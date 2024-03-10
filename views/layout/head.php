@@ -17,7 +17,11 @@
     <div class="container h-100 d-flex flex-column justify-content-between">
         <header class="p-1">
             <h1 class="text-center text-primary-emphasis fw-semibold">Bienvenido</h1>
+            <!-- En login, contacato, restore, registro y faQ deben cambiar el h2 -->
+
         </header>
         <main class="p-1 ">
-
-            <!-- En login, contacato, restore, registro y faQ deben cambiar el h2 -->
+            <div class="w-100 mb-2">
+                <img src="/lista-simple/assets/img/logo/logo_small.png" alt="Logo Lista Simple" title="Lista Simple" class="movil-sm">
+            </div>
+            <div class="continer d-flex flex-column w-100 align-items-center">

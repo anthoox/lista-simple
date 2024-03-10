@@ -5,14 +5,12 @@ html {
     margin: 0;
 }
 
-.logo-intro {
+.movil-sm {
     width: 100%;
     max-width: 550px;
 }
 
-.button-a {
-    max-width: 550px;
-}
+
 
 .f-little {
     font-size: 14px;
