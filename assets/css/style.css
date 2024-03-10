@@ -1,0 +1,19 @@
+html {
+    font-size: 16px;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.logo-intro {
+    width: 100%;
+}
+
+.f-little {
+    font-size: 14px;
+}
+
+.f-u-little {
+    font-size: 12px;
+
+}
