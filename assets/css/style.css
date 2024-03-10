@@ -10,7 +10,29 @@ html {
     max-width: 550px;
 }
 
+.movil-sm-h {
+    max-height: 200px;
+}
 
+.button-w {
+    width: 100%;
+}
+
+@media (width > 576px) {
+    .button-w {
+        min-width: 128px;
+        width: 150px;
+        max-height: 200px;
+    }
+}
+
+.yes-icon {
+    width: 30px;
+}
+
+.logo {
+    width: 40px;
+}
 
 .f-little {
     font-size: 14px;

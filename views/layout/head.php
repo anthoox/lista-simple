@@ -14,10 +14,13 @@
 
 
 <body class="vh-100">
-    <div class="container h-100 d-flex flex-column justify-content-between">
-        <header class="p-1">
-            <h1 class="text-center text-primary-emphasis fw-semibold">Bienvenido</h1>
-            <!-- En login, contacato, restore, registro y faQ deben cambiar el h2 -->
+    <div class="h-100 d-flex flex-column justify-content-between">
+        <header class="p-1 w-100">
+            <div class="container">
+                <h1 class="text-center text-primary-emphasis fw-semibold">Bienvenido</h1>
+                <!-- En login, contacato, restore, registro y faQ deben cambiar el h2 -->
+
+            </div>
 
         </header>
         <main class="p-1 ">
