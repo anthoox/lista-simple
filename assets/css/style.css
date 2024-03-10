@@ -7,6 +7,11 @@ html {
 
 .logo-intro {
     width: 100%;
+    max-width: 550px;
+}
+
+.button-a {
+    max-width: 550px;
 }
 
 .f-little {

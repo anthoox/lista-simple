@@ -1,21 +1,19 @@
 </main>
 <footer class="p-1  pb-0 mt-2">
 
-    <ul class="list-unstyled mt-2 mb-1">
+    <ul class="list-unstyled mt-2 mb-1 d-sm-flex justify-content-between">
         <li class="text-start">
             <a class="fw-medium text-decoration-none text-primary-emphasis f-little" href="/lista-simple/index.php">Inicio</a>
         </li>
+        <li class="text-start">
+            <a class="fw-medium text-decoration-none text-primary-emphasis f-little" href="/lista-simple/views/login/faq.php">FaQ</a>
+        </li>
         <li class="text-start ">
             <a class="fw-medium text-decoration-none text-primary-emphasis f-little" href="/lista-simple/views/login/contacto.php">Contacto</a>
-
-
         </li>
-        <li class="text-start">
-            <a class="fw-medium text-decoration-none text-primary-emphasis f-little" href="/lista-simple/views/login/faq.php">Preguntas frecuentes</a>
-        </li>
+
 
     </ul>
-
 
     <div>
         <p class="text-center text-primary-emphasis f-u-little">Proyecto DAW - Lista Simple -
