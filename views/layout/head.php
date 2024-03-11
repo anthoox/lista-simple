@@ -23,7 +23,7 @@
             </div>
 
         </header>
-        <main class="p-1 ">
+        <main class="p-3 ">
             <div class="w-100 mb-2">
                 <img src="/lista-simple/assets/img/logo/logo_small.png" alt="Logo Lista Simple" title="Lista Simple" class="movil-sm">
             </div>

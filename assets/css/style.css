@@ -28,7 +28,8 @@ html {
 
 .nav-w {
     min-width: 250px;
-
+    max-width: 250px;
+    transform: translateX(-500%);
 }
 
 .yes-icon {
