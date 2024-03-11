@@ -13,10 +13,10 @@
 </head>
 
 
-<body class="vh-100">
-    <div class=" h-100 d-flex flex-column justify-content-between">
-        <header class="  p-3 pt-2 pb-2 w-100 d-flex justify-content-center">
-            <div class="container d-flex justify-content-between align-items-center p-0 m-0">
+<body class="vh-100 ">
+    <div class=" h-100 d-flex flex-column justify-content-between ">
+        <header class="p-3 pt-2 pb-2 w-100 d-flex justify-content-center">
+            <div class="container d-flex justify-content-between align-items-center  m-0">
                 <div>
                     <img src="/lista-simple/assets/img/iconos/menu.svg" alt="icono menú" class="yes-icon">
                 </div>
@@ -26,5 +26,5 @@
             </div>
 
         </header>
-        <main class="p-3 w-100 container">
+        <main class="p-3 w-100 container  position-relative">
             <div class=" d-flex flex-column w-100 align-items-center">

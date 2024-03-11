@@ -127,17 +127,35 @@
         de cuentas</h2>
 </div>
 
-<form action="" class="mt-2 mb-2 movil-sm d-flex flex-column justify-content-center align-items-center flex-sm-row justify-content-sm-between">
-    <button type="submit" class="btn btn-primary rounded-1  mt-2 mb-2 text-white  button-w">Reset cuentas</button>
-    <button type="submit" class="btn btn-success rounded-1 mt-2 mb-2 text-white button-w ">Reset claves</button>
+<form action="" class="mt-2 movil-sm d-flex flex-column justify-content-center align-items-center flex-sm-row justify-content-sm-between">
+    <button type="submit" class="btn btn-success rounded-1  mt-2 mb-2 text-white  button-w">Reset cuentas</button>
+    <button type="submit" class="btn btn-primary rounded-1 mt-2 mb-2 text-white button-w ">Reset claves</button>
     <button type="submit" class="btn btn-danger rounded-1  mt-2 mb-2 text-white  button-w ">Vaciar BD</button>
 
 </form>
+<div class="d-flex flex-column movil-sm">
+    <span class="text-success fw-semibold f-little">Cuentas reseteadas</span>
+    <span class="text-primary fw-semibold f-little">Claves reseteadas</span>
+    <span class="text-danger fw-semibold f-little">Base de datos vaciada</span>
 
+</div>
 
 
 
 </div>
+<nav class="bg-white  rounded-end border border-start-0 border-1 p-4 position-absolute top-0 bottom-0 h-100 nav-w d-none">
+    <div class="rounded-circle">
+        <img src="/lista-simple/assets/img/logo/img-user.png" alt="Foto de perfil" class="img-user rounded-circle">
+    </div>
+
+    <ul class="list-group list-group-flush h-100 pt-2 pb-2">
+        <li class="list-group-item pt-4 pb-4">Mi cuenta</li>
+        <li class="list-group-item pt-4 pb-4">Cerrar sesión</li>
+        <li class="list-group-item pt-4 pb-4">
+            <img src="/lista-simple/assets/img/iconos/cerrar.svg" alt="Icono cerrar" class="yes-icon">
+        </li>
+    </ul>
+</nav>
 
 <!-- Pie de página -->
 <?php require_once 'C:/wamp64/www/lista-simple/views/layout/footer2.php'; ?>

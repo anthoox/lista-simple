@@ -26,12 +26,23 @@ html {
     }
 }
 
+.nav-w {
+    min-width: 250px;
+
+}
+
 .yes-icon {
     width: 30px;
 }
 
 .logo {
     width: 40px;
+}
+
+.img-user {
+
+    width: 150px;
+
 }
 
 .f-little {
