@@ -26,9 +26,17 @@ html {
     }
 }
 
+.top {
+    margin-top: 105px !important;
+}
+
 .nav-w {
-    min-width: 250px;
-    max-width: 250px;
+    min-width: 300px;
+    max-width: 300px;
+
+}
+
+.nav-position {
     transform: translateX(-500%);
 }
 
@@ -36,14 +44,21 @@ html {
     width: 30px;
 }
 
+
 .logo {
-    width: 40px;
+    width: 50px;
 }
+
+.logo-xl {
+    width: 240px;
+}
+
+
 
 .img-user {
 
     width: 150px;
-
+    height: 150px;
 }
 
 .f-little {

@@ -2,8 +2,8 @@
 <?php require_once 'C:/wamp64/www/lista-simple/views/layout/head2.php'; ?>
 
 <!-- Contenido -->
-<div class="w-100 mt-5">
-    <h2 class="text-start ">Alta de <br>
+<div class="w-100 mt-xl-5">
+    <h2 class="text-start  ms-xl-5 mb-5 mt-3">Alta de <br>
         usuarios</h2>
 </div>
 
@@ -32,8 +32,8 @@
     <hr>
 </div>
 
-<div class="w-100">
-    <h2 class="text-start ">Buscar <br>
+<div class="w-100 ">
+    <h2 class="text-start ms-xl-5 mb-5 mt-3">Buscar <br>
         usuario</h2>
 </div>
 
@@ -57,7 +57,7 @@
 </div>
 
 <div class="w-100">
-    <h2 class="text-start ">Usuarios</h2>
+    <h2 class="text-start  ms-xl-5 mb-5 mt-3">Usuarios</h2>
 </div>
 <div class="mt-2  overflow-scroll movil-sm movil-sm-h">
     <table class="table table-striped  ">
@@ -123,11 +123,13 @@
 </div>
 
 <div class="w-100">
-    <h2 class="text-start ">Gestion<br>
+    <h2 class="text-start  ms-xl-5 mb-5 mt-3">Gestion<br>
         de cuentas</h2>
 </div>
-
+<h3 class="m-2 "><span class="text-danger">¡</span>Advertencia<span class="text-danger">!</span>, estas funciones pueden borrar los datos.</h3>
 <form action="" class="mt-2 movil-sm d-flex flex-column justify-content-center align-items-center flex-sm-row justify-content-sm-between">
+
+
     <button type="submit" class="btn btn-success rounded-1  mt-2 mb-2 text-white  button-w">Reset cuentas</button>
     <button type="submit" class="btn btn-primary rounded-1 mt-2 mb-2 text-white button-w ">Reset claves</button>
     <button type="submit" class="btn btn-danger rounded-1  mt-2 mb-2 text-white  button-w ">Vaciar BD</button>
@@ -141,7 +143,6 @@
 </div>
 
 </div>
-
 
 
 <!-- Pie de página -->

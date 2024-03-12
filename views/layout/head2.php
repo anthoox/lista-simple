@@ -13,34 +13,55 @@
 </head>
 
 
-<body class="vh-100 d-flex justify-content-center ">
-    <nav class="bg-white z-3 rounded-end border border-start-0 border-1 p-4 start-0 vh-100 position-fixed nav-w">
-        <div class="rounded-circle">
-            <img src="/lista-simple/assets/img/logo/img-user.png" alt="Foto de perfil" class="img-user rounded-circle">
+<body>
+    <!-- NAV MOVIL -->
+    <nav class="bg-white  border-end p-4 start-0 h-100 d-flex flex-column align-items-center d-xl-none position-fixed z-3 nav-w nav-position">
+        <div class="rounded-circle border border-1 d-flex align-items-center justify-content-center img-user mt-5">
+            <img src="/lista-simple/assets/img/logo/logo.png" alt="Foto de perfil" class="img-user rounded-circle ">
         </div>
 
-        <ul class="list-group list-group-flush h-100 pt-2 pb-2">
+        <ul class="list-group list-group-flush h-100 pt-2 pb-2 w-100">
             <li class="list-group-item pt-4 pb-4">Mi cuenta</li>
             <li class="list-group-item pt-4 pb-4">Cerrar sesión</li>
             <li class="list-group-item pt-4 pb-4">
-                <img src="/lista-simple/assets/img/iconos/cerrar.svg" alt="Icono cerrar" class="yes-icon">
+                <img src="/lista-simple/assets/img/iconos/cerrar.svg" alt="Icono cerrar" class="yes-icon d-xl-none">
             </li>
         </ul>
     </nav>
-    <div class=" h-100 d-flex flex-column justify-content-between w-100 ">
-        <header class="p-0 pt-2 pb-2 w-100 d-flex justify-content-center position-fixed z-2 bg-white">
-            <div class="container d-flex justify-content-between align-items-center  m-0">
-                <div>
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class=" h-100 d-flex flex-column  w-100 ">
+        <!-- CABECERA -->
+        <header class="p-0  w-100  d-flex justify-content-center position-fixed z-2 bg-white  ">
+            <div class="container d-flex justify-content-between align-items-center justify-content-xl-center  m-0 pt-2 pb-2 border-bottom border-1">
+                <div class="d-xl-none">
                     <img src="/lista-simple/assets/img/iconos/menu.svg" alt="icono menú" class="yes-icon">
                 </div>
-                <div>
+                <div class="d-xl-none">
                     <img src="/lista-simple/assets/img/logo/logo.png" alt="Logo Lista Simple" class="logo">
+                </div>
+                <div class="d-none d-xl-block p-2">
+                    <img src="/lista-simple/assets/img/logo/logo_small.png" alt="Logo Lista Simple" class="logo-xl">
                 </div>
             </div>
 
         </header>
-        <main class="p-3 w-100 container mt-5">
 
+        <!-- MAIN -->
+        <main class="p-3 w-100 container mt-5 d-flex top">
+            <!-- NAV ESCRITORIO -->
+            <nav class="bg-white  border-end p-4  mt-xl-5 d-none d-xl-flex flex-column align-items-center nav-w ">
+                <div class="rounded-circle border border-1 d-flex align-items-center justify-content-center mt-4  img-user  ">
+                    <img src="/lista-simple/assets/img/logo/logo.png" alt="Foto de perfil" class="img-user rounded-circle">
+                </div>
 
-
-            <div class=" d-flex flex-column w-100 align-items-center">
+                <ul class="list-group list-group-flush h-100 pt-2 pb-2 w-100">
+                    <li class="list-group-item pt-4 pb-4">Mi cuenta</li>
+                    <li class="list-group-item pt-4 pb-4">Cerrar sesión</li>
+                    <li class="list-group-item pt-4 pb-4">
+                        <img src="/lista-simple/assets/img/iconos/cerrar.svg" alt="Icono cerrar" class="yes-icon d-xl-none">
+                    </li>
+                </ul>
+            </nav>
+            <!-- CONTENEDOR -->
+            <div class=" d-flex flex-column w-100 align-items-center ms-xl-4 mt-xl-5 ">
