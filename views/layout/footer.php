@@ -1,7 +1,8 @@
 </main>
-<footer class="container p-3  pb-0 mt-2">
-
-    <ul class="list-unstyled mt-2 mb-1 d-sm-flex justify-content-between">
+<footer class="container p-4 mt-2 border-top border-1">
+    <!-- quitar bordes en vistas menores de 576px -->
+    <!-- ACTIVAR EN VISTAS DE LOGIN -->
+    <ul class="list-unstyled  mb-1 d-sm-flex justify-content-between">
         <li class="text-start">
             <a class="fw-medium text-decoration-none text-primary-emphasis f-little" href="/lista-simple/index.php">Inicio</a>
         </li>
@@ -15,8 +16,8 @@
 
     </ul>
 
-    <div>
-        <p class="text-center text-primary-emphasis f-u-little">Proyecto DAW - Lista Simple -
+    <div class="h-100 d-flex justify-content-center align-items-center">
+        <p class="text-center text-primary-emphasis f-u-little p-0 m-0">Proyecto DAW - Lista Simple -
             Anthony Alegría Alcántara
             ® 2023</p>
     </div>

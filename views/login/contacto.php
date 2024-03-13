@@ -3,8 +3,8 @@
 
 <!-- Contenido -->
 
-<h2 class="text-start text-primary-emphasis movil-sm">Contacto</h2>
-<form class="d-flex flex-column justify-content-center movil-sm">
+<h2 class="text-start text-primary-emphasis col-12 col-md-10 col-lg-6">Contacto</h2>
+<form class="d-flex flex-column justify-content-center col-12 col-md-10 col-lg-6">
     <p class="text-start">Envianos tu consulta desde nuestro formulario o escribenos a: <a href="" class="text-decoration-none">contacto@listasimple.com</a>.</p>
     <div class="mb-2">
         <label for="email" class="d-block text-start form-label">Correo</label>
@@ -16,7 +16,7 @@
         <div id="textAreaHelp" class="text-start form-text">Te responderemos por email.</div>
 
     </div>
-    <button type="submit" class=" btn btn-primary rounded-1 mt-2 mb-2  text-white">Enviar</button>
+    <button type="submit" class=" btn btn-primary rounded-1 mt-2 mb-2 align-self-center text-white col-12 col-sm-8  col-md-7">Enviar</button>
 
 </form>
 

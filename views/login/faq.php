@@ -3,9 +3,9 @@
 
 <!-- Contenido -->
 
-<h2 class="text-start text-primary-emphasis mb-3 movil-sm">Preguntas Frecuentes</h2>
+<h2 class="text-start text-primary-emphasis mb-3 col-12 col-md-10 col-lg-6">FaQ</h2>
 
-<div class="accordion movil-sm" id="accordionPanelsStayOpenExample">
+<div class="accordion col-12 col-md-10 col-lg-6" id="accordionPanelsStayOpenExample">
     <div class="accordion-item">
         <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">

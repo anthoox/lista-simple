@@ -21,7 +21,7 @@
         <input type="password" class="form-control" id="password">
     </div>
 
-    <button type="submit" class="align-self-center btn btn-success rounded-1 mt-2 mb-2 text-white col-12 col-sm-8  col-md-7">Guardar</button>
+    <button type="submit" class="btn btn-success rounded-1 mt-2 mb-2 text-white col-12 col-sm-8  col-md-7">Guardar</button>
 
 </form>
 
