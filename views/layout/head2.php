@@ -22,6 +22,7 @@
 
         <ul class="list-group list-group-flush h-100 pt-2 pb-2 w-100">
             <li class="list-group-item pt-4 pb-4">Mi cuenta</li>
+            <li class="list-group-item pt-4 pb-4">Usuarios</li>
             <li class="list-group-item pt-4 pb-4">Cerrar sesión</li>
             <li class="list-group-item pt-4 pb-4">
                 <img src="/lista-simple/assets/img/iconos/cerrar.svg" alt="Icono cerrar" class="yes-icon d-xl-none">
@@ -52,9 +53,9 @@
         <header class="p-0  w-100  d-flex justify-content-center position-fixed z-2 bg-white  ">
             <div class="container d-flex justify-content-between align-items-center justify-content-xl-center  m-0 pt-2 pb-2 border-bottom border-1">
                 <div class="d-xl-none">
-                    <a href="" class="text-decoration-none text-dark-emphasis fw-medium"><img src="/lista-simple/assets/img/iconos/atras.svg" alt="icono menú" class="yes-icon">Atrás</a>
+                    <a name="icon" href=""><img src="/lista-simple/assets/img/iconos/atras.svg" alt="icono atras" class="yes-icon"></a><label for="icon" class="d-none d-sm-inline text-decoration-none text-dark-emphasis fw-medium">Atrás</label>
                 </div>
-                <div class="d-xl-none d-flex align-items-center">
+                <div class="d-xl-none">
                     <img src="/lista-simple/assets/img/logo/logo.png" alt="Logo Lista Simple" class="logo">
                 </div>
                 <div class="d-none d-xl-block p-2">
@@ -65,7 +66,7 @@
         </header>
 
         <!-- MAIN -->
-        <main class="p-3 w-100 container mt-5 d-flex top">
+        <main class="p-4 w-100 container mt-5 d-flex top">
             <!-- NAV ESCRITORIO -->
             <nav class="bg-white  border-end p-4  mt-xl-5 d-none d-xl-flex flex-column align-items-center nav-w ">
                 <div class="rounded-circle border border-1 d-flex align-items-center justify-content-center mt-4  img-user  ">
@@ -74,6 +75,8 @@
 
                 <ul class="list-group list-group-flush h-100 pt-2 pb-2 w-100">
                     <li class="list-group-item pt-4 pb-4">Mi cuenta</li>
+                    <li class="list-group-item pt-4 pb-4">Usuarios</li>
+
                     <li class="list-group-item pt-4 pb-4">Cerrar sesión</li>
                     <li class="list-group-item pt-4 pb-4">
                         <img src="/lista-simple/assets/img/iconos/cerrar.svg" alt="Icono cerrar" class="yes-icon d-xl-none">

@@ -3,11 +3,11 @@
 
 <!-- Contenido -->
 <div class="w-100 mt-xl-5">
-    <h2 class="text-start  ms-xl-5 mb-5 mt-3">Gestion<br>
-        de usuarios</h2>
+    <h2 class="text-start  ms-xl-5 mb-5 mt-3">Info<br>
+        de usuario</h2>
 </div>
 
-<div class="mt-2 col-12 col-md-10 col-lg-8">
+<div class=" col-12 col-md-10 col-lg-8">
     <ul class="list-group list-group-flush">
         <li class="list-group-item d-flex justify-content-between">
             <span class="fw-semibold">ID:</span><span>12</span>
@@ -29,7 +29,12 @@
     <hr>
 </div>
 
-<form class="mt-2  d-flex flex-column justify-content-center  col-12 col-md-10 col-lg-8">
+<div class="w-100 mt-xl-5">
+    <h2 class="text-start  ms-xl-5 mb-5 mt-3">Gestion<br>
+        de usuario</h2>
+</div>
+
+<form class="mt-2 d-flex flex-column justify-content-center  col-12 col-md-10 col-lg-8">
     <div class="mb-2">
         <label for="username" class="d-block text-start form-label">Usuario</label>
         <input type="text" class="form-control" id="username" placeholder="Usuario.com">

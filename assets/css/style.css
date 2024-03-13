@@ -19,12 +19,19 @@ html {
     width: 100%;
 }
 
-@media (width > 576px) {
+@media (width >=576px) {
     .button-w {
         min-width: 128px;
         width: 150px;
         max-height: 200px;
     }
+
+    .img-user-xl {
+
+        width: 250px;
+        height: 250px;
+    }
+
 }
 
 .top {
@@ -55,11 +62,36 @@ html {
 }
 
 
-
 .img-user {
 
     width: 150px;
     height: 150px;
+}
+
+
+.img-user-xl {
+
+    width: 200px;
+    height: 200px;
+}
+
+@media (width >=576px) {
+
+    .img-user-xl {
+
+        width: 250px;
+        height: 250px;
+    }
+
+
+}
+
+@media (width >=768px) {
+    .img-user-xl {
+
+        width: 300px;
+        height: 300px;
+    }
 }
 
 .f-little {
