@@ -31,13 +31,30 @@
 
     <!-- CONTENEDOR PRINCIPAL -->
     <div class=" h-100 d-flex flex-column  w-100 ">
-        <!-- CABECERA -->
-        <header class="p-0  w-100  d-flex justify-content-center position-fixed z-2 bg-white  ">
+        <!-- CABECERA 1 -->
+        <!-- <header class="p-0  w-100  d-flex justify-content-center position-fixed z-2 bg-white  ">
             <div class="container d-flex justify-content-between align-items-center justify-content-xl-center  m-0 pt-2 pb-2 border-bottom border-1">
                 <div class="d-xl-none">
                     <img src="/lista-simple/assets/img/iconos/menu.svg" alt="icono menú" class="yes-icon">
                 </div>
                 <div class="d-xl-none">
+                    <img src="/lista-simple/assets/img/logo/logo.png" alt="Logo Lista Simple" class="logo">
+                </div>
+                <div class="d-none d-xl-block p-2">
+                    <img src="/lista-simple/assets/img/logo/logo_small.png" alt="Logo Lista Simple" class="logo-xl">
+                </div>
+            </div>
+
+        </header> -->
+
+
+        <!-- CABECERA 2 -->
+        <header class="p-0  w-100  d-flex justify-content-center position-fixed z-2 bg-white  ">
+            <div class="container d-flex justify-content-between align-items-center justify-content-xl-center  m-0 pt-2 pb-2 border-bottom border-1">
+                <div class="d-xl-none">
+                    <a href="" class="text-decoration-none text-dark-emphasis fw-medium"><img src="/lista-simple/assets/img/iconos/atras.svg" alt="icono menú" class="yes-icon">Atrás</a>
+                </div>
+                <div class="d-xl-none d-flex align-items-center">
                     <img src="/lista-simple/assets/img/logo/logo.png" alt="Logo Lista Simple" class="logo">
                 </div>
                 <div class="d-none d-xl-block p-2">

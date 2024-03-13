@@ -7,7 +7,7 @@
         usuarios</h2>
 </div>
 
-<form class="mt-2  d-flex flex-column justify-content-center movil-sm">
+<form class="mt-2  d-flex flex-column justify-content-center col-12 col-md-10 col-lg-8">
     <div class="mb-2">
         <label for="username" class="d-block text-start form-label">Usuario</label>
         <input type="text" class="form-control" id="username" placeholder="Usuario.com">
@@ -21,7 +21,7 @@
         <input type="password" class="form-control" id="password">
     </div>
 
-    <button type="submit" class="btn btn-success rounded-1 mt-2 mb-2 text-white">Guardar</button>
+    <button type="submit" class="align-self-center btn btn-success rounded-1 mt-2 mb-2 text-white col-12 col-sm-8  col-md-7">Guardar</button>
 
 </form>
 
@@ -37,14 +37,14 @@
         usuario</h2>
 </div>
 
-<form class="mt-2  d-flex flex-column justify-content-center movil-sm">
+<form class="mt-2  d-flex flex-column justify-content-center col-12 col-md-10 col-lg-8">
 
     <div class="mb-2">
         <label for="email" class="d-block text-start form-label">Correo</label>
         <input type="email" class="form-control" id="email" placeholder="correo@correo.com">
     </div>
 
-    <button type="submit" class="btn btn-primary rounded-1 mt-2 mb-2 text-white">Buscar</button>
+    <button type="submit" class="btn btn-primary rounded-1 mt-2 mb-2 text-white align-self-center col-12 col-sm-8  col-md-7">Buscar</button>
 
 </form>
 
@@ -59,7 +59,7 @@
 <div class="w-100">
     <h2 class="text-start  ms-xl-5 mb-5 mt-3">Usuarios</h2>
 </div>
-<div class="mt-2  overflow-scroll movil-sm movil-sm-h">
+<div class="mt-2  overflow-scroll col-12 col-md-10 col-lg-8 table-h">
     <table class="table table-striped  ">
         <thead>
             <tr class="table-primary">
@@ -126,16 +126,16 @@
     <h2 class="text-start  ms-xl-5 mb-5 mt-3">Gestion<br>
         de cuentas</h2>
 </div>
-<h3 class="m-2 "><span class="text-danger">¡</span>Advertencia<span class="text-danger">!</span>, estas funciones pueden borrar los datos.</h3>
-<form action="" class="mt-2 movil-sm d-flex flex-column justify-content-center align-items-center flex-sm-row justify-content-sm-between">
+<p class="m-2 col-12 col-md-10 col-lg-8 "><span class="text-danger">¡</span>Advertencia<span class="text-danger">!</span>, estas funciones afectan a todos los usuario.</p>
+<form action="" class="mt-2 col-12 col-md-10 col-lg-8 d-flex flex-column justify-content-center align-items-center flex-sm-row justify-content-sm-between">
 
 
-    <button type="submit" class="btn btn-success rounded-1  mt-2 mb-2 text-white  button-w">Reset cuentas</button>
-    <button type="submit" class="btn btn-primary rounded-1 mt-2 mb-2 text-white button-w ">Reset claves</button>
-    <button type="submit" class="btn btn-danger rounded-1  mt-2 mb-2 text-white  button-w ">Vaciar BD</button>
+    <button type="submit" class="btn btn-success rounded-1  mt-2 mb-2 text-white   col-12 col-sm-3  ">Reset cuentas</button>
+    <button type="submit" class="btn btn-primary rounded-1 mt-2 mb-2 text-white col-12 col-sm-3 ">Reset claves</button>
+    <button type="submit" class="btn btn-danger rounded-1  mt-2 mb-2 text-white  col-12 col-sm-3  ">Vaciar BD</button>
 
 </form>
-<div class="d-flex flex-column movil-sm">
+<div class="d-flex flex-column col-12 col-md-10 col-lg-8">
     <span class="text-success fw-semibold f-little">Cuentas reseteadas</span>
     <span class="text-primary fw-semibold f-little">Claves reseteadas</span>
     <span class="text-danger fw-semibold f-little">Base de datos vaciada</span>

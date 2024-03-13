@@ -8,10 +8,11 @@ html {
 .movil-sm {
     width: 100%;
     max-width: 550px;
+    /* buscar esta clase en otros archivos para eliminarlo y cmabiarlo por col */
 }
 
-.movil-sm-h {
-    max-height: 200px;
+.table-h {
+    max-height: 250px;
 }
 
 .button-w {
