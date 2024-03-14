@@ -15,6 +15,7 @@
 
 <body>
     <!-- NAV MOVIL -->
+    <!-- DESACTIVAR EN VISTAS LOGIN con condicion de session iniciada-->
     <nav class="bg-white  border-end p-4 start-0 h-100 d-flex flex-column align-items-center d-xl-none position-fixed z-3 nav-w nav-position">
         <div class="rounded-circle border border-1 d-flex align-items-center justify-content-center img-user mt-5">
             <img src="/lista-simple/assets/img/logo/logo.png" alt="Foto de perfil" class="img-user rounded-circle ">
@@ -30,31 +31,24 @@
         </ul>
     </nav>
 
+
     <!-- CONTENEDOR PRINCIPAL -->
     <div class=" h-100 d-flex flex-column  w-100 ">
-        <!-- CABECERA 1 -->
-        <!-- <header class="p-0  w-100  d-flex justify-content-center position-fixed z-2 bg-white  ">
+
+
+        <header class="p-0  w-100  d-flex justify-content-center position-fixed z-2 bg-white  ">
             <div class="container d-flex justify-content-between align-items-center justify-content-xl-center  m-0 pt-2 pb-2 border-bottom border-1">
+                <!-- DESACTIVAR EN VISTA DE PRINCIPAL DE ADMIN Y USUARIO -->
+                <!-- <div class="d-xl-none">
+                    <a name="icon" href=""><img src="/lista-simple/assets/img/iconos/atras.svg" alt="icono atras" class="yes-icon"></a><label for="icon" class="d-none d-sm-inline text-decoration-none text-dark-emphasis fw-medium">Atrás</label>
+                </div> -->
+
+                <!-- ACTIVAR EN VISTA DE PRINCIPAL DE ADMIN Y USUARIO -->
                 <div class="d-xl-none">
                     <img src="/lista-simple/assets/img/iconos/menu.svg" alt="icono menú" class="yes-icon">
                 </div>
-                <div class="d-xl-none">
-                    <img src="/lista-simple/assets/img/logo/logo.png" alt="Logo Lista Simple" class="logo">
-                </div>
-                <div class="d-none d-xl-block p-2">
-                    <img src="/lista-simple/assets/img/logo/logo_small.png" alt="Logo Lista Simple" class="logo-xl">
-                </div>
-            </div>
-
-        </header> -->
 
 
-        <!-- CABECERA 2 -->
-        <header class="p-0  w-100  d-flex justify-content-center position-fixed z-2 bg-white  ">
-            <div class="container d-flex justify-content-between align-items-center justify-content-xl-center  m-0 pt-2 pb-2 border-bottom border-1">
-                <div class="d-xl-none">
-                    <a name="icon" href=""><img src="/lista-simple/assets/img/iconos/atras.svg" alt="icono atras" class="yes-icon"></a><label for="icon" class="d-none d-sm-inline text-decoration-none text-dark-emphasis fw-medium">Atrás</label>
-                </div>
                 <div class="d-xl-none">
                     <img src="/lista-simple/assets/img/logo/logo.png" alt="Logo Lista Simple" class="logo">
                 </div>

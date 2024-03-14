@@ -77,4 +77,4 @@
 
 
 <!-- Pie de página -->
-<?php require_once 'C:/wamp64/www/lista-simple/views/layout/footer2.php'; ?>
+<?php require_once 'C:/wamp64/www/lista-simple/views/layout/footer.php'; ?>
