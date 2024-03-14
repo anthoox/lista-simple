@@ -60,7 +60,7 @@
         </header>
 
         <!-- MAIN -->
-        <main class="p-4 w-100 container mt-5 d-flex top">
+        <main class="p-1  w-100 container d-flex top">
             <!-- NAV ESCRITORIO -->
             <nav class="bg-white  border-end p-4  mt-xl-5 d-none d-xl-flex flex-column align-items-center nav-w ">
                 <div class="rounded-circle border border-1 d-flex align-items-center justify-content-center mt-4  img-user  ">

@@ -35,7 +35,7 @@ html {
 }
 
 .top {
-    margin-top: 105px !important;
+    margin-top: 90px !important;
 }
 
 .nav-w {
@@ -66,6 +66,21 @@ html {
 
     width: 150px;
     height: 150px;
+}
+
+.add {
+    width: 65px;
+    height: 65px;
+}
+
+.icon-list {
+    width: 55px;
+    height: 55px;
+}
+
+.iconslist {
+    width: 20px;
+
 }
 
 
