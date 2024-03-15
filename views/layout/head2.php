@@ -78,4 +78,4 @@
                 </ul>
             </nav>
             <!-- CONTENEDOR -->
-            <div class=" d-flex flex-column w-100 align-items-center ms-xl-4 mt-xl-5 ">
+            <div class=" d-flex flex-column w-100 align-items-center ms-xl-4 mt-xl-5  ">
