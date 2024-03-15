@@ -23,7 +23,6 @@
 
         <ul class="list-group list-group-flush h-100 pt-2 pb-2 w-100">
             <li class="list-group-item pt-4 pb-4">Mi cuenta</li>
-            <li class="list-group-item pt-4 pb-4">Usuarios</li>
             <li class="list-group-item pt-4 pb-4">Papelera</li>
             <li class="list-group-item pt-4 pb-4">Ayuda</li>
             <li class="list-group-item pt-4 pb-4">Cerrar sesión</li>
