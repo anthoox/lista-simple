@@ -73,9 +73,7 @@
                     <li class="list-group-item pt-4 pb-4">Papelera</li>
                     <li class="list-group-item pt-4 pb-4">Ayuda</li>
                     <li class="list-group-item pt-4 pb-4">Cerrar sesión</li>
-                    <li class="list-group-item pt-4 pb-4">
-                        <img src="/lista-simple/assets/img/iconos/cerrar.svg" alt="Icono cerrar" class="yes-icon d-xl-none">
-                    </li>
+
                 </ul>
             </nav>
             <!-- CONTENEDOR -->
