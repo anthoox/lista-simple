@@ -32,12 +32,12 @@
 
 
     <button type="submit" class="btn align-self-center btn-success rounded-1 mt-5 mb-2 text-white align-self-center col-12 col-sm-8  col-md-7">Guardar</button>
+    <button type="submit" class="btn align-self-center btn-primary rounded-1 mt-2 mb-2 text-white align-self-center col-12 col-sm-8  col-md-7">Descargar</button>
 
 </form>
 
 <div class="d-flex flex-column col-12 col-xl-7 pe-2 ps-2">
 
-    <button type="submit" class="btn align-self-center btn-primary rounded-1 mt-2 mb-2 text-white align-self-center col-12 col-sm-8  col-md-7">Descargar</button>
     <span class="text-success fw-semibold f-little">Cuentas reseteadas</span>
     <span class="text-primary fw-semibold f-little">Claves reseteadas</span>
     <span class="text-danger fw-semibold f-little">Base de datos vaciada</span>
