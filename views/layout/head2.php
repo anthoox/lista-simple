@@ -22,10 +22,12 @@
         </div>
 
         <ul class="list-group list-group-flush h-100 pt-2 pb-2 w-100">
+            <li class="list-group-item pt-4 pb-4">Inicio</li>
             <li class="list-group-item pt-4 pb-4">Mi cuenta</li>
             <li class="list-group-item pt-4 pb-4">Papelera</li>
-            <li class="list-group-item pt-4 pb-4">Ayuda</li>
-            <li class="list-group-item pt-4 pb-4">Cerrar sesión</li>
+            <li class="list-group-item pt-4 pb-4">Soporte</li>
+            <li class="list-group-item pt-4 pb-4">Salir</li>
+
             <li class="list-group-item pt-4 pb-4">
                 <img src="/lista-simple/assets/img/iconos/cerrar.svg" alt="Icono cerrar" class="yes-icon d-xl-none">
             </li>
@@ -69,10 +71,12 @@
                 </div>
 
                 <ul class="list-group list-group-flush h-100 pt-2 pb-2 w-100">
+                    <li class="list-group-item pt-4 pb-4">Inicio</li>
+
                     <li class="list-group-item pt-4 pb-4">Mi cuenta</li>
                     <li class="list-group-item pt-4 pb-4">Papelera</li>
-                    <li class="list-group-item pt-4 pb-4">Ayuda</li>
-                    <li class="list-group-item pt-4 pb-4">Cerrar sesión</li>
+                    <li class="list-group-item pt-4 pb-4">Soporte</li>
+                    <li class="list-group-item pt-4 pb-4">Salir</li>
 
                 </ul>
             </nav>
