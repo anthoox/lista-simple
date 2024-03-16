@@ -90,9 +90,11 @@ html {
 
 .iconslist {
     width: 15px;
-
 }
 
+.iconslist-lg {
+    width: 30px;
+}
 
 .img-user-xl {
 
