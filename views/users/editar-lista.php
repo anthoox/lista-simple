@@ -3,7 +3,7 @@
 
 <!-- Contenido -->
 <div class="w-100 mt-xl-5 pe-2 ps-2">
-    <h2 class="text-start  ms-xl-5 mb-5 mt-3">Editar</h2>
+    <h2 class="text-start  ms-xl-5 mb-5 mt-3">Editar lista</h2>
 </div>
 
 <form class="d-flex flex-column justify-content-center  col-12 col-md-10 col-lg-8 pe-2 ps-2">
@@ -12,35 +12,15 @@
         <input type="text" class="form-control" id="username" placeholder="Nombre">
     </div>
 
-    <div class="d-flex mb-2 gap-2">
-        <div class="w-50">
-            <label for="cantidad" class="d-block text-start form-label">Unidades</label>
-            <input type="number" class="form-control" id="cantidad" placeholder="0">
-        </div>
-
-        <div class="w-50">
-            <label for="precio" class="d-block text-start form-label">Precio</label>
-            <input type="number" class="form-control" id="precio" placeholder="0€">
-        </div>
-    </div>
-
-
-
-
-
     <div class="mb-2">
         <label for="fecha" class="d-block text-start form-label">Recordatorio</label>
         <input type="datetime-local" class="form-control" id="fecha" placeholder="0€">
     </div>
 
-
-
-
     <div class="mb-3">
         <label for="exampleFormControlTextarea1" class="form-label d-block text-start">Notas</label>
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
     </div>
-
 
     <button type="submit" class="btn align-self-center btn-success rounded-1 mt-5 mb-2 text-white align-self-center col-12 col-sm-8  col-md-7">Guardar</button>
 
