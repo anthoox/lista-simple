@@ -27,6 +27,7 @@
     <div class="d-flex flex-column align-items-center w-100 col-12 col-xl-7 pe-2 ps-2">
         <span class="text-success fw-semibold f-little">Cuentas reseteadas</span>
         <span class="text-danger fw-semibold f-little">Base de datos vaciada</span>
+
     </div>
 
     <div class="d-flex flex-column mt-5">
