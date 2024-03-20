@@ -2,8 +2,10 @@
 <?php require_once 'C:/wamp64/www/lista-simple/views/layout/head.php'; ?>
 
 <!-- Contenido -->
+<?php
 
-<form class="d-flex flex-column justify-content-center col-12 col-md-10 col-lg-6">
+?>
+<form action=" registro.php" class="d-flex flex-column justify-content-center col-12 col-md-10 col-lg-6">
     <div class="mb-2">
         <label for="username" class="d-block text-start form-label">Usuario</label>
         <input type="text" class="form-control" id="username" placeholder="Usuario">
