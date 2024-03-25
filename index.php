@@ -1,14 +1,16 @@
 <!-- Cabeceras -->
 <?php require_once 'autoload.php'; ?>
+
 <?php require_once 'C:/wamp64/www/lista-simple/views/layout/head.php'; ?>
 
 <?php
 if (isset($_GET['controller'])) {
     $nombre_controlador = $_GET['controller'] . 'Controller';
 } else {
-    echo "La pagina que buscas no existe";
+    echo "<h1>404</h1>
+    <p>La pagina que buscas no existe</p>";
     // exit() detiene la ejecución.
-    exit();
+    // exit();
 }
 
 
@@ -34,3 +36,5 @@ if (class_exists($nombre_controlador)) {
 
 <!-- Pie de página -->
 <?php require_once 'C:/wamp64/www/lista-simple/views/layout/footer.php'; ?>
+
+<!-- Retocar al final, al menos del final de login -->
