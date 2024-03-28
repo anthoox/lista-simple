@@ -3,30 +3,6 @@
 
 <?php require_once 'C:/wamp64/www/lista-simple/views/layout/head.php'; ?>
 
-<?php
-if (isset($_GET['controller'])) {
-    $nombre_controlador = $_GET['controller'] . 'Controller';
-} else {
-    echo "<h1>404</h1>
-    <p>La pagina que buscas no existe</p>";
-    // exit() detiene la ejecución.
-    // exit();
-}
-
-
-if (class_exists($nombre_controlador)) {
-    $controlador = new $nombre_controlador();
-    if (isset($_GET['action']) && method_exists($controlador, $_GET['action'])) {
-        $action = $_GET['action'];
-        $controlador->$action();
-    } else {
-        echo 'La pagiana que buscas no EXISTE';
-    }
-} else {
-    echo 'La pagiana que buscas no existeeee';
-}
-?>
-
 <!-- Contenido -->
 
 

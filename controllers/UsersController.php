@@ -3,6 +3,7 @@ class UsersController
 {
     public function index()
     {
-        echo "<h1>Controllador de usuarios, index</h1>";
+        // Renderiza vista
+        require_once 'C:/wamp64/www/lista-simple/views/users/listas.php';
     }
 }
