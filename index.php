@@ -1,16 +1,50 @@
 <!-- Cabeceras -->
+<!-- Sin session no existe enviar a home.php -->
 <?php require_once 'autoload.php'; ?>
 
-<?php require_once 'C:/wamp64/www/lista-simple/views/layout/head.php'; ?>
+<?php
+if (isset($_GET['controller'])) {
+    $nombre_controlador = $_GET['controller'] . 'Controller';
+} else {
+    require_once 'C:/wamp64/www/lista-simple/views/layout/head.php';
 
-<!-- Contenido -->
+    echo
+    '<h1>404</h1>
+        <p>La pagina que buscas no existe</p>
+        <a href="../../index.php">Volver1</a>';
+    require_once 'C:/wamp64/www/lista-simple/views/layout/footer.php';
+    // exit() detiene la ejecución.
+    exit();
+}
 
 
-<a type="button" class="movil-sm btn btn-primary rounded-1 mb-2 align-self-center text-white col-12 col-sm-8  col-md-7" href="/lista-simple/views/login/login.php">Acceso</a>
-<a type="button" class="movil-sm btn btn-success rounded-1 mb-2  align-self-center text-white col-12 col-sm-8  col-md-7" href="/lista-simple/views/login/registro.php">Registro</a>
+if (class_exists($nombre_controlador)) {
+    $controlador = new $nombre_controlador();
+    if (isset($_GET['action']) && method_exists($controlador, $_GET['action'])) {
+        $action = $_GET['action'];
+        $controlador->$action();
+    } else {
+
+        require_once 'C:/wamp64/www/lista-simple/views/layout/head.php';
+
+        echo
+        '<h1>404</h1>
+        <p>La pagina que buscas no existe wey</p>
+        <a href="../../index.php">Volver2</a>';
+        require_once 'C:/wamp64/www/lista-simple/views/layout/footer.php';
+    }
+} else {
+
+    require_once 'C:/wamp64/www/lista-simple/views/layout/head.php';
+
+    echo
+    '<h1>404</h1>
+        <p>La pagina que buscas no existe tronco</p>
+        <a href="../../index.php">Volver3</a>';
+    require_once 'C:/wamp64/www/lista-simple/views/layout/footer.php';
+}
+?>
+<!-- Est div probablemente hay que quitarlo -->
 </div>
-
-<!-- Pie de página -->
-<?php require_once 'C:/wamp64/www/lista-simple/views/layout/footer.php'; ?>
 
 <!-- Retocar al final, al menos del final de login -->
