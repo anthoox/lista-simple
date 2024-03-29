@@ -10,7 +10,7 @@
             <a class="fw-medium text-decoration-none text-primary-emphasis f-little" href="/lista-simple/views/login/faq.php">FaQ</a>
         </li>
         <li class="text-start ">
-            <a class="fw-medium text-decoration-none text-primary-emphasis f-little" href="/lista-simple/views/login/contacto.php">Contacto</a>
+            <a class="fw-medium text-decoration-none text-primary-emphasis f-little" href="/lista-simple/views/login/contact.php">Contacto</a>
         </li>
 
 

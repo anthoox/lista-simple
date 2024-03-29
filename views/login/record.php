@@ -1,8 +1,11 @@
 <!-- Cabeceras -->
-<?php require_once 'C:/wamp64/www/lista-simple/views/layout/head.php'; ?>
+<?php
+require_once 'C:/wamp64/www/lista-simple/views/layout/head.php';
+?>
+
 
 <!-- Contenido -->
-<form action="/lista-simple/index/?controller=users&action=save" method="POST" class="d-flex flex-column justify-content-center col-12 col-md-10 col-lg-6">
+<form action="/lista-simple/users/save" method="POST" class="d-flex flex-column justify-content-center col-12 col-md-10 col-lg-6">
     <div class="mb-2">
         <label for="username" class="d-block text-start form-label">Usuario</label>
         <input type="text" class="form-control" id="username" placeholder="Usuario" name="username">
@@ -22,11 +25,13 @@
 
 <a class="text-center text-decoration-none text-primary-emphasis fw-medium" href="/lista-simple/index.php">Volver</a>
 
-
-<!-- <span class="text-danger fw-semibold f-little">El email ya existe en el sistema</span> -->
-<span class="text-success fw-semibold f-little">Usuario regitrado correctamente</span>
-
+<?php if (isset($_SESSION['register']) && $_SESSION['register'] == 'complete') : ?>
+    <span class="text-success fw-semibold f-little">Usuario regitrado correctamente</span>
+<?php elseif (isset($_SESSION['register']) && $_SESSION['register'] == 'failed') : ?>
+    <span class="text-danger fw-semibold f-little">Fallo en el registro</span>
+<?php endif; ?>
+<?= Utils::deleteSession('register') ?>
 </div>
 
 <!-- Pie de página -->
-<?php require_once 'C:/wamp64/www/lista-simple/views/layout/footer.php'; ?>
+<?php require_once  'C:/wamp64/www/lista-simple/views/layout/footer.php'; ?>

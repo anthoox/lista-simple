@@ -1,8 +1,12 @@
 <!-- Cabeceras -->
 <!-- Sin session no existe enviar a home.php -->
 <?php
+session_start();
 require_once 'autoload.php';
+require_once 'config/db.php';
 require_once 'config/parameters.php';
+require_once 'helpers/utils.php';
+
 
 function show_error()
 {
