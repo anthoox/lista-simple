@@ -32,31 +32,14 @@ if (class_exists($nombre_controlador)) {
         $default = action_default;
         $controlador->$default();
     } else {
-
-        // require_once 'C:/wamp64/www/lista-simple/views/layout/head.php';
-
-        // echo
-        // '<h1>404</h1>
-        // <p>La pagina que buscas no existe wey</p>
-        // <a href="http://localhost/lista-simple/home">Volver2</a>';
-        // require_once 'C:/wamp64/www/lista-simple/views/layout/footer.php';
-
         show_error();
     }
 } else {
 
-    // require_once 'C:/wamp64/www/lista-simple/views/layout/head.php';
-
-    // echo
-    // '<h1>404</h1>
-    //     <p>La pagina que buscas no existe tronco</p>
-    //     <a href="http://localhost/lista-simple/home">Volver3</a>';
-    // require_once 'C:/wamp64/www/lista-simple/views/layout/footer.php';
-
     show_error();
 }
 ?>
-<!-- Est div probablemente hay que quitarlo -->
+
 </div>
 
-<!-- Retocar al final, al menos del final de login -->
+<?php require_once 'C:/wamp64/www/lista-simple/views/layout/footer.php'; ?>

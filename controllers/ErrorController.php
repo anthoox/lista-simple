@@ -3,7 +3,9 @@ class ErrorController
 {
     public function index()
     {
-        echo
-        "<h1>La página que buscas no existe</h1>";
+        require_once 'C:/wamp64/www/lista-simple/views/layout/head.php';
+        echo '
+            <h1 class="display-2 fw-semibold">404</h1>
+            <h2>La página que buscas no existe</h2>';
     }
 }

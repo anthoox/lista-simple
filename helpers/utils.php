@@ -6,6 +6,5 @@ class Utils
         if (isset($_SESSION[$name])) {
             unset($_SESSION[$name]);
         }
-        // return $name;
     }
 }

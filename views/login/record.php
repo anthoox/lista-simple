@@ -26,9 +26,9 @@ require_once 'C:/wamp64/www/lista-simple/views/layout/head.php';
 <a class="text-center text-decoration-none text-primary-emphasis fw-medium" href="/lista-simple/index.php">Volver</a>
 
 <?php if (isset($_SESSION['register']) && $_SESSION['register'] == 'complete') : ?>
-    <span class="text-success fw-semibold f-little">Usuario regitrado correctamente</span>
+    <span class="text-success fw-semibold">Usuario regitrado correctamente</span>
 <?php elseif (isset($_SESSION['register']) && $_SESSION['register'] == 'failed') : ?>
-    <span class="text-danger fw-semibold f-little">Fallo en el registro</span>
+    <span class="text-danger fw-semibold">Fallo en el registro. Vuelve a intentarlo</span>
 <?php endif; ?>
 <?= Utils::deleteSession('register') ?>
 </div>

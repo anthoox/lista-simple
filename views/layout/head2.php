@@ -26,7 +26,7 @@
             <li class="list-group-item pt-4 pb-4">Mi cuenta</li>
             <li class="list-group-item pt-4 pb-4">Papelera</li>
             <li class="list-group-item pt-4 pb-4">Soporte</li>
-            <li class="list-group-item pt-4 pb-4">Salir</li>
+            <li class="list-group-item pt-4 pb-4"><a href="<?= base_url ?>users/logout" class="text-decoration-none text-black">Salir</a></li>
 
             <li class="list-group-item pt-4 pb-4">
                 <img src="<?= base_url ?>assets/img/iconos/cerrar.svg" alt="Icono cerrar" class="yes-icon d-xl-none">
@@ -76,7 +76,8 @@
                     <li class="list-group-item pt-4 pb-4">Mi cuenta</li>
                     <li class="list-group-item pt-4 pb-4">Papelera</li>
                     <li class="list-group-item pt-4 pb-4">Soporte</li>
-                    <li class="list-group-item pt-4 pb-4">Salir</li>
+                    <li class="list-group-item pt-4 pb-4"><a href="<?= base_url ?>users/logout" class="text-decoration-none text-black">Salir</a></li>
+
 
                 </ul>
             </nav>
