@@ -15,7 +15,7 @@
 
 </form>
 
-<a class="text-center text-decoration-none text-primary-emphasis fw-medium" href="/lista-simple/views/login/login.php">Volver</a>
+<a class="text-center text-decoration-none text-primary-emphasis fw-medium" href="/lista-simple/users/login">Volver</a>
 
 
 <!-- <span class="text-danger fw-semibold f-little">El email no esta registrado</span> -->

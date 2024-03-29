@@ -22,7 +22,7 @@
 
 <a class="text-center text-decoration-none text-primary-emphasis fw-medium " href="/lista-simple/views/login/restore.php">¿Olvidaste la
     contraseña?</a>
-<a class="text-center text-decoration-none text-primary-emphasis fw-medium " href="/lista-simple/views/login/restore.php">Volver</a>
+<a class="text-center text-decoration-none text-primary-emphasis fw-medium " href="/lista-simple/">Volver</a>
 
 
 <?php if (isset($_SESSION['error_login']) && $_SESSION['error_login'] == 'Failed') : ?>
@@ -30,10 +30,6 @@
 <?php endif; ?>
 <?= Utils::deleteSession('error_login') ?>
 
-
-
-
 </div>
 
-<!-- Pie de página -->
 <?php require_once 'C:/wamp64/www/lista-simple/views/layout/footer.php'; ?>

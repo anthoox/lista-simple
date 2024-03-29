@@ -1,5 +1,4 @@
 <!-- Cabeceras -->
-<!-- Sin session no existe enviar a home.php -->
 <?php
 session_start();
 require_once 'autoload.php';
@@ -13,12 +12,12 @@ function show_error()
     $error = new ErrorController();
     $error->index();
 }
+
 if (isset($_GET['controller'])) {
     $nombre_controlador = $_GET['controller'] . 'Controller';
 } elseif (!isset($_GET['controller']) && !isset($_GET['action'])) {
     $nombre_controlador = controller_default;
 } else {
-    // require_once 'C:/wamp64/www/lista-simple/views/layout/head.php';
     show_error();
 }
 
@@ -35,11 +34,7 @@ if (class_exists($nombre_controlador)) {
         show_error();
     }
 } else {
-
     show_error();
 }
+
 ?>
-
-</div>
-
-<?php require_once 'C:/wamp64/www/lista-simple/views/layout/footer.php'; ?>

@@ -117,10 +117,3 @@
 
 
 </div>
-
-
-<!-- Pie de página -->
-<?php
-// require_once 'C:/wamp64/www/lista-simple/views/layout/footer.php'; 
-// Solo mostrar en versión escritorio
-?>
