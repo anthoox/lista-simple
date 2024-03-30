@@ -3,7 +3,7 @@
 
 <!-- Contenido -->
 <div class="w-100 mt-xl-5 pe-2 ps-2">
-    <h2 class="text-start  ms-xl-5 mb-5 mt-3">Alta de <br>
+    <h2 class="text-start mb-5 mt-3">Alta de <br>
         usuarios</h2>
 </div>
 
@@ -33,7 +33,7 @@
 </div>
 
 <div class="w-100 pe-2 ps-2">
-    <h2 class="text-start ms-xl-5 mb-5 mt-3">Buscar <br>
+    <h2 class="text-start mb-5 mt-3">Buscar <br>
         usuario</h2>
 </div>
 
@@ -123,7 +123,7 @@
 </div>
 
 <div class="w-100 pe-2 ps-2">
-    <h2 class="text-start  ms-xl-5 mb-5 mt-3">Gestion<br>
+    <h2 class="text-start mb-5 mt-3">Gestion<br>
         de cuentas</h2>
 </div>
 <p class="m-2 col-12 col-md-10 col-lg-8 "><span class="text-danger">¡</span>Advertencia<span class="text-danger">!</span>, estas funciones afectan a todos los usuario.</p>
@@ -135,7 +135,7 @@
     <button type="submit" class="btn btn-danger rounded-1  mt-2 mb-2 text-white  col-12 col-sm-3  ">Vaciar BD</button>
 
 </form>
-<div class="d-flex flex-column col-12 col-md-10 col-lg-8 pe-2 ps-2">
+<div class="d-flex flex-column col-12 col-md-10 col-lg-8 pe-2 ps-2 mb-5">
     <span class="text-success fw-semibold f-little">Cuentas reseteadas</span>
     <span class="text-primary fw-semibold f-little">Claves reseteadas</span>
     <span class="text-danger fw-semibold f-little">Base de datos vaciada</span>

@@ -3,7 +3,7 @@
 
 <!-- Contenido -->
 <div class="w-100 mt-xl-5 pe-2 ps-2">
-    <h2 class="text-start  ms-xl-5 mb-5 mt-3">Info<br>
+    <h2 class="text-start mb-5 mt-3">Info<br>
         de usuario</h2>
 </div>
 
@@ -30,7 +30,7 @@
 </div>
 
 <div class="w-100 mt-xl-5 pe-2 ps-2">
-    <h2 class="text-start  ms-xl-5 mb-5 mt-3">Gestion<br>
+    <h2 class="text-start mb-5 mt-3">Gestion<br>
         de usuario</h2>
 </div>
 
@@ -64,7 +64,7 @@
 
 </form>
 
-<div class="d-flex flex-column col-12 col-xl-7 pe-2 ps-2">
+<div class="d-flex flex-column col-12 col-xl-7 pe-2 ps-2 mb-5">
     <span class="text-success fw-semibold f-little">Cuentas reseteadas</span>
     <span class="text-primary fw-semibold f-little">Claves reseteadas</span>
     <span class="text-danger fw-semibold f-little">Base de datos vaciada</span>

@@ -2,20 +2,21 @@
 <footer class="container p-4 mt-2 border-top border-1">
     <!-- quitar bordes en vistas menores de 576px -->
     <!-- ACTIVAR EN VISTAS DE LOGIN -->
-    <ul class="list-unstyled  mb-1 d-sm-flex justify-content-between">
-        <li class="text-start">
-            <a class="fw-medium text-decoration-none text-primary-emphasis f-little" href="/lista-simple/index.php">Inicio</a>
-        </li>
-        <li class="text-start">
-            <a class="fw-medium text-decoration-none text-primary-emphasis f-little" href="/lista-simple/views/login/faq.php">FaQ</a>
-        </li>
-        <li class="text-start ">
-            <a class="fw-medium text-decoration-none text-primary-emphasis f-little" href="/lista-simple/views/login/contact.php">Contacto</a>
-        </li>
+    <?php if (!isset($_SESSION['identity'])) :    ?>
+        <ul class="list-unstyled  mb-1 d-sm-flex justify-content-between">
+            <li class="text-start">
+                <a class="fw-medium text-decoration-none text-primary-emphasis f-little" href="/lista-simple/index.php">Inicio</a>
+            </li>
+            <li class="text-start">
+                <a class="fw-medium text-decoration-none text-primary-emphasis f-little" href="/lista-simple/views/login/faq.php">FaQ</a>
+            </li>
+            <li class="text-start ">
+                <a class="fw-medium text-decoration-none text-primary-emphasis f-little" href="/lista-simple/views/login/contact.php">Contacto</a>
+            </li>
 
 
-    </ul>
-
+        </ul>
+    <?php endif; ?>
     <div class="h-100 d-flex justify-content-center align-items-center">
         <p class="text-center text-primary-emphasis f-u-little p-0 m-0">Proyecto DAW - Lista Simple -
             Anthony Alegría Alcántara

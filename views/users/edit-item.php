@@ -3,7 +3,7 @@
 
 <!-- Contenido -->
 <div class="w-100 mt-xl-5 pe-2 ps-2">
-    <h2 class="text-start  ms-xl-5 mb-5 mt-3">Editar</h2>
+    <h2 class="text-start   mb-5 mt-3">Editar</h2>
 </div>
 
 <form class="d-flex flex-column justify-content-center  col-12 col-md-10 col-lg-8 pe-2 ps-2">
@@ -49,7 +49,7 @@
         <span class="text-danger fw-semibold f-little">Base de datos vaciada</span>
     </div>
 
-    <div class="d-flex flex-column mt-5">
+    <div class="d-flex flex-column mt-5 mb-5">
         <a href=""><img src="/lista-simple/assets/img/iconos/papelera.svg" class="iconslist-lg" alt="Icono eliminar"></a>
         <span>Eliminar</span>
     </div>
@@ -63,5 +63,5 @@
 
 <!-- Pie de página -->
 <?php
-// require_once 'C:/wamp64/www/lista-simple/views/layout/footer.php'; 
+require_once 'C:/wamp64/www/lista-simple/views/layout/footer.php';
 ?>
