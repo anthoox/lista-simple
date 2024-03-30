@@ -16,7 +16,90 @@ class UsersController
 
     public function record()
     {
-        require_once 'C:/wamp64/www/lista-simple/views/login/record.php';
+        if (!isset($_SESSION['identity'])) {
+            require_once 'C:/wamp64/www/lista-simple/views/login/record.php';
+        } elseif (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
+            require_once  'C:/wamp64/www/lista-simple/views/users/admin.php';
+        } elseif (isset($_SESSION['user']) && $_SESSION['user'] == true) {
+            require_once  'C:/wamp64/www/lista-simple/views/users/index.php';
+        }
+    }
+
+    public function acount()
+    {
+        if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
+            require_once  'C:/wamp64/www/lista-simple/views/users/admin.php';
+        }
+        if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
+            require_once 'C:/wamp64/www/lista-simple/views/users/acount.php';
+        }
+    }
+
+    public function editUser()
+    {
+        if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
+            require_once 'C:/wamp64/www/lista-simple/views/users/edit-user.php';
+        }
+        if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
+            require_once 'C:/wamp64/www/lista-simple/views/users/index.php';
+        }
+    }
+
+    public function editItem()
+    {
+        if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
+            require_once 'C:/wamp64/www/lista-simple/views/users/admin.php';
+        }
+        if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
+            require_once 'C:/wamp64/www/lista-simple/views/users/edit-item.php';
+        }
+    }
+
+    public function editList()
+    {
+        if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
+            require_once 'C:/wamp64/www/lista-simple/views/users/admin.php';
+        }
+        if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
+            require_once 'C:/wamp64/www/lista-simple/views/users/edit-list.php';
+        }
+    }
+
+    public function help()
+    {
+        if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
+            require_once 'C:/wamp64/www/lista-simple/views/users/admin.php';
+        }
+        if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
+            require_once 'C:/wamp64/www/lista-simple/views/users/help.php';
+        }
+    }
+    public function listInfo()
+    {
+        if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
+            require_once 'C:/wamp64/www/lista-simple/views/users/admin.php';
+        }
+        if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
+            require_once 'C:/wamp64/www/lista-simple/views/users/list-info.php';
+        }
+    }
+    public function list()
+    {
+        if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
+            require_once 'C:/wamp64/www/lista-simple/views/users/admin.php';
+        }
+        if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
+            require_once 'C:/wamp64/www/lista-simple/views/users/list.php';
+        }
+    }
+    public function trash()
+    {
+        if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
+            require_once 'C:/wamp64/www/lista-simple/views/users/admin.php';
+        }
+        if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
+            require_once 'C:/wamp64/www/lista-simple/views/users/trash.php';
+        }
     }
 
     public function home()
@@ -24,6 +107,7 @@ class UsersController
         require_once 'C:/wamp64/www/lista-simple/home.php';
     }
 
+    // FUNCIONES DE FUNCIONAMIENTO
     public function save()
     {
         $dataUser = ValidatorForm::validator($_POST);
@@ -92,42 +176,5 @@ class UsersController
         }
 
         header("Location:" . base_url);
-    }
-
-    public function acount()
-    {
-        require_once 'C:/wamp64/www/lista-simple/views/users/acount.php';
-    }
-
-    public function editUser()
-    {
-        require_once 'C:/wamp64/www/lista-simple/views/users/edit-user.php';
-    }
-
-    public function editItem()
-    {
-        require_once 'C:/wamp64/www/lista-simple/views/users/edit-item.php';
-    }
-
-    public function editList()
-    {
-        require_once 'C:/wamp64/www/lista-simple/views/users/edit-list.php';
-    }
-
-    public function help()
-    {
-        require_once 'C:/wamp64/www/lista-simple/views/users/help.php';
-    }
-    public function listInfo()
-    {
-        require_once 'C:/wamp64/www/lista-simple/views/users/list-info.php';
-    }
-    public function list()
-    {
-        require_once 'C:/wamp64/www/lista-simple/views/users/list.php';
-    }
-    public function trash()
-    {
-        require_once 'C:/wamp64/www/lista-simple/views/users/trash.php';
     }
 }
