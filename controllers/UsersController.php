@@ -78,6 +78,7 @@ class UsersController
 
     public function logout()
     {
+
         if (isset($_SESSION['identity'])) {
             unset($_SESSION['identity']);
         }
@@ -91,5 +92,42 @@ class UsersController
         }
 
         header("Location:" . base_url);
+    }
+
+    public function acount()
+    {
+        require_once 'C:/wamp64/www/lista-simple/views/users/acount.php';
+    }
+
+    public function editUser()
+    {
+        require_once 'C:/wamp64/www/lista-simple/views/users/edit-user.php';
+    }
+
+    public function editItem()
+    {
+        require_once 'C:/wamp64/www/lista-simple/views/users/edit-item.php';
+    }
+
+    public function editList()
+    {
+        require_once 'C:/wamp64/www/lista-simple/views/users/edit-list.php';
+    }
+
+    public function help()
+    {
+        require_once 'C:/wamp64/www/lista-simple/views/users/help.php';
+    }
+    public function listInfo()
+    {
+        require_once 'C:/wamp64/www/lista-simple/views/users/list-info.php';
+    }
+    public function list()
+    {
+        require_once 'C:/wamp64/www/lista-simple/views/users/list.php';
+    }
+    public function trash()
+    {
+        require_once 'C:/wamp64/www/lista-simple/views/users/trash.php';
     }
 }
