@@ -13,7 +13,7 @@ class UsersController
         }
     }
 
-
+    /* A PARTIR DE AQUI CAMBIAR USER/ADMIN A ERROR/No */
     public function record()
     {
         if (!isset($_SESSION['identity'])) {

@@ -2,12 +2,12 @@
 <?php require_once 'C:/wamp64/www/lista-simple/views/layout/head2.php'; ?>
 
 <!-- Contenido -->
-
-<div class="d-flex flex-column justify-content-center col-12  pe-2 ps-2 mb-4 mt-4 logo-xl">
-    <img src="/lista-simple/assets/img/iconos/ayuda-icon.svg" alt="">
+<div class="w-100 pe-2 ps-2">
+    <h2 class="text-start mb-5 mt-3">Soporte</h2>
 </div>
 
-<h2 class="text-start text-primary-emphasis col-12 pe-2 ps-2">Envia tu consulta</h2>
+
+<h3 class="text-start text-primary-emphasis col-12 pe-2 ps-2">Envia tu consulta</h3>
 <form class="d-flex flex-column justify-content-center col-12 p-2 ps-2">
     <p class="text-start">Envianos tu consulta desde nuestro formulario o escribenos a: <a href="" class="text-decoration-none">contacto@listasimple.com</a>.</p>
     <div class="mb-2">
@@ -27,7 +27,7 @@
 
 
 
-<h2 class="text-start text-primary-emphasis mb-3 col-12 pe-2 ps-2">FaQ</h2>
+<h3 class="text-start text-primary-emphasis mb-3 col-12 pe-2 ps-2">FaQ</h3>
 
 <div class="accordion col-12 pe-2 ps-2" id="accordionPanelsStayOpenExample">
     <div class="accordion-item">

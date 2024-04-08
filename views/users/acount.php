@@ -2,32 +2,29 @@
 <?php require_once 'C:/wamp64/www/lista-simple/views/layout/head2.php'; ?>
 
 <!-- Contenido -->
-<div class="w-100 mt-xl-5 pe-2 ps-2">
+<div class="w-100 pe-2 ps-2">
     <h2 class="text-start mb-5 mt-3">Mi<br>
         cuenta</h2>
 </div>
 
-<div class="mt-2 col-12 col-md-10 col-lg-8 d-flex flex-column align-items-center pe-2 ps-2">
-    <div class="rounded-circle border border-2 img-user-xl ">
 
-        <img src="/lista-simple/assets/img/logo/logo.png" alt="Foto de perfil" class="img-user-xl rounded-circle">
-
-    </div>
-    <h3>Usuario</h3>
-</div>
 
 <form class="mt-2  d-flex flex-column justify-content-center  col-12 col-md-10 col-lg-8 pe-2 ps-2">
     <div class="mb-2">
         <label for="username" class="d-block text-start form-label">Usuario</label>
-        <input type="text" class="form-control" id="username" placeholder="Usuario.com">
+        <input type="text" class="form-control" id="username" placeholder="Usuario.com" name="">
     </div>
     <div class="mb-2">
         <label for="email" class="d-block text-start form-label">Correo</label>
-        <input type="email" class="form-control" id="username" placeholder="correo@correo.com">
+        <input type="email" class="form-control" id="username" placeholder="correo@correo.com" name="">
     </div>
     <div class="mb-2">
         <label for="password" class="d-block text-start form-label">Contraseña</label>
-        <input type="password" class="form-control" id="password">
+        <input type="password" class="form-control" id="password" name="">
+    </div>
+    <div class="mb-2">
+        <label for="file" class="d-block text-start form-label">Imagen de usuario</label>
+        <input type="file" class="form-control" id="file" name="">
     </div>
 
 

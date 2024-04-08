@@ -2,7 +2,7 @@
 <?php require_once 'C:/wamp64/www/lista-simple/views/layout/head2.php'; ?>
 
 <!-- Contenido -->
-<div class="w-100 mt-xl-5 pe-2 ps-2">
+<div class="w-100  pe-2 ps-2">
     <h2 class="text-start mb-5 mt-3">Alta de <br>
         usuarios</h2>
 </div>
@@ -28,7 +28,7 @@
 <span class="text-danger fw-semibold f-little">Error en el alta</span>
 <span class="text-success fw-semibold f-little">Usuario creado</span>
 
-<div class="mt-4 mb-4 w-100 pe-2 ps-2">
+<div class="mt-4 mb-1 w-100 pe-2 ps-2">
     <hr>
 </div>
 
@@ -52,12 +52,12 @@
 
 
 
-<div class="mt-4 mb-4 w-100 pe-2 ps-2">
+<div class="mt-4 mb-1 w-100 pe-2 ps-2">
     <hr>
 </div>
 
 <div class="w-100 pe-2 ps-2">
-    <h2 class="text-start  ms-xl-5 mb-5 mt-3">Usuarios</h2>
+    <h2 class="text-start  mb-5 mt-3">Usuarios</h2>
 </div>
 <div class="mt-2  overflow-scroll col-12 col-md-10 col-lg-8 table-h pe-2 ps-2">
     <table class="table table-striped  ">
@@ -118,7 +118,7 @@
 </div>
 
 
-<div class="mt-4 mb-4 w-100 pe-2 ps-2">
+<div class="mt-4 mb-1 w-100 pe-2 ps-2">
     <hr>
 </div>
 

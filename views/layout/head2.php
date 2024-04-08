@@ -16,8 +16,8 @@
 <body>
     <!-- NAV MOVIL -->
     <nav class="bg-white  border-end p-4 start-0 h-100 d-flex flex-column align-items-center d-xl-none position-fixed z-3 nav-w nav-position">
-        <div class="rounded-circle border border-1 d-flex align-items-center justify-content-center img-user mt-5">
-            <img src="<?= base_url ?>assets/img/logo/logo.png" alt="Foto de perfil" class="img-user rounded-circle ">
+        <div class="rounded-circle border border-1 d-flex align-items-center justify-content-center mt-5 img-user">
+            <img src="<?= base_url ?>assets/img/logo/logo.png" alt="Foto de perfil" class="rounded-circle img-user">
         </div>
         <ul class="list-group list-group-flush h-100 pt-2 pb-2 w-100">
             <?php if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) : ?>
