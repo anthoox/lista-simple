@@ -13,8 +13,6 @@ CREATE TABLE users(
     CONSTRAINT up_email UNIQUE(email)
 )ENGINE=InnoDB;
 
-INSERT INTO users VALUES(null, 'admin', 'admin@admin.com', '1234', CURDATE(), 1, null );
-INSERT INTO users VALUES(null, 'Prueba', 'prueba@prueba.com', '1234', CURDATE(), 2, null );
 
 
 
@@ -29,7 +27,7 @@ CREATE TABLE lists(
     paper_bin               INT DEFAULT 0 NOT NULL,
     completed               INT DEFAULT 0 NOT NULL,
     CONSTRAINT pk_lists PRIMARY KEY(id),
-    CONSTRAINT fk_lists_users FOREIGN KEY(user_id) REFERENCES lists(id)
+    CONSTRAINT fk_lists_users FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE
 )ENGINE=InnoDB;
 
 
@@ -44,6 +42,6 @@ CREATE TABLE items(
     notes                   TEXT NULL,
     completed               INT DEFAULT 0 NULL,
     CONSTRAINT pk_items PRIMARY KEY(id),
-    CONSTRAINT fk_items_users FOREIGN KEY(user_id) REFERENCES users(id),
-    CONSTRAINT fk_items_lists FOREIGN KEY(list_id) REFERENCES lists(id)
+    CONSTRAINT fk_items_users FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE,
+    CONSTRAINT fk_items_lists FOREIGN KEY(list_id) REFERENCES lists(id) ON DELETE CASCADE
 )ENGINE=InnoDB;

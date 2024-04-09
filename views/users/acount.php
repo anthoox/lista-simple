@@ -32,10 +32,10 @@ $userData = $_SESSION['identity'];
     </div>
 
 
-    <button type="submit" class="btn btn-success rounded-1 mt-5 mb-2 text-white align-self-center col-12 col-sm-8  col-md-7">Guardar</button>
-    <button type="submit" class="btn btn-primary rounded-1 mt-2 mb-2 text-white align-self-center col-12 col-sm-8  col-md-7">Descargar</button>
+    <button type="submit" class="btn btn-success rounded-1 mt-5 mb-2 text-white align-self-center col-12 col-sm-8  col-md-7" name="guardar">Guardar</button>
+    <button type="submit" class="btn btn-primary rounded-1 mt-2 mb-2 text-white align-self-center col-12 col-sm-8  col-md-7" name="descarga">Descargar</button>
 
-    <button type="submit" class=" btn btn-danger rounded-1 mt-2 mb-2 text-white align-self-center col-12 col-sm-8  col-md-7">Darse de baja</button>
+    <button type="submit" class=" btn btn-danger rounded-1 mt-2 mb-2 text-white align-self-center col-12 col-sm-8  col-md-7" name="baja">Darse de baja</button>
 
 
 </form>
@@ -44,7 +44,7 @@ $userData = $_SESSION['identity'];
     <?php if (isset($_SESSION['save']) && $_SESSION['save'] == 'completed') : ?>
         <span class="text-success fw-semibold f-little">Datos actualizados</span>
     <?php elseif ((isset($_SESSION['save']) && $_SESSION['save'] == 'failed')) : ?>
-        <span class="text-success fw-semibold f-little text-danger">ErroR al actualizar los datos</span>
+        <span class="text-success fw-semibold f-little text-danger">Error al actualizar los datos</span>
 
     <?php endif; ?>
     <?= Utils::deleteSession('save') ?>

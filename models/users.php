@@ -209,4 +209,24 @@ class User
 
         return false;
     }
+
+    public function delete()
+    {
+        $id = $_SESSION['identity']->id;
+        $sql = "DELETE FROM users WHERE id = " . $id;
+
+
+        $del = $this->db->query($sql);
+
+        if ($del) {
+            if ($this->db->affected_rows > 0) {
+
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
 }

@@ -38,11 +38,6 @@ html {
     margin-top: 87px !important;
 }
 
-@media (width >=768px) {
-    .top {
-        margin-top: 105px !important;
-    }
-}
 
 
 
@@ -67,7 +62,7 @@ html {
 }
 
 .logo-xl {
-    width: 235px;
+    width: 200px;
 }
 
 
