@@ -69,10 +69,7 @@
 
 </div>
 
-<div class="d-flex flex-column justify-content-center col-12 mt-4 pe-2 ps-2">
-    <button type="submit" class=" btn btn-danger rounded-1 mt-2 mb-2 align-self-center text-white col-12 col-sm-8  col-md-7">Darse de baja</button>
 
-</div>
 
 </div>
 

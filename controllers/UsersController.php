@@ -177,4 +177,57 @@ class UsersController
 
         header("Location:" . base_url);
     }
+
+    public function editAcount()
+    {
+
+        $dataUser = ValidatorForm::validator($_POST);
+
+        if (!empty($dataUser)) {
+            $user = new User();
+
+            $username = $dataUser['username'];
+            $email = $dataUser['email'];
+
+
+            // Guardar contraseña
+            if (isset($dataUser['password'])) {
+                $password = $dataUser['password'];
+                $user->setPassword($password);
+            }
+
+            // Guardar la imagen
+            if (isset($_FILES['file']) && $_FILES['file']['size'] != 0) {
+
+                $file = $_FILES['imagen'];
+                $fileName = $file['name'];
+                $mimeType = $file['type'];
+
+                if ($mimeType == "image/jpg" || $mimeType == "image/jpeg" || $mimeType == "image/png") {
+                    if (!is_dir('uploads/images')) {
+                        mkdir('uploads/images', 0777, true);
+                    }
+                    move_uploaded_file($file['tmp_name'], 'uploads/images/' . $file['name']);
+                    $user->setImage($fileName);
+                }
+            }
+
+            if ($username && $email) {
+                $user->setUsername($username);
+                $user->setEmail($email);
+
+
+                $edit = $user->editAcount($dataUser);
+
+                if ($edit) {
+                    $_SESSION['save'] = 'completed';
+                    require_once 'C:/wamp64/www/lista-simple/views/users/acount.php';
+                } else {
+                    $_SESSION['save'] = 'failed';
+
+                    return false;
+                }
+            }
+        }
+    }
 }

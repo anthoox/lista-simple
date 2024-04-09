@@ -150,8 +150,10 @@ class User
         $result = false;
         if ($save) {
             $result = true;
+            $this->db->close();
             return $result;
         }
+        return $result;
     }
 
     public function login()
@@ -165,16 +167,44 @@ class User
         $login = $this->db->query($sql);
         if ($login && $login->num_rows == 1) {
             $user = $login->fetch_object();
-            // Verificar contraseña
-
             $verify = password_verify($password, $user->password);
 
             if ($verify) {
                 $verify = $user;
-
+                $this->db->close();
                 return $verify;
             }
         }
+        $this->db->close();
         return $result;
     }
+    public function editAcount($newDataUser)
+    {
+        $id = $_SESSION['identity']->id;
+
+
+
+        $sql = "UPDATE users SET username='{$this->getUsername()}', email='{$this->getEmail()}'";
+
+        if (isset($newDataUser['password'])) {
+            $sql .= ", password='{$this->getPassword()}'";
+        }
+        if ($this->getImage() != null) {
+            $sql .= ", imagen='{$this->getImage()}'";
+        }
+
+        $sql .= " WHERE id= " . $id . ";";
+
+        $save = $this->db->query($sql);
+
+
+        if ($save) {
+            $_SESSION['identity']->username = $this->username;
+            $_SESSION['identity']->password = $this->password;
+            return true;
+        }
+
+        return false;
+    }
 }
+//  PENDIENTE, GUARDAR CONTRASEÑA Y GUARDAR IMAGEN

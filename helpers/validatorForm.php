@@ -7,18 +7,17 @@ class ValidatorForm
         $dataUser = '';
         $error = true;
         if (isset($dataForm)) {
-            if ( // Si no esta vacio ningún valor del array
-                !empty($dataForm['username']) && !empty($dataForm['email'])
-                && !empty($dataForm['password'])
-            ) {
+
+            if (!empty($dataForm['username']) && !empty($dataForm['email'])) {
                 $error = 'ok';
+
                 // Si existe se añade a la variable el contenido, sino, la variable vale false
                 $username = isset($dataForm['username']) ? $dataForm['username'] : false;
                 $email = isset($dataForm['email']) ? $dataForm['email'] : false;
-                $password = isset($dataForm['password']) ? $dataForm['password'] : false;
+
 
                 // Validar nombre
-                if (!is_string($username) || preg_match("/[0-9]+/", $username)) { // -> si no es un string o si no es un formato valido
+                if (!is_string($username)) { // -> si no es un string o si no es un formato valido
                     $error = 'nombre';
                 }
 
@@ -27,12 +26,18 @@ class ValidatorForm
                     $error = 'email';
                 }
 
+
+
+                $dataUser = array('username' => $username, 'email' => $email);
+            }
+            if (!empty($dataForm['password'])) {
+
+                $password = isset($dataForm['password']) ? $dataForm['password'] : false;
                 // Validar contraseña
                 if (empty($password) || (strlen($password) < 4)) { // Si esta vacia o tiene menos de 5 caracteres
                     $error = 'contraseña';
                 }
-
-                $dataUser = array('username' => $username, 'email' => $email, 'password' => $password);
+                $dataUser['password'] = $password;
             }
         } else {
             return false;
@@ -41,6 +46,7 @@ class ValidatorForm
         if ($error != 'ok') {
             return false;
         } else {
+
             return $dataUser;
         }
     }
