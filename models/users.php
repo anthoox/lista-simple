@@ -188,9 +188,11 @@ class User
 
         if (isset($newDataUser['password'])) {
             $sql .= ", password='{$this->getPassword()}'";
+            $_SESSION['identity']->password = $this->password;
         }
         if ($this->getImage() != null) {
             $sql .= ", imagen='{$this->getImage()}'";
+            $_SESSION['identity']->image = $this->image;
         }
 
         $sql .= " WHERE id= " . $id . ";";
@@ -200,7 +202,7 @@ class User
 
         if ($save) {
             $_SESSION['identity']->username = $this->username;
-            $_SESSION['identity']->password = $this->password;
+            $_SESSION['identity']->email = $this->email;
             return true;
         }
 
