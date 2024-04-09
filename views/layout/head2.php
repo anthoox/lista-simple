@@ -69,7 +69,14 @@
             <!-- NAV ESCRITORIO -->
             <nav class="bg-white  border-end p-4  mt-xl-5 d-none d-xl-flex flex-column align-items-center nav-w">
                 <div class="rounded-circle border border-1 d-flex align-items-center justify-content-center mt-4  img-user  ">
-                    <img src="<?= base_url ?>assets/img/logo/logo.png" alt="Foto de perfil" class="img-user rounded-circle">
+                    <?php if (isset($_SESSION['identity']->image)) : ?>
+                        <img src="<?= base_url ?>uploads/images/<?= $_SESSION['identity']->id ?>/<?= $_SESSION['identity']->image ?>" alt="Foto de perfil" class="rounded-circle img-user">
+
+                    <?php else : ?>
+                        <img src="<?= base_url ?>assets/img/logo/logo.png" alt="Foto de perfil" class="rounded-circle img-user">
+
+                    <?php endif; ?>
+
                 </div>
 
                 <ul class="list-group list-group-flush h-100 pt-2 pb-2 w-100">

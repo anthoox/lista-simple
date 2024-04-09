@@ -13,7 +13,7 @@ $userData = $_SESSION['identity'];
 
 
 
-<form class="mt-2  d-flex flex-column justify-content-center  col-12 col-md-10 col-lg-8 pe-2 ps-2" action="<?= base_url ?>users/editAcount" method="POST" enctype="multipart/form-data">
+<form class="mt-2  d-flex flex-column justify-content-center  col-12 col-md-10 col-lg-8 pe-2 ps-2" action="<?= base_url ?>users/edit" method="POST" enctype="multipart/form-data">
     <div class="mb-2">
         <label for="username" class="d-block text-start form-label">Usuario</label>
         <input type="text" class="form-control" id="username" placeholder="Usuario.com" name="username" value="<?= $userData->username ?>">

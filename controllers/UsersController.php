@@ -178,7 +178,7 @@ class UsersController
         header("Location:" . base_url);
     }
 
-    public function editAcount()
+    public function edit()
     {
 
         $dataUser = ValidatorForm::validator($_POST);
@@ -199,15 +199,15 @@ class UsersController
             // Guardar la imagen
             if (isset($_FILES['file']) && $_FILES['file']['size'] != 0) {
 
-                $file = $_FILES['imagen'];
+                $file = $_FILES['file'];
                 $fileName = $file['name'];
                 $mimeType = $file['type'];
 
                 if ($mimeType == "image/jpg" || $mimeType == "image/jpeg" || $mimeType == "image/png") {
-                    if (!is_dir('uploads/images')) {
-                        mkdir('uploads/images', 0777, true);
+                    if (!is_dir('uploads/images/' . $_SESSION['identity']->id . "/")) {
+                        mkdir('uploads/images/' . $_SESSION['identity']->id . "/", 0777, true);
                     }
-                    move_uploaded_file($file['tmp_name'], 'uploads/images/' . $file['name']);
+                    move_uploaded_file($file['tmp_name'], 'uploads/images/' . $_SESSION['identity']->id . "/" . $file['name']);
                     $user->setImage($fileName);
                 }
             }
@@ -217,7 +217,7 @@ class UsersController
                 $user->setEmail($email);
 
 
-                $edit = $user->editAcount($dataUser);
+                $edit = $user->edit($dataUser);
 
                 if ($edit) {
                     $_SESSION['save'] = 'completed';

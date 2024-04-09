@@ -178,7 +178,7 @@ class User
         $this->db->close();
         return $result;
     }
-    public function editAcount($newDataUser)
+    public function edit($newDataUser)
     {
         $id = $_SESSION['identity']->id;
 
@@ -190,8 +190,9 @@ class User
             $sql .= ", password='{$this->getPassword()}'";
             $_SESSION['identity']->password = $this->password;
         }
+
         if ($this->getImage() != null) {
-            $sql .= ", imagen='{$this->getImage()}'";
+            $sql .= ", image='{$this->getImage()}'";
             $_SESSION['identity']->image = $this->image;
         }
 
@@ -209,4 +210,3 @@ class User
         return false;
     }
 }
-//  PENDIENTE, GUARDAR CONTRASEÑA Y GUARDAR IMAGEN
