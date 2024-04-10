@@ -19,8 +19,7 @@
     <?php endif; ?>
     <div class="h-100 d-flex justify-content-center align-items-center">
         <p class="text-center text-primary-emphasis f-u-little p-0 m-0">Proyecto DAW - Lista Simple -
-            Anthony Alegría Alcántara
-            ® 2023</p>
+            Anthony Alegría Alcántara ©<?php echo date('Y') ?></p>
     </div>
 </footer>
 

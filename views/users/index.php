@@ -18,7 +18,7 @@
         <a class="btn bg-body rounded-3 border-1 border-dark-subtle col-5 col-sm-5 col-md-4 fw-semibold f-little">Completas</a>
     </div>
 </div>
-<div class="d-flex flex-column col-12 mt-2 mt-md-4 gap-2 p-2 ">
+<div class="d-flex flex-column col-12 mt-1 mt-xl-3 gap-2 p-2 ">
     <!-- ELEMENTO -->
     <div class="w-100 rounded-4 border border-1 border-dark-subtle p-1 pe-3 ps-3">
         <div class="d-flex w-100 justify-content-end gap-2">
@@ -120,14 +120,18 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Nueva lista</h1>
+                <h3 class="modal-title fs-5 " id="exampleModalLabel">Nueva lista</h3>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="">
+                <form action="lists/save">
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label w-100 text-start">Nombre lista</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label w-100 text-start">Recordatorio</label>
+                        <input type="datetime-local" class="form-control" id="exampleFormControlInput1">
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label w-100 text-start">Notas</label>
