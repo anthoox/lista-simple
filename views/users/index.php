@@ -110,7 +110,7 @@
 </div>
 
 
-<div class="rounded-circle border border-1 bg-success d-flex align-items-center justify-content-center position-fixed bottom-0 end-0 mb-4 me-4 add">
+<div class="rounded-circle border border-1 bg-success d-flex align-items-center justify-content-center position-fixed bottom-0 end-0 mb-5 me-5 shadow add">
     <img src="/lista-simple/assets/img/iconos/add-l.svg" alt="Foto de perfil" class=" icon-list">
 </div>
 
