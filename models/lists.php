@@ -12,6 +12,13 @@ class Lists
     private $paper_bin;
     private $complete;
 
+    private $db;
+
+    public function __construct()
+    {
+        $this->db = DataBase::connect();
+    }
+
     /**
      * Get the value of id
      */
@@ -174,9 +181,12 @@ class Lists
         return $this;
     }
 
-    public function save($id)
+    public function save($userId)
     {
-        $sql = "INSERT INTO lists VALUES(NULL, $id, '{$this->getName()}', '{$this->getEmail()}','{$this->getPassword()}',CURDATE(),2,NULL)";
+        $date = date('Y-m-d');
+
+        $sql = "INSERT INTO lists VALUES(NULL, $userId, '{$this->getName()}', '$date', '{$this->getModificationDate()}', '{$this->getNotification()}' ,'{$this->getDescription()}' , 0, 0)";
+
         $save = $this->db->query($sql);
         $result = false;
         if ($save) {

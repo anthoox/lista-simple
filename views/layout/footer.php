@@ -1,8 +1,9 @@
 </main>
-<footer class="container p-4 mt-2 border-top border-1">
-    <!-- quitar bordes en vistas menores de 576px -->
-    <!-- ACTIVAR EN VISTAS DE LOGIN -->
-    <?php if (!isset($_SESSION['identity'])) :    ?>
+<?php if (!isset($_SESSION['identity'])) :    ?>
+
+    <footer class="container p-4 mt-2 border-top border-1">
+        <!-- quitar bordes en vistas menores de 576px -->
+        <!-- ACTIVAR EN VISTAS DE LOGIN -->
         <ul class="list-unstyled  mb-1 d-sm-flex justify-content-between">
             <li class="text-start">
                 <a class="fw-medium text-decoration-none text-primary-emphasis f-little" href="/lista-simple/index.php">Inicio</a>
@@ -16,12 +17,13 @@
 
 
         </ul>
-    <?php endif; ?>
-    <div class="h-100 d-flex justify-content-center align-items-center">
-        <p class="text-center text-primary-emphasis f-u-little p-0 m-0">Proyecto DAW - Lista Simple -
-            Anthony Alegría Alcántara ©<?php echo date('Y') ?></p>
-    </div>
-</footer>
+        <div class="h-100 d-flex justify-content-center align-items-center">
+            <p class="text-center text-primary-emphasis f-u-little p-0 m-0">Proyecto DAW - Lista Simple -
+                Anthony Alegría Alcántara ©<?php echo date('Y') ?></p>
+        </div>
+
+    </footer>
+<?php endif; ?>
 
 </div>
 

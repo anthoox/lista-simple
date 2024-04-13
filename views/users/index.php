@@ -1,7 +1,3 @@
-<!-- 
-    ESTO DEBE SER EL INDEX PRINCIPAL
--->
-
 <!-- Cabeceras -->
 <?php require_once 'C:/wamp64/www/lista-simple/views/layout/head2.php'; ?>
 
@@ -110,7 +106,7 @@
 </div>
 
 
-<div class="rounded-circle border border-1 bg-success d-flex align-items-center justify-content-center position-fixed bottom-0 end-0 mb-xl-5 me-3 me-xl-5 shadow add" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<div class="rounded-circle border border-1 bg-success d-flex align-items-center justify-content-center position-fixed bottom-0 end-0 mb-xl-0 me-3 me-xl-5 shadow add" data-bs-toggle="modal" data-bs-target="#exampleModal">
     <img src="/lista-simple/assets/img/iconos/add-l.svg" alt="Foto de perfil" class=" icon-list">
 </div>
 
@@ -124,24 +120,24 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="lists/save">
+                <form id="listForm" action="<?= base_url ?>lists/save" method="POST">
                     <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label w-100 text-start">Nombre lista</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre">
+                        <label for="name" class="form-label w-100 text-start">Nombre lista</label>
+                        <input type="text" class="form-control" id="name" placeholder="Nombre" name="name">
                     </div>
                     <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label w-100 text-start">Recordatorio</label>
-                        <input type="datetime-local" class="form-control" id="exampleFormControlInput1">
+                        <label for="notification" class="form-label w-100 text-start">Recordatorio</label>
+                        <input type="datetime-local" class="form-control" id="notification" name="notification">
                     </div>
                     <div class="mb-3">
-                        <label for="exampleFormControlTextarea1" class="form-label w-100 text-start">Notas</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <label for="description" class="form-label w-100 text-start">Descripción</label>
+                        <textarea class="form-control" id="description" rows="3" name="description"></textarea>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-success text-white">Guardar</button>
+                <button type="submit" form="listForm" class="btn btn-success text-white">Guardar</button>
             </div>
         </div>
     </div>
