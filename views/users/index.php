@@ -1,6 +1,7 @@
 <!-- Cabeceras -->
 <?php require_once 'C:/wamp64/www/lista-simple/views/layout/head2.php'; ?>
 
+
 <!-- Contenido -->
 <div class="d-flex flex-column col-12 mt-xl-3 flex-sm-row gap-1 justify-content-between p-0 m-0">
     <div class="d-flex justify-content-around gap-1 col-12 col-sm-6">
@@ -15,64 +16,55 @@
     </div>
 </div>
 <div class="d-flex flex-column col-12 mt-1 mt-xl-3 gap-2 p-2 ">
-    <!-- ELEMENTO -->
-    <div class="w-100 rounded-4 border border-1 border-dark-subtle p-1 pe-3 ps-3">
-        <div class="d-flex w-100 justify-content-end gap-2">
-            <!-- superior -->
-            <div>
-                <img src="/lista-simple/assets/img/iconos/editar.svg" alt="" class="iconslist">
-            </div>
-            <div>
-                <img src="/lista-simple/assets/img/iconos/papelera.svg" alt="" class="iconslist">
-            </div>
-        </div>
+    <?php
+    $lists = new ListsController();
+    $lists = $lists->lists();
 
-        <div class="d-flex w-100 justify-content-start fw-semibold">
-            <!-- medio -->
-            NOMBRE
-        </div>
+    if ($lists) {
+        foreach ($lists as $list) {
 
-        <div class="d-flex w-100 justify-content-between">
-            <!-- Inferior -->
-            <div class="text-primary fw-semibold f-little">
+            echo
+            '<div class="w-100 rounded-4 border border-1 border-dark-subtle p-1 pe-3 ps-3">
+                <div class="d-flex w-100 justify-content-end gap-2">
 
-                31/12/24
-            </div>
-            <div class="fw-semibold">
+                    <div>
+                        <img src="/lista-simple/assets/img/iconos/editar.svg" alt="" class="iconslist">
+                    </div>
+                    <div>
+                        <img src="/lista-simple/assets/img/iconos/papelera.svg" alt="" class="iconslist">
+                    </div>
+                </div>
+        
+                <div class="d-flex w-100 justify-content-start fw-semibold">';
+            echo $list[2];
 
-                1/10
-            </div>
-        </div>
-    </div>
+            echo
+            '</div>
+        
+                <div class="d-flex w-100 justify-content-between">
+ 
+                    <div class="text-primary fw-semibold f-little">';
+            if ($list[5] != '0000-00-00 00:00:00') {
+                $notification = Utils::notificacionFormat($list[5]);
+                echo $notification;
+            }
 
-    <div class="w-100 rounded-4 border border-1 border-dark-subtle p-1 pe-3 ps-3">
-        <div class="d-flex w-100 justify-content-end gap-2">
-            <!-- superior -->
-            <div>
-                <img src="/lista-simple/assets/img/iconos/editar.svg" alt="" class="iconslist">
-            </div>
-            <div>
-                <img src="/lista-simple/assets/img/iconos/papelera.svg" alt="" class="iconslist">
-            </div>
-        </div>
-
-        <div class="d-flex w-100 justify-content-start fw-semibold">
-            <!-- medio -->
-            NOMBRE
-        </div>
-
-        <div class="d-flex w-100 justify-content-between">
-            <!-- Inferior -->
-            <div class="text-primary fw-semibold f-little fw-semibold">
+            echo '           
+                    </div>
+                    <div class="fw-semibold">
+        
+                        1/10
+                    </div>
+                </div>
+            </div>';
+        }
+    } else {
+        echo 'No tiene listas aún.';
+    }
+    ?>
 
 
 
-            </div>
-            <div class="fw-semibold">
-                1/10
-            </div>
-        </div>
-    </div>
 
     <div class="w-100 rounded-4 border border-1 border-dark-subtle p-1 pe-3 ps-3 bg-body-secondary">
         <div class="d-flex w-100 justify-content-end gap-2">

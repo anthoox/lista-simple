@@ -196,4 +196,23 @@ class Lists
         }
         return $result;
     }
+
+    public function lists($userId)
+    {
+        $sql = "SELECT * FROM lists WHERE user_id = " . $userId . " AND paper_bin = 0";
+
+        $result = $this->db->query($sql);
+        if ($result) {
+            $dataLists = $result->fetch_All();
+
+            if (!empty($dataLists)) {
+
+                return $dataLists;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
 }

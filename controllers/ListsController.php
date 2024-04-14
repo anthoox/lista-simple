@@ -57,4 +57,16 @@ class ListsController
 
         header("Location:" . base_url . "users/index");
     }
+
+    public function lists()
+    {
+        $list = new Lists();
+        $result = $list->lists($_SESSION['identity']->id);
+
+        if ($result) {
+            return $result;
+        } else {
+            return false;
+        }
+    }
 }
