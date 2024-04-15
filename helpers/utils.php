@@ -8,7 +8,7 @@ class Utils
         }
     }
 
-    public static function notificacionFormat($hora)
+    public static function dateFormatter($hora)
     {
         // Convertir la cadena a un objeto DateTime
         $dateTime = date_create($hora);
