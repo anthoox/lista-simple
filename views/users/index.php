@@ -3,46 +3,32 @@
 
 
 <!-- Contenido -->
-<div class="d-flex flex-column col-12 mt-xl-3 flex-sm-row gap-1 justify-content-between p-0 m-0">
+
+<?php
+echo '
+    <div class="d-flex flex-column col-12 mt-xl-3 flex-sm-row gap-1 justify-content-between p-0 m-0">
     <div class="d-flex justify-content-around gap-1 col-12 col-sm-6">
-        <a id="lists" class="btn bg-primary rounded-3 text-white  border-1 border-light col-5 col-sm-5 col-md-4  fw-semibold f-little">Listas</a>
-        <a id="upcoming" class="btn bg-secondary-emphasis rounded-3 border-1 border-dark-subtle col-5 col-sm-5 col-md-4 fw-semibold f-little">Próximas</a>
+        <a href="' . base_url . 'lists/index" id="lists" class="btn bg-primary rounded-3 text-white  border-1 border-light col-5 col-sm-5 col-md-4  fw-semibold f-little">Listas</a>
+        <a href="' . base_url . 'lists/upcoming" id="upcoming" class="btn bg-secondary-emphasis rounded-3 border-1 border-dark-subtle col-5 col-sm-5 col-md-4 fw-semibold f-little">Próximas</a>
 
     </div>
     <div class="d-flex justify-content-around gap-1 col-12 col-sm-6">
 
-        <a id="pending" class="btn bg-body rounded-3 border-1 border-dark-subtle col-5 col-sm-5 col-md-4 fw-semibold f-little">Pendientes</a>
-        <a id="completed" class="btn bg-body rounded-3 border-1 border-dark-subtle col-5 col-sm-5 col-md-4 fw-semibold f-little">Completas</a>
+        <a href="' . base_url . 'lists/pending" id="pending" class="btn bg-body rounded-3 border-1 border-dark-subtle col-5 col-sm-5 col-md-4 fw-semibold f-little">Pendientes</a>
+        <a href="' . base_url . 'lists/completed" id="completed" class="btn bg-body rounded-3 border-1 border-dark-subtle col-5 col-sm-5 col-md-4 fw-semibold f-little">Completas</a>
     </div>
 </div>
-<div id="contenido" class="d-flex flex-column col-12 mt-1 mt-xl-3 gap-2 p-2 ">
-    <?php
-    // Manejar la solicitud AJAX
-    if (isset($_GET['tipe']) && $_GET['tipe'] != "lists") {
-        $tipe = $_GET['tipe'];
+<div class="d-flex flex-column col-12 mt-1 mt-xl-3 gap-2 p-2 ">';
 
-        if ($tipe === "upcoming") {
-            // Cargar y mostrar las listas próximas
-        } elseif ($tipe === "pending") {
-            // Cargar y mostrar las listas pendientes
-        } elseif ($tipe === "completed") {
-            // Cargar y mostrar las listas completas
-        }
-    } else {
+if ($result) {
+    foreach ($result as $list) {
+        // Si no esta en la papelera/
+        if ($list[7] == 0) {
+            // Si no esta completo
+            if ($list[8] == 0) {
 
-
-        $lists = new ListsController();
-        $lists = $lists->lists();
-
-        if ($lists) {
-            foreach ($lists as $list) {
-                // Si no esta en la papelera/
-                if ($list[7] == 0) {
-                    // Si no esta completo
-                    if ($list[8] == 0) {
-
-                        echo
-                        '<div class="w-100 rounded-4 border border-1 border-dark-subtle p-1 pe-3 ps-3">
+                echo
+                '<div class="w-100 rounded-4 border border-1 border-dark-subtle p-1 pe-3 ps-3">
                         <div class="d-flex w-100 justify-content-end gap-2">
         
                             <div>
@@ -54,20 +40,20 @@
                         </div>
                 
                         <div class="d-flex w-100 justify-content-start">';
-                        echo '<span class="fs-5 fw-semibold">' . $list[2] . '</span>';
+                echo '<span class="fs-5 fw-semibold">' . $list[2] . '</span>';
 
-                        echo
-                        '</div>
+                echo
+                '</div>
                 
                         <div class="d-flex w-100 justify-content-between">
          
                             <div class="text-primary fw-semibold">';
-                        if ($list[5] != '0000-00-00 00:00:00') {
-                            $notification = Utils::dateFormatter($list[5]);
-                            echo '<span class="f-little">' . $notification . '</span>';
-                        }
+                if ($list[5] != '0000-00-00 00:00:00') {
+                    $notification = Utils::dateFormatter($list[5]);
+                    echo '<span class="f-little">' . $notification . '</span>';
+                }
 
-                        echo '           
+                echo '           
                             </div>
                             <div class="fw-semibold">
                 
@@ -75,10 +61,10 @@
                             </div>
                         </div>
                     </div>';
-                    } else {
-                        // Si esta completo
-                        echo
-                        '<div class="w-100 rounded-4 border border-1 border-dark-subtle p-1 pe-3 ps-3 bg-body-secondary">
+            } else {
+                // Si esta completo
+                echo
+                '<div class="w-100 rounded-4 border border-1 border-dark-subtle p-1 pe-3 ps-3 bg-body-secondary">
                         <div class="d-flex w-100 justify-content-end gap-2">
                             <div>
                                 <img src="/lista-simple/assets/img/iconos/editar.svg" alt="" class="iconslist">
@@ -89,32 +75,34 @@
                         </div>
                 
                         <div class="d-flex w-100 justify-content-start text-secondary text-decoration-line-through">';
-                        echo '<span class="fs-5 fw-semibold">' . $list[2] . '</span>';
+                echo '<span class="fs-5 fw-semibold">' . $list[2] . '</span>';
 
-                        echo
-                        '</div>
+                echo
+                '</div>
                 
                         <div class="d-flex w-100 justify-content-between">
                             <div class="text-secondary  text-decoration-line-through">';
-                        if ($list[5] != '0000-00-00 00:00:00') {
-                            $notification = Utils::dateFormatter($list[5]);
-                            echo '<span class="fw-semibold f-little">' . $notification . '</span>';
-                        }
+                if ($list[5] != '0000-00-00 00:00:00') {
+                    $notification = Utils::dateFormatter($list[5]);
+                    echo '<span class="fw-semibold f-little">' . $notification . '</span>';
+                }
 
-                        echo   '</div>
+                echo   '</div>
                             <div class="text-secondary fw-semibold text-decoration-line-through">
                                 10/10
                             </div>
                         </div>
                     </div>';
-                    }
-                }
             }
-        } else {
-            echo '<h5>No tiene listas aún.</h5>';
         }
     }
-    ?>
+} else {
+
+
+    echo '<h5>No tiene listas aún.</h5>';
+}
+
+?>
 
 
 </div>

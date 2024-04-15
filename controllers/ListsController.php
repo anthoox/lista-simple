@@ -4,10 +4,6 @@ require_once 'helpers/validatorForm.php';
 require_once 'helpers/utils.php';
 class ListsController
 {
-    public function index()
-    {
-        echo "<h1>Controllador de lista, index</h1>";
-    }
 
     // FUNCIONES DE FUNCIONAMIENTO
     public function save()
@@ -58,14 +54,62 @@ class ListsController
         header("Location:" . base_url . "users/index");
     }
 
-    public function lists()
+    public function index()
     {
         $list = new Lists();
         $result = $list->lists($_SESSION['identity']->id);
 
+
         if ($result) {
+            require_once  'C:/wamp64/www/lista-simple/views/users/index.php';
             return $result;
         } else {
+            require_once  'C:/wamp64/www/lista-simple/views/users/index.php';
+            return $result;
+        }
+    }
+
+    public function upcoming()
+    {
+        $list = new Lists();
+        $result = $list->upcoming($_SESSION['identity']->id);
+
+
+        if ($result) {
+            require_once  'C:/wamp64/www/lista-simple/views/users/index.php';
+            return $result;
+        } else {
+            require_once  'C:/wamp64/www/lista-simple/views/users/index.php';
+            return false;
+        }
+    }
+
+    public function pending()
+    {
+        $list = new Lists();
+        $result = $list->pending($_SESSION['identity']->id);
+
+
+        if ($result) {
+            require_once  'C:/wamp64/www/lista-simple/views/users/index.php';
+            return $result;
+        } else {
+            require_once  'C:/wamp64/www/lista-simple/views/users/index.php';
+            return false;
+        }
+    }
+
+    public function completed()
+    {
+        $list = new Lists();
+        $result = $list->completed($_SESSION['identity']->id);
+
+
+        if ($result) {
+            require_once  'C:/wamp64/www/lista-simple/views/users/index.php';
+            return $result;
+        } else {
+            require_once  'C:/wamp64/www/lista-simple/views/users/index.php';
             return false;
         }
     }

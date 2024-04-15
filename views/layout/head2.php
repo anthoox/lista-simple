@@ -21,10 +21,10 @@
         </div>
         <ul class="list-group list-group-flush h-100 pt-2 pb-2 w-100">
             <?php if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) : ?>
-                <li class="list-group-item pt-4 pb-4"><a href="<?= base_url ?>users/index" class="text-decoration-none text-black">Inicio</a></li>
+                <li class="list-group-item pt-4 pb-4"><a href="<?= base_url ?>lists/index" class="text-decoration-none text-black">Inicio</a></li>
                 <li class="list-group-item pt-4 pb-4"><a href="<?= base_url ?>users/logout" class="text-decoration-none text-black">Salir</a></li>
             <?php elseif (isset($_SESSION['user']) && $_SESSION['user'] == true) : ?>
-                <li class="list-group-item pt-4 pb-4"><a href="<?= base_url ?>users/index" class="text-decoration-none text-black">Inicio</a></li>
+                <li class="list-group-item pt-4 pb-4"><a href="<?= base_url ?>lists/index" class="text-decoration-none text-black">Inicio</a></li>
                 <li class="list-group-item pt-4 pb-4"><a href="<?= base_url ?>users/acount" class="text-decoration-none text-black">Mi cuenta</a></li>
                 <li class="list-group-item pt-4 pb-4"><a href="<?= base_url ?>users/trash" class="text-decoration-none text-black">Papelera</a></li>
                 <li class="list-group-item pt-4 pb-4"><a href="<?= base_url ?>users/help" class="text-decoration-none text-black">Soporte</a></li>
@@ -81,10 +81,10 @@
 
                 <ul class="list-group list-group-flush h-100 pt-2 pb-2 w-100">
                     <?php if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) : ?>
-                        <li class="list-group-item pt-4 pb-4"><a href="<?= base_url ?>users/index" class="text-decoration-none text-black">Inicio</a></li>
+                        <li class="list-group-item pt-4 pb-4"><a href="<?= base_url ?>lists/index" class="text-decoration-none text-black">Inicio</a></li>
                         <li class="list-group-item pt-4 pb-4"><a href="<?= base_url ?>users/logout" class="text-decoration-none text-black">Salir</a></li>
                     <?php elseif (isset($_SESSION['user']) && $_SESSION['user'] == true) : ?>
-                        <li class="list-group-item pt-4 pb-4"><a href="<?= base_url ?>users/index" class="text-decoration-none text-black">Inicio</a></li>
+                        <li class="list-group-item pt-4 pb-4"><a href="<?= base_url ?>lists/index" class="text-decoration-none text-black">Inicio</a></li>
                         <li class="list-group-item pt-4 pb-4"><a href="<?= base_url ?>users/acount" class="text-decoration-none text-black">Mi cuenta</a></li>
                         <li class="list-group-item pt-4 pb-4"><a href="<?= base_url ?>users/trash" class="text-decoration-none text-black">Papelera</a></li>
                         <li class="list-group-item pt-4 pb-4"><a href="<?= base_url ?>users/help" class="text-decoration-none text-black">Soporte</a></li>

@@ -215,4 +215,58 @@ class Lists
             return false;
         }
     }
+
+    public function upcoming($userId)
+    {
+        $sql = "SELECT * FROM lists WHERE user_id = " . $userId . " AND paper_bin = 0 AND (notification IS NOT NULL AND notification != '0000-00-00 00:00:00') AND notification > NOW()";
+        $result = $this->db->query($sql);
+        if ($result) {
+            $dataLists = $result->fetch_All();
+
+            if (!empty($dataLists)) {
+
+                return $dataLists;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
+    public function pending($userId)
+    {
+        $sql = "SELECT * FROM lists WHERE user_id = " . $userId . " AND completed = 0";
+        $result = $this->db->query($sql);
+        if ($result) {
+            $dataLists = $result->fetch_All();
+
+            if (!empty($dataLists)) {
+
+                return $dataLists;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
+    public function completed($userId)
+    {
+        $sql = "SELECT * FROM lists WHERE user_id = " . $userId . " AND completed = 1";
+        $result = $this->db->query($sql);
+        if ($result) {
+            $dataLists = $result->fetch_All();
+
+            if (!empty($dataLists)) {
+
+                return $dataLists;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
 }
