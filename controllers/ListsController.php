@@ -51,7 +51,7 @@ class ListsController
             $_SESSION['register'] = "failed";
         }
 
-        header("Location:" . base_url . "users/index");
+        header("Location:" . base_url . "lists/index");
     }
 
     public function index()
