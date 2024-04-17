@@ -2,7 +2,7 @@
 <?php require_once 'C:/wamp64/www/lista-simple/views/layout/head.php'; ?>
 
 <?php if (isset($_SESSION['identity'])) : ?>
-    <?= header("Location:" . base_url . "users/index") ?>
+    <?= header("Location:" . base_url . "lists/index") ?>
 <?php endif; ?>
 
 <!-- Contenido -->

@@ -113,4 +113,21 @@ class ListsController
             return false;
         }
     }
+
+    public function list($id)
+    {
+        $list = new Lists();
+        $result = $list->list($id);
+
+
+        if ($result) {
+            var_dump($result);
+            die();
+            require_once  'C:/wamp64/www/lista-simple/views/users/index.php';
+            return $result;
+        } else {
+            require_once  'C:/wamp64/www/lista-simple/views/users/index.php';
+            return false;
+        }
+    }
 }

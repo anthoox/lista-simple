@@ -269,4 +269,23 @@ class Lists
             return false;
         }
     }
+
+    public function list($id)
+    {
+        $sql = "SELECT * FROM lists WHERE id = " . $id;
+        $result = $this->db->query($sql);
+        if ($result) {
+            $dataList = $result->fetch_array();
+
+            if (!empty($dataList)) {
+                // var_dump($dataList);
+                // die();
+                return $dataList;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
 }
