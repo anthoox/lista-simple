@@ -1,4 +1,3 @@
-<!-- Cabeceras -->
 <?php require_once 'C:/wamp64/www/lista-simple/views/layout/head2.php'; ?>
 
 
@@ -33,7 +32,8 @@
                         <div class="d-flex w-100 justify-content-end gap-2">
         
                             <div>
-                                <img src="/lista-simple/assets/img/iconos/editar.svg" alt="Icono de lapiz para editar datos de lista" class="iconslist"  data-bs-toggle="modal" data-bs-target="#editModal" id=' . $list[0] . '>
+                            
+                                <img src="/lista-simple/assets/img/iconos/editar.svg" alt="Icono de lapiz para editar datos de lista" class="iconslist btn-edit"  data-bs-toggle="modal" data-bs-target="#editModal"  data-list-id=' . $list[0] . '>
                             </div>
                             <div>
                                 <img src="/lista-simple/assets/img/iconos/papelera.svg" alt="Icono papelera para eliminar lista" class="iconslist">

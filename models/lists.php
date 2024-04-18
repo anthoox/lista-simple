@@ -278,8 +278,6 @@ class Lists
             $dataList = $result->fetch_array();
 
             if (!empty($dataList)) {
-                // var_dump($dataList);
-                // die();
                 return $dataList;
             } else {
                 return false;

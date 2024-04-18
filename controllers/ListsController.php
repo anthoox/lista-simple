@@ -114,20 +114,21 @@ class ListsController
         }
     }
 
-    public function list($id)
+
+    public function list()
     {
+        $id = $_GET['id'];
         $list = new Lists();
         $result = $list->list($id);
 
-
         if ($result) {
-            var_dump($result);
-            die();
-            require_once  'C:/wamp64/www/lista-simple/views/users/index.php';
-            return $result;
+            // Devolver el resultado como JSON
+            header('Content-Type: application/json');
+            echo json_encode($result);
         } else {
-            require_once  'C:/wamp64/www/lista-simple/views/users/index.php';
-            return false;
+            // Si no se encuentra la lista, devolver un mensaje de error
+            http_response_code(404);
+            echo json_encode(array('message' => 'Lista no encontrada'));
         }
     }
 }
