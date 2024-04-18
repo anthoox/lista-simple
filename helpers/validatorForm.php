@@ -54,6 +54,7 @@ class ValidatorForm
     public static function valitatorList($dataForm)
     {
 
+
         $dataList = '';
         $error = true;
         if (isset($dataForm)) {
@@ -94,6 +95,10 @@ class ValidatorForm
                     $error = 'description';
                 }
                 $dataList['description'] = $description;
+            }
+
+            if (isset($dataForm['idList'])) {
+                $dataList['id'] = $dataForm['idList'];
             }
         } else {
             return false;

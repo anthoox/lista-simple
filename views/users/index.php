@@ -97,6 +97,8 @@
                 }
             }
         }
+    } elseif ($result == 0) {
+        echo '<h5>Error al editar lista</h5>';
     } else {
         echo '<h5>No tiene listas aún.</h5>';
     }

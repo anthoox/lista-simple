@@ -286,4 +286,19 @@ class Lists
             return false;
         }
     }
+
+    public function edit($datos)
+    {
+        $modification = date("Y-m-d");
+        $sql = "UPDATE lists SET name = '{$datos['name']}', modification_date = '$modification', notification = '{$datos['notification']}',  description = '{$datos['description']}' WHERE id = '{$datos['id']}'";
+
+        $save = $this->db->query($sql);
+
+
+        if ($save) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

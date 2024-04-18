@@ -131,4 +131,33 @@ class ListsController
             echo json_encode(array('message' => 'Lista no encontrada'));
         }
     }
+
+    public function edit()
+    {
+        $dataList = ValidatorForm::valitatorList($_POST);
+        if (!isset($dataList['notification'])) {
+            $dataList['notification'] = "0000-00-00 00:00:00";
+        }
+        if (!isset($dataList['description'])) {
+            $dataList['description'] = "";
+        }
+
+
+        $list = new Lists();
+        $result = $list->edit($dataList);
+        if ($result) {
+            $list = new Lists();
+            $result = $list->lists($_SESSION['identity']->id);
+
+
+            if ($result) {
+                require_once  'C:/wamp64/www/lista-simple/views/users/index.php';
+                return $result;
+            } else {
+                require_once  'C:/wamp64/www/lista-simple/views/users/index.php';
+                $result = 0;
+                return $result;
+            }
+        }
+    }
 }
