@@ -36,7 +36,7 @@
                                 <img src="/lista-simple/assets/img/iconos/editar.svg" alt="Icono de lapiz para editar datos de lista" class="iconslist btn-edit"  data-bs-toggle="modal" data-bs-target="#editModal"  data-list-id=' . $list[0] . '>
                             </div>
                             <div>
-                                <img src="/lista-simple/assets/img/iconos/papelera.svg" alt="Icono papelera para eliminar lista" class="iconslist">
+                                <img src="/lista-simple/assets/img/iconos/papelera.svg" alt="Icono papelera para eliminar lista" class="iconslist btn-del"  data-list-id=' . $list[0] . '>
                             </div>
                         </div>
                 
@@ -68,10 +68,10 @@
                     '<div class="w-100 rounded-4 border border-1 border-dark-subtle p-1 pe-3 ps-3 bg-body-secondary">
                         <div class="d-flex w-100 justify-content-end gap-2">
                             <div>
-                                <img src="/lista-simple/assets/img/iconos/editar.svg" alt="" class="iconslist">
+                                <img src="/lista-simple/assets/img/iconos/editar.svg" alt="" class="iconslist btn-edit"  data-bs-toggle="modal" data-bs-target="#editModal"  data-list-id=' . $list[0] . '">
                             </div>
                             <div>
-                                <img src="/lista-simple/assets/img/iconos/papelera.svg" alt="" class="iconslist">
+                                <img src="/lista-simple/assets/img/iconos/papelera.svg" alt="" class="iconslist btn-del"  data-list-id=' . $list[0] . '">
                             </div>
                         </div>
                 
@@ -97,10 +97,11 @@
                 }
             }
         }
-    } elseif ($result == 0) {
-        echo '<h5>Error al editar lista</h5>';
+    } elseif ($result == 1) {
+
+        echo '<h5>Error al cargar listas</h5>';
     } else {
-        echo '<h5>No tiene listas aún.</h5>';
+        echo '<h5>Sin listas</h5>';
     }
 
     ?>

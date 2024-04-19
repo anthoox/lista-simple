@@ -5,14 +5,14 @@ window.onload = function () {
         button.addEventListener('click', function () {
             var listId = this.getAttribute('data-list-id');
 
-            // Crear una solicitud AJAX para enviar el ID de la lista al controlador
+            // Solicitud AJAX enviando ID al controlador
             var xhr = new XMLHttpRequest();
             xhr.open('GET', 'http://localhost/lista-simple/lists/list&id=' + listId, true);
             xhr.onload = function () {
                 if (xhr.status >= 200 && xhr.status < 400) {
-                    console.log(xhr.responseText);
+                    // console.log(xhr.responseText);
                     var jsonData = JSON.parse(xhr.responseText);
-                    console.log(jsonData);
+                    // console.log(jsonData);
 
                     var id = jsonData.id;
                     var description = jsonData.description;
@@ -28,6 +28,36 @@ window.onload = function () {
                     // Manejar errores
                     alert('Error al obtener los detalles de la lista');
                 }
+            };
+            xhr.onerror = function () {
+                alert('Error al realizar la solicitud');
+            };
+            xhr.send();
+        });
+    });
+
+    var delButtons = document.querySelectorAll('.btn-del');
+    delButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+            var listId = this.getAttribute('data-list-id');
+            console.log(listId)
+
+            // Solicitud AJAX enviando ID al controlador
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'http://localhost/lista-simple/lists/trash&id=' + listId, true);
+            xhr.onload = function () {
+                // if (xhr.status >= 200 && xhr.status < 400) {
+                //     console.log(xhr.responseText);
+                //     var jsonData = JSON.parse(xhr.responseText);
+                //     console.log(jsonData);
+
+
+                // } else {
+                //     // Manejar errores
+                //     alert('Error al eliminar la lista');
+                // }
+                location.reload('http://localhost/lista-simple/users/index.php');
+
             };
             xhr.onerror = function () {
                 alert('Error al realizar la solicitud');

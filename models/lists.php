@@ -254,10 +254,11 @@ class Lists
 
     public function completed($userId)
     {
-        $sql = "SELECT * FROM lists WHERE user_id = " . $userId . " AND completed = 1";
+        $sql = "SELECT * FROM lists WHERE user_id = " . $userId . " AND completed = 1 AND paper_bin = 0";
         $result = $this->db->query($sql);
+
         if ($result) {
-            $dataLists = $result->fetch_All();
+            $dataLists = $result->fetch_all();
 
             if (!empty($dataLists)) {
 
@@ -292,6 +293,19 @@ class Lists
         $modification = date("Y-m-d");
         $sql = "UPDATE lists SET name = '{$datos['name']}', modification_date = '$modification', notification = '{$datos['notification']}',  description = '{$datos['description']}' WHERE id = '{$datos['id']}'";
 
+        $save = $this->db->query($sql);
+
+
+        if ($save) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function trash($id)
+    {
+        $sql = "UPDATE lists SET paper_bin = 1 WHERE id = '{$id}'";
         $save = $this->db->query($sql);
 
 

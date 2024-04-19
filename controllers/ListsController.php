@@ -155,9 +155,36 @@ class ListsController
                 return $result;
             } else {
                 require_once  'C:/wamp64/www/lista-simple/views/users/index.php';
-                $result = 0;
+                $result = 1;
                 return $result;
             }
+        }
+    }
+
+    public function trash()
+    {
+        $id = $_GET['id'];
+
+        $list = new Lists();
+        $result = $list->trash($id);
+        if ($result) {
+            $list = new Lists();
+            $result = $list->lists($_SESSION['identity']->id);
+            if ($result) {
+                require_once  'C:/wamp64/www/lista-simple/views/users/index.php';
+                return $result;
+            } else {
+                require_once  'C:/wamp64/www/lista-simple/views/users/index.php';
+                $result = 1;
+                return $result;
+            }
+            // Devolver el resultado como JSON
+            // header('Content-Type: application/json');
+            // echo json_encode($result);
+        } else {
+            // Si no se encuentra la lista, devolver un mensaje de error
+            http_response_code(404);
+            echo json_encode(array('message' => 'Lista no encontrada'));
         }
     }
 }
