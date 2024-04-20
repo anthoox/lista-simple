@@ -178,13 +178,32 @@ class ListsController
                 $result = 1;
                 return $result;
             }
-            // Devolver el resultado como JSON
-            // header('Content-Type: application/json');
-            // echo json_encode($result);
         } else {
             // Si no se encuentra la lista, devolver un mensaje de error
             http_response_code(404);
             echo json_encode(array('message' => 'Lista no encontrada'));
+        }
+    }
+
+    public function paper_bin()
+    {
+        $list = new Lists();
+        $result = $list->paper_bin();
+        if ($result) {
+            $dataList = $result->fetch_all();
+            // var_dump($dataList);
+            // die();
+            if (!empty($dataList)) {
+                require_once  'C:/wamp64/www/lista-simple/views/users/trash.php';
+
+                return $dataList;
+            } else {
+                return false;
+            }
+        } else {
+            require_once  'C:/wamp64/www/lista-simple/views/users/trash.php';
+            $result = 1;
+            return false;
         }
     }
 }

@@ -315,4 +315,17 @@ class Lists
             return false;
         }
     }
+
+    public function paper_bin()
+    {
+        $sql = "SELECT * FROM lists WHERE user_id = '{$_SESSION['identity']->id}' AND paper_bin = 1";
+        $result = $this->db->query($sql);
+
+
+        if ($result) {
+            return $result;
+        } else {
+            return false;
+        }
+    }
 }
