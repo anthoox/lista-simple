@@ -55,7 +55,7 @@
                     }
 
                     echo '           
-                            </div>
+                            </div> 
                             <div class="fw-semibold">
                 
                                 1/10

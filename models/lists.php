@@ -328,4 +328,26 @@ class Lists
             return false;
         }
     }
+
+    public function rest($id)
+    {
+        $sql = "UPDATE lists SET paper_bin = 0 WHERE id = '{$id}'";
+        $save = $this->db->query($sql);
+
+        if ($save) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public function del($id)
+    {
+        $sql = "DELETE FROM lists WHERE id = '{$id}'";
+        $restul = $this->db->query($sql);
+        if ($restul) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

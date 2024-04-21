@@ -191,8 +191,6 @@ class ListsController
         $result = $list->paper_bin();
         if ($result) {
             $dataList = $result->fetch_all();
-            // var_dump($dataList);
-            // die();
             if (!empty($dataList)) {
                 require_once  'C:/wamp64/www/lista-simple/views/users/trash.php';
 
@@ -204,6 +202,34 @@ class ListsController
             require_once  'C:/wamp64/www/lista-simple/views/users/trash.php';
             $result = 1;
             return false;
+        }
+    }
+
+    public function rest()
+    {
+        $id = $_GET['id'];
+
+        $list = new Lists();
+        $result = $list->rest($id);
+        if ($result) {
+            require_once  'C:/wamp64/www/lista-simple/views/users/trash.php';
+        } else {
+            require_once  'C:/wamp64/www/lista-simple/views/users/trash.php';
+            echo '<h2>error al restaurar lista</h2>';
+        }
+    }
+
+    public function del()
+    {
+        $id = $_GET['id'];
+
+        $list = new Lists();
+        $result = $list->del($id);
+        if ($result) {
+            require_once  'C:/wamp64/www/lista-simple/views/users/trash.php';
+        } else {
+            require_once  'C:/wamp64/www/lista-simple/views/users/trash.php';
+            echo '<h2>error al eleminar lista</h2>';
         }
     }
 }

@@ -17,21 +17,18 @@
     if (isset($result) && empty(!$result)) {
 
         foreach ($result as $list) {
-            // Si no esta en la papelera/
-            // if ($list[7] == 1) {
-            // Si no esta completo
             if ($list[8] == 0) {
 
                 echo
-                '<div class="w-100 rounded-4 border border-1 border-dark-subtle bg-body-secondary p-1 pe-3 ps-3">
+                '<div class="w-100 rounded-4 border border-1 border-dark-subtle  p-1 pe-3 ps-3">
                     <div class="d-flex w-100 justify-content-end gap-2">
     
                         <div>
                         
-                            <img src="/lista-simple/assets/img/iconos/restaurar.svg" alt="Icono de lapiz para editar datos de lista" class="iconslist btn-edit"  data-bs-toggle="modal" data-bs-target="#editModal"  data-list-id=' . $list[0] . '>
+                            <img src="/lista-simple/assets/img/iconos/restaurar.svg" alt="Icono para restaurar lista" class="iconslist btn-rest"  data-list-id=' . $list[0] . '>
                         </div>
                         <div>
-                            <img src="/lista-simple/assets/img/iconos/papelera.svg" alt="Icono papelera para eliminar lista" class="iconslist btn-del"  data-list-id=' . $list[0] . '>
+                            <img src="/lista-simple/assets/img/iconos/papelera.svg" alt="Icono papelera para eliminar lista" class="iconslist btn-delete"  data-list-id=' . $list[0] . '>
                         </div>
                     </div>
             
@@ -63,10 +60,10 @@
                 '<div class="w-100 rounded-4 border border-1 border-dark-subtle p-1 pe-3 ps-3 bg-body-secondary">
                     <div class="d-flex w-100 justify-content-end gap-2">
                         <div>
-                            <img src="/lista-simple/assets/img/iconos/restaurar.svg" alt="" class="iconslist btn-edit"  data-bs-toggle="modal" data-bs-target="#editModal"  data-list-id=' . $list[0] . '">
+                            <img src="/lista-simple/assets/img/iconos/restaurar.svg" alt="Icono para restuarar lista" class="iconslist btn-rest" data-list-id=' . $list[0] . '">
                         </div>
                         <div>
-                            <img src="/lista-simple/assets/img/iconos/papelera.svg" alt="" class="iconslist btn-del"  data-list-id=' . $list[0] . '">
+                            <img src="/lista-simple/assets/img/iconos/papelera.svg" alt="Icono para eliminar lista" class="iconslist btn-delete"  data-list-id=' . $list[0] . '">
                         </div>
                     </div>
             
@@ -90,7 +87,6 @@
                     </div>
                 </div>';
             }
-            // }
         }
     } elseif ($result == 1) {
 
