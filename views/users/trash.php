@@ -4,8 +4,8 @@
 <!-- Contenido -->
 <div class="d-flex flex-column mt-2 col-12 mt-xl-3 flex-sm-row gap-1 justify-content-around p-0 m-0">
     <div class="d-flex justify-content-around gap-1 col-12 col-sm-6">
-        <a class="btn bg-primary rounded-3 text-white  border-1 border-light col-5 col-sm-5  fw-semibold f-little">Vaciar</a>
-        <a class="btn bg-secondary-emphasis rounded-3 border-1 border-dark-subtle col-5 col-sm-5 fw-semibold f-little">Restaurar</a>
+        <a id="empty-trash" class="btn bg-primary rounded-3 text-white  border-1 border-light col-5 col-sm-5  fw-semibold f-little" data-bs-toggle="modal" data-bs-target="#emptyModal">Vaciar</a>
+        <a id="restore-lists" class="btn bg-secondary-emphasis rounded-3 border-1 border-dark-subtle col-5 col-sm-5 fw-semibold f-little" data-bs-toggle="modal" data-bs-target="#restoreModal">Restaurar</a>
     </div>
 </div>
 <div class="d-flex flex-column col-12 mt-2 mt-md-4 gap-2 p-2 ">
@@ -25,7 +25,7 @@
     
                         <div>
                         
-                            <img src="/lista-simple/assets/img/iconos/restaurar.svg" alt="Icono para restaurar lista" class="iconslist btn-rest"  data-list-id=' . $list[0] . '>
+                            <img src="/lista-simple/assets/img/iconos/restaurar.svg" alt="Icono para restaurar lista"  class="iconslist btn-rest"  data-list-id=' . $list[0] . '>
                         </div>
                         <div>
                             <img src="/lista-simple/assets/img/iconos/papelera.svg" alt="Icono papelera para eliminar lista" class="iconslist btn-delete"  data-list-id=' . $list[0] . '>
@@ -60,7 +60,7 @@
                 '<div class="w-100 rounded-4 border border-1 border-dark-subtle p-1 pe-3 ps-3 bg-body-secondary">
                     <div class="d-flex w-100 justify-content-end gap-2">
                         <div>
-                            <img src="/lista-simple/assets/img/iconos/restaurar.svg" alt="Icono para restuarar lista" class="iconslist btn-rest" data-list-id=' . $list[0] . '">
+                            <img src="/lista-simple/assets/img/iconos/restaurar.svg" alt="Icono para restuarar lista"  class="iconslist btn-rest" data-list-id=' . $list[0] . '">
                         </div>
                         <div>
                             <img src="/lista-simple/assets/img/iconos/papelera.svg" alt="Icono para eliminar lista" class="iconslist btn-delete"  data-list-id=' . $list[0] . '">
@@ -97,6 +97,8 @@
 
     ?>
 
+    <?php require_once 'C:/wamp64/www/lista-simple/views/modals/modalEmpty.php'; ?>
+    <?php require_once 'C:/wamp64/www/lista-simple/views/modals/modalRestore.php'; ?>
 
 
 </div>
