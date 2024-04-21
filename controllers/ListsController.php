@@ -232,4 +232,29 @@ class ListsController
             echo '<h2>error al eleminar lista</h2>';
         }
     }
+
+    public function restoreAll()
+    {
+
+        $list = new Lists();
+        $result = $list->restoreAll($_SESSION['identity']->id);
+        if ($result) {
+            require_once  'C:/wamp64/www/lista-simple/views/users/trash.php';
+        } else {
+            require_once  'C:/wamp64/www/lista-simple/views/users/trash.php';
+            echo '<h2>error al restaurar lista</h2>';
+        }
+    }
+
+    public function deleteAll()
+    {
+        $list = new Lists();
+        $result = $list->deleteAll($_SESSION['identity']->id);
+        if ($result) {
+            require_once  'C:/wamp64/www/lista-simple/views/users/trash.php';
+        } else {
+            require_once  'C:/wamp64/www/lista-simple/views/users/trash.php';
+            echo '<h2>error al eleminar lista</h2>';
+        }
+    }
 }

@@ -350,4 +350,26 @@ class Lists
             return false;
         }
     }
+
+    public function restoreAll($id)
+    {
+        $sql = "UPDATE lists SET paper_bin = 0 WHERE paper_bin = 1 AND user_id='{$id}'";
+        $restul = $this->db->query($sql);
+        if ($restul) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function deleteAll($id)
+    {
+        $sql = "DELETE FROM lists WHERE paper_bin = 1 AND user_id='{$id}'";
+        $restul = $this->db->query($sql);
+        if ($restul) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

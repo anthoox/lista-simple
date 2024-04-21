@@ -6,7 +6,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form id="formRestore" action="<?= base_url ?>lists/edit" method="POST">
+                <form id="formRestore" action="<?= base_url ?>lists/restoreAll" method="POST">
                     <div class="mb-3">
                         <p for="name" class="form-label w-100 text-center fw-normal fs-5">Al restaurar las listas estas se moverán al inicio ¿Esta seguro?</p>
                     </div>
