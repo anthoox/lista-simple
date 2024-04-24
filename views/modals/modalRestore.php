@@ -8,7 +8,7 @@
             <div class="modal-body">
                 <form id="formRestore" action="<?= base_url ?>lists/restoreAll" method="POST">
                     <div class="mb-3">
-                        <p for="name" class="form-label w-100 text-center fw-normal fs-5">Al restaurar las listas estas se moverán al inicio ¿Esta seguro?</p>
+                        <p for="name" class="form-label w-100 text-center fw-normal fs-6">Va a restaurar todas las listas ¿Esta seguro?</p>
                     </div>
 
                     <input type="text" class="form-control" id="idListRestore" name="idList" hidden>

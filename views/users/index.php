@@ -47,7 +47,6 @@
                     '</div>
                 
                         <div class="d-flex w-100 justify-content-between">
-         
                             <div class="text-primary fw-semibold">';
                     if ($list[5] != '0000-00-00 00:00:00') {
                         $notification = Utils::dateFormatter($list[5]);

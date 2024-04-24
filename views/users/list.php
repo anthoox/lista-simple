@@ -32,10 +32,10 @@
                     <span class="fw-semibold">x2</span>
                 </div>
                 <div>
-                    <img src="/lista-simple/assets/img/iconos/editar.svg" alt="" class="iconslist">
+                    <img src="/lista-simple/assets/img/iconos/editar.svg" alt="Icono para editar ítem" class="iconslist">
                 </div>
                 <div>
-                    <img src="/lista-simple/assets/img/iconos/papelera.svg" alt="" class="iconslist">
+                    <img src="/lista-simple/assets/img/iconos/papelera.svg" alt="Icono eliminar ítem" class="iconslist">
                 </div>
             </div>
 

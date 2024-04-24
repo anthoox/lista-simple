@@ -117,9 +117,9 @@ class ListsController
 
     public function list()
     {
-        $id = $_GET['id'];
+        $listId = $_GET['id'];
         $list = new Lists();
-        $result = $list->list($id);
+        $result = $list->list($listId);
 
         if ($result) {
             // Devolver el resultado como JSON
