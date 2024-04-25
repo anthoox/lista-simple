@@ -106,6 +106,20 @@ html {
     height: 200px;
 }
 
+.icon-list-sm {
+    width: 35px;
+    height: 35px;
+}
+
+.btn-style {
+    cursor: pointer;
+    transition: scale 250ms;
+}
+
+.btn-style:active {
+    scale: 0.98;
+}
+
 @media (width >=576px) {
 
     .img-user-xl {

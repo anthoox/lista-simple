@@ -111,4 +111,99 @@ class ValidatorForm
             return $dataList;
         }
     }
+
+    public static function validatorItem($dataForm)
+    {
+
+
+        $dataList = '';
+        $error = true;
+
+        if (isset($dataForm)) {
+
+
+            $dataList = array();
+
+            if (!empty($dataForm['name'])) {
+                $error = 'ok';
+
+                $name = isset($dataForm['name']) ? $dataForm['name'] : false;
+
+                if (!is_string($name)) {
+                    $error = 'nombre';
+                }
+
+                $dataList['name'] = $name;
+            }
+
+            if (!empty($dataForm['notification'])) {
+
+                $notification = isset($dataForm['notification']) ? $dataForm['notification'] : false;
+                $notificationObj = DateTime::createFromFormat('Y-m-d\TH:i', $notification);
+
+
+                // Verifica si la creación del objeto fue exitosa y si la fecha/hora coincide con la cadena original
+                if (!$notificationObj != false && $notificationObj->format('Y-m-d\TH:i') === $notification) {
+                    $error = 'notification';
+                }
+
+                $dataList['notification'] = $notification;
+            } else {
+                $notification = "0000-00-00 00:00:00";
+                $notificationObj = DateTime::createFromFormat('Y-m-d\TH:i', $notification);
+
+
+                $dataList['notification'] = $notification;
+            }
+
+            if (!empty($dataForm['notes'])) {
+                $notes = isset($dataForm['notes']) ? $dataForm['notes'] : false;
+
+                if (!is_string($notes)) {
+                    $error = 'notes';
+                }
+                $dataList['notes'] = $notes;
+            } else {
+                $dataList['notes'] = "";
+            }
+
+            if (!empty($dataForm['price'])) {
+                $price = isset($dataForm['price']) ? $dataForm['price'] : "0";
+
+                if (!is_string($price)) {
+                    $error = 'price';
+                }
+                $dataList['price'] = $price;
+            } else {
+                $dataList['price'] = 0.00;
+            }
+
+            if (!empty($dataForm['units'])) {
+                $units = isset($dataForm['units']) ? $dataForm['units'] : "0";
+
+                if (!is_string($price)) {
+                    $error = 'price';
+                }
+                $dataList['units'] = $units;
+            } else {
+                $dataList['units'] = 1;
+            }
+
+            if (isset($dataForm['idList'])) {
+                $dataList['idList'] = $dataForm['idList'];
+            }
+            if (isset($dataForm['idUser'])) {
+                $dataList['idUser'] = $dataForm['idUser'];
+            }
+        } else {
+            return false;
+        }
+
+        if ($error != 'ok') {
+            return false;
+        } else {
+
+            return $dataList;
+        }
+    }
 }

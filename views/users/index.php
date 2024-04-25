@@ -5,14 +5,14 @@
 
 <div class="d-flex flex-column col-12 mt-xl-3 flex-sm-row gap-1 justify-content-between p-0 m-0">
     <div class="d-flex justify-content-around gap-1 col-12 col-sm-6">
-        <a href="<?= base_url ?>lists/index" id="lists" class="btn bg-primary rounded-3 text-white  border-1 border-light col-5 col-sm-5 col-md-4  fw-semibold f-little">Listas</a>
-        <a href="<?= base_url ?>lists/upcoming" id="upcoming" class="btn bg-secondary-emphasis rounded-3 border-1 border-dark-subtle col-5 col-sm-5 col-md-4 fw-semibold f-little">Próximas</a>
+        <a href="<?= base_url ?>lists/index" id="lists" class="btn bg-primary rounded-3 text-white  border-1 border-light col-5 col-sm-5 col-md-4  fw-semibold btn-style f-little">Listas</a>
+        <a href="<?= base_url ?>lists/upcoming" id="upcoming" class="btn bg-secondary-emphasis rounded-3 border-1 border-dark-subtle col-5 col-sm-5 col-md-4 fw-semibold btn-style f-little">Próximas</a>
 
     </div>
     <div class="d-flex justify-content-around gap-1 col-12 col-sm-6">
 
-        <a href="<?= base_url ?>lists/pending" id="pending" class="btn bg-body rounded-3 border-1 border-dark-subtle col-5 col-sm-5 col-md-4 fw-semibold f-little">Pendientes</a>
-        <a href="<?= base_url ?>lists/completed" id="completed" class="btn bg-body rounded-3 border-1 border-dark-subtle col-5 col-sm-5 col-md-4 fw-semibold f-little">Completas</a>
+        <a href="<?= base_url ?>lists/pending" id="pending" class="btn bg-body rounded-3 border-1 border-dark-subtle col-5 col-sm-5 col-md-4 fw-semibold btn-style f-little">Pendientes</a>
+        <a href="<?= base_url ?>lists/completed" id="completed" class="btn bg-body rounded-3 border-1 border-dark-subtle col-5 col-sm-5 col-md-4 fw-semibold btn-style f-little">Completas</a>
     </div>
 </div>
 <div class="d-flex flex-column col-12 mt-1 mt-xl-3 gap-2 p-2 ">
@@ -27,8 +27,9 @@
                 // Si no esta completo
                 if ($list[8] == 0) {
 
+
                     echo
-                    '<div class="w-100 rounded-4 border border-1 border-dark-subtle p-1 pe-3 ps-3">
+                    '<a href="' . base_url . 'items/index&id=' . $list[0] . '" class="w-100 rounded-4 border border-1 border-dark-subtle p-1 pe-3 ps-3 btn-style text-decoration-none">
                         <div class="d-flex w-100 justify-content-end gap-2">
         
                             <div>
@@ -41,7 +42,7 @@
                         </div>
                 
                         <div class="d-flex w-100 justify-content-start">';
-                    echo '<span class="fs-5 fw-semibold">' . $list[2] . '</span>';
+                    echo '<span class="fs-5 fw-semibold text-black">' . $list[2] . '</span>';
 
                     echo
                     '</div>
@@ -50,7 +51,7 @@
                             <div class="text-primary fw-semibold">';
                     if ($list[5] != '0000-00-00 00:00:00') {
                         $notification = Utils::dateFormatter($list[5]);
-                        echo '<span class="f-little">' . $notification . '</span>';
+                        echo '<span class="text-primary f-little">' . $notification . '</span>';
                     }
 
                     echo '           
@@ -60,7 +61,7 @@
                                 1/10
                             </div>
                         </div>
-                    </div>';
+                    </a>';
                 } else {
                     // Si esta completo
                     echo

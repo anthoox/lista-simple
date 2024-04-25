@@ -8,7 +8,7 @@ class Items
     private $list_id;
     private $name;
     private $price;
-    private $number;
+    private $units;
     private $notification;
     private $notes;
     private $completed;
@@ -34,87 +34,87 @@ class Items
 
     public function getUserId()
     {
-        return $this->id;
+        return $this->user_id;
     }
 
-    public function setUserId($id)
+    public function setUserId($user_id)
     {
-        $this->id = $id;
+        $this->user_id = $user_id;
         return $this;
     }
 
     public function getListId()
     {
-        return $this->id;
+        return $this->list_id;
     }
 
-    public function setListId($id)
+    public function setListId($list_id)
     {
-        $this->id = $id;
+        $this->list_id = $list_id;
         return $this;
     }
 
     public function getName()
     {
-        return $this->id;
+        return $this->name;
     }
 
-    public function setName($id)
+    public function setName($name)
     {
-        $this->id = $id;
+        $this->name = $name;
         return $this;
     }
     public function getPrice()
     {
-        return $this->id;
+        return $this->price;
     }
 
-    public function setPrice($id)
+    public function setPrice($price)
     {
-        $this->id = $id;
+        $this->price = $price;
         return $this;
     }
 
-    public function getNumber()
+    public function getUnits()
     {
-        return $this->id;
+        return $this->units;
     }
 
-    public function setNumber($id)
+    public function setUnits($units)
     {
-        $this->id = $id;
+        $this->units = $units;
         return $this;
     }
 
     public function getNotification()
     {
-        return $this->id;
+        return $this->notification;
     }
 
-    public function setNotification($id)
+    public function setNotification($notification)
     {
-        $this->id = $id;
+        $this->notification = $notification;
         return $this;
     }
 
     public function getNotes()
     {
-        return $this->id;
+        return $this->notes;
     }
 
-    public function setNotes($id)
+    public function setNotes($notes)
     {
-        $this->id = $id;
+        $this->notes = $notes;
         return $this;
     }
     public function getcompleted()
     {
-        return $this->id;
+        return $this->completed;
     }
 
-    public function setcompleted($id)
+    public function setcompleted($completed)
     {
-        $this->id = $id;
+        $this->completed = $completed;
         return $this;
     }
 
@@ -135,5 +135,21 @@ class Items
         } else {
             return false;
         }
+    }
+
+    public function save($listId, $userId)
+    {
+        $sql = "INSERT INTO items VALUES(NULL, $userId, $listId, '{$this->getName()}', '{$this->getPrice()}', '{$this->getUnits()}' ,'
+        {$this->getNotification()}' ,'{$this->getNotes()}', 0)";
+
+        $save = $this->db->query($sql);
+        $result = false;
+        if ($save) {
+            $result = true;
+            $this->db->close();
+            return $result;
+        }
+        $this->db->close();
+        return $result;
     }
 }
