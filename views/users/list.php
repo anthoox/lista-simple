@@ -2,7 +2,15 @@
 <?php require_once 'C:/wamp64/www/lista-simple/views/layout/head2.php'; ?>
 <?php
 $list = new ListsController();
-$data = $list->getList($_GET['id']);
+if (isset($_GET['id'])) {
+
+    $_SESSION['the-list'] = $_GET['id'];
+    $data = $list->getList($_GET['id']);
+} elseif ($_SESSION['the-list']) {
+    $data = $list->getList($_SESSION['the-list']);
+}
+
+
 ?>
 
 <!-- Contenido -->
@@ -13,7 +21,7 @@ $data = $list->getList($_GET['id']);
 
     </span>
     <h2 class="fw-semibold fs-3 w-25 text-center">
-        <?= $data['name'] ?>
+        <?= $data['name']; ?>
 
     </h2>
 
@@ -40,10 +48,10 @@ $data = $list->getList($_GET['id']);
                         <div class="d-flex w-100 justify-content-end  gap-2 h-25">
 
                             <div>
-                                <img src="/lista-simple/assets/img/iconos/editar.svg" alt="Icono para editar ítem" class="iconslist">
+                                <img src="/lista-simple/assets/img/iconos/editar.svg" alt="Icono para editar ítem" class="iconslist btn-edit-item" data-bs-toggle="modal" data-bs-target="#editItemModal"  data-list-id="' . $item[0] . '">
                             </div>
                             <div>
-                                <img src="/lista-simple/assets/img/iconos/papelera.svg" alt="Icono eliminar ítem" class="iconslist">
+                                <img src="/lista-simple/assets/img/iconos/papelera.svg" alt="Icono eliminar ítem" class="iconslist btn-del-item">
                             </div>
                         </div>
             
@@ -132,9 +140,10 @@ $data = $list->getList($_GET['id']);
 </div>
 
 
-<div class="rounded-circle border border-1 bg-success d-flex align-items-center justify-content-center position-fixed bottom-0 end-0 mb-4 me-4 add" data-bs-toggle="modal" data-bs-target="#addModal">
+<div class="rounded-circle border border-1 bg-success d-flex align-items-center justify-content-center position-fixed bottom-0 end-0 mb-4 me-4 add" data-bs-toggle="modal" data-bs-target="#addItemModal">
     <img src="/lista-simple/assets/img/iconos/add.svg" alt="Foto de perfil" class=" icon-list icon-list-sm">
 </div>
+<?php require_once 'C:/wamp64/www/lista-simple/views/modals/modalEditItem.php'; ?>
 
 <?php require_once 'C:/wamp64/www/lista-simple/views/modals/modalAddItem.php'; ?>
 

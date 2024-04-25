@@ -1,4 +1,4 @@
-<div class="modal fade mt-5" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade mt-5" id="addItemModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -6,7 +6,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form id="itemForm" action="<?= base_url ?>items/save" method="POST">
+                <form id="itemAddForm" action="<?= base_url ?>items/save" method="POST">
                     <div class="mb-3">
                         <label for="name" class="form-label w-100 text-start">Nombre</label>
                         <input type="text" class="form-control" id="name" placeholder="Nombre" name="name">
@@ -37,7 +37,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="submit" form="itemForm" class="btn btn-success text-white">Guardar</button>
+                <button type="submit" form="itemAddForm" class="btn btn-success text-white">Guardar</button>
             </div>
         </div>
     </div>

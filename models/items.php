@@ -152,4 +152,38 @@ class Items
         $this->db->close();
         return $result;
     }
+
+    public function getItem($itemId)
+    {
+        $sql = "SELECT * FROM items WHERE id = '{$itemId}' ";
+        $result = $this->db->query($sql);
+        if ($result) {
+            $dataLists = $result->fetch_assoc();
+
+            if (!empty($dataLists)) {
+
+                return $dataLists;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
+    public function edit($dataItem)
+    {
+
+        $sql = "UPDATE items SET name = '{$dataItem['name']}', price = '{$dataItem['price']}', numer = '{$dataItem['units']}', notification_date = '{$dataItem['notification']}', notes = '{$dataItem['notes']}' WHERE id = '{$dataItem['idItem']}'";
+
+
+        $save = $this->db->query($sql);
+
+
+        if ($save) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

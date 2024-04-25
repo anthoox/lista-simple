@@ -133,17 +133,30 @@ class ListsController
         }
     }
 
-    public function getList()
+    public function getList($id)
     {
-        $listId = $_GET['id'];
-        $list = new Lists();
-        $result = $list->getList($listId);
+        if (isset($_GET['id'])) {
+            $listId = $_GET['id'];
+            $list = new Lists();
+            $result = $list->getList($listId);
 
-        if ($result) {
+            if ($result) {
 
-            return $result;
+                return $result;
+            } else {
+                return false;
+            }
         } else {
-            return false;
+            $listId = $id;
+            $list = new Lists();
+            $result = $list->getList($listId);
+
+            if ($result) {
+
+                return $result;
+            } else {
+                return false;
+            }
         }
     }
 

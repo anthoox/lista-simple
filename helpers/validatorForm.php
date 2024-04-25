@@ -192,6 +192,9 @@ class ValidatorForm
             if (isset($dataForm['idList'])) {
                 $dataList['idList'] = $dataForm['idList'];
             }
+            if (isset($dataForm['idItem'])) {
+                $dataList['idItem'] = $dataForm['idItem'];
+            }
             if (isset($dataForm['idUser'])) {
                 $dataList['idUser'] = $dataForm['idUser'];
             }
