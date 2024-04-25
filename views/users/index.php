@@ -29,7 +29,7 @@
 
 
                     echo
-                    '<a href="' . base_url . 'items/index&id=' . $list[0] . '" class="w-100 rounded-4 border border-1 border-dark-subtle p-1 pe-3 ps-3 btn-style text-decoration-none">
+                    '<div  class="w-100 rounded-4 border border-1 border-dark-subtle p-1 pe-3 ps-3 btn-style ">
                         <div class="d-flex w-100 justify-content-end gap-2">
         
                             <div>
@@ -41,11 +41,11 @@
                             </div>
                         </div>
                 
-                        <div class="d-flex w-100 justify-content-start">';
+                        <a href="' . base_url . 'items/index&id=' . $list[0] . '" class="d-flex w-100 justify-content-start text-decoration-none">';
                     echo '<span class="fs-5 fw-semibold text-black">' . $list[2] . '</span>';
 
                     echo
-                    '</div>
+                    '</a>
                 
                         <div class="d-flex w-100 justify-content-between">
                             <div class="text-primary fw-semibold">';
@@ -61,7 +61,7 @@
                                 1/10
                             </div>
                         </div>
-                    </a>';
+                    </div>';
                 } else {
                     // Si esta completo
                     echo

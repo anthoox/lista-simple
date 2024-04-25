@@ -123,8 +123,11 @@ class ListsController
 
         if ($result) {
             // Devolver el resultado como JSON
-            header('Content-Type: application/json');
+            // header('Content-Type: application/json');
+
+            // a lo mejor hay q devolver un array desde aqui
             echo json_encode($result);
+            // return $result;
         } else {
             // Si no se encuentra la lista, devolver un mensaje de error
             http_response_code(404);
