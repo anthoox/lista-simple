@@ -288,6 +288,23 @@ class Lists
         }
     }
 
+    public function getList($id)
+    {
+        $sql = "SELECT * FROM lists WHERE id = " . $id;
+        $result = $this->db->query($sql);
+        if ($result) {
+            $dataList = $result->fetch_assoc();
+
+            if (!empty($dataList)) {
+                return $dataList;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
     public function edit($datos)
     {
         $modification = date("Y-m-d");

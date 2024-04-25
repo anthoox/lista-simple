@@ -124,14 +124,26 @@ class ListsController
         if ($result) {
             // Devolver el resultado como JSON
             // header('Content-Type: application/json');
-
-            // a lo mejor hay q devolver un array desde aqui
             echo json_encode($result);
             // return $result;
         } else {
             // Si no se encuentra la lista, devolver un mensaje de error
             http_response_code(404);
             echo json_encode(array('message' => 'Lista no encontrada'));
+        }
+    }
+
+    public function getList()
+    {
+        $listId = $_GET['id'];
+        $list = new Lists();
+        $result = $list->getList($listId);
+
+        if ($result) {
+
+            return $result;
+        } else {
+            return false;
         }
     }
 

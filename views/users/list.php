@@ -1,25 +1,24 @@
 <!-- Cabeceras -->
 <?php require_once 'C:/wamp64/www/lista-simple/views/layout/head2.php'; ?>
 <?php
-
 $list = new ListsController();
-$data = $list->list($_GET['id']);
-var_dump($data)
+$data = $list->getList($_GET['id']);
 ?>
 
 <!-- Contenido -->
 <div class="d-flex col-12 mt-xl-3 justify-content-between  align-items-center p-1  pe-3 ps-3 m-0 border-1 border-bottom border-top">
 
-    <span class="fw-semibold fs-4">
+    <span class="fw-semibold fs-4 w-25 text-start">
         Total: --
 
     </span>
+    <h2 class="fw-semibold fs-3 w-25 text-center">
+        <?= $data['name'] ?>
 
-    <span>
-        <?= var_dump($data) ?>
-    </span>
+    </h2>
 
-    <a href="">
+
+    <a href="/lista-simple/views/users/list-info.php" class="fw-semibold fs-4 w-25 text-end">
         <img src="/lista-simple/assets/img/iconos/info.svg" alt="Icono de información de lista" class="iconslist-lg">
     </a>
 
