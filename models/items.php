@@ -186,4 +186,15 @@ class Items
             return false;
         }
     }
+
+    public function del($idItem)
+    {
+        $sql = "DELETE FROM items WHERE id = '{$idItem}'";
+        $restul = $this->db->query($sql);
+        if ($restul) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

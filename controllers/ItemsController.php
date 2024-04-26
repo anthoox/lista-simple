@@ -139,8 +139,20 @@ class ItemsController
         if ($result) {
             $list = new ItemsController();
             $list->index($dataItem['idList']);
+        }
+    }
 
-            // $_SESSION['the-list'] = $dataItem['idList'];
+    public function del()
+    {
+        $id = $_GET['id'];
+
+        $item = new Items();
+        $result = $item->del($id);
+        if ($result) {
+            require_once  'C:/wamp64/www/lista-simple/views/users/list.php';
+        } else {
+            require_once  'C:/wamp64/www/lista-simple/views/users/list.php';
+            echo '<h2>error al eleminar item</h2>';
         }
     }
 }

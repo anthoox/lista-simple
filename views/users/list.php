@@ -20,7 +20,7 @@ if (isset($_GET['id'])) {
         Total: --
 
     </span>
-    <h2 class="fw-semibold fs-3 w-25 text-center">
+    <h2 class="fw-semibold fs-4 w-25 text-center">
         <?= $data['name']; ?>
 
     </h2>
@@ -51,9 +51,9 @@ if (isset($_GET['id'])) {
                                 <img src="/lista-simple/assets/img/iconos/editar.svg" alt="Icono para editar ítem" class="iconslist btn-edit-item" data-bs-toggle="modal" data-bs-target="#editItemModal"  data-list-id="' . $item[0] . '">
                             </div>
                             <div>
-                                <img src="/lista-simple/assets/img/iconos/papelera.svg" alt="Icono eliminar ítem" class="iconslist btn-del-item">
+                                <img src="/lista-simple/assets/img/iconos/papelera.svg" alt="Icono eliminar ítem" class="iconslist btn-del-item" data-list-id="' . $item[0] . '">
                             </div>
-                        </div>
+                        </div a>
             
                         <div class="d-flex w-100 justify-content-start align-items-center h-50">
                             <span class="fw-semibold">' . $item[3] . '</span>
