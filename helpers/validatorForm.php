@@ -138,6 +138,7 @@ class ValidatorForm
 
             if (!empty($dataForm['notification'])) {
 
+
                 $notification = isset($dataForm['notification']) ? $dataForm['notification'] : false;
                 $notificationObj = DateTime::createFromFormat('Y-m-d\TH:i', $notification);
 

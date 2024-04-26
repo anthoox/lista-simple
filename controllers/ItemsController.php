@@ -124,10 +124,10 @@ class ItemsController
         $dataItem = ValidatorForm::validatorItem($_POST);
 
 
-        if (!isset($dataList['notification'])) {
+        if (!isset($dataItem['notification'])) {
             $dataItem['notification'] = "0000-00-00 00:00:00";
         }
-        if (!isset($dataList['notes'])) {
+        if (!isset($dataItem['notes'])) {
             $dataItem['notes'] = "";
         }
 
@@ -135,6 +135,7 @@ class ItemsController
         $item = new Items();
 
         $result = $item->edit($dataItem);
+
 
         if ($result) {
             $list = new ItemsController();

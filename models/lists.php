@@ -183,9 +183,9 @@ class Lists
 
     public function save($userId)
     {
-        $date = date('Y-m-d');
 
-        $sql = "INSERT INTO lists VALUES(NULL, $userId, '{$this->getName()}', '$date', '{$this->getModificationDate()}', '{$this->getNotification()}' ,'{$this->getDescription()}' , 0, 0)";
+
+        $sql = "INSERT INTO lists VALUES(NULL, $userId, '{$this->getName()}', NOW(), '{$this->getModificationDate()}', '{$this->getNotification()}' ,'{$this->getDescription()}' , 0, 0)";
 
         $save = $this->db->query($sql);
         $result = false;
@@ -199,7 +199,7 @@ class Lists
 
     public function lists($userId)
     {
-        $sql = "SELECT * FROM lists WHERE user_id = " . $userId . " AND paper_bin = 0";
+        $sql = "SELECT * FROM lists WHERE user_id = " . $userId . " AND paper_bin = 0 ORDER BY completed, creation_date DESC";
 
         $result = $this->db->query($sql);
         if ($result) {
@@ -307,8 +307,8 @@ class Lists
 
     public function edit($datos)
     {
-        $modification = date("Y-m-d");
-        $sql = "UPDATE lists SET name = '{$datos['name']}', modification_date = '$modification', notification = '{$datos['notification']}',  description = '{$datos['description']}' WHERE id = '{$datos['id']}'";
+
+        $sql = "UPDATE lists SET name = '{$datos['name']}', modification_date = NOW(), notification = '{$datos['notification']}',  description = '{$datos['description']}' WHERE id = '{$datos['id']}'";
 
         $save = $this->db->query($sql);
 

@@ -44,7 +44,7 @@ if (isset($_GET['id'])) {
                     <div class="form-check h-100 d-flex align-items-center pe-1 border-1 border-end">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                     </div>
-                    <div class="w-100 ps-2 ">
+                    <div class="w-100 ps-2 d-flex justify-content-between flex-column">
                         <div class="d-flex w-100 justify-content-end  gap-2 h-25">
 
                             <div>
@@ -55,7 +55,7 @@ if (isset($_GET['id'])) {
                             </div>
                         </div a>
             
-                        <div class="d-flex w-100 justify-content-start align-items-center h-50">
+                        <div class="d-flex w-100 justify-content-start align-items-center h-25">
                             <span class="fw-semibold">' . $item[3] . '</span>
                         </div>
             
@@ -69,10 +69,25 @@ if (isset($_GET['id'])) {
 
                 echo '  </div>
                             <div class="d-flex align-items-center w-50 justify-content-end">
-                                <span class="fw-semibold me-1">x' . $item[5] . '</span>
-
-                                <span class="fw-semibold ms-1">' . $item[4] . '€ </span>
-                            </div>
+                                <span class="fw-semibold me-1">x' . $item[5] . '</span>';
+                if (isset($item[4]) &&  $item[4] != '0.00') {
+                    $num = $item[4];
+                    // Verificar si el número tiene decimales
+                    if (strpos($num, '.') !== false) {
+                        // Si tiene decimales diferentes de .00, mostrar el número completo
+                        if (preg_match('/\.(\d*[1-9])/', $num)) {
+                            echo '<span class="fw-semibold ms-1">' . $num . '€ </span>';
+                        } else {
+                            // Si el número es entero o tiene decimales .00, quitar los .00
+                            $num =  number_format($num, 0, '.', '');
+                            echo '<span class="fw-semibold ms-1">' . $num . '€ </span>';
+                        }
+                    } else {
+                        // Si el número es entero, simplemente mostrarlo
+                        echo '<span class="fw-semibold ms-1">' . $num . '€ </span>';
+                    }
+                }
+                echo '  </div>
                 
                         </div>
                     </div>
@@ -87,18 +102,18 @@ if (isset($_GET['id'])) {
                     <div class="form-check h-100 d-flex align-items-center pe-1 border-1 border-end">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
                     </div>
-                    <div class="w-100 ps-2">
+                    <div class="w-100 ps-2 d-flex justify-content-between flex-column">
                         <div class="d-flex w-100 justify-content-end gap-2 h-25">
                             <!-- superior -->
                             <div>
-                                <img src="/lista-simple/assets/img/iconos/editar.svg" alt="" class="iconslist">
+                                <img src="/lista-simple/assets/img/iconos/editar.svg" alt="Icono para editar ítem" class="iconslist btn-edit-item" data-bs-toggle="modal" data-bs-target="#editItemModal"  data-list-id="' . $item[0] . '">
                             </div>
                             <div>
-                                <img src="/lista-simple/assets/img/iconos/papelera.svg" alt="" class="iconslist">
+                                <img src="/lista-simple/assets/img/iconos/papelera.svg" alt="Icono eliminar ítem" class="iconslist btn-del-item" data-list-id="' . $item[0] . '">
                             </div>
                         </div>
             
-                        <div class="d-flex w-100 justify-content-start align-items-center h-50">
+                        <div class="d-flex w-100 justify-content-start align-items-center h-25">
                             <span class="fw-semibold text-secondary text-decoration-line-through">' . $item[3] . '</span>
 
                         </div>
@@ -114,17 +129,33 @@ if (isset($_GET['id'])) {
                 }
 
                 echo '  </div>
-                    <div class="d-flex align-items-center w-50 justify-content-end">
-                        <span class="fw-semibold me-1 text-secondary ">x' . $item[5] . '</span>
-    
-                        <span class="fw-semibold ms-1 text-secondary ">' . $item[4] . '€ </span>
+                            <div class="d-flex align-items-center w-50 justify-content-end">
+                                <span class="fw-semibold me-1">x' . $item[5] . '</span>';
+                if (isset($item[4]) &&  $item[4] != '0.00') {
+                    $num = $item[4];
+                    // Verificar si el número tiene decimales
+                    if (strpos($num, '.') !== false) {
+                        // Si tiene decimales diferentes de .00, mostrar el número completo
+                        if (preg_match('/\.(\d*[1-9])/', $num)) {
+                            echo '<span class="fw-semibold ms-1">' . $num . '€ </span>';
+                        } else {
+                            // Si el número es entero o tiene decimales .00, quitar los .00
+                            $num =  number_format($num, 0, '.', '');
+                            echo '<span class="fw-semibold ms-1">' . $num . '€ </span>';
+                        }
+                    } else {
+                        // Si el número es entero, simplemente mostrarlo
+                        echo '<span class="fw-semibold ms-1">' . $num . '€ </span>';
+                    }
+                }
+
+
+                echo '  </div>
+                
+                        </div>
                     </div>
-                    
-                    </div>
-                </div>
-        
-            </div>
-    ';
+            
+                </div>';
             }
         }
     } elseif ($result == 1) {

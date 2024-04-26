@@ -120,7 +120,7 @@ class Items
 
     public function items($listId)
     {
-        $sql = "SELECT * FROM items WHERE list_id = " . $listId;
+        $sql = "SELECT * FROM items WHERE list_id = " . $listId . " ORDER BY completed, creation_date desc";
 
         $result = $this->db->query($sql);
         if ($result) {
@@ -140,7 +140,7 @@ class Items
     public function save($listId, $userId)
     {
         $sql = "INSERT INTO items VALUES(NULL, $userId, $listId, '{$this->getName()}', '{$this->getPrice()}', '{$this->getUnits()}' ,'
-        {$this->getNotification()}' ,'{$this->getNotes()}', 0)";
+        {$this->getNotification()}' ,'{$this->getNotes()}', 0, NOW())";
 
         $save = $this->db->query($sql);
         $result = false;
@@ -173,6 +173,7 @@ class Items
 
     public function edit($dataItem)
     {
+
 
         $sql = "UPDATE items SET name = '{$dataItem['name']}', price = '{$dataItem['price']}', numer = '{$dataItem['units']}', notification_date = '{$dataItem['notification']}', notes = '{$dataItem['notes']}' WHERE id = '{$dataItem['idItem']}'";
 
