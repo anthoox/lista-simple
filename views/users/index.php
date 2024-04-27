@@ -5,14 +5,24 @@
 
 <div class="d-flex flex-column col-12 mt-xl-3 flex-sm-row gap-1 justify-content-between p-0 m-0">
     <div class="d-flex justify-content-around gap-1 col-12 col-sm-6">
-        <a href="<?= base_url ?>lists/index" id="lists" class="btn bg-primary rounded-3 text-white  border-1 border-light col-5 col-sm-5 col-md-4  fw-semibold btn-style f-little">Listas</a>
-        <a href="<?= base_url ?>lists/upcoming" id="upcoming" class="btn bg-secondary-emphasis rounded-3 border-1 border-dark-subtle col-5 col-sm-5 col-md-4 fw-semibold btn-style f-little">Próximas</a>
+        <a href="<?= base_url ?>lists/index" id="lists" class="btn <?php
+                                                                    echo isset($_SESSION['color']) && $_SESSION['color'] == 'index' ? 'bg-primary text-white' : 'bg-body border-dark-subtle';
+                                                                    ?>
+
+  rounded-3   border-1 border-light col-5 col-sm-5 col-md-4  fw-semibold btn-style f-little btn-list">Listas</a>
+        <a href="<?= base_url ?>lists/upcoming" id="upcoming" class="btn <?php
+                                                                            echo isset($_SESSION['color']) && $_SESSION['color'] == 'upcoming' ? 'bg-primary text-white' : 'bg-body border-dark-subtle';
+                                                                            ?> rounded-3 border-1 col-5 col-sm-5 col-md-4 fw-semibold btn-style f-little btn-list">Próximas</a>
 
     </div>
     <div class="d-flex justify-content-around gap-1 col-12 col-sm-6">
 
-        <a href="<?= base_url ?>lists/pending" id="pending" class="btn bg-body rounded-3 border-1 border-dark-subtle col-5 col-sm-5 col-md-4 fw-semibold btn-style f-little">Pendientes</a>
-        <a href="<?= base_url ?>lists/completed" id="completed" class="btn bg-body rounded-3 border-1 border-dark-subtle col-5 col-sm-5 col-md-4 fw-semibold btn-style f-little">Completas</a>
+        <a href="<?= base_url ?>lists/pending" id="pending" class="btn <?php
+                                                                        echo isset($_SESSION['color']) && $_SESSION['color'] == 'pending' ? 'bg-primary text-white' : 'bg-body border-dark-subtle';
+                                                                        ?> rounded-3 border-1 col-5 col-sm-5 col-md-4 fw-semibold btn-style f-little btn-list">Pendientes</a>
+        <a href="<?= base_url ?>lists/completed" id="completed" class="btn <?php
+                                                                            echo isset($_SESSION['color']) && $_SESSION['color'] == 'completed' ? 'bg-primary text-white' : 'bg-body border-dark-subtle';
+                                                                            ?> rounded-3 border-1 col-5 col-sm-5 col-md-4 fw-semibold btn-style f-little btn-list">Completas</a>
     </div>
 </div>
 <div class="d-flex flex-column col-12 mt-1 mt-xl-3 gap-2 p-2 ">

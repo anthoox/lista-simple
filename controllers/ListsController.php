@@ -58,10 +58,11 @@ class ListsController
     {
         $list = new Lists();
         $result = $list->lists($_SESSION['identity']->id);
-
+        $_SESSION['color'] = 'index';
 
         if ($result) {
             require_once  'C:/wamp64/www/lista-simple/views/users/index.php';
+
             return $result;
         } else {
             require_once  'C:/wamp64/www/lista-simple/views/users/index.php';
@@ -73,7 +74,7 @@ class ListsController
     {
         $list = new Lists();
         $result = $list->upcoming($_SESSION['identity']->id);
-
+        $_SESSION['color'] = 'upcoming';
 
         if ($result) {
             require_once  'C:/wamp64/www/lista-simple/views/users/index.php';
@@ -88,6 +89,7 @@ class ListsController
     {
         $list = new Lists();
         $result = $list->pending($_SESSION['identity']->id);
+        $_SESSION['color'] = 'pending';
 
 
         if ($result) {
@@ -103,10 +105,12 @@ class ListsController
     {
         $list = new Lists();
         $result = $list->completed($_SESSION['identity']->id);
+        $_SESSION['color'] = 'completed';
 
 
         if ($result) {
             require_once  'C:/wamp64/www/lista-simple/views/users/index.php';
+            $result['color'] = 'completed';
             return $result;
         } else {
             require_once  'C:/wamp64/www/lista-simple/views/users/index.php';
