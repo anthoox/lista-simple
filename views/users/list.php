@@ -9,26 +9,27 @@ if (isset($_GET['id'])) {
 } elseif ($_SESSION['the-list']) {
     $data = $list->getList($_SESSION['the-list']);
 }
-
+$items = new ItemsController();
+$totalPrice = $items->totalPrice($data['id']);
 
 ?>
 
 <!-- Contenido -->
-<div class="d-flex col-12 mt-xl-3 justify-content-between  align-items-center p-1  pe-3 ps-3 m-0 border-1 border-bottom border-top">
+<div class="d-flex col-12 mt-xl-3 justify-content-between  align-items-center p-1  pe-2 ps-2 m-0 border-1 border-bottom border-top">
+    <a href="<?= base_url ?>lists/index" class="d-flex align-items-center fw-semibold fs-4 text-star">
+        <img src="/lista-simple/assets/img/iconos/return.svg" alt="Icono de información de lista" class="iconslist-lg">
+    </a>
 
-    <span class="fw-semibold fs-4 w-25 text-start">
-        Total: --
-
-    </span>
-    <h2 class="fw-semibold fs-4 w-25 text-center">
+    <h2 class="fw-semibold fs-4 mb-0 text-center">
         <?= $data['name']; ?>
 
     </h2>
 
 
-    <a href="/lista-simple/views/users/list-info.php" class="fw-semibold fs-4 w-25 text-end">
-        <img src="/lista-simple/assets/img/iconos/info.svg" alt="Icono de información de lista" class="iconslist-lg">
-    </a>
+    <span class="fw-semibold fs-6  text-end">
+        Total: <?= $totalPrice['totalPrice'] ?>
+
+    </span>
 
 </div>
 

@@ -198,4 +198,30 @@ class Items
             return false;
         }
     }
+
+    public function getItemsInfo($idList)
+    {
+        $sql = "SELECT 
+                (SELECT COUNT(id) FROM items WHERE list_id = $idList) AS total_items,
+                (SELECT COUNT(id) FROM items WHERE list_id = $idList AND completed = 1) AS completed_items";
+        $result = $this->db->query($sql);
+        if ($result) {
+            return $result->fetch_assoc();
+        } else {
+            return false;
+        }
+    }
+
+    public function totalPrice($idList)
+    {
+        $sql = "SELECT SUM(price * numer) AS totalPrice FROM items WHERE list_id = $idList";
+        $result = $this->db->query($sql);
+
+
+        if ($result) {
+            return $result->fetch_assoc();
+        } else {
+            return false;
+        }
+    }
 }

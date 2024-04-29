@@ -156,4 +156,28 @@ class ItemsController
             echo '<h2>error al eleminar item</h2>';
         }
     }
+
+    public function numItems($idList)
+    {
+        $items = new Items();
+        $result = $items->getItemsInfo($idList);
+        if ($result) {
+
+            return $result;
+        } else {
+            return false;
+        }
+    }
+
+    public function totalPrice($idList)
+    {
+        $items = new Items();
+        $result = $items->totalPrice($idList);
+        if ($result) {
+
+            return $result;
+        } else {
+            return false;
+        }
+    }
 }

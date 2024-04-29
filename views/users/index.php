@@ -36,7 +36,8 @@
             if ($list[7] == 0) {
                 // Si no esta completo
                 if ($list[8] == 0) {
-
+                    $items = new ItemsController();
+                    $itemsData = $items->numItems($list[0]);
 
                     echo
                     '<div  class="w-100 rounded-4 border border-1 border-dark-subtle p-1 pe-3 ps-3 btn-style ">
@@ -52,6 +53,7 @@
                         </div>
                 
                         <a href="' . base_url . 'items/index&id=' . $list[0] . '" class="d-flex w-100 justify-content-start text-decoration-none">';
+
                     echo '<span class="fs-5 fw-semibold text-black">' . $list[2] . '</span>';
 
                     echo
@@ -66,14 +68,15 @@
 
                     echo '           
                             </div> 
-                            <div class="fw-semibold">
-                
-                                1/10
+                            <div class="fw-semibold">' .
+                        $itemsData["completed_items"] . '/' . $itemsData["total_items"] . '
                             </div>
                         </div>
                     </div>';
                 } else {
                     // Si esta completo
+                    $items = new ItemsController();
+                    $itemsData = $items->numItems($list[0]);
                     echo
                     '<div class="w-100 rounded-4 border border-1 border-dark-subtle p-1 pe-3 ps-3 bg-body-secondary">
                         <div class="d-flex w-100 justify-content-end gap-2">
@@ -99,8 +102,8 @@
                     }
 
                     echo   '</div>
-                            <div class="text-secondary fw-semibold text-decoration-line-through">
-                                10/10
+                            <div class="text-secondary fw-semibold text-decoration-line-through">' .
+                        $itemsData["completed_items"] . '/' . $itemsData["total_items"] . '
                             </div>
                         </div>
                     </div>';
