@@ -172,5 +172,33 @@ window.onload = function () {
     });
 
 
+    // Capturar el cambio en el checkbox
+    document.querySelectorAll('.form-check-input').forEach(function (checkbox) {
+        checkbox.addEventListener('change', function () {
+            var idItem = this.dataset.itemId;
+            var completed = this.checked ? 1 : 0; // Si está marcado, completado es 1, de lo contrario es 0
+            checkbox.classList.add
+            // Crear una solicitud AJAX para enviar el ID del elemento y el estado completado al servidor
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'http://localhost/lista-simple/items/completed', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onload = function () {
+                if (xhr.status >= 200 && xhr.status < 400) {
+                    // Actualización exitosa
+                    console.log('Estado actualizado en la base de datos.');
+                    location.reload('http://localhost/lista-simple/users/trash.php');
+
+                } else {
+                    // Manejar errores
+                    console.error('Error al actualizar el estado en la base de datos.');
+                }
+            };
+            xhr.onerror = function () {
+                // Manejar errores de red
+                console.error('Error de red al enviar la solicitud.');
+            };
+            xhr.send('&id=' + idItem + '&completed=' + completed);
+        });
+    });
 
 };

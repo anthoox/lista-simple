@@ -180,4 +180,31 @@ class ItemsController
             return false;
         }
     }
+
+    public function completed()
+    {
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // Obtener el ID del elemento y el estado completado del cuerpo de la solicitud
+            $idItem = $_POST['id'];
+            $completed = $_POST['completed'];
+
+            $item = new Items();
+            $result = $item->completed($idItem, $completed);
+
+            if ($result) {
+                // La actualización fue exitosa
+                echo json_encode(['message' => 'Estado actualizado correctamente']);
+            } else {
+                // Error al actualizar
+                http_response_code(500);
+                echo json_encode(['error' => 'Error al actualizar el estado']);
+            }
+        } else {
+            // Método de solicitud no válido
+            http_response_code(405);
+            echo json_encode(['error' => 'Método no permitido']);
+        }
+        require_once  'C:/wamp64/www/lista-simple/views/users/list.php';
+    }
 }

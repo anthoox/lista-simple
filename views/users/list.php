@@ -43,7 +43,7 @@ $totalPrice = $items->totalPrice($data['id']);
                 echo '
                 <div class="w-100 rounded-4 border border-1 border-dark-subtle p-1 pe-3 ps-3 d-flex">
                     <div class="form-check h-100 d-flex align-items-center pe-1 border-1 border-end">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" data-item-id="' . $item[0] . '">
                     </div>
                     <div class="w-100 ps-2 d-flex justify-content-between flex-column">
                         <div class="d-flex w-100 justify-content-end  gap-2 h-25">
@@ -101,7 +101,8 @@ $totalPrice = $items->totalPrice($data['id']);
                 echo '
                 <div class="w-100 rounded-4 border border-1 border-dark-subtle p-1 pe-3 ps-3 d-flex bg-body-secondary">
                     <div class="form-check h-100 d-flex align-items-center pe-1 border-1 border-end">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" data-item-id="' . $item[0] . ' " checked >
+
                     </div>
                     <div class="w-100 ps-2 d-flex justify-content-between flex-column">
                         <div class="d-flex w-100 justify-content-end gap-2 h-25">

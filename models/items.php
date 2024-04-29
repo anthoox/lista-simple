@@ -224,4 +224,16 @@ class Items
             return false;
         }
     }
+
+    public function completed($idList, $completed)
+    {
+        $sql = "UPDATE items SET completed = $completed WHERE id = $idList";
+        $result = $this->db->query($sql);
+
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
