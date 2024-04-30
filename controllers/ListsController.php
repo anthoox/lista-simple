@@ -104,7 +104,7 @@ class ListsController
     public function completed()
     {
         $list = new Lists();
-        $result = $list->completed($_SESSION['identity']->id);
+        $result = $list->lists($_SESSION['identity']->id);
         $_SESSION['color'] = 'completed';
 
 
