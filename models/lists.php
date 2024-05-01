@@ -218,7 +218,7 @@ class Lists
 
     public function upcoming($userId)
     {
-        $sql = "SELECT * FROM lists WHERE user_id = " . $userId . " AND paper_bin = 0 AND (notification IS NOT NULL AND notification != '0000-00-00 00:00:00') AND notification > NOW()";
+        $sql = "SELECT * FROM lists WHERE user_id = " . $userId . " AND completed = 0 AND paper_bin = 0 AND (notification IS NOT NULL AND notification != '0000-00-00 00:00:00') AND notification > NOW()";
         $result = $this->db->query($sql);
         if ($result) {
             $dataLists = $result->fetch_All();
@@ -382,6 +382,17 @@ class Lists
     public function deleteAll($id)
     {
         $sql = "DELETE FROM lists WHERE paper_bin = 1 AND user_id='{$id}'";
+        $restul = $this->db->query($sql);
+        if ($restul) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function completeList($idList, $completed)
+    {
+        $sql = "UPDATE lists SET completed = '{$completed}' WHERE id ='{$idList}'";
         $restul = $this->db->query($sql);
         if ($restul) {
             return true;

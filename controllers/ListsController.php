@@ -104,7 +104,7 @@ class ListsController
     public function completed()
     {
         $list = new Lists();
-        $result = $list->lists($_SESSION['identity']->id);
+        $result = $list->completed($_SESSION['identity']->id);
         $_SESSION['color'] = 'completed';
 
 
@@ -287,6 +287,31 @@ class ListsController
         } else {
             require_once  'C:/wamp64/www/lista-simple/views/users/trash.php';
             echo '<h2>error al eleminar lista</h2>';
+        }
+    }
+
+    public function completeList()
+    {
+        // Obtener los datos enviados mediante FormData
+        // $data = json_decode(file_get_contents("php://input"), true);
+
+        if (isset($_POST['list_id']) && isset($_POST['completed'])) {
+            $listId = $_POST['list_id'];
+            $completed = $_POST['completed'];
+            $list = new Lists();
+            $result = $list->completeList($listId, $completed);
+            if ($result) {
+                // La actualización fue exitosa
+                echo json_encode(['message' => 'Estado actualizado correctamente']);
+            } else {
+                // Error al actualizar
+                http_response_code(500);
+                echo json_encode(['error' => 'Error al actualizar el estado']);
+            }
+        } else {
+            // Datos no recibidos correctamente
+            http_response_code(400);
+            echo json_encode(['error' => 'Datos incompletos']);
         }
     }
 }

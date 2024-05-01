@@ -201,4 +201,68 @@ window.onload = function () {
         });
     });
 
+
+
+
+    // Escuchar el evento de cambio en los checkboxes
+    var checkboxes = document.querySelectorAll('.form-check-input');
+    checkboxes.forEach(function (checkbox) {
+        checkbox.addEventListener('change', function () {
+            // Contar el número de checkboxes marcados
+            var checkedCount = 0;
+            checkboxes.forEach(function (cb) {
+                if (cb.checked) {
+                    checkedCount++;
+                }
+            });
+
+            // Obtener el ID de la lista
+            var listId = this.getAttribute('data-list-id');
+
+            // Si todos los checkboxes están marcados, llamar a la función para marcar la lista como completa
+            if (checkedCount === checkboxes.length) {
+                marcarListaCompleta(listId, 1);
+            } else {
+                // Si no todos los checkboxes están marcados, llamar a la función para marcar la lista como incompleta
+                marcarListaCompleta(listId, 0);
+            }
+        });
+    });
+
+
+    function marcarListaCompleta(listId, completed) {
+        // Crear un objeto FormData para enviar datos como formulario
+        var formData = new FormData();
+        formData.append('list_id', listId);
+
+        // Determinar el valor de completed según el estado de los checkboxes
+        checkboxes.forEach(function (checkbox) {
+            if (!checkbox.checked) {
+                completed = 0; // Si al menos un checkbox no está marcado, completado es 0
+            }
+        });
+
+        formData.append('completed', completed);
+
+        // Realizar una solicitud AJAX POST para llamar al método PHP
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'http://localhost/lista-simple/lists/completeList', true);
+        xhr.onload = function () {
+            if (xhr.status >= 200 && xhr.status < 400) {
+                // Acciones adicionales si es necesario
+                console.log('Estado actualizado en la base de datos.');
+            } else {
+                // Manejar errores si es necesario
+                alert('Error al actualizar la lista en la base de datos ' + completed);
+            }
+        };
+        xhr.onerror = function () {
+            alert('Error al realizar la solicitud');
+        };
+        xhr.send('&list_id=' + listId + '&completed=' + completed);
+    }
+
+
+
+
 };
