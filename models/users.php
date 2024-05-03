@@ -145,86 +145,90 @@ class User
 
     public function save()
     {
-        $sql = "INSERT INTO users VALUES(NULL, '{$this->getUsername()}', '{$this->getEmail()}','{$this->getPassword()}',CURDATE(),2,NULL)";
-        $save = $this->db->query($sql);
-        $result = false;
-        if ($save) {
-            $result = true;
-            $this->db->close();
-            return $result;
+        $username = $this->getUsername();
+        $email = $this->getEmail();
+        $password = $this->getPassword();
+
+        $sql = "INSERT INTO users VALUES(NULL, ?, ?, ?, CURDATE(), 2, NULL)";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bind_param("sss", $username, $email, $password);
+        $result = $stmt->execute();
+
+        if ($result) {
+            return true;
+        } else {
+            return false;
         }
-        return $result;
     }
+
 
     public function login()
     {
         $result = false;
         $email = $this->email;
-
         $password = $this->password;
-        // Comprobar si existe el usuario
-        $sql = "SELECT * FROM users WHERE email ='$email'";
-        $login = $this->db->query($sql);
-        if ($login && $login->num_rows == 1) {
-            $user = $login->fetch_object();
-            $verify = password_verify($password, $user->password);
 
-            if ($verify) {
-                $verify = $user;
-                $this->db->close();
-                return $verify;
+        $sql = "SELECT * FROM users WHERE email = ?";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $login = $stmt->get_result();
+
+        if ($login->num_rows == 1) {
+            $user = $login->fetch_object();
+            if (password_verify($password, $user->password)) {
+                $result = $user;
             }
         }
-        $this->db->close();
+
         return $result;
     }
+
     public function edit($newDataUser)
     {
         $id = $_SESSION['identity']->id;
-
-
-
-        $sql = "UPDATE users SET username='{$this->getUsername()}', email='{$this->getEmail()}'";
+        $sql = "UPDATE users SET username = ?, email = ?";
+        $params = array($this->getUsername(), $this->getEmail());
 
         if (isset($newDataUser['password'])) {
-            $sql .= ", password='{$this->getPassword()}'";
+            $sql .= ", password = ?";
+            $params[] = $this->getPassword();
             $_SESSION['identity']->password = $this->password;
         }
 
         if ($this->getImage() != null) {
-            $sql .= ", image='{$this->getImage()}'";
+            $sql .= ", image = ?";
+            $params[] = $this->getImage();
             $_SESSION['identity']->image = $this->image;
         }
 
-        $sql .= " WHERE id= " . $id . ";";
+        $sql .= " WHERE id = ?";
+        $params[] = $id;
 
-        $save = $this->db->query($sql);
+        $stmt = $this->db->prepare($sql);
+        $types = str_repeat('s', count($params));
+        $stmt->bind_param($types, ...$params);
+        $result = $stmt->execute();
 
-
-        if ($save) {
+        if ($result) {
             $_SESSION['identity']->username = $this->username;
             $_SESSION['identity']->email = $this->email;
             return true;
+        } else {
+            return false;
         }
-
-        return false;
     }
 
     public function delete()
     {
         $id = $_SESSION['identity']->id;
-        $sql = "DELETE FROM users WHERE id = " . $id;
+        $sql = "DELETE FROM users WHERE id = ?";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bind_param("i", $id);
+        $result = $stmt->execute();
 
-
-        $del = $this->db->query($sql);
-
-        if ($del) {
-            if ($this->db->affected_rows > 0) {
-
-                return true;
-            } else {
-                return false;
-            }
+        if ($result && $this->db->affected_rows > 0) {
+            return true;
         } else {
             return false;
         }

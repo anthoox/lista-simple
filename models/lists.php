@@ -183,34 +183,33 @@ class Lists
 
     public function save($userId)
     {
+        $name = $this->getName();
+        $modificationDate = $this->getModificationDate();
+        $notification = $this->getNotification();
+        $description = $this->getDescription();
 
+        $sql = "INSERT INTO lists VALUES(NULL, ?, ?, NOW(), ?, ?, ?, 0, 0)";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bind_param("sssss", $userId, $name, $modificationDate, $notification, $description);
+        $result = $stmt->execute();
 
-        $sql = "INSERT INTO lists VALUES(NULL, $userId, '{$this->getName()}', NOW(), '{$this->getModificationDate()}', '{$this->getNotification()}' ,'{$this->getDescription()}' , 0, 0)";
-
-        $save = $this->db->query($sql);
-        $result = false;
-        if ($save) {
-            $result = true;
-            $this->db->close();
-            return $result;
+        if ($result) {
+            return true;
+        } else {
+            return false;
         }
-        return $result;
     }
 
     public function lists($userId)
     {
-        $sql = "SELECT * FROM lists WHERE user_id = " . $userId . " AND paper_bin = 0 ORDER BY completed, creation_date DESC";
+        $sql = "SELECT * FROM lists WHERE user_id = ? AND paper_bin = 0 ORDER BY completed, creation_date DESC";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bind_param("i", $userId);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
-        $result = $this->db->query($sql);
-        if ($result) {
-            $dataLists = $result->fetch_All();
-
-            if (!empty($dataLists)) {
-
-                return $dataLists;
-            } else {
-                return false;
-            }
+        if ($result->num_rows > 0) {
+            return $result->fetch_all();
         } else {
             return false;
         }
@@ -218,17 +217,14 @@ class Lists
 
     public function upcoming($userId)
     {
-        $sql = "SELECT * FROM lists WHERE user_id = " . $userId . " AND completed = 0 AND paper_bin = 0 AND (notification IS NOT NULL AND notification != '0000-00-00 00:00:00') AND notification > NOW()";
-        $result = $this->db->query($sql);
-        if ($result) {
-            $dataLists = $result->fetch_All();
+        $sql = "SELECT * FROM lists WHERE user_id = ? AND completed = 0 AND paper_bin = 0 AND (notification IS NOT NULL AND notification != '0000-00-00 00:00:00') AND notification > NOW()";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bind_param("i", $userId);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
-            if (!empty($dataLists)) {
-
-                return $dataLists;
-            } else {
-                return false;
-            }
+        if ($result->num_rows > 0) {
+            return $result->fetch_all();
         } else {
             return false;
         }
@@ -236,17 +232,14 @@ class Lists
 
     public function pending($userId)
     {
-        $sql = "SELECT * FROM lists WHERE user_id = " . $userId . " AND completed = 0";
-        $result = $this->db->query($sql);
-        if ($result) {
-            $dataLists = $result->fetch_All();
+        $sql = "SELECT * FROM lists WHERE user_id = ? AND completed = 0";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bind_param("i", $userId);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
-            if (!empty($dataLists)) {
-
-                return $dataLists;
-            } else {
-                return false;
-            }
+        if ($result->num_rows > 0) {
+            return $result->fetch_all();
         } else {
             return false;
         }
@@ -254,18 +247,14 @@ class Lists
 
     public function completed($userId)
     {
-        $sql = "SELECT * FROM lists WHERE user_id = " . $userId . " AND completed = 1 AND paper_bin = 0";
-        $result = $this->db->query($sql);
+        $sql = "SELECT * FROM lists WHERE user_id = ? AND completed = 1 AND paper_bin = 0";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bind_param("i", $userId);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
-        if ($result) {
-            $dataLists = $result->fetch_all();
-
-            if (!empty($dataLists)) {
-
-                return $dataLists;
-            } else {
-                return false;
-            }
+        if ($result->num_rows > 0) {
+            return $result->fetch_all();
         } else {
             return false;
         }
@@ -273,16 +262,14 @@ class Lists
 
     public function list($id)
     {
-        $sql = "SELECT * FROM lists WHERE id = " . $id;
-        $result = $this->db->query($sql);
-        if ($result) {
-            $dataList = $result->fetch_array();
+        $sql = "SELECT * FROM lists WHERE id = ?";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
-            if (!empty($dataList)) {
-                return $dataList;
-            } else {
-                return false;
-            }
+        if ($result->num_rows > 0) {
+            return $result->fetch_array();
         } else {
             return false;
         }
@@ -290,16 +277,14 @@ class Lists
 
     public function getList($id)
     {
-        $sql = "SELECT * FROM lists WHERE id = " . $id;
-        $result = $this->db->query($sql);
-        if ($result) {
-            $dataList = $result->fetch_assoc();
+        $sql = "SELECT * FROM lists WHERE id = ?";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
-            if (!empty($dataList)) {
-                return $dataList;
-            } else {
-                return false;
-            }
+        if ($result->num_rows > 0) {
+            return $result->fetch_assoc();
         } else {
             return false;
         }
@@ -307,13 +292,12 @@ class Lists
 
     public function edit($datos)
     {
+        $sql = "UPDATE lists SET name = ?, modification_date = NOW(), notification = ?, description = ? WHERE id = ?";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bind_param("sssi", $datos['name'], $datos['notification'], $datos['description'], $datos['id']);
+        $result = $stmt->execute();
 
-        $sql = "UPDATE lists SET name = '{$datos['name']}', modification_date = NOW(), notification = '{$datos['notification']}',  description = '{$datos['description']}' WHERE id = '{$datos['id']}'";
-
-        $save = $this->db->query($sql);
-
-
-        if ($save) {
+        if ($result) {
             return true;
         } else {
             return false;
@@ -322,11 +306,12 @@ class Lists
 
     public function trash($id)
     {
-        $sql = "UPDATE lists SET paper_bin = 1 WHERE id = '{$id}'";
-        $save = $this->db->query($sql);
+        $sql = "UPDATE lists SET paper_bin = 1 WHERE id = ?";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bind_param("i", $id);
+        $result = $stmt->execute();
 
-
-        if ($save) {
+        if ($result) {
             return true;
         } else {
             return false;
@@ -335,11 +320,13 @@ class Lists
 
     public function paper_bin()
     {
-        $sql = "SELECT * FROM lists WHERE user_id = '{$_SESSION['identity']->id}' AND paper_bin = 1";
-        $result = $this->db->query($sql);
+        $sql = "SELECT * FROM lists WHERE user_id = ? AND paper_bin = 1";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bind_param("i", $_SESSION['identity']->id);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
-
-        if ($result) {
+        if ($result->num_rows > 0) {
             return $result;
         } else {
             return false;
@@ -348,20 +335,26 @@ class Lists
 
     public function rest($id)
     {
-        $sql = "UPDATE lists SET paper_bin = 0 WHERE id = '{$id}'";
-        $save = $this->db->query($sql);
+        $sql = "UPDATE lists SET paper_bin = 0 WHERE id = ?";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bind_param("i", $id);
+        $result = $stmt->execute();
 
-        if ($save) {
+        if ($result) {
             return true;
         } else {
             return false;
         }
     }
+
     public function del($id)
     {
-        $sql = "DELETE FROM lists WHERE id = '{$id}'";
-        $restul = $this->db->query($sql);
-        if ($restul) {
+        $sql = "DELETE FROM lists WHERE id = ?";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bind_param("i", $id);
+        $result = $stmt->execute();
+
+        if ($result) {
             return true;
         } else {
             return false;
@@ -370,9 +363,12 @@ class Lists
 
     public function restoreAll($id)
     {
-        $sql = "UPDATE lists SET paper_bin = 0 WHERE paper_bin = 1 AND user_id='{$id}'";
-        $restul = $this->db->query($sql);
-        if ($restul) {
+        $sql = "UPDATE lists SET paper_bin = 0 WHERE paper_bin = 1 AND user_id=?";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bind_param("i", $id);
+        $result = $stmt->execute();
+
+        if ($result) {
             return true;
         } else {
             return false;
@@ -381,9 +377,12 @@ class Lists
 
     public function deleteAll($id)
     {
-        $sql = "DELETE FROM lists WHERE paper_bin = 1 AND user_id='{$id}'";
-        $restul = $this->db->query($sql);
-        if ($restul) {
+        $sql = "DELETE FROM lists WHERE paper_bin = 1 AND user_id=?";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bind_param("i", $id);
+        $result = $stmt->execute();
+
+        if ($result) {
             return true;
         } else {
             return false;
@@ -392,9 +391,12 @@ class Lists
 
     public function completeList($idList, $completed)
     {
-        $sql = "UPDATE lists SET completed = '{$completed}' WHERE id ='{$idList}'";
-        $restul = $this->db->query($sql);
-        if ($restul) {
+        $sql = "UPDATE lists SET completed = ? WHERE id = ?";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bind_param("ii", $completed, $idList);
+        $result = $stmt->execute();
+
+        if ($result) {
             return true;
         } else {
             return false;

@@ -120,18 +120,14 @@ class Items
 
     public function items($listId)
     {
-        $sql = "SELECT * FROM items WHERE list_id = " . $listId . " ORDER BY completed, creation_date desc";
+        $sql = "SELECT * FROM items WHERE list_id = ? ORDER BY completed";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bind_param("i", $listId);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
-        $result = $this->db->query($sql);
-        if ($result) {
-            $dataLists = $result->fetch_All();
-
-            if (!empty($dataLists)) {
-
-                return $dataLists;
-            } else {
-                return false;
-            }
+        if ($result->num_rows > 0) {
+            return $result->fetch_all();
         } else {
             return false;
         }
@@ -139,33 +135,37 @@ class Items
 
     public function save($listId, $userId)
     {
-        $sql = "INSERT INTO items VALUES(NULL, $userId, $listId, '{$this->getName()}', '{$this->getPrice()}', '{$this->getUnits()}' ,'
-        {$this->getNotification()}' ,'{$this->getNotes()}', 0, NOW())";
+        $idUser = (int)$userId;
+        $idList = (int)$listId;
+        $name = $this->getName();
+        $price = $this->getPrice();
+        $units = $this->getUnits();
+        $notification = $this->getNotification();
+        $notes = $this->getNotes();
 
-        $save = $this->db->query($sql);
-        $result = false;
-        if ($save) {
-            $result = true;
-            $this->db->close();
-            return $result;
+        $sql = "INSERT INTO items VALUES(NULL, ?, ?, ?, ?, ?, ?, ?, 0, NOW())";
+
+        $stmt = $this->db->prepare($sql);
+        $stmt->bind_param("iisssss", $idUser, $idList, $name, $price, $units, $notification, $notes);
+        $result = $stmt->execute();
+
+        if ($result) {
+            return true;
+        } else {
+            return false;
         }
-        $this->db->close();
-        return $result;
     }
 
     public function getItem($itemId)
     {
-        $sql = "SELECT * FROM items WHERE id = '{$itemId}' ";
-        $result = $this->db->query($sql);
-        if ($result) {
-            $dataLists = $result->fetch_assoc();
+        $sql = "SELECT * FROM items WHERE id = ?";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bind_param("i", $itemId);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
-            if (!empty($dataLists)) {
-
-                return $dataLists;
-            } else {
-                return false;
-            }
+        if ($result->num_rows > 0) {
+            return $result->fetch_assoc();
         } else {
             return false;
         }
@@ -173,15 +173,12 @@ class Items
 
     public function edit($dataItem)
     {
+        $sql = "UPDATE items SET name = ?, price = ?, numer = ?, notification_date = ?, notes = ? WHERE id = ?";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bind_param("sssssi", $dataItem['name'], $dataItem['price'], $dataItem['units'], $dataItem['notification'], $dataItem['notes'], $dataItem['idItem']);
+        $result = $stmt->execute();
 
-
-        $sql = "UPDATE items SET name = '{$dataItem['name']}', price = '{$dataItem['price']}', numer = '{$dataItem['units']}', notification_date = '{$dataItem['notification']}', notes = '{$dataItem['notes']}' WHERE id = '{$dataItem['idItem']}'";
-
-
-        $save = $this->db->query($sql);
-
-
-        if ($save) {
+        if ($result) {
             return true;
         } else {
             return false;
@@ -190,9 +187,12 @@ class Items
 
     public function del($idItem)
     {
-        $sql = "DELETE FROM items WHERE id = '{$idItem}'";
-        $restul = $this->db->query($sql);
-        if ($restul) {
+        $sql = "DELETE FROM items WHERE id = ?";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bind_param("i", $idItem);
+        $result = $stmt->execute();
+
+        if ($result) {
             return true;
         } else {
             return false;
@@ -202,10 +202,14 @@ class Items
     public function getItemsInfo($idList)
     {
         $sql = "SELECT 
-                (SELECT COUNT(id) FROM items WHERE list_id = $idList) AS total_items,
-                (SELECT COUNT(id) FROM items WHERE list_id = $idList AND completed = 1) AS completed_items";
-        $result = $this->db->query($sql);
-        if ($result) {
+                (SELECT COUNT(id) FROM items WHERE list_id = ?) AS total_items,
+                (SELECT COUNT(id) FROM items WHERE list_id = ? AND completed = 1) AS completed_items";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bind_param("ii", $idList, $idList);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows > 0) {
             return $result->fetch_assoc();
         } else {
             return false;
@@ -214,11 +218,13 @@ class Items
 
     public function totalPrice($idList)
     {
-        $sql = "SELECT SUM(price * numer) AS totalPrice FROM items WHERE list_id = $idList AND completed != 0";
-        $result = $this->db->query($sql);
+        $sql = "SELECT SUM(price * numer) AS totalPrice FROM items WHERE list_id = ? AND completed != 0";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bind_param("i", $idList);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
-
-        if ($result) {
+        if ($result->num_rows > 0) {
             return $result->fetch_assoc();
         } else {
             return false;
@@ -227,8 +233,10 @@ class Items
 
     public function completed($idList, $completed)
     {
-        $sql = "UPDATE items SET completed = $completed WHERE id = $idList";
-        $result = $this->db->query($sql);
+        $sql = "UPDATE items SET completed = ? WHERE id = ?";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bind_param("ii", $completed, $idList);
+        $result = $stmt->execute();
 
         if ($result) {
             return true;
