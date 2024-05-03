@@ -6,205 +6,255 @@ class ItemsController
 {
     public function index($id = '')
     {
-        if (isset($_GET['id']) && $id == '') {
-            $itemId = $_GET['id'];
+        if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
+            require_once 'C:/wamp64/www/lista-simple/views/users/admin.php';
+        }
+        if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
+            if (isset($_GET['id']) && $id == '') {
+                $itemId = $_GET['id'];
 
-            $items = new Items();
-            $result = $items->items($itemId);
-            require_once  'C:/wamp64/www/lista-simple/views/users/list.php';
+                $items = new Items();
+                $result = $items->items($itemId);
+                require_once  'C:/wamp64/www/lista-simple/views/users/list.php';
 
-            return $result;
-        } else if ($id != '') {
-            $itemId = $id;
+                return $result;
+            } else if ($id != '') {
+                $itemId = $id;
 
-            $items = new Items();
-            $result = $items->items($itemId);
-            require_once  'C:/wamp64/www/lista-simple/views/users/list.php';
+                $items = new Items();
+                $result = $items->items($itemId);
+                require_once  'C:/wamp64/www/lista-simple/views/users/list.php';
 
-            return $result;
+                return $result;
+            }
+        } else {
+            require_once 'C:/wamp64/www/lista-simple/home.php';
         }
     }
 
     public function save()
     {
+        if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
+            require_once 'C:/wamp64/www/lista-simple/views/users/admin.php';
+        }
+        if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
+            $dataItem = ValidatorForm::validatorItem($_POST);
 
 
-        $dataItem = ValidatorForm::validatorItem($_POST);
+            if (!empty($dataItem)) {
+                $name = isset($dataItem['name']) ? $dataItem['name'] : false;
+                $notification = isset($dataItem['notification']) ? $dataItem['notification'] : false;
+                $notes = isset($dataItem['notes']) ? $dataItem['notes'] : false;
+                $price = isset($dataItem['price']) ? $dataItem['price'] : false;
+                $units = isset($dataItem['units']) ? $dataItem['units'] : false;
+                $idUser = isset($dataItem['idUser']) ? $dataItem['idUser'] : false;
+                $idList = isset($dataItem['idList']) ? $dataItem['idList'] : false;
+
+                $item = new Items();
 
 
-        if (!empty($dataItem)) {
-            $name = isset($dataItem['name']) ? $dataItem['name'] : false;
-            $notification = isset($dataItem['notification']) ? $dataItem['notification'] : false;
-            $notes = isset($dataItem['notes']) ? $dataItem['notes'] : false;
-            $price = isset($dataItem['price']) ? $dataItem['price'] : false;
-            $units = isset($dataItem['units']) ? $dataItem['units'] : false;
-            $idUser = isset($dataItem['idUser']) ? $dataItem['idUser'] : false;
-            $idList = isset($dataItem['idList']) ? $dataItem['idList'] : false;
-
-            $item = new Items();
+                if ($name) {
+                    $item->setName($name);
+                } else {
+                    $item->setName('ítem');
+                }
 
 
-            if ($name) {
-                $item->setName($name);
-            } else {
-                $item->setName('ítem');
-            }
+                if ($notification) {
+                    $item->setNotification($notification);
+                } else {
+                    $item->setNotification(null);
+                }
 
 
-            if ($notification) {
-                $item->setNotification($notification);
-            } else {
-                $item->setNotification(null);
-            }
+                if ($notes) {
+                    $item->setNotes($notes);
+                } else {
+                    $item->setNotes('');
+                }
+
+                if ($price) {
+                    $item->setPrice($price);
+                } else {
+                    $item->setPrice(0);
+                }
+
+                if ($units) {
+                    $item->setUnits($units);
+                } else {
+                    $item->setUnits(1);
+                }
+
+                if ($idList) {
+                    $item->setListId($idList);
+                }
+
+                if ($idUser) {
+                    $item->setUserId($idUser);
+                }
 
 
-            if ($notes) {
-                $item->setNotes($notes);
-            } else {
-                $item->setNotes('');
-            }
-
-            if ($price) {
-                $item->setPrice($price);
-            } else {
-                $item->setPrice(0);
-            }
-
-            if ($units) {
-                $item->setUnits($units);
-            } else {
-                $item->setUnits(1);
-            }
-
-            if ($idList) {
-                $item->setListId($idList);
-            }
-
-            if ($idUser) {
-                $item->setUserId($idUser);
-            }
-
-
-            $save = $item->save($idList, $idUser);
-            if ($save) {
-                $_SESSION['register_item'] = "complete";
+                $save = $item->save($idList, $idUser);
+                if ($save) {
+                    $_SESSION['register_item'] = "complete";
+                } else {
+                    $_SESSION['register_item'] = "failed";
+                }
             } else {
                 $_SESSION['register_item'] = "failed";
+                // faltan control de errores
             }
-        } else {
-            $_SESSION['register_item'] = "failed";
-            // faltan control de errores
-        }
 
-        header("Location:" . base_url . "items/index&id=" . $idList);
+            header("Location:" . base_url . "items/index&id=" . $idList);
+        } else {
+            require_once 'C:/wamp64/www/lista-simple/home.php';
+        }
     }
 
     public function getItem()
     {
-        $listId = $_GET['id'];
+        if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
+            require_once 'C:/wamp64/www/lista-simple/views/users/admin.php';
+        }
+        if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
+            $listId = $_GET['id'];
 
-        $item = new Items();
-        $result = $item->getItem($listId);
+            $item = new Items();
+            $result = $item->getItem($listId);
 
-        if ($result) {
-            // Devolver el resultado como JSON
-            // header('Content-Type: application/json');
-            echo json_encode($result);
-            // return $result;
+            if ($result) {
+                // Devolver el resultado como JSON
+                echo json_encode($result);
+            } else {
+                // Si no se encuentra la lista, devolver un mensaje de error
+                http_response_code(404);
+                echo json_encode(array('message' => 'Lista no encontrada'));
+            }
         } else {
-            // Si no se encuentra la lista, devolver un mensaje de error
-            http_response_code(404);
-            echo json_encode(array('message' => 'Lista no encontrada'));
+            require_once 'C:/wamp64/www/lista-simple/home.php';
         }
     }
 
     public function edit()
     {
-
-        $dataItem = ValidatorForm::validatorItem($_POST);
-
-
-        if (!isset($dataItem['notification'])) {
-            $dataItem['notification'] = "0000-00-00 00:00:00";
+        if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
+            require_once 'C:/wamp64/www/lista-simple/views/users/admin.php';
         }
-        if (!isset($dataItem['notes'])) {
-            $dataItem['notes'] = "";
-        }
+        if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
+            $dataItem = ValidatorForm::validatorItem($_POST);
 
 
-        $item = new Items();
+            if (!isset($dataItem['notification'])) {
+                $dataItem['notification'] = "0000-00-00 00:00:00";
+            }
+            if (!isset($dataItem['notes'])) {
+                $dataItem['notes'] = "";
+            }
 
-        $result = $item->edit($dataItem);
+
+            $item = new Items();
+
+            $result = $item->edit($dataItem);
 
 
-        if ($result) {
-            $list = new ItemsController();
-            $list->index($dataItem['idList']);
+            if ($result) {
+                $list = new ItemsController();
+                $list->index($dataItem['idList']);
+            }
+        } else {
+            require_once 'C:/wamp64/www/lista-simple/home.php';
         }
     }
 
     public function del()
     {
-        $id = $_GET['id'];
+        if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
+            require_once 'C:/wamp64/www/lista-simple/views/users/admin.php';
+        }
+        if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
+            $id = $_GET['id'];
 
-        $item = new Items();
-        $result = $item->del($id);
-        if ($result) {
-            require_once  'C:/wamp64/www/lista-simple/views/users/list.php';
+            $item = new Items();
+            $result = $item->del($id);
+            if ($result) {
+                require_once  'C:/wamp64/www/lista-simple/views/users/list.php';
+            } else {
+                require_once  'C:/wamp64/www/lista-simple/views/users/list.php';
+                echo '<h2>error al eleminar item</h2>';
+            }
         } else {
-            require_once  'C:/wamp64/www/lista-simple/views/users/list.php';
-            echo '<h2>error al eleminar item</h2>';
+            require_once 'C:/wamp64/www/lista-simple/home.php';
         }
     }
 
     public function numItems($idList)
     {
-        $items = new Items();
-        $result = $items->getItemsInfo($idList);
-        if ($result) {
+        if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
+            require_once 'C:/wamp64/www/lista-simple/views/users/admin.php';
+        }
+        if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
+            $items = new Items();
+            $result = $items->getItemsInfo($idList);
+            if ($result) {
 
-            return $result;
+                return $result;
+            } else {
+                return false;
+            }
         } else {
-            return false;
+            require_once 'C:/wamp64/www/lista-simple/home.php';
         }
     }
 
     public function totalPrice($idList)
     {
-        $items = new Items();
-        $result = $items->totalPrice($idList);
-        if ($result) {
+        if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
+            require_once 'C:/wamp64/www/lista-simple/views/users/admin.php';
+        }
+        if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
+            $items = new Items();
+            $result = $items->totalPrice($idList);
+            if ($result) {
 
-            return $result;
+                return $result;
+            } else {
+                return false;
+            }
         } else {
-            return false;
+            require_once 'C:/wamp64/www/lista-simple/home.php';
         }
     }
 
     public function completed()
     {
-
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // Obtener el ID del elemento y el estado completado del cuerpo de la solicitud
-            $idItem = $_POST['id'];
-            $completed = $_POST['completed'];
-
-            $item = new Items();
-            $result = $item->completed($idItem, $completed);
-
-            if ($result) {
-                // La actualización fue exitosa
-                echo json_encode(['message' => 'Estado actualizado correctamente']);
-            } else {
-                // Error al actualizar
-                http_response_code(500);
-                echo json_encode(['error' => 'Error al actualizar el estado']);
-            }
-        } else {
-            // Método de solicitud no válido
-            http_response_code(405);
-            echo json_encode(['error' => 'Método no permitido']);
+        if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
+            require_once 'C:/wamp64/www/lista-simple/views/users/admin.php';
         }
-        require_once  'C:/wamp64/www/lista-simple/views/users/list.php';
+        if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                // Obtener el ID del elemento y el estado completado del cuerpo de la solicitud
+                $idItem = $_POST['id'];
+                $completed = $_POST['completed'];
+
+                $item = new Items();
+                $result = $item->completed($idItem, $completed);
+
+                if ($result) {
+                    // La actualización fue exitosa
+                    echo json_encode(['message' => 'Estado actualizado correctamente']);
+                } else {
+                    // Error al actualizar
+                    http_response_code(500);
+                    echo json_encode(['error' => 'Error al actualizar el estado']);
+                }
+            } else {
+                // Método de solicitud no válido
+                http_response_code(405);
+                echo json_encode(['error' => 'Método no permitido']);
+            }
+            require_once  'C:/wamp64/www/lista-simple/views/users/list.php';
+        } else {
+            require_once 'C:/wamp64/www/lista-simple/home.php';
+        }
     }
 }

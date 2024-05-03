@@ -214,7 +214,7 @@ class Items
 
     public function totalPrice($idList)
     {
-        $sql = "SELECT SUM(price * numer) AS totalPrice FROM items WHERE list_id = $idList";
+        $sql = "SELECT SUM(price * numer) AS totalPrice FROM items WHERE list_id = $idList AND completed != 0";
         $result = $this->db->query($sql);
 
 

@@ -33,7 +33,7 @@ $userData = $_SESSION['identity'];
 
 
     <button type="submit" class="btn btn-success rounded-1 mt-5 mb-2 text-white align-self-center col-12 col-sm-8  col-md-7" name="guardar">Guardar</button>
-    <button type="submit" class="btn btn-primary rounded-1 mt-2 mb-2 text-white align-self-center col-12 col-sm-8  col-md-7" name="descarga">Descargar</button>
+    <!-- <button type="submit" class="btn btn-primary rounded-1 mt-2 mb-2 text-white align-self-center col-12 col-sm-8  col-md-7" name="descarga">Descargar</button> -->
 
     <button type="submit" class="btn btn-danger rounded-1 mt-2 mb-2 text-white align-self-center col-12 col-sm-8  col-md-7" name="baja">Darse de baja</button>
 
