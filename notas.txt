@@ -1,3 +1,6 @@
 en el index si la sesion no existe mostrar el inicio con los botones. Sino, llevar a la sesión.
 Que las vistas del login funcione con un controlador y se cargue el contenido en el index
 que el boton de acceso tenga su controlador
+
+
+Que cuando se obtenga el mismo numero de items como de completados. Guardar lista como completado

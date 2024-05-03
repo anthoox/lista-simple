@@ -36,172 +36,86 @@
         foreach ($result as $list) {
             // Si no esta en la papelera/
             if ($list[7] == 0) {
-                // Si no esta completo
-                if ($list[8] == 0) {
 
-                    $items = new ItemsController();
-                    $itemsData = $items->numItems($list[0]);
+                $items = new ItemsController();
+                $itemsData = $items->numItems($list[0]);
 
-                    if ($itemsData["completed_items"] !== $itemsData["total_items"] || $itemsData["total_items"] == 0) {
 
-                        echo
-                        '<div  class="w-100 rounded-4 border border-1 border-dark-subtle p-1 pe-3 ps-3 btn-style ">
-                                <div class="d-flex w-100 justify-content-end gap-2">            
-                                    <div>                                
-                                        <img src="/lista-simple/assets/img/iconos/editar.svg" alt="Icono de lapiz para editar datos de lista" class="iconslist btn-edit"  data-bs-toggle="modal" data-bs-target="#editModal"  data-list-id=' . $list[0] . '>
-                                    </div>
-                                    <div>
-                                        <img src="/lista-simple/assets/img/iconos/papelera.svg" alt="Icono papelera para eliminar lista" class="iconslist btn-del"  data-list-id=' . $list[0] . '>
-                                    </div>
-                                </div>
+                if ($itemsData["completed_items"] !== $itemsData["total_items"] || $itemsData["total_items"] == 0) {
+                    // Si los items completos no es igual al total de items o el total de items es igual a 0
+                    $completedList = new ListsController();
+                    $result = $completedList->completeList($list[0], 0);
+                    // Marca la lista como NO completa
+
+                    echo
+                    '<div  class="w-100 rounded-4 border border-1 border-dark-subtle p-1 pe-3 ps-3 btn-style ">
+                        <div class="d-flex w-100 justify-content-end gap-2">            
+                            <div>                                
+                                <img src="/lista-simple/assets/img/iconos/editar.svg" alt="Icono de lapiz para editar datos de lista" class="iconslist btn-edit"  data-bs-toggle="modal" data-bs-target="#editModal"  data-list-id=' . $list[0] . '>
+                            </div>
+                            <div>
+                                <img src="/lista-simple/assets/img/iconos/papelera.svg" alt="Icono papelera para eliminar lista" class="iconslist btn-del"  data-list-id=' . $list[0] . '>
+                            </div>
+                        </div>
                         
-                                <a href="' . base_url . 'items/index&id=' . $list[0] . '" class="d-flex w-100 justify-content-start text-decoration-none">';
+                        <a href="' . base_url . 'items/index&id=' . $list[0] . '" class="d-flex w-100 justify-content-start text-decoration-none">
 
-                        echo '<span class="fs-5 fw-semibold text-black">' . $list[2] . '</span>';
+                            <span class="fs-5 fw-semibold text-black">' . $list[2] . '</span>
 
-                        echo
-                        '</a>
+                        </a>
                         
-                                <div class="d-flex w-100 justify-content-between">
-                                    <div class="text-primary fw-semibold">';
-                        if ($list[5] != '0000-00-00 00:00:00') {
-                            $notification = Utils::dateFormatter($list[5]);
-                            echo '<span class="text-primary f-little">' . $notification . '</span>';
-                        }
-
-                        echo '           
-                                    </div> 
-                                    <div class="fw-semibold">' .
-                            $itemsData["completed_items"] . '/' . $itemsData["total_items"] . '
-                                    </div>
-                                </div>
-                            </div>';
-                    } else {
-
-                        echo
-                        '<div  class="w-100 rounded-4 border border-1 border-dark-subtle p-1 pe-3 ps-3 bg-body-secondary btn-style ">
-                                <div class="d-flex w-100 justify-content-end gap-2">
-                
-                                    <div>
-                                    
-                                        <img src="/lista-simple/assets/img/iconos/editar.svg" alt="Icono de lapiz para editar datos de lista" class="iconslist btn-edit"  data-bs-toggle="modal" data-bs-target="#editModal"  data-list-id=' . $list[0] . '>
-                                    </div>
-                                    <div>
-                                        <img src="/lista-simple/assets/img/iconos/papelera.svg" alt="Icono papelera para eliminar lista" class="iconslist btn-del"  data-list-id=' . $list[0] . '>
-                                    </div>
-                                </div>
-                        
-                                <a href="' . base_url . 'items/index&id=' . $list[0] . '"class="d-flex w-100 justify-content-start text-secondary text-decoration-line-through">';
-
-                        echo '<span class="fs-5 fw-semibold">' . $list[2] . '</span>';
-
-                        echo
-                        '</a>
-                        
-                                <div class="d-flex w-100 justify-content-between">
-                                    <div class="text-secondary  text-decoration-line-through">';
-                        if ($list[5] != '0000-00-00 00:00:00') {
-                            $notification = Utils::dateFormatter($list[5]);
-                            echo '<span class="fw-semibold f-little">' . $notification . '</span>';
-                        }
-
-                        echo '           
-                                    </div> 
-                                    <div class="text-secondary fw-semibold text-decoration-line-through">' .
-                            $itemsData["completed_items"] . '/' . $itemsData["total_items"] . '
-                                    </div>
-                                </div>
-                            </div>';
+                        <div class="d-flex w-100 justify-content-between">
+                            <div class="text-primary fw-semibold">';
+                    if ($list[5] != '0000-00-00 00:00:00') {
+                        $notification = Utils::dateFormatter($list[5]);
+                        echo '<span class="text-primary f-little">' . $notification . '</span>';
                     }
-                } else {
-                    $items = new ItemsController();
-                    $itemsData = $items->numItems($list[0]);
+
+                    echo '        
+                            </div> 
+                            <div class="fw-semibold">' .
+                        $itemsData["completed_items"] . '/' . $itemsData["total_items"] . '
+                            </div>
+                        </div>
+                    </div>';
+                } elseif ($itemsData["completed_items"] === $itemsData["total_items"] && $itemsData["total_items"] !== 0) {
+                    // Si el total de items es igual a los items completos y el total de items es distinto a 0
+                    $completedList = new ListsController();
+                    $result = $completedList->completeList($list[0], 1);
+                    // Marca la lista como completa
                     echo
                     '<div  class="w-100 rounded-4 border border-1 border-dark-subtle p-1 pe-3 ps-3 bg-body-secondary btn-style ">
-                            <div class="d-flex w-100 justify-content-end gap-2">
-            
-                                <div>
-                                
-                                    <img src="/lista-simple/assets/img/iconos/editar.svg" alt="Icono de lapiz para editar datos de lista" class="iconslist btn-edit"  data-bs-toggle="modal" data-bs-target="#editModal"  data-list-id=' . $list[0] . '>
-                                </div>
-                                <div>
-                                    <img src="/lista-simple/assets/img/iconos/papelera.svg" alt="Icono papelera para eliminar lista" class="iconslist btn-del"  data-list-id=' . $list[0] . '>
-                                </div>
+                        <div class="d-flex w-100 justify-content-end gap-2">
+                            <div>
+                                <img src="/lista-simple/assets/img/iconos/editar.svg" alt="Icono de lapiz para editar datos de lista" class="iconslist btn-edit"  data-bs-toggle="modal" data-bs-target="#editModal"  data-list-id=' . $list[0] . '>
                             </div>
-                    
-                            <a href="' . base_url . 'items/index&id=' . $list[0] . '"class="d-flex w-100 justify-content-start text-secondary text-decoration-line-through">';
+                            <div>
+                                <img src="/lista-simple/assets/img/iconos/papelera.svg" alt="Icono papelera para eliminar lista" class="iconslist btn-del"  data-list-id=' . $list[0] . '>
+                            </div>
+                        </div>
 
-                    echo '<span class="fs-5 fw-semibold">' . $list[2] . '</span>';
+                        <a href="' . base_url . 'items/index&id=' . $list[0] . '"class="d-flex w-100 justify-content-start text-secondary text-decoration-line-through">';
 
-                    echo
-                    '</a>
-                    
-                            <div class="d-flex w-100 justify-content-between">
-                                <div class="text-secondary  text-decoration-line-through">';
+                    echo '<span class="fs-5 fw-semibold">' . $list[2] . '</span>
+                        </a>
+
+                        <div class="d-flex w-100 justify-content-between">
+                            <div class="text-secondary  text-decoration-line-through">';
                     if ($list[5] != '0000-00-00 00:00:00') {
                         $notification = Utils::dateFormatter($list[5]);
                         echo '<span class="fw-semibold f-little">' . $notification . '</span>';
                     }
 
                     echo '           
-                                </div> 
-                                <div class="text-secondary fw-semibold text-decoration-line-through">' .
+                            </div> 
+                            <div class="text-secondary fw-semibold text-decoration-line-through">' .
                         $itemsData["completed_items"] . '/' . $itemsData["total_items"] . '
-                                </div>
                             </div>
-                        </div>';
+                        </div>
+                    </div>';
                 }
             }
         }
-        // } else {
-        //     foreach ($result as $list) {
-        //         // Si no esta en la papelera/
-        //         if ($list[7] == 0) {
-
-
-        //             $items = new ItemsController();
-        //             $itemsData = $items->numItems($list[0]);
-
-        //             if ($itemsData["completed_items"] === $itemsData["total_items"] && $itemsData["total_items"] > 0) {
-
-        //                 echo
-        //                 '<div  class="w-100 rounded-4 border border-1 border-dark-subtle p-1 pe-3 ps-3 bg-body-secondary btn-style ">
-        //                         <div class="d-flex w-100 justify-content-end gap-2">
-
-        //                             <div>
-
-        //                                 <img src="/lista-simple/assets/img/iconos/editar.svg" alt="Icono de lapiz para editar datos de lista" class="iconslist btn-edit"  data-bs-toggle="modal" data-bs-target="#editModal"  data-list-id=' . $list[0] . '>
-        //                             </div>
-        //                             <div>
-        //                                 <img src="/lista-simple/assets/img/iconos/papelera.svg" alt="Icono papelera para eliminar lista" class="iconslist btn-del"  data-list-id=' . $list[0] . '>
-        //                             </div>
-        //                         </div>
-
-        //                         <a href="' . base_url . 'items/index&id=' . $list[0] . '"class="d-flex w-100 justify-content-start text-secondary text-decoration-line-through">';
-
-        //                 echo '<span class="fs-5 fw-semibold">' . $list[2] . '</span>';
-
-        //                 echo
-        //                 '</a>
-
-        //                         <div class="d-flex w-100 justify-content-between">
-        //                             <div class="text-secondary  text-decoration-line-through">';
-        //                 if ($list[5] != '0000-00-00 00:00:00') {
-        //                     $notification = Utils::dateFormatter($list[5]);
-        //                     echo '<span class="fw-semibold f-little">' . $notification . '</span>';
-        //                 }
-
-        //                 echo '           
-        //                             </div> 
-        //                             <div class="text-secondary fw-semibold text-decoration-line-through">' .
-        //                     $itemsData["completed_items"] . '/' . $itemsData["total_items"] . '
-        //                             </div>
-        //                         </div>
-        //                     </div>';
-        //             }
-        //         }
-        //     }
-        // }
     } elseif ($result == 1) {
 
         echo '<h5>Error al cargar listas</h5>';
