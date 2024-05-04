@@ -31,15 +31,12 @@
 
     if (isset($result) && empty(!$result)) {
 
-        // if ($_SESSION['color'] !== 'completed') {
-
         foreach ($result as $list) {
             // Si no esta en la papelera/
             if ($list[7] == 0) {
 
                 $items = new ItemsController();
                 $itemsData = $items->numItems($list[0]);
-
 
                 if ($itemsData["completed_items"] !== $itemsData["total_items"] || $itemsData["total_items"] == 0) {
                     // Si los items completos no es igual al total de items o el total de items es igual a 0

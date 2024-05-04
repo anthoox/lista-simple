@@ -6,7 +6,8 @@ class ErrorController
         require_once 'C:/wamp64/www/lista-simple/views/layout/head.php';
         echo '
             <h1 class="display-2 fw-semibold">404</h1>
-            <h2>La página que buscas no existe</h2>';
+            <h2>La página que buscas no existe</h2>
+            <a class="text-center text-decoration-none text-primary-emphasis fw-medium " href="/lista-simple/">Volver</a>';
         echo '
             <!-- Pie de página -->';
         require_once 'C:/wamp64/www/lista-simple/views/layout/footer.php';

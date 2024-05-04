@@ -31,7 +31,7 @@ class ListsController
                 if ($notification) {
                     $list->setNotification($notification);
                 } else {
-                    $list->setNotification(null);
+                    $list->setNotification('0000-00-00 00:00:00');
                 }
 
 

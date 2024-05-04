@@ -28,7 +28,7 @@ class ItemsController
                 return $result;
             }
         } else {
-            require_once 'C:/wamp64/www/lista-simple/home.php';
+            require_once 'C:/wamp64/www/lista-simple/views/users/home.php';
         }
     }
 
@@ -107,7 +107,7 @@ class ItemsController
 
             header("Location:" . base_url . "items/index&id=" . $idList);
         } else {
-            require_once 'C:/wamp64/www/lista-simple/home.php';
+            require_once 'C:/wamp64/www/lista-simple/views/users/home.php';
         }
     }
 
@@ -131,7 +131,7 @@ class ItemsController
                 echo json_encode(array('message' => 'Lista no encontrada'));
             }
         } else {
-            require_once 'C:/wamp64/www/lista-simple/home.php';
+            require_once 'C:/wamp64/www/lista-simple/views/users/home.php';
         }
     }
 
@@ -162,7 +162,7 @@ class ItemsController
                 $list->index($dataItem['idList']);
             }
         } else {
-            require_once 'C:/wamp64/www/lista-simple/home.php';
+            require_once 'C:/wamp64/www/lista-simple/views/users/home.php';
         }
     }
 
@@ -183,7 +183,7 @@ class ItemsController
                 echo '<h2>error al eleminar item</h2>';
             }
         } else {
-            require_once 'C:/wamp64/www/lista-simple/home.php';
+            require_once 'C:/wamp64/www/lista-simple/views/users/home.php';
         }
     }
 
@@ -202,7 +202,7 @@ class ItemsController
                 return false;
             }
         } else {
-            require_once 'C:/wamp64/www/lista-simple/home.php';
+            require_once 'C:/wamp64/www/lista-simple/views/users/home.php';
         }
     }
 
@@ -221,7 +221,7 @@ class ItemsController
                 return false;
             }
         } else {
-            require_once 'C:/wamp64/www/lista-simple/home.php';
+            require_once 'C:/wamp64/www/lista-simple/views/users/home.php';
         }
     }
 
@@ -254,7 +254,7 @@ class ItemsController
             }
             require_once  'C:/wamp64/www/lista-simple/views/users/list.php';
         } else {
-            require_once 'C:/wamp64/www/lista-simple/home.php';
+            require_once 'C:/wamp64/www/lista-simple/views/users/home.php';
         }
     }
 }

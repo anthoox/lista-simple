@@ -9,11 +9,11 @@
 <form action="<?= base_url ?>users/login" method="POST" class="d-flex flex-column justify-content-center mt-2 col-12 col-md-10 col-lg-6">
     <div class="mb-2">
         <label for="email" class="d-block text-start form-label">Correo</label>
-        <input type="email" class="form-control" id="email" placeholder="correo@correo.com" name="email" value="prueba@prueba.com">
+        <input type="email" class="form-control" id="email" placeholder="correo@correo.com" name="email" value="prueba@prueba.com" required>
     </div>
     <div class="mb-2">
         <label for="password" class="d-block text-start form-label">Contraseña</label>
-        <input type="password" class="form-control" id="password" name="password" value="1234">
+        <input type="password" class="form-control" id="password" name="password" value="1234" required>
     </div>
 
     <button type="submit" class="btn btn-primary rounded-1 mt-2 mb-2 text-white align-self-center col-12 col-sm-8  col-md-7">Entrar</button>
