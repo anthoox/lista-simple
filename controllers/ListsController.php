@@ -56,7 +56,7 @@ class ListsController
 
             header("Location:" . base_url . "lists/index");
         } else {
-            require_once 'C:/wamp64/www/lista-simple/home.php';
+            require_once 'C:/wamp64/www/lista-simple/views/users/home.php';
         }
     }
 
@@ -79,7 +79,7 @@ class ListsController
                 return $result;
             }
         } else {
-            require_once 'C:/wamp64/www/lista-simple/home.php';
+            require_once 'C:/wamp64/www/lista-simple/views/users/home.php';
         }
     }
 
@@ -101,7 +101,7 @@ class ListsController
                 return false;
             }
         } else {
-            require_once 'C:/wamp64/www/lista-simple/home.php';
+            require_once 'C:/wamp64/www/lista-simple/views/users/home.php';
         }
     }
 
@@ -124,7 +124,7 @@ class ListsController
                 return false;
             }
         } else {
-            require_once 'C:/wamp64/www/lista-simple/home.php';
+            require_once 'C:/wamp64/www/lista-simple/views/users/home.php';
         }
     }
 
@@ -149,7 +149,7 @@ class ListsController
                 return false;
             }
         } else {
-            require_once 'C:/wamp64/www/lista-simple/home.php';
+            require_once 'C:/wamp64/www/lista-simple/views/users/home.php';
         }
     }
 
@@ -173,7 +173,7 @@ class ListsController
                 echo json_encode(array('message' => 'Lista no encontrada'));
             }
         } else {
-            require_once 'C:/wamp64/www/lista-simple/home.php';
+            require_once 'C:/wamp64/www/lista-simple/views/users/home.php';
         }
     }
 
@@ -246,7 +246,7 @@ class ListsController
                 }
             }
         } else {
-            require_once 'C:/wamp64/www/lista-simple/home.php';
+            require_once 'C:/wamp64/www/lista-simple/views/users/home.php';
         }
     }
 
@@ -277,7 +277,7 @@ class ListsController
                 echo json_encode(array('message' => 'Lista no encontrada'));
             }
         } else {
-            require_once 'C:/wamp64/www/lista-simple/home.php';
+            require_once 'C:/wamp64/www/lista-simple/views/users/home.php';
         }
     }
 
@@ -304,7 +304,7 @@ class ListsController
                 return false;
             }
         } else {
-            require_once 'C:/wamp64/www/lista-simple/home.php';
+            require_once 'C:/wamp64/www/lista-simple/views/users/home.php';
         }
     }
 
@@ -325,7 +325,7 @@ class ListsController
                 echo '<h2>error al restaurar lista</h2>';
             }
         } else {
-            require_once 'C:/wamp64/www/lista-simple/home.php';
+            require_once 'C:/wamp64/www/lista-simple/views/users/home.php';
         }
     }
 
@@ -346,7 +346,7 @@ class ListsController
                 echo '<h2>error al eleminar lista</h2>';
             }
         } else {
-            require_once 'C:/wamp64/www/lista-simple/home.php';
+            require_once 'C:/wamp64/www/lista-simple/views/users/home.php';
         }
     }
 
@@ -365,7 +365,7 @@ class ListsController
                 echo '<h2>error al restaurar lista</h2>';
             }
         } else {
-            require_once 'C:/wamp64/www/lista-simple/home.php';
+            require_once 'C:/wamp64/www/lista-simple/views/users/home.php';
         }
     }
 
@@ -384,7 +384,7 @@ class ListsController
                 echo '<h2>error al eleminar lista</h2>';
             }
         } else {
-            require_once 'C:/wamp64/www/lista-simple/home.php';
+            require_once 'C:/wamp64/www/lista-simple/views/users/home.php';
         }
     }
 
@@ -402,7 +402,7 @@ class ListsController
                 return false;
             }
         } else {
-            require_once 'C:/wamp64/www/lista-simple/home.php';
+            require_once 'C:/wamp64/www/lista-simple/views/users/home.php';
         }
     }
 }
