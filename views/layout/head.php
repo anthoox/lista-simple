@@ -15,7 +15,7 @@
 
 <body class="vh-100">
     <div class=" h-100 d-flex flex-column justify-content-between">
-        <header class="p-1 w-100">
+        <header class="p-0 w-100">
             <div class="container pt-2 pb-2 border-bottom border-1">
                 <h1 class="text-center text-primary-emphasis fw-semibold">Bienvenido</h1>
             </div>

@@ -12,6 +12,8 @@ class UsersController
         }
         if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
             require_once  'C:/wamp64/www/lista-simple/views/users/index.php';
+        } else {
+            require_once 'C:/wamp64/www/lista-simple/home.php';
         }
     }
 
@@ -24,6 +26,8 @@ class UsersController
             require_once  'C:/wamp64/www/lista-simple/views/users/admin.php';
         } elseif (isset($_SESSION['user']) && $_SESSION['user'] == true) {
             require_once  'C:/wamp64/www/lista-simple/views/users/index.php';
+        } else {
+            require_once 'C:/wamp64/www/lista-simple/home.php';
         }
     }
 
