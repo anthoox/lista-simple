@@ -34,7 +34,7 @@ class ValidatorForm
 
                 $password = isset($dataForm['password']) ? $dataForm['password'] : false;
                 // Validar contraseña
-                if (empty($password) || (strlen($password) < 4)) { // Si esta vacia o tiene menos de 5 caracteres
+                if (empty($password) || (strlen($password) < 5)) { // Si esta vacia o tiene menos de 5 caracteres
                     $error = 'contraseña';
                 }
                 $dataUser['password'] = $password;

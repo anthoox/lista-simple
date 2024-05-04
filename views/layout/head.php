@@ -18,12 +18,10 @@
         <header class="p-1 w-100">
             <div class="container pt-2 pb-2 border-bottom border-1">
                 <h1 class="text-center text-primary-emphasis fw-semibold">Bienvenido</h1>
-                <!-- En login, contacato, restore, registro y faQ deben cambiar el h2 -->
-
             </div>
 
         </header>
-        <main class="p-4 p-4 w-100 container mt-5 d-flex flex-column top ">
+        <main class="p-4 p-4 w-100 container mt-5 d-flex flex-column ">
             <div class="w-100 mb-2">
                 <img src="/lista-simple/assets/img/logo/logo_small.png" alt="Logo Lista Simple" title="Lista Simple" class="col-12 col-md-10 col-lg-7 col-xl-6 col-xxl-5">
             </div>
