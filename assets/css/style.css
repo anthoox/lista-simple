@@ -43,18 +43,31 @@ html {
 
 
 .nav-w {
+    /* top: 0 !important;
+    bottom: 0 !important; */
     min-width: 300px;
     max-width: 300px;
-
+    transition: transform 500ms ease;
 }
 
-.nav-position {
+.nav-hidden {
     transform: translateX(-500%);
+}
+
+.nav-show {
+    transform: translateX(0%);
 }
 
 .yes-icon {
     width: 30px;
+    cursor: pointer;
+    transition: transform 250ms;
 }
+
+.yes-icon:active {
+    scale: .9;
+}
+
 
 
 .logo {
@@ -78,7 +91,7 @@ html {
     height: 50px;
     cursor: pointer;
     bottom: 60px !important;
-    transition: scale 250ms;
+    transition: all 250ms;
 }
 
 .add:active {
@@ -113,7 +126,7 @@ html {
 
 .btn-style {
     cursor: pointer;
-    transition: scale 250ms;
+    transition: all 250ms ease;
 }
 
 .btn-style:active {
