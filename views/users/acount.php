@@ -45,7 +45,8 @@ $userData = $_SESSION['identity'];
         <span class="text-success fw-semibold f-little">Datos actualizados</span>
     <?php elseif ((isset($_SESSION['save']) && $_SESSION['save'] == 'failed')) : ?>
         <span class="text-success fw-semibold f-little text-danger">Error al actualizar los datos</span>
-
+    <?php elseif ((isset($_SESSION['save']) && $_SESSION['save'] == 'prueba')) : ?>
+        <span class="text-success fw-semibold f-little text-danger">Los datos de este usuario no se pueden modificar</span>
     <?php endif; ?>
     <?= Utils::deleteSession('save') ?>
 </div>
