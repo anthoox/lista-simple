@@ -20,8 +20,8 @@
 
 </form>
 
-<a class="text-center text-decoration-none text-primary-emphasis fw-medium " href="/lista-simple/views/login/restore.php">¿Olvidaste la
-    contraseña?</a>
+<!-- <a class="text-center text-decoration-none text-primary-emphasis fw-medium " href="/lista-simple/views/login/restore.php">¿Olvidaste la
+    contraseña?</a> -->
 <a class="text-center text-decoration-none text-primary-emphasis fw-medium " href="/lista-simple/">Volver</a>
 
 
