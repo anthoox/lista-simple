@@ -58,11 +58,11 @@ html {
 
 
 .logo {
-    width: 50px;
+    width: 40px;
 }
 
 .logo-xl {
-    width: 200px;
+    width: 120px;
 }
 
 
@@ -117,7 +117,7 @@ html {
 }
 
 .btn-style:active {
-    scale: 0.98;
+    scale: 0.99;
 }
 
 @media (width >=576px) {

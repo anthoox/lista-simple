@@ -142,7 +142,6 @@ class User
         return $this;
     }
 
-
     public function save()
     {
         $username = $this->getUsername();
@@ -225,6 +224,23 @@ class User
         $sql = "DELETE FROM users WHERE id = ?";
         $stmt = $this->db->prepare($sql);
         $stmt->bind_param("i", $id);
+        $result = $stmt->execute();
+
+        if ($result && $this->db->affected_rows > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function deleteData($data)
+    {
+        $email = $data;
+        $sql = "DELETE FROM lists WHERE user_id = (SELECT id FROM users WHERE email = ?)";
+
+
+        $stmt = $this->db->prepare($sql);
+        $stmt->bind_param("s", $email);
         $result = $stmt->execute();
 
         if ($result && $this->db->affected_rows > 0) {

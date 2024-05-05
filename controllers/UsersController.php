@@ -129,7 +129,6 @@ class UsersController
         require_once 'C:/wamp64/www/lista-simple/views/users/home.php';
     }
 
-    // FUNCIONES DE FUNCIONAMIENTO
     public function save()
     {
         $dataUser = ValidatorForm::validator($_POST);
@@ -186,6 +185,11 @@ class UsersController
     {
 
         if (isset($_SESSION['identity'])) {
+            $userPrueba = $_SESSION['identity']->email;
+            if ($userPrueba === 'prueba@prueba.com') {
+                $user = new UsersController();
+                $result = $user->deleteData($userPrueba);
+            }
             unset($_SESSION['identity']);
         }
 
@@ -194,6 +198,7 @@ class UsersController
         }
 
         if (isset($_SESSION['user'])) {
+
             unset($_SESSION['user']);
         }
 
@@ -280,6 +285,18 @@ class UsersController
             }
         } else {
             require_once 'C:/wamp64/www/lista-simple/views/users/home.php';
+        }
+    }
+
+    public function deleteData($email)
+    {
+
+        $user = new User();
+        $result = $user->deleteData($email);
+        if ($result) {
+            return true;
+        } else {
+            return false;
         }
     }
 }
