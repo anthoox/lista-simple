@@ -206,7 +206,7 @@ window.onload = function () {
     const nav = document.getElementById('nav-movil');
     const showNav = document.getElementById('btn-menu-abrir');
     const hiddenNav = document.getElementById('btn-menu-cerrar')
-    const main = document.getElementById('main');
+    const mainCnt = document.getElementById('main-container');
     showNav.addEventListener('click', () => {
         nav.classList.add('nav-show');
     })
@@ -216,9 +216,9 @@ window.onload = function () {
     })
 
     // Ocultar el menú lateral al hacer clic en cualquier parte de la aplicación
-    main.addEventListener('click', (event) => {
+    mainCnt.addEventListener('click', (event) => {
         // Verificar si el clic ocurrió fuera del menú lateral
-        if (!nav.contains(event.target)) {
+        if (!nav.contains(event.target) && showNav != event.target) {
             nav.classList.remove('nav-show');
         }
     });

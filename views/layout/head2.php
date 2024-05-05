@@ -17,8 +17,9 @@
 
 
 
+
     <!-- CONTENEDOR PRINCIPAL -->
-    <div class=" h-100 d-flex flex-column  w-100 ">
+    <div class=" h-100 d-flex flex-column  w-100 " id="main-container">
 
 
         <header class="p-0  w-100  d-flex justify-content-center position-fixed z-2 bg-white  ">
@@ -39,8 +40,9 @@
             </div>
 
         </header>
+
         <!-- NAV MOVIL -->
-        <nav class="bg-white  border border-1 h-100 p-4  mt-xl-5 d-flex d-xl-none flex-column align-items-center position-absolute z-3 nav-w nav-hidden" id="nav-movil">
+        <nav class="bg-white  border border-1  p-4  mt-xl-5 d-flex top-0 xl-none flex-column align-items-center position-absolute z-3 nav-w nav-hidden" id="nav-movil">
             <div class="rounded-circle border border-1 d-flex align-items-center justify-content-center mt-4  img-user  ">
                 <?php if (isset($_SESSION['identity']->image)) : ?>
                     <img src="<?= base_url ?>uploads/images/<?= $_SESSION['identity']->id ?>/<?= $_SESSION['identity']->image ?>" alt="Foto de perfil" class="rounded-circle img-user">
@@ -69,7 +71,7 @@
         </nav>
 
         <!-- MAIN -->
-        <main class="p-1  w-100 container d-flex top" id="main">
+        <main class="h-100 p-1  w-100 container d-flex top overflow-show">
             <!-- NAV ESCRITORIO -->
             <nav class="bg-white  border-end p-4  mt-xl-3 d-none d-xl-flex flex-column align-items-center nav-w ">
                 <div class="rounded-circle border border-1 d-flex align-items-center justify-content-center mt-4  img-user  ">
