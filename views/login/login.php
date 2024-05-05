@@ -13,7 +13,7 @@
     </div>
     <div class="mb-2">
         <label for="password" class="d-block text-start form-label">Contraseña</label>
-        <input type="password" class="form-control" id="password" name="password" value="123456" required>
+        <input type="password" class="form-control" id="password" name="password" value="aDGas+?+{32" required>
     </div>
 
     <button type="submit" class="btn btn-primary rounded-1 mt-2 mb-2 text-white align-self-center col-12 col-sm-8  col-md-7">Entrar</button>
