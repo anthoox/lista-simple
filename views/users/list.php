@@ -174,7 +174,7 @@ $price = number_format((float)$totalPrice['totalPrice'], 2)
 </div>
 
 
-<div class="rounded-circle border border-1 bg-success d-flex align-items-center justify-content-center position-fixed bottom-0 end-0 mb-4 me-4 add" data-bs-toggle="modal" data-bs-target="#addItemModal">
+<div class="rounded-circle border border-1 bg-success d-flex align-items-center justify-content-center position-fixed bottom-0  end-0 mb-xl-0 me-3 me-xl-5 shadow add" data-bs-toggle="modal" data-bs-target="#addItemModal">
     <img src="/lista-simple/assets/img/iconos/add.svg" alt="Foto de perfil" class=" icon-list icon-list-sm">
 </div>
 <?php require_once 'C:/wamp64/www/lista-simple/views/modals/modalEditItem.php'; ?>

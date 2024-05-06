@@ -8,6 +8,7 @@
     <meta name="copyright" content="anthoox" />
     <meta name="description" content="Aplicación de listas de tareas">
     <title>Lista Simple</title>
+    <link rel="icon" href="<?= base_url ?>assets/img/logo/logo.ico">
     <link rel="stylesheet" type="text/css" href="<?= base_url ?>assets/css/bootstrap/style.css">
     <link rel="stylesheet" href="<?= base_url ?>assets/css/style.css">
 </head>
