@@ -26,11 +26,12 @@
         <header class="p-0  w-100  d-flex justify-content-center position-fixed z-2 bg-white  ">
             <div class="container d-flex justify-content-between align-items-center justify-content-xl-center  m-0 pt-2 pb-2 border-bottom border-1">
 
-                <!-- ACTIVAR EN VISTA DE PRINCIPAL DE ADMIN Y USUARIO -->
                 <div class="d-xl-none">
                     <img src="<?= base_url ?>assets/img/iconos/menu.svg" alt="icono menú" class="yes-icon" id="btn-menu-abrir">
                 </div>
-
+                <div class="d-flex w-100 d-flex flex-row-reverse d-xl-none   align-items-center">
+                    <span class="p-1 ps-3 pe-3 bg-primary text-white ms-2 me-2 rounded rounded-3"> <?= $_SESSION['identity']->username  ?></span><span>Usuario:</span>
+                </div>
 
                 <div class="d-xl-none">
                     <img src="<?= base_url ?>assets/img/logo/logo.png" alt="Logo Lista Simple" class="logo">
@@ -38,6 +39,22 @@
                 <div class="d-none d-xl-block p-2">
                     <img src="<?= base_url ?>assets/img/logo/logo_small.png" alt="Logo Lista Simple" class="logo-xl">
                 </div>
+                <div class="w-100 d-none  d-xl-flex  flex-row-reverse align-items-center">
+                    <span class="p-1 ps-3 pe-3 bg-primary text-white ms-2 me-2 rounded rounded-3"> <?= $_SESSION['identity']->username  ?></span><span>Usuario:</span>
+                </div>
+
+                <div class="d-none d-xl-block">
+                    <img src="<?= base_url ?>assets/img/logo/logo.png" alt="Logo Lista Simple" class="logo">
+                </div>
+
+                <!-- 
+                
+                <div class="d-none d-xl-flex align-items-center flex-row-reverse  p-2 w-100">
+                    <img src="<?= base_url ?>assets/img/logo/logo_small.png" alt="Logo Lista Simple" class="logo-xl">
+
+                    <span class=" p-1 ps-3 pe-3 bg-primary text-white ms-2 me-2 rounded rounded-3"> <?= $_SESSION['identity']->username  ?></span><span>Usuario:</span>
+
+                </div> -->
             </div>
 
         </header>
@@ -80,8 +97,7 @@
                         <img src="<?= base_url ?>uploads/images/<?= $_SESSION['identity']->id ?>/<?= $_SESSION['identity']->image ?>" alt="Foto de perfil" class="rounded-circle img-user">
 
                     <?php else : ?>
-                        <img src="<?= base_url ?>assets/img/logo/logo.png" alt="Foto de perfil" class="rounded-circle img-user">
-
+                        <img src="<?= base_url ?>assets/img/logo/logo.png" alt="Foto de perfil" class="rounded-circle img-user"><br>
                     <?php endif; ?>
 
                 </div>
@@ -102,4 +118,4 @@
 
 
             <!-- CONTENEDOR -->
-            <div class=" d-flex flex-column w-100 align-items-center ms-xl-4 mt-xl-5">
+            <div class=" d-flex flex-column w-100 align-items-center ms-xl-4 mt-xl-3">
