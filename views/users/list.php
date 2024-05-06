@@ -11,7 +11,7 @@ if (isset($_GET['id'])) {
 }
 $items = new ItemsController();
 $totalPrice = $items->totalPrice($data['id']);
-
+$price = number_format((float)$totalPrice['totalPrice'], 2)
 ?>
 
 <!-- Contenido -->
@@ -27,7 +27,8 @@ $totalPrice = $items->totalPrice($data['id']);
 
 
     <span class="fw-semibold fs-6  text-end">
-        Total: <?= $totalPrice['totalPrice'] ?>
+
+        Total: <?= $price . '€' ?>
 
     </span>
 
@@ -41,7 +42,7 @@ $totalPrice = $items->totalPrice($data['id']);
             // Si no esta completo/
             if ($item[8] == 0) {
                 echo '
-                <div class="w-100 rounded-4 border border-1 border-dark-subtle p-1 pe-3 ps-3 d-flex" >
+                <div class="w-100 rounded-4 border border-1 border-dark-subtle p-1 pe-3 ps-3 d-flex btn-style"  >
                     <div class="form-check h-100 d-flex align-items-center pe-1 border-1 border-end">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" data-item-id="' . $item[0] . '" data-list-id="' . $data['id'] . '">
                     </div>

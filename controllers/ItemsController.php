@@ -11,19 +11,20 @@ class ItemsController
         }
         if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
             if (isset($_GET['id']) && $id == '') {
-                $itemId = $_GET['id'];
+                $listId = $_GET['id'];
 
                 $items = new Items();
-                $result = $items->items($itemId);
+                $result = $items->items($listId);
                 require_once  'C:/wamp64/www/lista-simple/views/users/list.php';
 
                 return $result;
             } else if ($id != '') {
-                $itemId = $id;
+                $listId = $id;
 
                 $items = new Items();
-                $result = $items->items($itemId);
-                require_once  'C:/wamp64/www/lista-simple/views/users/list.php';
+                $result = $items->items($listId);
+                header("Location:" . base_url . "items/index&id=" . $listId);
+
 
                 return $result;
             }

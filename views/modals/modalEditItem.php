@@ -9,7 +9,7 @@
                 <form id="itemEditForm" action="<?= base_url ?>items/edit" method="POST">
                     <div class="mb-3">
                         <label for="name" class="form-label w-100 text-start">Nombre </label>
-                        <input type="text" class="form-control" id="item-name" placeholder="Nombre" name="name">
+                        <input type="text" class="form-control" id="item-name" placeholder="Nombre" name="name" autofocus>
                     </div>
                     <div class="d-flex flex-colum gap-2">
                         <div class="mb-3  w-50">
@@ -32,6 +32,8 @@
                     <div class="mb-3">
                         <label for="notification" class="form-label w-100 text-start">Notificación</label>
                         <input type="datetime-local" class="form-control" id="item-notification" name="notification">
+                        <div id="notificationHelp" class="form-text text-start">Notificación no disponible.</div>
+
                     </div>
                     <div class="mb-3">
                         <label for="notes" class="form-label w-100 text-start">Notas</label>
@@ -40,7 +42,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancelar</button>
                 <button type="submit" form="itemEditForm" class="btn btn-success text-white">Guardar</button>
             </div>
         </div>
