@@ -9,7 +9,7 @@
 
 <h3 class="text-start text-primary-emphasis col-12 pe-2 ps-2">Envia tu consulta</h3>
 <form class="d-flex flex-column justify-content-center col-12 p-2 ps-2">
-    <p class="text-start">Envianos tu consulta desde nuestro formulario o escribenos a: <a href="" class="text-decoration-none">listasimple@anthoox.es</a>.</p>
+    <p class="text-start">Envianos tu consulta desde nuestro formulario o escribenos a: <a href="mailto:listasimple@anthoox.es" class="text-decoration-none">listasimple@anthoox.es</a>.</p>
     <div class="mb-2">
         <label for="exampleFormControlTextarea1" class="d-block text-start form-label">Consulta</label>
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Escribe tu consulta" aria-describedby="textAreaHelp" disabled></textarea>

@@ -136,6 +136,9 @@
 
 <!-- Modal EDIT -->
 <?php require_once 'C:/wamp64/www/lista-simple/views/modals/modalEditList.php'; ?>
+
+<?php require_once 'C:/wamp64/www/lista-simple/views/modals/modalLogout.php'; ?>
+
 </div>
 
 <!-- Pie de página -->

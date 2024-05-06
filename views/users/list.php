@@ -181,6 +181,7 @@ $price = number_format((float)$totalPrice['totalPrice'], 2)
 
 <?php require_once 'C:/wamp64/www/lista-simple/views/modals/modalAddItem.php'; ?>
 
+<?php require_once 'C:/wamp64/www/lista-simple/views/modals/modalLogout.php'; ?>
 
 </div>
 

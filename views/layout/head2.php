@@ -55,16 +55,16 @@
 
             </div>
 
-            <ul class="list-group list-group-flush h-100 pt-2 pb-2 w-100">
+            <ul class="list-group list-group-flush h-100 pt-2 pb-2 w-100 ">
                 <?php if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) : ?>
-                    <li class="list-group-item pt-4 pb-4"><a href="<?= base_url ?>lists/index" class="text-decoration-none text-black">Inicio</a></li>
-                    <li class="list-group-item pt-4 pb-4"><a href="<?= base_url ?>users/logout" class="text-decoration-none text-black">Salir</a></li>
+                    <li class="list-group-item pt-4 pb-4 "><a href="<?= base_url ?>lists/index" class="text-decoration-none text-black fw-semibold">Inicio</a></li>
+                    <li class="list-group-item pt-4 pb-4 "><a href="<?= base_url ?>users/logout" class="text-decoration-none text-black fw-semibold">Salir</a></li>
                 <?php elseif (isset($_SESSION['user']) && $_SESSION['user'] == true) : ?>
-                    <li class="list-group-item pt-4 pb-4"><a href="<?= base_url ?>lists/index" class="text-decoration-none text-black">Inicio</a></li>
-                    <li class="list-group-item pt-4 pb-4"><a href="<?= base_url ?>users/acount" class="text-decoration-none text-black">Mi cuenta</a></li>
-                    <li class="list-group-item pt-4 pb-4"><a href="<?= base_url ?>users/trash" class="text-decoration-none text-black">Papelera</a></li>
-                    <li class="list-group-item pt-4 pb-4"><a href="<?= base_url ?>users/help" class="text-decoration-none text-black">Soporte</a></li>
-                    <li class="list-group-item pt-4 pb-4"><a href="<?= base_url ?>users/logout" class="text-decoration-none text-black">Salir</a></li>
+                    <li class="list-group-item pt-4 pb-4 "><a href="<?= base_url ?>lists/index" class="text-decoration-none text-black fw-semibold">Inicio</a></li>
+                    <li class="list-group-item pt-4 pb-4 "><a href="<?= base_url ?>users/acount" class="text-decoration-none text-black fw-semibold">Mi cuenta</a></li>
+                    <li class="list-group-item pt-4 pb-4 "><a href="<?= base_url ?>users/trash" class="text-decoration-none text-black fw-semibold">Papelera</a></li>
+                    <li class="list-group-item pt-4 pb-4 "><a href="<?= base_url ?>users/help" class="text-decoration-none text-black fw-semibold">Soporte</a></li>
+                    <li class="list-group-item pt-4 pb-4 "><a href="" class="text-decoration-none text-black fw-semibold" data-bs-toggle="modal" data-bs-target="#logoutModal">Salir</a></li>
                 <?php endif; ?>
                 <li class="list-group-item pt-4 pb-4"><img src="<?= base_url ?>assets/img/iconos/cerrar.svg" alt="Icono cerrar menú lateral" class="yes-icon" id="btn-menu-cerrar"></li>
 
@@ -88,14 +88,14 @@
 
                 <ul class="list-group list-group-flush h-100 pt-2 pb-2 w-100">
                     <?php if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) : ?>
-                        <li class="list-group-item pt-4 pb-4"><a href="<?= base_url ?>lists/index" class="text-decoration-none text-black">Inicio</a></li>
-                        <li class="list-group-item pt-4 pb-4"><a href="<?= base_url ?>users/logout" class="text-decoration-none text-black">Salir</a></li>
+                        <li class="list-group-item pt-4 pb-4  "><a href="<?= base_url ?>lists/index" class="text-decoration-none text-black fw-semibold">Inicio</a></li>
+                        <li class="list-group-item pt-4 pb-4  "><a href="<?= base_url ?>users/logout" class="text-decoration-none text-black fw-semibold">Salir</a></li>
                     <?php elseif (isset($_SESSION['user']) && $_SESSION['user'] == true) : ?>
-                        <li class="list-group-item pt-4 pb-4"><a href="<?= base_url ?>lists/index" class="text-decoration-none text-black">Inicio</a></li>
-                        <li class="list-group-item pt-4 pb-4"><a href="<?= base_url ?>users/acount" class="text-decoration-none text-black">Mi cuenta</a></li>
-                        <li class="list-group-item pt-4 pb-4"><a href="<?= base_url ?>users/trash" class="text-decoration-none text-black">Papelera</a></li>
-                        <li class="list-group-item pt-4 pb-4"><a href="<?= base_url ?>users/help" class="text-decoration-none text-black">Soporte</a></li>
-                        <li class="list-group-item pt-4 pb-4"><a href="<?= base_url ?>users/logout" class="text-decoration-none text-black">Salir</a></li>
+                        <li class="list-group-item pt-4 pb-4  "><a href="<?= base_url ?>lists/index" class="text-decoration-none text-black fw-semibold">Inicio</a></li>
+                        <li class="list-group-item pt-4 pb-4  "><a href="<?= base_url ?>users/acount" class="text-decoration-none text-black fw-semibold">Mi cuenta</a></li>
+                        <li class="list-group-item pt-4 pb-4  "><a href="<?= base_url ?>users/trash" class="text-decoration-none text-black fw-semibold">Papelera</a></li>
+                        <li class="list-group-item pt-4 pb-4  "><a href="<?= base_url ?>users/help" class="text-decoration-none text-black fw-semibold">Soporte</a></li>
+                        <li class="list-group-item pt-4 pb-4  "><a href="" class="text-decoration-none text-black fw-semibold" data-bs-toggle="modal" data-bs-target="#logoutModal">Salir</a></li>
                     <?php endif; ?>
                 </ul>
             </nav>
