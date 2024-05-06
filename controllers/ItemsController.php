@@ -103,7 +103,6 @@ class ItemsController
                 }
             } else {
                 $_SESSION['register_item'] = "failed";
-                // faltan control de errores
             }
 
             header("Location:" . base_url . "items/index&id=" . $idList);
