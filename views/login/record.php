@@ -3,7 +3,6 @@
 require_once 'C:/wamp64/www/lista-simple/views/layout/head.php';
 ?>
 
-<p class="col-12 col-md-10 col-lg-6">Bienvenido a nuestra sección de registro. Puedes registrarte usando un email ficticio. Toda la información de su cuenta como email, nombre y contraseña como las listas e items que cree serán borrados en algún momento por el administrador.</p>
 <!-- Contenido -->
 <form action="/lista-simple/users/save" method="POST" class="d-flex flex-column justify-content-center col-12 col-md-10 col-lg-6">
     <div class="mb-2">
