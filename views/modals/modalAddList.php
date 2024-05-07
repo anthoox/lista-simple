@@ -9,11 +9,12 @@
                 <form id="listForm" action="<?= base_url ?>lists/save" method="POST">
                     <div class="mb-3">
                         <label for="name" class="form-label w-100 text-start">Nombre lista</label>
-                        <input type="text" class="form-control" id="name" placeholder="Nombre" name="name">
+                        <input type="text" class="form-control" id="name" placeholder="Nombre" name="name" autofocus required>
                     </div>
                     <div class="mb-3">
                         <label for="notification" class="form-label w-100 text-start">Recordatorio</label>
                         <input type="datetime-local" class="form-control" id="notification" name="notification">
+                        <div id="notificationHelp" class="form-text text-start">Recordatorio no disponible.</div>
                     </div>
                     <div class="mb-3">
                         <label for="description" class="form-label w-100 text-start">Descripción</label>
@@ -22,7 +23,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancelar</button>
                 <button type="submit" form="listForm" class="btn btn-success text-white">Guardar</button>
             </div>
         </div>

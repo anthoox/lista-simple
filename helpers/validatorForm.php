@@ -182,9 +182,9 @@ class ValidatorForm
             if (!empty($dataForm['units'])) {
                 $units = isset($dataForm['units']) ? $dataForm['units'] : "0";
 
-                if (!is_string($price)) {
-                    $error = 'price';
-                }
+                // if (!is_string($price)) {
+                //     $error = 'price';
+                // }
                 $dataList['units'] = $units;
             } else {
                 $dataList['units'] = 1;

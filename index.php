@@ -1,11 +1,16 @@
 <?php
 session_start();
+
 require_once 'autoload.php';
 require_once 'config/db.php';
 require_once 'config/parameters.php';
 require_once 'helpers/utils.php';
 
 
+// Desactiva la visualización de errores
+ini_set('display_errors', 0);
+// Desactiva la notificación de errores
+error_reporting(0);
 
 function show_error()
 {
@@ -22,6 +27,7 @@ if (isset($_GET['controller'])) {
 }
 
 if (isset(($nombre_controlador))) {
+
     if (class_exists($nombre_controlador)) {
         $controlador = new $nombre_controlador();
         if (isset($_GET['action']) && method_exists($controlador, $_GET['action'])) {
@@ -34,6 +40,9 @@ if (isset(($nombre_controlador))) {
             show_error();
         }
     } else {
+
         show_error();
     }
+} else {
+    show_error();
 }

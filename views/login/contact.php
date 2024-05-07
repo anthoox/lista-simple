@@ -1,5 +1,10 @@
 <!-- Cabeceras -->
-<?php require_once 'C:/wamp64/www/lista-simple/views/layout/head.php'; ?>
+<?php
+require_once 'C:/wamp64/www/lista-simple/config/parameters.php';
+require_once 'C:/wamp64/www/lista-simple/helpers/utils.php';
+require_once 'C:/wamp64/www/lista-simple/views/layout/head.php';
+require_once 'C:/wamp64/www/lista-simple/views/layout/head.php';
+?>
 
 <!-- Contenido -->
 

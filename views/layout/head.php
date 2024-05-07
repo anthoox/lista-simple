@@ -8,6 +8,7 @@
     <meta name="copyright" content="anthoox" />
     <meta name="description" content="Aplicación de listas de tareas">
     <title>Lista Simple</title>
+    <link rel="icon" href="<?= base_url ?>assets/img/logo/logo.ico">
     <link rel="stylesheet" type="text/css" href="/lista-simple/assets/css/bootstrap/style.css">
     <link rel="stylesheet" href="/lista-simple/assets/css/style.css">
 </head>
@@ -26,3 +27,11 @@
                 <img src="/lista-simple/assets/img/logo/logo_small.png" alt="Logo Lista Simple" title="Lista Simple" class="col-12 col-md-10 col-lg-7 col-xl-6 col-xxl-5">
             </div>
             <div class=" d-flex flex-column w-100 align-items-center">
+                <?php
+                if (isset($_SESSION['logout'])) {
+                    echo '
+                    <div>
+                    <h5>La sesión ha expirado</h5>
+                    </div>';
+                }
+                ?>

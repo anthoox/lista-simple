@@ -1,10 +1,13 @@
 </main>
+
+
 <?php if (!isset($_SESSION['identity'])) :    ?>
 
-    <footer class="container d-flex justify-content-between p-3 mt-2 border-top border-1">
+
+    <footer class="container d-flex justify-content-between align-items-center p-3 mt-2 border-top border-1">
         <!-- quitar bordes en vistas menores de 576px -->
         <!-- ACTIVAR EN VISTAS DE LOGIN -->
-        <ul class="list-unstyled  mb-0 d-sm-flex gap-3 w-25 text-star">
+        <ul class="list-unstyled  mb-0 d-md-flex gap-3  text-star">
             <li class="text-start ">
                 <a class="fw-medium text-decoration-none text-primary-emphasis f-little" href="/lista-simple/index.php">Inicio</a>
             </li>
@@ -18,12 +21,12 @@
 
         </ul>
 
-        <div class="h-100  p-0 m-0 w-50">
-            <p class="text-center text-primary-emphasis f-u-little p-0 m-0">Proyecto DAW - Lista Simple -
-                Anthony Alegría Alcántara ©<?php echo date('Y') ?></p>
-        </div>
+        <!-- <div class="h-100  p-0 m-0 w-50"> -->
+        <p class="text-center text-primary-emphasis f-u-little p-0 m-0 w-50">Proyecto DAW - Lista Simple -
+            Anthony Alegría Alcántara ©<?php echo date('Y') ?></p>
+        <!-- </div> -->
 
-        <div class="h-100  p-0 m-0 w-25 gap-4  text-end">
+        <div class="h-100  p-0 m-0  gap-2 d-flex justify-content-center align-items-center">
             <a href="mailto:listasimple@anthoox.es"><img src="/lista-simple/assets/img/iconos/email.svg" alt="Enlace a email de contacto" class="iconslist " title="listasimple@anthoox.es"></a>
 
             <a href="https://github.com/anthoox/lista-simple" target="_blank"><img src="/lista-simple/assets/img/iconos/github.svg" alt="Enlace a GitHub de proyecto" class="iconslist" title="GitHub - Lista Simple"></a>
@@ -32,6 +35,19 @@
         </div>
 
     </footer>
+
+<?php else : ?>
+    <!-- Modal ADD -->
+    <?php require_once 'C:/wamp64/www/lista-simple/views/modals/modalAddList.php'; ?>
+    <?php require_once 'C:/wamp64/www/lista-simple/views/modals/modalAddItem.php'; ?>
+
+    <!-- Modal EDIT -->
+    <?php require_once 'C:/wamp64/www/lista-simple/views/modals/modalEditList.php'; ?>
+    <?php require_once 'C:/wamp64/www/lista-simple/views/modals/modalEditItem.php'; ?>
+
+
+    <!-- Modal LOGOUT -->
+    <?php require_once 'C:/wamp64/www/lista-simple/views/modals/modalLogout.php'; ?>
 <?php endif; ?>
 
 </div>

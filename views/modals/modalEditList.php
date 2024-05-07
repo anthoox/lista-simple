@@ -9,11 +9,13 @@
                 <form id="listFormEdit" action="<?= base_url ?>lists/edit" method="POST">
                     <div class="mb-3">
                         <label for="name" class="form-label w-100 text-start">Nombre lista</label>
-                        <input id="listName" type="text" class="form-control fw-semibold" id="name" placeholder="Nombre" name="name">
+                        <input id="listName" type="text" class="form-control fw-semibold" id="name" placeholder="Nombre" name="name" autofocus>
                     </div>
                     <div class="mb-3">
                         <label for="notification" class="form-label w-100 text-start">Recordatorio</label>
                         <input type="datetime-local" class="form-control" id="edit-notification" name="notification">
+                        <div id="notificationHelp" class="form-text text-start">Recordatorio no disponible.</div>
+
                     </div>
                     <input type="text" class="form-control" id="idList" name="idList" hidden>
 
