@@ -38,7 +38,7 @@
         </h2>
         <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse">
             <div class="accordion-body">
-                <strong>No es necesario.</strong> Puedes usar un email fictio o un real si lo deseas. El email será almacenado durante un tiempo y luego será eliminado como todos los datos de los usuarios registrados.
+                <strong>No es necesario.</strong> Puedes usar un email ficticio o un real si lo deseas. El email será almacenado durante un tiempo y luego será eliminado como todos los datos de los usuarios registrados.
             </div>
         </div>
     </div>
@@ -51,20 +51,20 @@
         </h2>
         <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
             <div class="accordion-body">
-                <strong>Para nada.</strong> La aplicación esta lanzada para probarla. Solo se enviará respuestas a consultas al email desde el que se envián.
+                <strong>Para nada.</strong> La aplicación está disponible para probarla. Solo se enviará respuestas a consultas al email desde el que se envían.
             </div>
         </div>
     </div>
     <div class="accordion-item">
         <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                <strong>¿Como puedo añadir listas?</strong>
+                <strong>¿Cómo puedo añadir listas?</strong>
 
             </button>
         </h2>
         <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
             <div class="accordion-body">
-                <strong>Es muy sencillo.</strong> Solo debes dar clic sobre el boton de añadir lista
+                <strong>Es muy sencillo.</strong> Solo debes dar clic sobre el botón de añadir lista
                 <img src="/lista-simple/assets/img/iconos/add-l.svg" alt="Foto de perfil de usuario" class="mb-1 rounded-circle border border-1 bg-success icon-list-ss"> e ir añadiendo los datos que desees. El único dato obligatorio es el nombre.
             </div>
         </div>
@@ -73,13 +73,13 @@
     <div class="accordion-item">
         <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                <strong>¿Como puedo editar los datos de listas?</strong>
+                <strong>¿Cómo puedo editar los datos de listas?</strong>
 
             </button>
         </h2>
         <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
             <div class="accordion-body">
-                <strong>Desde la vista de tus listas</strong> puedes dar click en el icono <img src="/lista-simple/assets/img/iconos/editar.svg" alt="Foto de perfil de usuario" class="mb-1 icon-list-ss"> de la lista que quieras editar y así modificar sus datos.
+                <strong>Desde la vista de tus listas</strong> puedes dar clic en el icono <img src="/lista-simple/assets/img/iconos/editar.svg" alt="Foto de perfil de usuario" class="mb-1 icon-list-ss"> de la lista que quieras editar y así modificar sus datos.
             </div>
         </div>
     </div>
@@ -87,69 +87,83 @@
     <div class="accordion-item">
         <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                <strong>¿Como puedo añadir elementos a las listas?</strong>
+                <strong>¿Cómo puedo añadir elementos a las listas?</strong>
 
             </button>
         </h2>
         <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse">
             <div class="accordion-body">
-                <strong>Una vez creada tu lista</strong> da clic sobre el nombre de tu lista y te llevará al contenido de la lista. Para añadir nuevos elementos solo debes dar click en el icono <img src="/lista-simple/assets/img/iconos/add.svg" alt="Foto de perfil de usuario" class="mb-1 rounded-circle border border-1 bg-success icon-list-ss"> y rellenar los datos del elemento a añadir. El único dato obligatorio es el nombre.
+                <strong>Crea una lista y</strong> da clic sobre el nombre de tu lista y te llevará al contenido de la lista. Para añadir nuevos elementos solo debes dar clic en el icono <img src="/lista-simple/assets/img/iconos/add.svg" alt="Foto de perfil de usuario" class="mb-1 rounded-circle border border-1 bg-success icon-list-ss"> y rellenar los datos del elemento a añadir. El único dato obligatorio es el nombre.
             </div>
         </div>
     </div>
 
     <div class="accordion-item">
         <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                <strong>¿Como puedo editar los datos de elementos de las listas?</strong>
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false" aria-controls="panelsStayOpen-collapseSix">
+                <strong>¿Cómo puedo editar los datos de elementos de las listas?</strong>
 
             </button>
         </h2>
         <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse">
             <div class="accordion-body">
-                <strong>Dentro de la vista de los elementos de la lista</strong> puedes dar click en el icono <img src="/lista-simple/assets/img/iconos/editar.svg" alt="Imagen icono editar" class="mb-1 icon-list-ss"> del elemento que quieras editar y así modificar sus datos.
+                <strong>Dentro de la vista de los elementos de la lista</strong> puedes dar clic en el icono <img src="/lista-simple/assets/img/iconos/editar.svg" alt="Imagen icono editar" class="mb-1 icon-list-ss"> del elemento que quieras editar y así modificar sus datos.
             </div>
         </div>
     </div>
 
     <div class="accordion-item">
         <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                <strong>¿Que pasa cuando elimino una lista o un elemento de una lista?</strong>
-
-            </button>
-        </h2>
-        <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse">
-            <div class="accordion-body">
-                <strong>Si damos clic</strong> en el icono <img src="/lista-simple/assets/img/iconos/papelera.svg" alt="Imagen icono de papelera" class="mb-1 icon-list-ss"> de una lista esta se enviará a la papelera y se pueden recuperar o eliminar. Sin embargo, si se eliminan los elementos que de una lista estos se borrarán de forma definitiva.
-            </div>
-        </div>
-    </div>
-
-    <div class="accordion-item">
-        <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSeven" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                <strong>¿Como puedo recuperar una lista?</strong>
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSeven" aria-expanded="false" aria-controls="panelsStayOpen-collapseSeven">
+                <strong>¿Cómo elimino una lista y sus elementos?</strong>
 
             </button>
         </h2>
         <div id="panelsStayOpen-collapseSeven" class="accordion-collapse collapse">
             <div class="accordion-body">
-                <strong>Podemos recuperar las listas</strong> accediendo a la vista papelera y restaurarlas individualmente dandole al icono <img src="/lista-simple/assets/img/iconos/restaurar.svg" alt="Imagen icono de restauarar" class="mb-1 icon-list-ss"> o eliminarlas dando al icono <img src="/lista-simple/assets/img/iconos/papelera.svg" alt="Imagen icono de papelera" class="mb-1 icon-list-ss">. Tambíen se pueden restuarar o eliminar todas a la vez con los botones <img src="/lista-simple/assets/img/iconos/botonesRD.png" alt="Imagen de iconos de restaurar y vaciar listas de la vista papelera" class="mb-1 iconslist-xl">.
+                <strong>Si damos clic</strong> en el icono <img src="/lista-simple/assets/img/iconos/papelera.svg" alt="Imagen icono de papelera" class="mb-1 icon-list-ss"> de una lista, esta se enviará a la papelera independientemente del contenido que tenga. Desde la papelera se podrá recuperar o eliminar. Sin embargo, si se eliminan los elementos que de una lista estos se borrarán de forma definitiva.
             </div>
         </div>
     </div>
 
     <div class="accordion-item">
         <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseEight" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseEignt" aria-expanded="false" aria-controls="panelsStayOpen-collapseEignt">
+                <strong>¿Cómo elimino los elementos de una lista?</strong>
+
+            </button>
+        </h2>
+        <div id="panelsStayOpen-collapseEignt" class="accordion-collapse collapse">
+            <div class="accordion-body">
+                <strong>Damos clic en el nombre de la lista</strong> para acceder a su contenido. Si damos clic en el icono <img src="/lista-simple/assets/img/iconos/papelera.svg" alt="Imagen icono de papelera" class="mb-1 icon-list-ss"> de cualquier elemento de la lista, este se eliminará de forma definitiva.
+            </div>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseNine" aria-expanded="false" aria-controls="panelsStayOpen-collapseNine">
+                <strong>¿Cómo puedo recuperar una lista?</strong>
+
+            </button>
+        </h2>
+        <div id="panelsStayOpen-collapseNine" class="accordion-collapse collapse">
+            <div class="accordion-body">
+                <strong>Podemos recuperar las listas</strong> accediendo a la vista papelera y restaurarlas individualmente, dabdo al icono <img src="/lista-simple/assets/img/iconos/restaurar.svg" alt="Imagen icono de restauarar" class="mb-1 icon-list-ss"> o eliminarlas dando al icono <img src="/lista-simple/assets/img/iconos/papelera.svg" alt="Imagen icono de papelera" class="mb-1 icon-list-ss">. También se pueden restaurar o eliminar todas a la vez con los botones <img src="/lista-simple/assets/img/iconos/botonesRD.png" alt="Imagen de iconos de restaurar y vaciar listas de la vista papelera" class="mb-1 iconslist-xl">.
+            </div>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTen" aria-expanded="false" aria-controls="panelsStayOpen-collapseTen">
                 <strong>¿Puedo darme de baja de la aplicación?</strong>
 
             </button>
         </h2>
-        <div id="panelsStayOpen-collapseEight" class="accordion-collapse collapse">
+        <div id="panelsStayOpen-collapseTen" class="accordion-collapse collapse">
             <div class="accordion-body">
-                <strong>Por su puesto</strong>. Desde la vista <strong>Mi cuenta</strong> puedes darte de baja dando clic en el botón <img src="/lista-simple/assets/img/iconos/baja.png" alt="Imagen botón darse de baja de vista Mi cuenta" class="mb-1 iconslist-xl">. Ten en cuenta que dando de baja la cuenta se borran todos los datos de esta como el email, usuario, contraseña, listas y elementos de estas.
+                <strong>Por su puesto</strong>. Desde la vista <strong>Mi cuenta</strong> puedes darte de baja dando clic en el botón <img src="/lista-simple/assets/img/iconos/baja.png" alt="Imagen botón darse de baja de vista Mi cuenta" class="mb-1 iconslist-xl">. Al dar de baja la cuenta se borran todos los datos de esta como el email, usuario, contraseña, listas y elementos de estas.
             </div>
         </div>
     </div>

@@ -27,3 +27,11 @@
                 <img src="/lista-simple/assets/img/logo/logo_small.png" alt="Logo Lista Simple" title="Lista Simple" class="col-12 col-md-10 col-lg-7 col-xl-6 col-xxl-5">
             </div>
             <div class=" d-flex flex-column w-100 align-items-center">
+                <?php
+                if (isset($_SESSION['logout'])) {
+                    echo '
+                    <div>
+                    <h5>La sesión ha expirado</h5>
+                    </div>';
+                }
+                ?>

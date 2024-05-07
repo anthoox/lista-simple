@@ -17,8 +17,6 @@
 <body>
 
 
-
-
     <!-- CONTENEDOR PRINCIPAL -->
     <div class=" h-100 d-flex flex-column  w-100 " id="main-container">
 
@@ -47,14 +45,6 @@
                     <img src="<?= base_url ?>assets/img/logo/logo.png" alt="Logo Lista Simple" class="logo">
                 </div>
 
-                <!-- 
-                
-                <div class="d-none d-xl-flex align-items-center flex-row-reverse  p-2 w-100">
-                    <img src="<?= base_url ?>assets/img/logo/logo_small.png" alt="Logo Lista Simple" class="logo-xl">
-
-                    <span class=" p-1 ps-3 pe-3 bg-primary text-white ms-2 me-2 rounded rounded-3"> <?= $_SESSION['identity']->username  ?></span><span>Usuario:</span>
-
-                </div> -->
             </div>
 
         </header>
@@ -81,7 +71,7 @@
                     <li class="list-group-item pt-4 pb-4 "><a href="<?= base_url ?>users/acount" class="text-decoration-none text-black fw-semibold">Mi cuenta</a></li>
                     <li class="list-group-item pt-4 pb-4 "><a href="<?= base_url ?>users/trash" class="text-decoration-none text-black fw-semibold">Papelera</a></li>
                     <li class="list-group-item pt-4 pb-4 "><a href="<?= base_url ?>users/help" class="text-decoration-none text-black fw-semibold">Soporte</a></li>
-                    <li class="list-group-item pt-4 pb-4 "><a href="" class="text-decoration-none text-black fw-semibold" data-bs-toggle="modal" data-bs-target="#logoutModal">Salir</a></li>
+                    <li class="list-group-item pt-4 pb-4 "><a href="#" class="text-decoration-none text-black fw-semibold" data-bs-toggle="modal" data-bs-target="#logoutModal">Salir</a></li>
                 <?php endif; ?>
                 <li class="list-group-item pt-4 pb-4"><img src="<?= base_url ?>assets/img/iconos/cerrar.svg" alt="Icono cerrar menú lateral" class="yes-icon" id="btn-menu-cerrar"></li>
 
@@ -89,7 +79,7 @@
         </nav>
 
         <!-- MAIN -->
-        <main class="h-100 p-1  w-100 container d-flex top overflow-show">
+        <main class="p-1  w-100 container d-flex top overflow-show">
             <!-- NAV ESCRITORIO -->
             <nav class="bg-white  border-end p-4  mt-xl-3 d-none d-xl-flex flex-column align-items-center nav-w ">
                 <div class="rounded-circle border border-1 d-flex align-items-center justify-content-center mt-4  img-user  ">

@@ -1,6 +1,5 @@
 <?php require_once 'C:/wamp64/www/lista-simple/views/layout/head2.php'; ?>
 
-
 <!-- Contenido -->
 
 <div class="d-flex flex-column col-12 mt-xl-3 flex-sm-row gap-1 justify-content-between p-0 m-0">
@@ -131,13 +130,7 @@
 </div>
 
 
-<!-- Modal ADD -->
-<?php require_once 'C:/wamp64/www/lista-simple/views/modals/modalAddList.php'; ?>
 
-<!-- Modal EDIT -->
-<?php require_once 'C:/wamp64/www/lista-simple/views/modals/modalEditList.php'; ?>
-
-<?php require_once 'C:/wamp64/www/lista-simple/views/modals/modalLogout.php'; ?>
 
 </div>
 
