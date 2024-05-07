@@ -1,6 +1,6 @@
 <!-- Cabeceras -->
 <?php
-require_once 'C:/wamp64/www/lista-simple/views/layout/head.php';
+require_once base_url2 . 'views/layout/head.php';
 ?>
 
 <!-- Contenido -->
@@ -33,4 +33,4 @@ require_once 'C:/wamp64/www/lista-simple/views/layout/head.php';
 </div>
 
 <!-- Pie de página -->
-<?php require_once  'C:/wamp64/www/lista-simple/views/layout/footer.php'; ?>
+<?php require_once  base_url2 . 'views/layout/footer.php'; ?>

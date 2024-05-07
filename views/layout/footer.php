@@ -38,16 +38,16 @@
 
 <?php else : ?>
     <!-- Modal ADD -->
-    <?php require_once 'C:/wamp64/www/lista-simple/views/modals/modalAddList.php'; ?>
-    <?php require_once 'C:/wamp64/www/lista-simple/views/modals/modalAddItem.php'; ?>
+    <?php require_once base_url2 . 'views/modals/modalAddList.php'; ?>
+    <?php require_once base_url2 . 'views/modals/modalAddItem.php'; ?>
 
     <!-- Modal EDIT -->
-    <?php require_once 'C:/wamp64/www/lista-simple/views/modals/modalEditList.php'; ?>
-    <?php require_once 'C:/wamp64/www/lista-simple/views/modals/modalEditItem.php'; ?>
+    <?php require_once base_url2 . 'views/modals/modalEditList.php'; ?>
+    <?php require_once base_url2 . 'views/modals/modalEditItem.php'; ?>
 
 
     <!-- Modal LOGOUT -->
-    <?php require_once 'C:/wamp64/www/lista-simple/views/modals/modalLogout.php'; ?>
+    <?php require_once base_url2 . 'views/modals/modalLogout.php'; ?>
 <?php endif; ?>
 
 </div>

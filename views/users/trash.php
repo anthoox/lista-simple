@@ -1,5 +1,5 @@
 <!-- Cabeceras -->
-<?php require_once 'C:/wamp64/www/lista-simple/views/layout/head2.php'; ?>
+<?php require_once base_url2 . 'views/layout/head2.php'; ?>
 
 <!-- Contenido -->
 <div class="d-flex flex-column mt-2 col-12 mt-xl-3 flex-sm-row gap-1 justify-content-around p-0 m-0">
@@ -97,8 +97,8 @@
 
     ?>
 
-    <?php require_once 'C:/wamp64/www/lista-simple/views/modals/modalEmpty.php'; ?>
-    <?php require_once 'C:/wamp64/www/lista-simple/views/modals/modalRestore.php'; ?>
+    <?php require_once base_url2 . 'views/modals/modalEmpty.php'; ?>
+    <?php require_once base_url2 . 'views/modals/modalRestore.php'; ?>
 
 
 </div>
@@ -112,5 +112,5 @@
 
 <!-- Pie de página -->
 <?php
-require_once 'C:/wamp64/www/lista-simple/views/layout/footer.php';
+require_once base_url2 . 'views/layout/footer.php';
 ?>

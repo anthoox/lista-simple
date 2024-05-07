@@ -1,5 +1,5 @@
 <!-- Cabeceras -->
-<?php require_once 'C:/wamp64/www/lista-simple/views/layout/head2.php'; ?>
+<?php require_once base_url2 . 'views/layout/head2.php'; ?>
 <?php
 $list = new ListsController();
 if (isset($_GET['id'])) {
@@ -183,5 +183,5 @@ $price = number_format((float)$totalPrice['totalPrice'], 2)
 
 <!-- Pie de página -->
 <?php
-require_once 'C:/wamp64/www/lista-simple/views/layout/footer.php';
+require_once base_url2 . 'views/layout/footer.php';
 ?>

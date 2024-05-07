@@ -1,4 +1,4 @@
-<?php require_once 'C:/wamp64/www/lista-simple/views/layout/head2.php'; ?>
+<?php require_once base_url2 . 'views/layout/head2.php'; ?>
 
 <!-- Contenido -->
 
@@ -136,5 +136,5 @@
 
 <!-- Pie de página -->
 <?php
-require_once 'C:/wamp64/www/lista-simple/views/layout/footer.php';
+require_once base_url2 . 'views/layout/footer.php';
 ?>

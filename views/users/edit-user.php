@@ -1,5 +1,5 @@
 <!-- Cabeceras -->
-<?php require_once 'C:/wamp64/www/lista-simple/views/layout/head2.php'; ?>
+<?php require_once base_url2 . 'views/layout/head2.php'; ?>
 
 <!-- Contenido -->
 <div class="w-100 mt-xl-5 pe-2 ps-2">
@@ -77,4 +77,4 @@
 
 
 <!-- Pie de página -->
-<?php require_once 'C:/wamp64/www/lista-simple/views/layout/footer.php'; ?>
+<?php require_once base_url2 . 'views/layout/footer.php'; ?>

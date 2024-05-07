@@ -1,5 +1,5 @@
 <!-- Cabeceras -->
-<?php require_once 'C:/wamp64/www/lista-simple/views/layout/head.php'; ?>
+<?php require_once base_url2 . 'views/layout/head.php'; ?>
 
 <?php if (isset($_SESSION['identity'])) : ?>
     <?= header("Location:" . base_url . "lists/index") ?>
@@ -32,4 +32,4 @@
 
 </div>
 
-<?php require_once 'C:/wamp64/www/lista-simple/views/layout/footer.php'; ?>
+<?php require_once base_url2 . 'views/layout/footer.php'; ?>

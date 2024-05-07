@@ -7,7 +7,7 @@ class ItemsController
     public function index($id = '')
     {
         if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
-            require_once 'C:/wamp64/www/lista-simple/views/users/admin.php';
+            require_once base_url2 . 'views/users/admin.php';
         }
         if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
             if (isset($_GET['id']) && $id == '') {
@@ -15,7 +15,7 @@ class ItemsController
 
                 $items = new Items();
                 $result = $items->items($listId);
-                require_once  'C:/wamp64/www/lista-simple/views/users/list.php';
+                require_once  base_url2 . 'views/users/list.php';
 
                 return $result;
             } else if ($id != '') {
@@ -29,14 +29,15 @@ class ItemsController
                 return $result;
             }
         } else {
-            require_once 'C:/wamp64/www/lista-simple/views/users/home.php';
+            require_once base_url2 . 'views/users/home.php';
         }
+        require_once base_url2 . 'views/users/home.php';
     }
 
     public function save()
     {
         if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
-            require_once 'C:/wamp64/www/lista-simple/views/users/admin.php';
+            require_once base_url2 . 'views/users/admin.php';
         }
         if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
             $dataItem = ValidatorForm::validatorItem($_POST);
@@ -107,14 +108,14 @@ class ItemsController
 
             header("Location:" . base_url . "items/index&id=" . $idList);
         } else {
-            require_once 'C:/wamp64/www/lista-simple/views/users/home.php';
+            require_once base_url2 . 'views/users/home.php';
         }
     }
 
     public function getItem()
     {
         if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
-            require_once 'C:/wamp64/www/lista-simple/views/users/admin.php';
+            require_once base_url2 . 'views/users/admin.php';
         }
         if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
             $listId = $_GET['id'];
@@ -131,14 +132,14 @@ class ItemsController
                 echo json_encode(array('message' => 'Lista no encontrada'));
             }
         } else {
-            require_once 'C:/wamp64/www/lista-simple/views/users/home.php';
+            require_once base_url2 . 'views/users/home.php';
         }
     }
 
     public function edit()
     {
         if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
-            require_once 'C:/wamp64/www/lista-simple/views/users/admin.php';
+            require_once base_url2 . 'views/users/admin.php';
         }
         if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
             $dataItem = ValidatorForm::validatorItem($_POST);
@@ -162,14 +163,14 @@ class ItemsController
                 $list->index($dataItem['idList']);
             }
         } else {
-            require_once 'C:/wamp64/www/lista-simple/views/users/home.php';
+            require_once base_url2 . 'views/users/home.php';
         }
     }
 
     public function del()
     {
         if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
-            require_once 'C:/wamp64/www/lista-simple/views/users/admin.php';
+            require_once base_url2 . 'views/users/admin.php';
         }
         if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
             $id = $_GET['id'];
@@ -177,20 +178,20 @@ class ItemsController
             $item = new Items();
             $result = $item->del($id);
             if ($result) {
-                require_once  'C:/wamp64/www/lista-simple/views/users/list.php';
+                require_once  base_url2 . 'views/users/list.php';
             } else {
-                require_once  'C:/wamp64/www/lista-simple/views/users/list.php';
+                require_once  base_url2 . 'views/users/list.php';
                 echo '<h2>error al eleminar item</h2>';
             }
         } else {
-            require_once 'C:/wamp64/www/lista-simple/views/users/home.php';
+            require_once base_url2 . 'views/users/home.php';
         }
     }
 
     public function numItems($idList)
     {
         if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
-            require_once 'C:/wamp64/www/lista-simple/views/users/admin.php';
+            require_once base_url2 . 'views/users/admin.php';
         }
         if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
             $items = new Items();
@@ -202,14 +203,14 @@ class ItemsController
                 return false;
             }
         } else {
-            require_once 'C:/wamp64/www/lista-simple/views/users/home.php';
+            require_once base_url2 . 'views/users/home.php';
         }
     }
 
     public function totalPrice($idList)
     {
         if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
-            require_once 'C:/wamp64/www/lista-simple/views/users/admin.php';
+            require_once base_url2 . 'views/users/admin.php';
         }
         if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
             $items = new Items();
@@ -221,14 +222,14 @@ class ItemsController
                 return false;
             }
         } else {
-            require_once 'C:/wamp64/www/lista-simple/views/users/home.php';
+            require_once base_url2 . 'views/users/home.php';
         }
     }
 
     public function completed()
     {
         if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
-            require_once 'C:/wamp64/www/lista-simple/views/users/admin.php';
+            require_once base_url2 . 'views/users/admin.php';
         }
         if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -252,9 +253,9 @@ class ItemsController
                 http_response_code(405);
                 echo json_encode(['error' => 'Método no permitido']);
             }
-            require_once  'C:/wamp64/www/lista-simple/views/users/list.php';
+            require_once  base_url2 . 'views/users/list.php';
         } else {
-            require_once 'C:/wamp64/www/lista-simple/views/users/home.php';
+            require_once base_url2 . 'views/users/home.php';
         }
     }
 }
