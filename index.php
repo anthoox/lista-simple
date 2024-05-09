@@ -26,7 +26,7 @@ if (isset($_GET['controller'])) {
     show_error();
 }
 
-if (isset(($nombre_controlador))) {
+if (isset($nombre_controlador)) {
 
     if (class_exists($nombre_controlador)) {
         $controlador = new $nombre_controlador();

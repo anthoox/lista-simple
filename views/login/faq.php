@@ -1,9 +1,9 @@
 <!-- Cabeceras -->
 <?php
 
-require_once base_url2 . 'config/parameters.php';
-require_once base_url2 . 'helpers/utils.php';
-require_once base_url2 . 'views/layout/head.php';
+require_once 'C:/wamp64/www/lista-simple/config/parameters.php';
+require_once 'C:/wamp64/www/lista-simple/helpers/utils.php';
+require_once 'C:/wamp64/www/lista-simple/views/layout/head.php';
 ?>
 
 <!-- Contenido -->
