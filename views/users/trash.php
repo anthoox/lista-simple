@@ -25,10 +25,10 @@
     
                         <div>
                         
-                            <img src="<?=web?>img/iconos/restaurar.svg" alt="Icono para restaurar lista"  class="iconslist btn-rest"  data-list-id=' . $list[0] . '>
+                            <img src="'.web.'img/iconos/restaurar.svg" alt="Icono para restaurar lista"  class="iconslist btn-rest"  data-list-id=' . $list[0] . '>
                         </div>
                         <div>
-                            <img src="<?=web?>img/iconos/papelera.svg" alt="Icono papelera para eliminar lista" class="iconslist btn-delete"  data-list-id=' . $list[0] . '>
+                            <img src="'.web.'img/iconos/papelera.svg" alt="Icono papelera para eliminar lista" class="iconslist btn-delete"  data-list-id=' . $list[0] . '>
                         </div>
                     </div>
             
@@ -60,10 +60,10 @@
                 '<div class="w-100 rounded-4 border border-1 border-dark-subtle p-1 pe-3 ps-3 bg-body-secondary">
                     <div class="d-flex w-100 justify-content-end gap-2">
                         <div>
-                            <img src="<?=web?>img/iconos/restaurar.svg" alt="Icono para restuarar lista"  class="iconslist btn-rest" data-list-id=' . $list[0] . '">
+                            <img src="'.web.'img/iconos/restaurar.svg" alt="Icono para restuarar lista"  class="iconslist btn-rest" data-list-id=' . $list[0] . '">
                         </div>
                         <div>
-                            <img src="<?=web?>img/iconos/papelera.svg" alt="Icono para eliminar lista" class="iconslist btn-delete"  data-list-id=' . $list[0] . '">
+                            <img src="'.web.'img/iconos/papelera.svg" alt="Icono para eliminar lista" class="iconslist btn-delete"  data-list-id=' . $list[0] . '">
                         </div>
                     </div>
             

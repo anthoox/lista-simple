@@ -4,13 +4,12 @@
 <?php
 
 
-if(isset($_SESSION['identity'])){
+if (isset($_SESSION['identity'])) {
     // header("Location: https://listasimple.anthoox.es/lists/index"); 
-    header("Location: C:/wamp64/www/lista-simple/assets/lists/index");
+    header("Location: http://localhost/lista-simple/lists/index");
 
-
-ob_end_flush();
-} 
+    ob_end_flush();
+}
 ?>
 
 

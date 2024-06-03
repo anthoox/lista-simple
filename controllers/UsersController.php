@@ -185,29 +185,6 @@ class UsersController
     }
     
     
-       public function log()
-    {
-        if ($_POST) {
-            // Identificar usuario
-            $user = new User();
-            $user->setEmail($_POST['email']);
-            $user->setPassword($_POST['password']);
-            // Consulta a la base de datos
-            $identity = $user->login();
-            // Iniciar la sesión
-            if ($identity && is_object($identity)) {
-                $_SESSION['identity'] = $identity;
-                if ($identity->rol == 1) {
-                    $_SESSION['admin'] = true;
-                } elseif ($identity->rol == 2) {
-                    $_SESSION['user'] = true;
-                }
-            } else {
-                $_SESSION['error_login'] = 'Failed';
-            }
-        }
-        require_once base_host . 'views/login/log.php';
-    }
 
 
     public function logout()

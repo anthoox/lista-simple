@@ -24,25 +24,24 @@
         <header class="p-0  w-100  d-flex justify-content-center position-fixed z-2 bg-white  ">
             <div class="container d-flex justify-content-between align-items-center justify-content-xl-center  m-0 pt-2 pb-2 ps-0 pe-1 border-bottom border-1">
 
-                <div class="d-xl-none ">
+                <div class="d-xl-none ms-2">
                     <?php
-                    if($_SESSION['icon'] == 1){
-                        echo '<a href="'.base_url . 'lists/index" class="d-flex align-items-center fw-semibold fs-4 text-star text-decoration-none text-black">
+                    if ($_SESSION['icon'] == 1) {
+                        echo '<a href="' . base_url . 'lists/index" class="d-flex align-items-center fw-semibold fs-4 text-star text-decoration-none text-black ">
         <img src="' . web . 'img/iconos/return.svg" alt="Icono de información de lista" class="iconslist-lg "> <span class="fs-6 ">Volver</span>
     </a>';
-                        
-                    }else{
-                        echo '<img src="'.base_url .'assets/img/iconos/menu.svg" alt="icono menú" class="yes-icon" id="btn-menu-abrir">';
+                    } else {
+                        echo '<img src="' . base_url . 'assets/img/iconos/menu.svg" alt="icono menú" class="yes-icon" id="btn-menu-abrir">';
                     }
                     ?>
-                    
+
                 </div>
                 <div class="d-flex w-100 d-flex flex-row-reverse d-xl-none   align-items-center">
-                   <span class="p-1 ps-3 pe-3 bg-primary text-white ms-2 me-2 rounded rounded-3"> <?= $_SESSION['identity']->username  ?></span><span>Usuario:</span>
+                    <span class="p-1 ps-3 pe-3 bg-primary text-white ms-2 me-2 rounded rounded-3"> <?= $_SESSION['identity']->username  ?></span><span>Usuario:</span>
                 </div>
 
-                <div class="d-xl-none">
-                    <img src="<?= base_url ?>assets/img/logo/logo.png" alt="Logo Lista Simple" class="logo">
+                <div class="d-xl-none me-1">
+                    <img src="<?= base_url ?>assets/img/logo/logo.png" alt="Logo Lista Simple" class="logo ">
                 </div>
                 <div class="d-none d-xl-block p-2">
                     <img src="<?= base_url ?>assets/img/logo/logo_small.png" alt="Logo Lista Simple" class="logo-xl">
@@ -51,8 +50,8 @@
                     <span class="p-1 ps-3 pe-3 bg-primary text-white ms-2 me-2 rounded rounded-3"> <?= $_SESSION['identity']->username  ?></span><span>Usuario:</span>
                 </div>
 
-                <div class="d-none d-xl-block">
-                    <img src="<?= base_url ?>assets/img/logo/logo.png" alt="Logo Lista Simple" class="logo">
+                <div class="d-none d-xl-block ">
+                    <img src="<?= base_url ?>assets/img/logo/logo.png" alt="Logo Lista Simple" class=" logo">
                 </div>
 
             </div>
