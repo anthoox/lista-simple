@@ -15,7 +15,7 @@
 
 </form>
 
-<a class="text-center text-decoration-none text-primary-emphasis fw-medium" href="/">Volver</a>
+<a class="text-center text-decoration-none text-primary-emphasis fw-medium" href="<?= base_url ?>">Volver</a>
 
 <p class=" w-75 col-12 col-sm-8 col-md-6 mt-5">Función NO disponible aún. Si necesita ayuda puede enviar su consulta al email: <a href="mailto:listasimple@anthoox.es" class="text-decoration-none">listasimple@anthoox.es</a></p>
 <!-- <span class="text-danger fw-semibold f-little">El email no esta registrado</span> -->

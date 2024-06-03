@@ -4,7 +4,7 @@ require_once base_host . 'views/layout/head.php';
 ?>
 
 <!-- Contenido -->
-<form action="/users/save" method="POST" class="d-flex flex-column justify-content-center col-12 col-md-10 col-lg-6">
+<form action="<?= base_url ?>/users/save" method="POST" class="d-flex flex-column justify-content-center col-12 col-md-10 col-lg-6">
     <div class="mb-2">
         <label for="username" class="d-block text-start form-label">Usuario</label>
         <input type="text" class="form-control" id="username" placeholder="Usuario" name="username" required>
@@ -22,7 +22,7 @@ require_once base_host . 'views/layout/head.php';
 </form>
 
 
-<a class="text-center text-decoration-none text-primary-emphasis fw-medium" href="/">Volver</a>
+<a class="text-center text-decoration-none text-primary-emphasis fw-medium" href="<?= base_url ?>">Volver</a>
 
 <?php if (isset($_SESSION['register']) && $_SESSION['register'] == 'complete') : ?>
     <span class="text-primary fw-semibold">Usuario regitrado correctamente</span>

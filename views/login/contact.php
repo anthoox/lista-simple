@@ -25,7 +25,7 @@ require_once 'C:/wamp64/www/lista-simple/views/layout/head.php';
 
 </form>
 
-<a class="text-center text-decoration-none text-primary-emphasis fw-medium" href="/">Volver</a>
+<a class="text-center text-decoration-none text-primary-emphasis fw-medium" href="<?= base_url ?>">Volver</a>
 <!-- <span class="text-success fw-semibold f-little">Consulta enviada</span> -->
 
 

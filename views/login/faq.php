@@ -148,8 +148,8 @@ require_once 'C:/wamp64/www/lista-simple/views/layout/head.php';
             </div>
         </div>
     </div>
-    
-     <div class="accordion-item">
+
+    <div class="accordion-item">
         <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseElev" aria-expanded="false" aria-controls="panelsStayOpen-collapseElev">
                 <strong>¿Y que pasa con mis datos si me registro?</strong>
@@ -164,7 +164,7 @@ require_once 'C:/wamp64/www/lista-simple/views/layout/head.php';
     </div>
 
 </div>
-<a class="text-center text-decoration-none text-primary-emphasis fw-medium mt-3 " href="/">Volver</a>
+<a class="text-center text-decoration-none text-primary-emphasis fw-medium mt-3 " href="<?= base_url ?>">Volver</a>
 
 </div>
 

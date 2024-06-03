@@ -9,13 +9,13 @@
         <!-- ACTIVAR EN VISTAS DE LOGIN -->
         <ul class="list-unstyled  mb-0 d-md-flex gap-3  text-star">
             <li class="text-start ">
-                <a class="fw-medium text-decoration-none text-primary-emphasis f-little" href="/">Inicio</a>
+                <a class="fw-medium text-decoration-none text-primary-emphasis f-little" href="<?= base_url ?>">Inicio</a>
             </li>
             <li class="text-start">
-                <a class="fw-medium text-decoration-none text-primary-emphasis f-little" href="/views/login/faq.php">FaQ</a>
+                <a class="fw-medium text-decoration-none text-primary-emphasis f-little" href="<?= base_url ?>/views/login/faq.php">FaQ</a>
             </li>
             <li class="text-start ">
-                <a class="fw-medium text-decoration-none text-primary-emphasis f-little" href="/views/login/contact.php">Contacto</a>
+                <a class="fw-medium text-decoration-none text-primary-emphasis f-little" href="<?= base_url ?>/views/login/contact.php">Contacto</a>
             </li>
 
 

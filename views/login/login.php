@@ -31,7 +31,7 @@ if (isset($_SESSION['identity'])) {
 
 <!-- <a class="text-center text-decoration-none text-primary-emphasis fw-medium " href="/lista-simple/views/login/restore.php">¿Olvidaste la
     contraseña?</a> -->
-<a class="text-center text-decoration-none text-primary-emphasis fw-medium " href="/">Volver</a>
+<a class="text-center text-decoration-none text-primary-emphasis fw-medium " href="<?= base_url ?>">Volver</a>
 
 
 <?php if (isset($_SESSION['error_login']) && $_SESSION['error_login'] == 'Failed') : ?>

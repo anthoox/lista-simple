@@ -6,7 +6,7 @@
     <!-- <div class="d-flex justify-content-around gap-1 col-12 col-sm-6"> -->
         <a href="<?= base_url ?>lists/index" id="lists" class="btn <?php
         echo isset($_SESSION['color']) && $_SESSION['color'] == 'index' ? 'bg-primary text-white' : 'bg-body border-dark-subtle';
-        ?> rounded-3  border-1 border-light fw-semibold btn-style f-little btn-list">Listas</a>
+        ?> rounded-3  border-1 border-light  btn-style f-little btn-list">Listas</a>
 
 
 
@@ -108,9 +108,9 @@
         }
     } elseif ($result == 1) {
 
-        echo '<h5>Error al cargar listas</h5>';
+        echo '<h6>Error al cargar listas</h6>';
     } else {
-        echo '<h5>Sin listas</h5>';
+        echo '<h6>Aún no tienes listas. Añadelas dando clic en el icono <img src="'.base_url.'assets/img/iconos/add.svg" alt="Foto de perfil de usuario" class="mb-1 rounded-circle border border-1 bg-success icon-list-ss"> </h6>';
     }
 
     ?>
