@@ -37,9 +37,9 @@
                     ?>
                     
                 </div>
-                
-                 <?= $_SESSION['identity']->username  ?></span><span>Usuario:</span>-->
-             
+                <div class="d-flex w-100 d-flex flex-row-reverse d-xl-none   align-items-center">
+                   <span class="p-1 ps-3 pe-3 bg-primary text-white ms-2 me-2 rounded rounded-3"> <?= $_SESSION['identity']->username  ?></span><span>Usuario:</span>
+                </div>
 
                 <div class="d-xl-none">
                     <img src="<?= base_url ?>assets/img/logo/logo.png" alt="Logo Lista Simple" class="logo">
