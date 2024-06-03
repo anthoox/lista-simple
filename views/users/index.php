@@ -4,16 +4,20 @@
 
 <div class="d-flex  col-12 mt-xl-3 flex-sm-row gap-1 ps-2 pe-2  m-0">
     <!-- <div class="d-flex justify-content-around gap-1 col-12 col-sm-6"> -->
-        <a href="<?= base_url ?>lists/index" id="lists" class="btn <?php
-        echo isset($_SESSION['color']) && $_SESSION['color'] == 'index' ? 'bg-primary text-white' : 'bg-body border-dark-subtle';
-        ?> rounded-3  border-1 border-light  btn-style f-little btn-list">Listas</a>
+    <a href="<?= base_url ?>lists/index" id="lists" class="btn <?php
+                                                                echo isset($_SESSION['color']) && $_SESSION['color'] == 'index' ? 'bg-primary text-white' : 'bg-body border-dark-subtle';
+                                                                ?> rounded-3  border-1 border-light  btn-style f-little btn-list">Listas</a>
 
 
 
- 
-        <a href="<?= base_url ?>lists/completed" id="completed" class="btn <?php
-        echo isset($_SESSION['color']) && $_SESSION['color'] == 'completed' ? 'bg-primary text-white' : 'bg-body border-dark-subtle';
-        ?> rounded-3 border-1fw-semibold btn-style f-little btn-list">Completas</a>
+
+    <a href="<?= base_url ?>lists/completed" id="completed" class="btn <?php
+                                                                        echo isset($_SESSION['color']) && $_SESSION['color'] == 'completed' ? 'bg-primary text-white' : 'bg-body border-dark-subtle';
+                                                                        ?> rounded-3 border-1fw-semibold btn-style f-little btn-list">Completas</a>
+
+    <a href="<?= base_url ?>lists/upcoming" id="upcoming" class="btn <?php
+                                                                        echo isset($_SESSION['color']) && $_SESSION['color'] == 'upcoming' ? 'bg-primary text-white' : 'bg-body border-dark-subtle';
+                                                                        ?> rounded-3 border-1fw-semibold btn-style f-little btn-list">Recordatorios</a>
 
 </div>
 <div class="d-flex flex-column col-12 mt-1 mt-xl-3 gap-2 p-2 ">
@@ -23,7 +27,7 @@
 
     if (isset($result) && empty(!$result)) {
 
-        foreach ($result as $list) {    
+        foreach ($result as $list) {
             // Si no esta en la papelera/
             if ($list[7] == 0) {
 
@@ -41,10 +45,10 @@
                     '<div  class="w-100 rounded-4 border border-1 border-dark-subtle p-1 pe-3 ps-3 btn-style ">
                         <div class="d-flex w-100 justify-content-end gap-2">            
                             <div>                                
-                                <img src="'.base_url .'assets/img/iconos/editar.svg" alt="Icono de lapiz para editar datos de lista" class="iconslist btn-edit"  data-bs-toggle="modal" data-bs-target="#editModal"  data-list-id=' . $list[0] . '>
+                                <img src="' . base_url . 'assets/img/iconos/editar.svg" alt="Icono de lapiz para editar datos de lista" class="iconslist btn-edit"  data-bs-toggle="modal" data-bs-target="#editModal"  data-list-id=' . $list[0] . '>
                             </div>
                             <div>
-                                <img src="'.base_url .'assets/img/iconos/papelera.svg" alt="Icono papelera para eliminar lista" class="iconslist btn-del"  data-list-id=' . $list[0] . '>
+                                <img src="' . base_url . 'assets/img/iconos/papelera.svg" alt="Icono papelera para eliminar lista" class="iconslist btn-del"  data-list-id=' . $list[0] . '>
                             </div>
                         </div>
                         
@@ -77,10 +81,10 @@
                     '<div  class="w-100 rounded-4 border border-1 border-dark-subtle p-1 pe-3 ps-3 bg-body-secondary btn-style ">
                         <div class="d-flex w-100 justify-content-end gap-2">
                             <div>
-                                <img src="'.base_url .'assets/img/iconos/editar.svg" alt="Icono de lapiz para editar datos de lista" class="iconslist btn-edit"  data-bs-toggle="modal" data-bs-target="#editModal"  data-list-id=' . $list[0] . '>
+                                <img src="' . base_url . 'assets/img/iconos/editar.svg" alt="Icono de lapiz para editar datos de lista" class="iconslist btn-edit"  data-bs-toggle="modal" data-bs-target="#editModal"  data-list-id=' . $list[0] . '>
                             </div>
                             <div>
-                                <img src="'.base_url .'assets/img/iconos/papelera.svg" alt="Icono papelera para eliminar lista" class="iconslist btn-del"  data-list-id=' . $list[0] . '>
+                                <img src="' . base_url . 'assets/img/iconos/papelera.svg" alt="Icono papelera para eliminar lista" class="iconslist btn-del"  data-list-id=' . $list[0] . '>
                             </div>
                         </div>
 
@@ -109,8 +113,11 @@
     } elseif ($result == 1) {
 
         echo '<h6>Error al cargar listas</h6>';
+    } elseif ($result == false) {
+
+        echo '<h6>Aún no has completado ninguna lista.</h6>';
     } else {
-        echo '<h6>Aún no tienes listas. Añadelas dando clic en el icono <img src="'.base_url.'assets/img/iconos/add.svg" alt="Foto de perfil de usuario" class="mb-1 rounded-circle border border-1 bg-success icon-list-ss"> </h6>';
+        echo '<h6>Aún no tienes listas. Añadelas dando clic en el icono <img src="' . base_url . 'assets/img/iconos/add.svg" alt="Foto de perfil de usuario" class="mb-1 rounded-circle border border-1 bg-success icon-list-ss"> </h6>';
     }
 
     ?>

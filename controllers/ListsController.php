@@ -70,17 +70,17 @@ class listsController
             $list = new Lists();
             $result = $list->lists($_SESSION['identity']->id);
             $_SESSION['color'] = 'index';
-            $_SESSION['icon'] =0;
+            $_SESSION['icon'] = 0;
             if ($result) {
                 require_once  base_host . 'views/users/index.php';
                 return $result;
             } else {
-     
+
                 require_once  base_host . 'views/users/index.php';
                 return $result;
             }
         } else {
-            
+
 
             require_once base_host . 'views/users/home.php';
         }
@@ -146,8 +146,10 @@ class listsController
             if ($result) {
                 require_once  base_host . 'views/users/index.php';
                 $result['color'] = 'completed';
+
                 return $result;
             } else {
+
                 require_once  base_host . 'views/users/index.php';
                 return false;
             }

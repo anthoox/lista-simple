@@ -1,6 +1,7 @@
 <!-- Cabeceras -->
 <?php require_once base_host . 'views/layout/head2.php'; ?>
 
+
 <!-- Contenido -->
 <div class="d-flex flex-column mt-2 col-12 mt-xl-3 flex-sm-row gap-1 justify-content-around p-0 m-0">
     <div class="d-flex justify-content-around gap-1 col-12 col-sm-6">
