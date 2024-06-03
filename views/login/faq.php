@@ -1,10 +1,9 @@
 <!-- Cabeceras -->
 <?php
 
-require_once '/home/g280846/public_html/listasimple/config/parameters.php';
-require_once '/home/g280846/public_html/listasimple/helpers/utils.php';
-require_once '/home/g280846/public_html/listasimple/views/layout/head.php';
-
+require_once 'C:/wamp64/www/lista-simple/config/parameters.php';
+require_once 'C:/wamp64/www/lista-simple/helpers/utils.php';
+require_once 'C:/wamp64/www/lista-simple/views/layout/head.php';
 ?>
 
 <!-- Contenido -->
