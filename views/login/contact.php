@@ -1,9 +1,9 @@
 <!-- Cabeceras -->
 <?php
-require_once base_url2 . 'config/parameters.php';
-require_once base_url2 . 'helpers/utils.php';
-require_once base_url2 . 'views/layout/head.php';
-require_once base_url2 . 'views/layout/head.php';
+require_once '/home/g280846/public_html/listasimple/config/parameters.php';
+require_once '/home/g280846/public_html/listasimple/helpers/utils.php';
+require_once '/home/g280846/public_html/listasimple/views/layout/head.php';
+
 ?>
 
 <!-- Contenido -->
@@ -25,7 +25,7 @@ require_once base_url2 . 'views/layout/head.php';
 
 </form>
 
-<a class="text-center text-decoration-none text-primary-emphasis fw-medium" href="/lista-simple/index.php">Volver</a>
+<a class="text-center text-decoration-none text-primary-emphasis fw-medium" href="/">Volver</a>
 <!-- <span class="text-success fw-semibold f-little">Consulta enviada</span> -->
 
 
@@ -33,4 +33,4 @@ require_once base_url2 . 'views/layout/head.php';
 </div>
 
 <!-- Pie de página -->
-<?php require_once base_url2 . 'views/layout/footer.php'; ?>
+<?php require_once base_host . 'views/layout/footer.php'; ?>

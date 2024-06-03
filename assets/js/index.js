@@ -1,4 +1,5 @@
 window.onload = function () {
+
     // Capturar el clic en el botón de edición
     var editButtons = document.querySelectorAll('.btn-edit');
     editButtons.forEach(function (button) {
@@ -9,6 +10,7 @@ window.onload = function () {
             var xhr = new XMLHttpRequest();
             xhr.open('GET', 'http://localhost/lista-simple/lists/list&id=' + listId, true);
             xhr.onload = function () {
+            
                 if (xhr.status >= 200 && xhr.status < 400) {
                     // console.log(xhr.responseText);
                     var jsonData = JSON.parse(xhr.responseText);

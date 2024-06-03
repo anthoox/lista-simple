@@ -1,5 +1,5 @@
 <!-- Cabeceras -->
-<?php require_once base_url2 . 'views/layout/head2.php'; ?>
+<?php require_once base_host . 'views/layout/head2.php'; ?>
 
 <!-- Contenido -->
 <div class="w-100 mt-xl-5 pe-2 ps-2">
@@ -31,7 +31,7 @@
     </div>
 
     <div class="d-flex flex-column mt-5 mb-5">
-        <a href=""><img src="/lista-simple/assets/img/iconos/papelera.svg" class="iconslist-lg" alt="Icono eliminar"></a>
+        <a href=""><img src="/lista-simple<?=web?>img/iconos/papelera.svg" class="iconslist-lg" alt="Icono eliminar"></a>
         <span>Eliminar</span>
     </div>
 </form>
@@ -44,5 +44,5 @@
 
 <!-- Pie de página -->
 <?php
-require_once base_url2 . 'views/layout/footer.php';
+require_once base_host . 'views/layout/footer.php';
 ?>

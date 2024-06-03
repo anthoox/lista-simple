@@ -1,5 +1,5 @@
 <!-- Cabeceras -->
-<?php require_once base_url2 . 'views/layout/head2.php'; ?>
+<?php require_once base_host . 'views/layout/head2.php'; ?>
 
 <!-- Contenido -->
 <div class="d-flex flex-column mt-2 col-12 mt-xl-3 flex-sm-row gap-1 justify-content-around p-0 m-0">
@@ -10,7 +10,7 @@
 </div>
 <div class="d-flex flex-column col-12 mt-2 mt-md-4 gap-2 p-2 ">
     <?php
-    $lists = new ListsController();
+    $lists = new listsController();
     $result = $lists->paper_bin();
 
 
@@ -25,10 +25,10 @@
     
                         <div>
                         
-                            <img src="/lista-simple/assets/img/iconos/restaurar.svg" alt="Icono para restaurar lista"  class="iconslist btn-rest"  data-list-id=' . $list[0] . '>
+                            <img src="<?=web?>img/iconos/restaurar.svg" alt="Icono para restaurar lista"  class="iconslist btn-rest"  data-list-id=' . $list[0] . '>
                         </div>
                         <div>
-                            <img src="/lista-simple/assets/img/iconos/papelera.svg" alt="Icono papelera para eliminar lista" class="iconslist btn-delete"  data-list-id=' . $list[0] . '>
+                            <img src="<?=web?>img/iconos/papelera.svg" alt="Icono papelera para eliminar lista" class="iconslist btn-delete"  data-list-id=' . $list[0] . '>
                         </div>
                     </div>
             
@@ -60,10 +60,10 @@
                 '<div class="w-100 rounded-4 border border-1 border-dark-subtle p-1 pe-3 ps-3 bg-body-secondary">
                     <div class="d-flex w-100 justify-content-end gap-2">
                         <div>
-                            <img src="/lista-simple/assets/img/iconos/restaurar.svg" alt="Icono para restuarar lista"  class="iconslist btn-rest" data-list-id=' . $list[0] . '">
+                            <img src="<?=web?>img/iconos/restaurar.svg" alt="Icono para restuarar lista"  class="iconslist btn-rest" data-list-id=' . $list[0] . '">
                         </div>
                         <div>
-                            <img src="/lista-simple/assets/img/iconos/papelera.svg" alt="Icono para eliminar lista" class="iconslist btn-delete"  data-list-id=' . $list[0] . '">
+                            <img src="<?=web?>img/iconos/papelera.svg" alt="Icono para eliminar lista" class="iconslist btn-delete"  data-list-id=' . $list[0] . '">
                         </div>
                     </div>
             
@@ -97,8 +97,8 @@
 
     ?>
 
-    <?php require_once base_url2 . 'views/modals/modalEmpty.php'; ?>
-    <?php require_once base_url2 . 'views/modals/modalRestore.php'; ?>
+    <?php require_once base_host . 'views/modals/modalEmpty.php'; ?>
+    <?php require_once base_host . 'views/modals/modalRestore.php'; ?>
 
 
 </div>
@@ -112,5 +112,5 @@
 
 <!-- Pie de página -->
 <?php
-require_once base_url2 . 'views/layout/footer.php';
+require_once base_host . 'views/layout/footer.php';
 ?>

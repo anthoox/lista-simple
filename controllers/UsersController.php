@@ -8,125 +8,128 @@ class UsersController
     public function index()
     {
         if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
-            require_once  base_url2 . 'views/users/admin.php';
+            require_once  base_host . 'views/users/admin.php';
         }
         if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
-            require_once  base_url2 . 'views/users/index.php';
+            require_once  base_host . 'views/users/index.php';
         } else {
-            require_once base_url2 . 'views/users/home.php';
+            require_once base_host . 'views/users/home.php';
         }
     }
 
     /* A PARTIR DE AQUI CAMBIAR USER/ADMIN A ERROR/No */
     public function record()
-    {
+    {   
         if (!isset($_SESSION['identity'])) {
-            require_once base_url2 . 'views/login/record.php';
+            require_once base_host . 'views/login/record.php';
         } elseif (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
-            require_once  base_url2 . 'views/users/admin.php';
+
+            require_once  base_host . 'views/users/admin.php';
         } elseif (isset($_SESSION['user']) && $_SESSION['user'] == true) {
-            require_once  base_url2 . 'views/users/index.php';
+
+            require_once  base_host . 'views/users/index.php';
         } else {
-            require_once base_url2 . 'views/users/home.php';
+
+            require_once base_host . '/views/users/home.php';
         }
     }
 
     public function acount()
     {
         if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
-            require_once  base_url2 . 'views/users/admin.php';
+            require_once  base_host . 'views/users/admin.php';
         }
         if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
-            require_once base_url2 . 'views/users/acount.php';
+            require_once base_host . 'views/users/acount.php';
         } else {
-            require_once base_url2 . 'views/users/home.php';
+            require_once base_host . 'views/users/home.php';
         }
     }
 
     public function editUser()
     {
         if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
-            require_once base_url2 . 'views/users/edit-user.php';
+            require_once base_host . 'views/users/edit-user.php';
         }
         if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
-            require_once base_url2 . 'views/users/index.php';
+            require_once base_host . 'views/users/index.php';
         } else {
-            require_once base_url2 . 'views/users/home.php';
+            require_once base_host . 'views/users/home.php';
         }
     }
 
     public function editItem()
     {
         if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
-            require_once base_url2 . 'views/users/admin.php';
+            require_once base_host . 'views/users/admin.php';
         }
         if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
-            require_once base_url2 . 'views/users/edit-item.php';
+            require_once base_host . 'views/users/edit-item.php';
         } else {
-            require_once base_url2 . 'views/users/home.php';
+            require_once base_host . 'views/users/home.php';
         }
     }
 
     public function editList()
     {
         if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
-            require_once base_url2 . 'views/users/admin.php';
+            require_once base_host . 'views/users/admin.php';
         }
         if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
-            require_once base_url2 . 'views/users/edit-list.php';
+            require_once base_host . 'views/users/edit-list.php';
         } else {
-            require_once base_url2 . 'views/users/home.php';
+            require_once base_host . 'views/users/home.php';
         }
     }
 
     public function help()
     {
         if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
-            require_once base_url2 . 'views/users/admin.php';
+            require_once base_host . 'views/users/admin.php';
         }
         if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
-            require_once base_url2 . 'views/users/help.php';
+            require_once base_host . 'views/users/help.php';
         } else {
-            require_once base_url2 . 'views/users/home.php';
+            require_once base_host . 'views/users/home.php';
         }
     }
     public function listInfo()
     {
         if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
-            require_once base_url2 . 'views/users/admin.php';
+            require_once base_host . 'views/users/admin.php';
         }
         if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
-            require_once base_url2 . 'views/users/list-info.php';
+            require_once base_host . 'views/users/list-info.php';
         } else {
-            require_once base_url2 . 'views/users/home.php';
+            require_once base_host . 'views/users/home.php';
         }
     }
     public function list()
     {
         if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
-            require_once base_url2 . 'views/users/admin.php';
+            require_once base_host . 'views/users/admin.php';
         }
         if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
-            require_once base_url2 . 'views/users/list.php';
+            require_once base_host . 'views/users/list.php';
         } else {
-            require_once base_url2 . 'views/users/home.php';
+            require_once base_host . 'views/users/home.php';
         }
     }
     public function trash()
     {
         if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
-            require_once base_url2 . 'views/users/admin.php';
+            require_once base_host . 'views/users/admin.php';
         }
         if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
-            require_once base_url2 . 'views/users/trash.php';
+            require_once base_host . 'views/users/trash.php';
         } else {
-            require_once base_url2 . 'views/users/home.php';
+            require_once base_host . 'views/users/home.php';
         }
     }
 
     public function home()
     {
-        require_once base_url2 . 'views/users/home.php';
+        require_once base_host . 'views/users/home.php';
     }
 
     public function save()
@@ -138,7 +141,7 @@ class UsersController
             $email = $dataUser['email'];
             $password = $dataUser['password'];
             if ($username && $email && $password) {
-                $user = new User();
+                $user = new user();
                 $user->setUsername($username);
                 $user->setEmail($email);
                 $user->setPassword($password);
@@ -178,8 +181,34 @@ class UsersController
                 $_SESSION['error_login'] = 'Failed';
             }
         }
-        require_once base_url2 . 'views/login/login.php';
+        require_once base_host . 'views/login/login.php';
     }
+    
+    
+       public function log()
+    {
+        if ($_POST) {
+            // Identificar usuario
+            $user = new User();
+            $user->setEmail($_POST['email']);
+            $user->setPassword($_POST['password']);
+            // Consulta a la base de datos
+            $identity = $user->login();
+            // Iniciar la sesión
+            if ($identity && is_object($identity)) {
+                $_SESSION['identity'] = $identity;
+                if ($identity->rol == 1) {
+                    $_SESSION['admin'] = true;
+                } elseif ($identity->rol == 2) {
+                    $_SESSION['user'] = true;
+                }
+            } else {
+                $_SESSION['error_login'] = 'Failed';
+            }
+        }
+        require_once base_host . 'views/login/log.php';
+    }
+
 
     public function logout()
     {
@@ -208,7 +237,7 @@ class UsersController
     public function edit()
     {
         if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
-            require_once base_url2 . 'views/users/admin.php';
+            require_once base_host . 'views/users/admin.php';
         }
         if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
             $userPrueba = $_SESSION['identity']->email;
@@ -256,7 +285,7 @@ class UsersController
 
                             if ($edit) {
                                 $_SESSION['save'] = 'completed';
-                                require_once base_url2 . 'views/users/acount.php';
+                                require_once base_host . 'views/users/acount.php';
                             } else {
                                 $_SESSION['save'] = 'failed';
 
@@ -276,15 +305,15 @@ class UsersController
                         $user->logout();
                     } else {
                         $_SESSION['save'] = "failed";
-                        require_once base_url2 . 'views/users/acount.php';
+                        require_once base_host . 'views/users/acount.php';
                     }
                 }
             } else {
                 $_SESSION['save'] = 'prueba';
-                require_once base_url2 . 'views/users/acount.php';
+                require_once base_host . 'views/users/acount.php';
             }
         } else {
-            require_once base_url2 . 'views/users/home.php';
+            require_once base_host . 'views/users/home.php';
         }
     }
 

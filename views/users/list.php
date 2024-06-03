@@ -1,7 +1,7 @@
 <!-- Cabeceras -->
-<?php require_once base_url2 . 'views/layout/head2.php'; ?>
+<?php require_once base_host . 'views/layout/head2.php'; ?>
 <?php
-$list = new ListsController();
+$list = new listsController();
 if (isset($_GET['id'])) {
 
     $_SESSION['the-list'] = $_GET['id'];
@@ -9,24 +9,26 @@ if (isset($_GET['id'])) {
 } elseif ($_SESSION['the-list']) {
     $data = $list->getList($_SESSION['the-list']);
 }
-$items = new ItemsController();
+$items = new itemsController();
 $totalPrice = $items->totalPrice($data['id']);
 $price = number_format((float)$totalPrice['totalPrice'], 2)
 ?>
 
 <!-- Contenido -->
-<div class="d-flex col-12 mt-xl-3 justify-content-between  align-items-center p-1  pe-2 ps-2 m-0 border-1 border-bottom border-top">
-    <a href="<?= base_url ?>lists/index" class="d-flex align-items-center fw-semibold fs-4 text-star">
-        <img src="/lista-simple/assets/img/iconos/return.svg" alt="Icono de información de lista" class="iconslist-lg">
+<div class="d-flex col-12 mt-xl-3 justify-content-between  align-items-center p-1  pe-3 ps-3 m-0 border-1 border-bottom border-top">
+    <a href="<?= base_url ?>lists/index" class=" d-none d-xl-flex align-items-center fw-semibold fs-4 text-star text-decoration-none text-black">
+        <img src="<?= base_url ?>assets/img/iconos/return.svg" alt="Icono para volver a la página anterior" class="iconslist-lg"> <span class="fs-6 ">Volver</span>
+
+
     </a>
 
-    <h2 class="fw-semibold fs-4 mb-0 text-center">
+    <h2 class="fw-semibold fs-3 lh-1 m-0 text-center ">
         <?= $data['name']; ?>
 
     </h2>
 
 
-    <span class="fw-semibold fs-6  text-end">
+    <span class="fw-semibold fs-6  m-0 text-end">
 
         Total: <?= $price . '€' ?>
 
@@ -42,18 +44,18 @@ $price = number_format((float)$totalPrice['totalPrice'], 2)
             // Si no esta completo/
             if ($item[8] == 0) {
                 echo '
-                <div class="w-100 rounded-4 border border-1 border-dark-subtle p-1 pe-3 ps-3 d-flex btn-style"  >
-                    <div class="form-check h-100 d-flex align-items-center pe-1 border-1 border-end">
+                <div class="w-100 rounded-4 border border-1 border-dark-subtle p-1 pe-3 ps-3 d-flex btn-style" data-bs-toggle="modal" data-bs-target="#editItemModal"  data-list-id="' . $item[0] . '" >
+                    <div class="form-check h-100 d-flex align-items-center pe-1 border-1 border-end" >
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" data-item-id="' . $item[0] . '" data-list-id="' . $data['id'] . '">
                     </div>
                     <div class="w-100 ps-2 d-flex justify-content-between flex-column">
                         <div class="d-flex w-100 justify-content-end  gap-2 h-25">
 
                             <div>
-                                <img src="/lista-simple/assets/img/iconos/editar.svg" alt="Icono para editar ítem" class="iconslist btn-edit-item" data-bs-toggle="modal" data-bs-target="#editItemModal"  data-list-id="' . $item[0] . '">
+                                <img src="' . base_url . '/assets/img/iconos/editar.svg" alt="Icono para editar ítem" class="iconslist btn-edit-item" data-bs-toggle="modal" data-bs-target="#editItemModal"  data-list-id="' . $item[0] . '">
                             </div>
                             <div>
-                                <img src="/lista-simple/assets/img/iconos/papelera.svg" alt="Icono eliminar ítem" class="iconslist btn-del-item" data-list-id="' . $item[0] . '">
+                                <img src="' . base_url . '/assets/img/iconos/papelera.svg" alt="Icono eliminar ítem" class="iconslist btn-del-item" data-list-id="' . $item[0] . '">
                             </div>
                         </div a>
             
@@ -109,10 +111,10 @@ $price = number_format((float)$totalPrice['totalPrice'], 2)
                         <div class="d-flex w-100 justify-content-end gap-2 h-25">
                             <!-- superior -->
                             <div>
-                                <img src="/lista-simple/assets/img/iconos/editar.svg" alt="Icono para editar ítem" class="iconslist btn-edit-item" data-bs-toggle="modal" data-bs-target="#editItemModal"  data-list-id="' . $item[0] . '">
+                                <img src="/assets/img/iconos/editar.svg" alt="Icono para editar ítem" class="iconslist btn-edit-item" data-bs-toggle="modal" data-bs-target="#editItemModal"  data-list-id="' . $item[0] . '">
                             </div>
                             <div>
-                                <img src="/lista-simple/assets/img/iconos/papelera.svg" alt="Icono eliminar ítem" class="iconslist btn-del-item" data-list-id="' . $item[0] . '">
+                                <img src="/assets/img/iconos/papelera.svg" alt="Icono eliminar ítem" class="iconslist btn-del-item" data-list-id="' . $item[0] . '">
                             </div>
                         </div>
             
@@ -175,7 +177,7 @@ $price = number_format((float)$totalPrice['totalPrice'], 2)
 
 
 <div class="rounded-circle border border-1 bg-success d-flex align-items-center justify-content-center position-fixed bottom-0  end-0 mb-xl-0 me-3 me-xl-5 shadow add" data-bs-toggle="modal" data-bs-target="#addItemModal">
-    <img src="/lista-simple/assets/img/iconos/add.svg" alt="Foto de perfil" class=" icon-list icon-list-sm">
+    <img src="/assets/img/iconos/add.svg" alt="Foto de perfil" class=" icon-list icon-list-sm">
 </div>
 
 </div>
@@ -183,5 +185,5 @@ $price = number_format((float)$totalPrice['totalPrice'], 2)
 
 <!-- Pie de página -->
 <?php
-require_once base_url2 . 'views/layout/footer.php';
+require_once base_host . 'views/layout/footer.php';
 ?>

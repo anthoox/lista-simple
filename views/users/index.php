@@ -1,4 +1,4 @@
-<?php require_once base_url2 . 'views/layout/head2.php'; ?>
+<?php require_once base_host . 'views/layout/head2.php'; ?>
 
 <!-- Contenido -->
 
@@ -28,18 +28,20 @@
 
     <?php
 
+
     if (isset($result) && empty(!$result)) {
 
-        foreach ($result as $list) {
+        foreach ($result as $list) {    
             // Si no esta en la papelera/
             if ($list[7] == 0) {
 
-                $items = new ItemsController();
+                $items = new itemsController();
                 $itemsData = $items->numItems($list[0]);
 
                 if ($itemsData["completed_items"] !== $itemsData["total_items"] || $itemsData["total_items"] == 0) {
+
                     // Si los items completos no es igual al total de items o el total de items es igual a 0
-                    $completedList = new ListsController();
+                    $completedList = new listsController();
                     $result = $completedList->completeList($list[0], 0);
                     // Marca la lista como NO completa
 
@@ -47,10 +49,10 @@
                     '<div  class="w-100 rounded-4 border border-1 border-dark-subtle p-1 pe-3 ps-3 btn-style ">
                         <div class="d-flex w-100 justify-content-end gap-2">            
                             <div>                                
-                                <img src="/lista-simple/assets/img/iconos/editar.svg" alt="Icono de lapiz para editar datos de lista" class="iconslist btn-edit"  data-bs-toggle="modal" data-bs-target="#editModal"  data-list-id=' . $list[0] . '>
+                                <img src="'.base_url .'assets/img/iconos/editar.svg" alt="Icono de lapiz para editar datos de lista" class="iconslist btn-edit"  data-bs-toggle="modal" data-bs-target="#editModal"  data-list-id=' . $list[0] . '>
                             </div>
                             <div>
-                                <img src="/lista-simple/assets/img/iconos/papelera.svg" alt="Icono papelera para eliminar lista" class="iconslist btn-del"  data-list-id=' . $list[0] . '>
+                                <img src="'.base_url .'assets/img/iconos/papelera.svg" alt="Icono papelera para eliminar lista" class="iconslist btn-del"  data-list-id=' . $list[0] . '>
                             </div>
                         </div>
                         
@@ -76,17 +78,17 @@
                     </div>';
                 } elseif ($itemsData["completed_items"] === $itemsData["total_items"] && $itemsData["total_items"] !== 0) {
                     // Si el total de items es igual a los items completos y el total de items es distinto a 0
-                    $completedList = new ListsController();
+                    $completedList = new listsController();
                     $result = $completedList->completeList($list[0], 1);
                     // Marca la lista como completa
                     echo
                     '<div  class="w-100 rounded-4 border border-1 border-dark-subtle p-1 pe-3 ps-3 bg-body-secondary btn-style ">
                         <div class="d-flex w-100 justify-content-end gap-2">
                             <div>
-                                <img src="/lista-simple/assets/img/iconos/editar.svg" alt="Icono de lapiz para editar datos de lista" class="iconslist btn-edit"  data-bs-toggle="modal" data-bs-target="#editModal"  data-list-id=' . $list[0] . '>
+                                <img src="'.base_url .'assets/img/iconos/editar.svg" alt="Icono de lapiz para editar datos de lista" class="iconslist btn-edit"  data-bs-toggle="modal" data-bs-target="#editModal"  data-list-id=' . $list[0] . '>
                             </div>
                             <div>
-                                <img src="/lista-simple/assets/img/iconos/papelera.svg" alt="Icono papelera para eliminar lista" class="iconslist btn-del"  data-list-id=' . $list[0] . '>
+                                <img src="'.base_url .'assets/img/iconos/papelera.svg" alt="Icono papelera para eliminar lista" class="iconslist btn-del"  data-list-id=' . $list[0] . '>
                             </div>
                         </div>
 
@@ -126,7 +128,7 @@
 
 
 <div class="rounded-circle border border-1 bg-success d-flex align-items-center justify-content-center position-fixed bottom-0 end-0 mb-xl-0 me-3 me-xl-5 shadow add" data-bs-toggle="modal" data-bs-target="#addModal">
-    <img src="/lista-simple/assets/img/iconos/add-l.svg" alt="Foto de perfil de usuario" class="icon-list">
+    <img src="<?=base_url?>assets/img/iconos/add-l.svg" alt="Foto de perfil de usuario" class="icon-list">
 </div>
 
 
@@ -136,5 +138,5 @@
 
 <!-- Pie de página -->
 <?php
-require_once base_url2 . 'views/layout/footer.php';
+require_once base_host . 'views/layout/footer.php';
 ?>
