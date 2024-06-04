@@ -10,7 +10,7 @@ window.onload = function () {
             var xhr = new XMLHttpRequest();
             xhr.open('GET', 'http://localhost/lista-simple/lists/list&id=' + listId, true);
             xhr.onload = function () {
-            
+
                 if (xhr.status >= 200 && xhr.status < 400) {
                     // console.log(xhr.responseText);
                     var jsonData = JSON.parse(xhr.responseText);
@@ -225,4 +225,26 @@ window.onload = function () {
         }
     });
 
+
+    //Mostrar botón papelera
+    const list = document.querySelectorAll('.select-style');
+    list.forEach(element => {
+        element.addEventListener('contextmenu', function (event) {
+            event.preventDefault(); // Evitar el comportamiento predeterminado (abrir menú contextual)
+        });
+        element.addEventListener('mousedown', function (event) {
+            event.preventDefault();
+            const iconBox = element.querySelector('.cnt-btn-del');
+
+            holdTimer = setTimeout(() => {
+                iconBox.classList.remove('d-none')
+                element.classList.add('shadow-lg')
+            }, 100)
+        })
+        element.addEventListener('mouseup', function (event) {
+            if (event.button === 0) { // Solo si es clic izquierdo
+                clearTimeout(holdTimer);
+            }
+        });
+    });
 };

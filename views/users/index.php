@@ -42,12 +42,12 @@
                     // Marca la lista como NO completa
 
                     echo
-                    '<div  class="w-100 rounded-4 border border-1 border-dark-subtle p-1 pe-3 ps-3 btn-style ">
+                    '<div  class="w-100 rounded-4 border border-1 border-dark-subtle p-1 pe-3 ps-3 btn-style select-style">
                         <div class="d-flex w-100 justify-content-end gap-2">            
                             <div>                                
                                 <img src="' . base_url . 'assets/img/iconos/editar.svg" alt="Icono de lapiz para editar datos de lista" class="iconslist btn-edit"  data-bs-toggle="modal" data-bs-target="#editModal"  data-list-id=' . $list[0] . '>
                             </div>
-                            <div>
+                            <div class="cnt-btn-del d-none">
                                 <img src="' . base_url . 'assets/img/iconos/papelera.svg" alt="Icono papelera para eliminar lista" class="iconslist btn-del"  data-list-id=' . $list[0] . '>
                             </div>
                         </div>
@@ -83,7 +83,7 @@
                             <div>
                                 <img src="' . base_url . 'assets/img/iconos/editar.svg" alt="Icono de lapiz para editar datos de lista" class="iconslist btn-edit"  data-bs-toggle="modal" data-bs-target="#editModal"  data-list-id=' . $list[0] . '>
                             </div>
-                            <div>
+                            <div class="cnt-btn-del d-none">
                                 <img src="' . base_url . 'assets/img/iconos/papelera.svg" alt="Icono papelera para eliminar lista" class="iconslist btn-del"  data-list-id=' . $list[0] . '>
                             </div>
                         </div>

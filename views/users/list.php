@@ -54,7 +54,7 @@ $price = number_format((float)$totalPrice['totalPrice'], 2)
                             <div>
                                 <img src="' . base_url . '/assets/img/iconos/editar.svg" alt="Icono para editar ítem" class="iconslist btn-edit-item" data-bs-toggle="modal" data-bs-target="#editItemModal"  data-list-id="' . $item[0] . '">
                             </div>
-                            <div>
+                            <div class="cnt-btn-del d-none">
                                 <img src="' . base_url . '/assets/img/iconos/papelera.svg" alt="Icono eliminar ítem" class="iconslist btn-del-item" data-list-id="' . $item[0] . '">
                             </div>
                         </div a>
@@ -113,7 +113,7 @@ $price = number_format((float)$totalPrice['totalPrice'], 2)
                             <div>
                                 <img src="' . base_url . '/assets/img/iconos/editar.svg" alt="Icono para editar ítem" class="iconslist btn-edit-item" data-bs-toggle="modal" data-bs-target="#editItemModal"  data-list-id="' . $item[0] . '">
                             </div>
-                            <div>
+                            <div class="cnt-btn-del d-none">
                                 <img src="' . base_url . '/assets/img/iconos/papelera.svg" alt="Icono eliminar ítem" class="iconslist btn-del-item" data-list-id="' . $item[0] . '">
                             </div>
                         </div>

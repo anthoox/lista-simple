@@ -86,7 +86,14 @@ body {
     width: 120px;
 }
 
+.select-style{
 
+            -webkit-contextMenu: none;
+            /* Chrome, Safari, Opera */
+            -moz-contextMenu: none;
+            /* Firefox */
+
+}
 
 .img-user {
 

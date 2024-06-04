@@ -19,25 +19,25 @@
 
         foreach ($result as $list) {
             if ($list[8] == 0) {
+                $items = new itemsController();
+                $itemsData = $items->numItems($list[0]);
 
                 echo
-                '<div class="w-100 rounded-4 border border-1 border-dark-subtle  p-1 pe-3 ps-3">
+                '<div class="w-100 rounded-4 border border-1 border-dark-subtle p-1 pe-3 ps-3 select-style">
                     <div class="d-flex w-100 justify-content-end gap-2">
     
-                        <div>
-                        
+                        <div>                        
                             <img src="'.web.'img/iconos/restaurar.svg" alt="Icono para restaurar lista"  class="iconslist btn-rest"  data-list-id=' . $list[0] . '>
                         </div>
-                        <div>
+
+                        <div class="cnt-btn-del d-none">
                             <img src="'.web.'img/iconos/papelera.svg" alt="Icono papelera para eliminar lista" class="iconslist btn-delete"  data-list-id=' . $list[0] . '>
                         </div>
                     </div>
             
-                    <div class="d-flex w-100 justify-content-start">';
-                echo '<span class="fs-5 fw-semibold text-secondary ">' . $list[2] . '</span>';
-
-                echo
-                '</div>
+                    <div class="d-flex w-100 justify-content-start">'.
+                        '<span class="fs-5 fw-semibold text-secondary ">' . $list[2] . '</span>'.
+                    '</div>
             
                     <div class="d-flex w-100 justify-content-between">
      
@@ -49,10 +49,11 @@
 
                 echo '           
                         </div>
-                        <div class="fw-semibold text-secondary ">
-            
-                            1/10
+
+                        <div class="fw-semibold text-secondary ">'.
+                        $itemsData["completed_items"] . '/' . $itemsData["total_items"] . '
                         </div>
+
                     </div>
                 </div>';
             } else {
