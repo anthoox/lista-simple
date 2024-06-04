@@ -15,14 +15,14 @@ $price = number_format((float)$totalPrice['totalPrice'], 2)
 ?>
 
 <!-- Contenido -->
-<div class="d-flex col-12 mt-xl-3 justify-content-between  align-items-center p-1  pe-3 ps-3 m-0 border-1 border-bottom border-top">
+<div class="d-flex col-12 mt-xl-3 justify-content-between  align-items-center p-0 mt-1">
     <a href="<?= base_url ?>lists/index" class=" d-none d-xl-flex align-items-center fw-semibold fs-4 text-star text-decoration-none text-black">
         <img src="<?= base_url ?>assets/img/iconos/return.svg" alt="Icono para volver a la página anterior" class="iconslist-lg"> <span class="fs-6 ">Volver</span>
 
 
     </a>
 
-    <h2 class="fw-semibold fs-3 lh-1 m-0 text-center ">
+    <h2 class="fw-semibold  text-left">
         <?= $data['name']; ?>
 
     </h2>
@@ -36,7 +36,7 @@ $price = number_format((float)$totalPrice['totalPrice'], 2)
 
 </div>
 
-<div class="d-flex flex-column col-12 mt-2 mt-md-4 gap-2 p-2 ">
+<div class="d-flex flex-column col-12  mt-md-4 gap-2  ">
     <?php
 
     if (isset($result) && !empty($result)) {

@@ -100,7 +100,9 @@ class listsController
                 require_once  base_host . 'views/users/index.php';
                 return $result;
             } else {
-                require_once  base_host . 'views/users/index.php';
+                $_SESSION['upcoming']['empty'] = true;
+
+                require_once  base_host . 'views/users/index.php';  
                 return false;
             }
         } else {

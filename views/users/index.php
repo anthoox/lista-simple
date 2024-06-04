@@ -2,25 +2,25 @@
 
 <!-- Contenido -->
 
-<div class="d-flex  col-12 mt-xl-3 flex-sm-row gap-1 ps-2 pe-2  m-0">
+<div class="d-flex  col-12 mt-xl-3 flex-sm-row gap-1    m-0">
     <!-- <div class="d-flex justify-content-around gap-1 col-12 col-sm-6"> -->
-    <a href="<?= base_url ?>lists/index" id="lists" class="btn <?php
-                                                                echo isset($_SESSION['color']) && $_SESSION['color'] == 'index' ? 'bg-primary text-white' : 'bg-body border-dark-subtle';
-                                                                ?> rounded-3  border-1 border-light  btn-style f-little btn-list">Listas</a>
+    <h2><a href="<?= base_url ?>lists/index" id="lists" class="btn <?php
+                                                                    echo isset($_SESSION['color']) && $_SESSION['color'] == 'index' ? 'bg-primary text-white' : 'bg-body border-dark-subtle';
+                                                                    ?> rounded-3  border-1 border-light  btn-style f-little btn-list">Listas</a></h2>
 
 
 
 
-    <a href="<?= base_url ?>lists/completed" id="completed" class="btn <?php
-                                                                        echo isset($_SESSION['color']) && $_SESSION['color'] == 'completed' ? 'bg-primary text-white' : 'bg-body border-dark-subtle';
-                                                                        ?> rounded-3 border-1fw-semibold btn-style f-little btn-list">Completas</a>
+    <h2><a href="<?= base_url ?>lists/completed" id="completed" class="btn <?php
+                                                                            echo isset($_SESSION['color']) && $_SESSION['color'] == 'completed' ? 'bg-primary text-white' : 'bg-body border-dark-subtle';
+                                                                            ?> rounded-3 border-1fw-semibold btn-style f-little btn-list">Completas</a></h2>
 
-    <a href="<?= base_url ?>lists/upcoming" id="upcoming" class="btn <?php
-                                                                        echo isset($_SESSION['color']) && $_SESSION['color'] == 'upcoming' ? 'bg-primary text-white' : 'bg-body border-dark-subtle';
-                                                                        ?> rounded-3 border-1fw-semibold btn-style f-little btn-list">Recordatorios</a>
+    <h2><a href="<?= base_url ?>lists/upcoming" id="upcoming" class="btn <?php
+                                                                            echo isset($_SESSION['color']) && $_SESSION['color'] == 'upcoming' ? 'bg-primary text-white' : 'bg-body border-dark-subtle';
+                                                                            ?> rounded-3 border-1fw-semibold btn-style f-little btn-list">Recordatorios</a></h2>
 
 </div>
-<div class="d-flex flex-column col-12 mt-1 mt-xl-3 gap-2 p-2 ">
+<div class="d-flex flex-column col-12  mt-xl-3 gap-2 p-0  ">
 
     <?php
 
@@ -113,6 +113,11 @@
     } elseif ($result == 1) {
 
         echo '<h6>Error al cargar listas</h6>';
+    } elseif ($_SESSION['upcoming']['empty'] == true) {
+
+        echo '<h6>Aún no tienes listas con recordatorios.</h6>';
+        Utils::deleteSession($_SESSION['upcoming']['empty']);
+
     } elseif ($result == false) {
 
         echo '<h6>Aún no has completado ninguna lista.</h6>';
