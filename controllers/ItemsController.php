@@ -242,6 +242,7 @@ class itemsController
                 $item = new Items();
                 $result = $item->completed($idItem, $completed);
 
+
                 if ($result) {
                     // La actualización fue exitosa
                     echo json_encode(['message' => 'Estado actualizado correctamente']);
@@ -254,6 +255,8 @@ class itemsController
                 // Método de solicitud no válido
                 http_response_code(405);
                 echo json_encode(['error' => 'Método no permitido']);
+                // var_dump($_POST);
+                // die();
             }
             require_once  base_host . 'views/users/list.php';
         } else {

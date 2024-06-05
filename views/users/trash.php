@@ -4,10 +4,10 @@
 
 <!-- Contenido -->
 <div class="d-flex flex-column col-12 mt-xl-3 flex-sm-row gap-1 justify-content-around p-0 m-0">
-    <div class="d-flex  gap-1 col-12">
-        <h2><a id="empty-trash" class="btn bg-primary rounded-3 text-white  border-1 border-light btn-style f-little" data-bs-toggle="modal" data-bs-target="#emptyModal">Vaciar</a></h2>
+    <div class="d-flex  gap-1 col-12 col-md-6 justify-content-center gap-5">
+        <h2><a id="empty-trash" class="btn bg-success rounded-3 text-white  border-1 border-light btn-style f-little" data-bs-toggle="modal" data-bs-target="#emptyModal">Vaciar</a></h2>
 
-        <h2><a id="restore-lists" class="btn bg-secondary-emphasis rounded-3 border-1 border-dark-subtle btn-style f-little" data-bs-toggle="modal" data-bs-target="#restoreModal">Restaurar</a></h2>
+        <h2><a id="restore-lists" class="btn bg-success rounded-3 text-white border-1 border-light  btn-style f-little" data-bs-toggle="modal" data-bs-target="#restoreModal">Restaurar</a></h2>
     </div>
 </div>
 <div class="d-flex flex-column col-12 mt-xl-3 gap-2 p-0">

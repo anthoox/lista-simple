@@ -177,9 +177,9 @@ window.onload = function () {
     // Capturar el cambio en el checkbox
     document.querySelectorAll('.form-check-input').forEach(function (checkbox) {
         checkbox.addEventListener('change', function () {
-            var idItem = this.dataset.itemId;
+            var idItem = this.getAttribute('data-list-id');
             var completed = this.checked ? 1 : 0; // Si está marcado, completado es 1, de lo contrario es 0
-            checkbox.classList.add
+            console.log(idItem, completed)
             // Crear una solicitud AJAX para enviar el ID del elemento y el estado completado al servidor
             var xhr = new XMLHttpRequest();
             xhr.open('POST', 'http://localhost/lista-simple/items/completed', true);
@@ -231,6 +231,7 @@ window.onload = function () {
 
 
     ///////////////
+    
     let timer;
     const elements = document.querySelectorAll('.select-style');
 
@@ -243,7 +244,7 @@ window.onload = function () {
         });
     }
 
-    document.addEventListener('click', (event) => {
+    mainCnt.addEventListener('click', (event) => {
         if (!event.target.closest('.select-style')) {
             deselectAll();
         }
@@ -260,7 +261,7 @@ window.onload = function () {
                 iconBox.classList.remove('d-none');
                 ele.classList.add('selected');
                 isLongPress = true;
-            }, 750);
+            }, 750); 
         };
 
         const clearTimer = () => {
@@ -277,21 +278,13 @@ window.onload = function () {
         };
 
         ele.addEventListener('mousedown', (e) => {
-            if (!e.target.closest('.btn-edit-item') && !e.target.closest('.btn-del-item') && !e.target.closest('.btn-edit') && !e.target.closest('.btn-del') && !e.target.closest('.btn-rest') && !e.target.closest('.btn-delete')) {
-                startTimer();
-                ele.addEventListener('contextmenu', preventContextMenu);
-            }
+            startTimer();
+            ele.addEventListener('contextmenu', preventContextMenu);
         });
 
         ele.addEventListener('mouseup', (e) => {
             clearTimer();
             ele.removeEventListener('contextmenu', preventContextMenu);
-            if (!isLongPress) {
-                if (ele.classList.contains('selected')) {
-                    iconBox.classList.add('d-none');
-                    ele.classList.remove('selected');
-                }
-            }
         });
 
         ele.addEventListener('mouseleave', (e) => {
@@ -300,21 +293,13 @@ window.onload = function () {
         });
 
         ele.addEventListener('touchstart', (e) => {
-            if (!e.target.closest('.btn-edit-item') && !e.target.closest('.btn-del-item') && !e.target.closest('.btn-edit') && !e.target.closest('.btn-del') && !e.target.closest('.btn-rest') && !e.target.closest('.btn-delete')) {
-                startTimer();
-                ele.addEventListener('contextmenu', preventContextMenu);
-            }
+            startTimer();
+            ele.addEventListener('contextmenu', preventContextMenu);
         });
 
         ele.addEventListener('touchend', (e) => {
             clearTimer();
             ele.removeEventListener('contextmenu', preventContextMenu);
-            if (!isLongPress) {
-                if (ele.classList.contains('selected')) {
-                    iconBox.classList.add('d-none');
-                    ele.classList.remove('selected');
-                }
-            }
         });
 
         ele.addEventListener('touchcancel', (e) => {
@@ -322,6 +307,7 @@ window.onload = function () {
             ele.removeEventListener('contextmenu', preventContextMenu);
         });
 
+        // Prevenir comportamiento predeterminado si fue una pulsación larga
         if (anchorOrSpan) {
             anchorOrSpan.addEventListener('click', (e) => {
                 if (ele.getAttribute('data-long-press') === 'true') {
@@ -331,12 +317,11 @@ window.onload = function () {
             });
         }
 
+        // Añadir un listener para prevenir el menú contextual cuando se mantiene la pulsación
         ele.addEventListener('contextmenu', (e) => {
             e.preventDefault();
         });
     });
-
-
 
 
 };
