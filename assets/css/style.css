@@ -86,13 +86,11 @@ body {
     width: 120px;
 }
 
-.select-style{
-
-            -webkit-contextMenu: none;
-            /* Chrome, Safari, Opera */
-            -moz-contextMenu: none;
-            /* Firefox */
-
+.select-style.selected{
+    background-color: #5e17eb20 !important;
+    border: 1px solid #5e17eb80 !important;
+    transform: scale(1.03);
+    transition: all 250ms;
 }
 
 .img-user {

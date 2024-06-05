@@ -9,7 +9,7 @@
                 <form id="listForm" action="<?= base_url ?>lists/save" method="POST">
                     <div class="mb-3">
                         <label for="name" class="form-label w-100 text-start">Nombre lista</label>
-                        <input type="text" class="form-control" id="name" placeholder="Nombre" name="name" autofocus required>
+                        <input type="text" class="form-control" id="name" placeholder="Nombre" name="name" autofocus required >
                     </div>
                     <div class="mb-3">
                         <label for="notification" class="form-label w-100 text-start">Recordatorio</label>

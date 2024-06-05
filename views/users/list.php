@@ -44,9 +44,9 @@ $price = number_format((float)$totalPrice['totalPrice'], 2)
             // Si no esta completo/
             if ($item[8] == 0) {
                 echo '
-                <div class="w-100 rounded-4 border border-1 border-dark-subtle p-1 pe-3 ps-3 d-flex btn-style"  >
+                <div class="w-100 rounded-4 border border-1 border-dark-subtle p-1 pe-3 ps-3 d-flex btn-style select-style"  >
                     <div class="form-check h-100 d-flex align-items-center pe-1 border-1 border-end" >
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" data-item-id="' . $item[0] . '" data-list-id="' . $data['id'] . '">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                     </div>
                     <div class="w-100 ps-2 d-flex justify-content-between flex-column">
                         <div class="d-flex w-100 justify-content-end  gap-2 h-25">
@@ -59,8 +59,8 @@ $price = number_format((float)$totalPrice['totalPrice'], 2)
                             </div>
                         </div a>
             
-                        <div class="d-flex w-100 justify-content-start align-items-center h-25 " data-bs-toggle="modal" data-bs-target="#editItemModal"  data-list-id="' . $item[0] . '">
-                            <span class="fw-semibold">' . $item[3] . '</span>
+                        <div class="d-flex w-100 justify-content-start align-items-center h-25 ">
+                            <span class="fw-semibold span-style">' . $item[3] . '</span>
                         </div>
             
                         <div class="d-flex w-100 h-25">
@@ -102,9 +102,9 @@ $price = number_format((float)$totalPrice['totalPrice'], 2)
             } else {
 
                 echo '
-                <div class="w-100 rounded-4 border border-1 border-dark-subtle p-1 pe-3 ps-3 d-flex bg-body-secondary">
+                <div class="w-100 rounded-4 border border-1 border-dark-subtle p-1 pe-3 ps-3 d-flex bg-body-secondary btn-style select-style">
                     <div class="form-check h-100 d-flex align-items-center pe-1 border-1 border-end">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" data-item-id="' . $item[0] . ' " checked >
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" data-item-id="' . $item[0] . ' " checked >
 
                     </div>
                     <div class="w-100 ps-2 d-flex justify-content-between flex-column">
@@ -119,7 +119,7 @@ $price = number_format((float)$totalPrice['totalPrice'], 2)
                         </div>
             
                         <div class="d-flex w-100 justify-content-start align-items-center h-25">
-                            <span class="fw-semibold text-secondary text-decoration-line-through">' . $item[3] . '</span>
+                            <span class="fw-semibold text-secondary text-decoration-line-through span-style">' . $item[3] . '</span>
 
                         </div>
         

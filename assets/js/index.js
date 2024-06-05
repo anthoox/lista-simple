@@ -42,7 +42,7 @@ window.onload = function () {
     delButtons.forEach(function (button) {
         button.addEventListener('click', function () {
             var listId = this.getAttribute('data-list-id');
-            console.log(listId)
+            // console.log(listId)
 
             // Solicitud AJAX enviando ID al controlador
             var xhr = new XMLHttpRequest();
@@ -65,7 +65,7 @@ window.onload = function () {
     delButtons.forEach(function (button) {
         button.addEventListener('click', function () {
             var listId = this.getAttribute('data-list-id');
-            console.log(listId)
+            // console.log(listId)
 
             // Solicitud AJAX enviando ID al controlador
             var xhr = new XMLHttpRequest();
@@ -86,7 +86,7 @@ window.onload = function () {
     delButtons.forEach(function (button) {
         button.addEventListener('click', function () {
             var listId = this.getAttribute('data-list-id');
-            console.log(listId)
+            // console.log(listId)
 
             // Solicitud AJAX enviando ID al controlador
             var xhr = new XMLHttpRequest();
@@ -209,42 +209,119 @@ window.onload = function () {
     const showNav = document.getElementById('btn-menu-abrir');
     const hiddenNav = document.getElementById('btn-menu-cerrar')
     const mainCnt = document.getElementById('main-container');
-    showNav.addEventListener('click', () => {
-        nav.classList.add('nav-show');
-    })
+    if(showNav){
+        showNav.addEventListener('click', () => {
+            nav.classList.add('nav-show');
+        })
 
-    hiddenNav.addEventListener('click', () => {
-        nav.classList.remove('nav-show');
-    })
-
-    // Ocultar el menú lateral al hacer clic en cualquier parte de la aplicación
-    mainCnt.addEventListener('click', (event) => {
-        // Verificar si el clic ocurrió fuera del menú lateral
-        if (!nav.contains(event.target) && showNav != event.target) {
+        hiddenNav.addEventListener('click', () => {
             nav.classList.remove('nav-show');
+        })
+
+        // Ocultar el menú lateral al hacer clic en cualquier parte de la aplicación
+        mainCnt.addEventListener('click', (event) => {
+            // Verificar si el clic ocurrió fuera del menú lateral
+            if (!nav.contains(event.target) && showNav != event.target) {
+                nav.classList.remove('nav-show');
+            }
+        });
+    }
+
+
+
+
+    ///////////////
+    
+    let timer;
+    const elements = document.querySelectorAll('.select-style');
+
+    // Función para deseleccionar todos los elementos
+    function deselectAll() {
+        elements.forEach(ele => {
+            const iconBox = ele.querySelector('.cnt-btn-del');
+            iconBox.classList.add('d-none');
+            ele.classList.remove('selected');
+        });
+    }
+
+    mainCnt.addEventListener('click', (event) => {
+        if (!event.target.closest('.select-style')) {
+            deselectAll();
         }
     });
 
+    elements.forEach(ele => {
+        const iconBox = ele.querySelector('.cnt-btn-del');
+        const anchorOrSpan = ele.querySelector('a, .span-style');
+        let isLongPress = false;
 
-    //Mostrar botón papelera
-    const list = document.querySelectorAll('.select-style');
-    list.forEach(element => {
-        element.addEventListener('contextmenu', function (event) {
-            event.preventDefault(); // Evitar el comportamiento predeterminado (abrir menú contextual)
-        });
-        element.addEventListener('mousedown', function (event) {
-            event.preventDefault();
-            const iconBox = element.querySelector('.cnt-btn-del');
+        const startTimer = () => {
+            isLongPress = false;
+            timer = setTimeout(() => {
+                iconBox.classList.remove('d-none');
+                ele.classList.add('selected');
+                isLongPress = true;
+            }, 750); 
+        };
 
-            holdTimer = setTimeout(() => {
-                iconBox.classList.remove('d-none')
-                element.classList.add('shadow-lg')
-            }, 100)
-        })
-        element.addEventListener('mouseup', function (event) {
-            if (event.button === 0) { // Solo si es clic izquierdo
-                clearTimeout(holdTimer);
+        const clearTimer = () => {
+            clearTimeout(timer);
+            if (isLongPress) {
+                ele.setAttribute('data-long-press', 'true');
+            } else {
+                ele.removeAttribute('data-long-press');
             }
+        };
+
+        const preventContextMenu = (e) => {
+            e.preventDefault();
+        };
+
+        ele.addEventListener('mousedown', (e) => {
+            startTimer();
+            ele.addEventListener('contextmenu', preventContextMenu);
+        });
+
+        ele.addEventListener('mouseup', (e) => {
+            clearTimer();
+            ele.removeEventListener('contextmenu', preventContextMenu);
+        });
+
+        ele.addEventListener('mouseleave', (e) => {
+            clearTimer();
+            ele.removeEventListener('contextmenu', preventContextMenu);
+        });
+
+        ele.addEventListener('touchstart', (e) => {
+            startTimer();
+            ele.addEventListener('contextmenu', preventContextMenu);
+        });
+
+        ele.addEventListener('touchend', (e) => {
+            clearTimer();
+            ele.removeEventListener('contextmenu', preventContextMenu);
+        });
+
+        ele.addEventListener('touchcancel', (e) => {
+            clearTimer();
+            ele.removeEventListener('contextmenu', preventContextMenu);
+        });
+
+        // Prevenir comportamiento predeterminado si fue una pulsación larga
+        if (anchorOrSpan) {
+            anchorOrSpan.addEventListener('click', (e) => {
+                if (ele.getAttribute('data-long-press') === 'true') {
+                    e.preventDefault();
+                    ele.removeAttribute('data-long-press');
+                }
+            });
+        }
+
+        // Añadir un listener para prevenir el menú contextual cuando se mantiene la pulsación
+        ele.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
         });
     });
+
+
 };

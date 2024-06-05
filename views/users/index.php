@@ -52,7 +52,7 @@
                             </div>
                         </div>
                         
-                        <a href="' . base_url . 'items/index&id=' . $list[0] . '" class="d-flex w-100 justify-content-start text-decoration-none">
+                        <a href="' . base_url . 'items/index&id=' . $list[0] . '" class="d-flex w-100 justify-content-start text-decoration-none ancla">
 
                             <span class="fs-5 fw-semibold text-black">' . $list[2] . '</span>
 
@@ -78,7 +78,7 @@
                     $result = $completedList->completeList($list[0], 1);
                     // Marca la lista como completa
                     echo
-                    '<div  class="w-100 rounded-4 border border-1 border-dark-subtle p-1 pe-3 ps-3 bg-body-secondary btn-style ">
+                    '<div  class="w-100 rounded-4 border border-1 border-dark-subtle p-1 pe-3 ps-3 bg-body-secondary btn-style select-style">
                         <div class="d-flex w-100 justify-content-end gap-2">
                             <div>
                                 <img src="' . base_url . 'assets/img/iconos/editar.svg" alt="Icono de lapiz para editar datos de lista" class="iconslist btn-edit"  data-bs-toggle="modal" data-bs-target="#editModal"  data-list-id=' . $list[0] . '>
@@ -88,7 +88,7 @@
                             </div>
                         </div>
 
-                        <a href="' . base_url . 'items/index&id=' . $list[0] . '"class="d-flex w-100 justify-content-start text-secondary text-decoration-line-through">';
+                        <a href="' . base_url . 'items/index&id=' . $list[0] . '"class="d-flex w-100 justify-content-start text-secondary text-decoration-line-through ancla">';
 
                     echo '<span class="fs-5 fw-semibold">' . $list[2] . '</span>
                         </a>
