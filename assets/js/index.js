@@ -278,13 +278,21 @@ window.onload = function () {
         };
 
         ele.addEventListener('mousedown', (e) => {
-            startTimer();
-            ele.addEventListener('contextmenu', preventContextMenu);
+            if (!e.target.closest('.btn-edit-item') && !e.target.closest('.btn-del-item') && !e.target.closest('.btn-edit') && !e.target.closest('.btn-del') && !e.target.closest('.btn-rest') && !e.target.closest('.btn-delete')) {
+                startTimer();
+                ele.addEventListener('contextmenu', preventContextMenu);
+            }
         });
 
         ele.addEventListener('mouseup', (e) => {
             clearTimer();
             ele.removeEventListener('contextmenu', preventContextMenu);
+            if (!isLongPress) {
+                if (ele.classList.contains('selected')) {
+                    iconBox.classList.add('d-none');
+                    ele.classList.remove('selected');
+                }
+            }
         });
 
         ele.addEventListener('mouseleave', (e) => {
@@ -293,13 +301,21 @@ window.onload = function () {
         });
 
         ele.addEventListener('touchstart', (e) => {
-            startTimer();
-            ele.addEventListener('contextmenu', preventContextMenu);
+            if (!e.target.closest('.btn-edit-item') && !e.target.closest('.btn-del-item') && !e.target.closest('.btn-edit') && !e.target.closest('.btn-del') && !e.target.closest('.btn-rest') && !e.target.closest('.btn-delete')) {
+                startTimer();
+                ele.addEventListener('contextmenu', preventContextMenu);
+            }
         });
 
         ele.addEventListener('touchend', (e) => {
             clearTimer();
             ele.removeEventListener('contextmenu', preventContextMenu);
+            if (!isLongPress) {
+                if (ele.classList.contains('selected')) {
+                    iconBox.classList.add('d-none');
+                    ele.classList.remove('selected');
+                }
+            }
         });
 
         ele.addEventListener('touchcancel', (e) => {

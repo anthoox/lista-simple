@@ -33,9 +33,8 @@
 
                 $items = new itemsController();
                 $itemsData = $items->numItems($list[0]);
-
                 if ($itemsData["completed_items"] !== $itemsData["total_items"] || $itemsData["total_items"] == 0) {
-
+  
                     // Si los items completos no es igual al total de items o el total de items es igual a 0
                     $completedList = new listsController();
                     $result = $completedList->completeList($list[0], 0);
@@ -73,6 +72,7 @@
                         </div>
                     </div>';
                 } elseif ($itemsData["completed_items"] === $itemsData["total_items"] && $itemsData["total_items"] !== 0) {
+            
                     // Si el total de items es igual a los items completos y el total de items es distinto a 0
                     $completedList = new listsController();
                     $result = $completedList->completeList($list[0], 1);
