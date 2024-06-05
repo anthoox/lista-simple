@@ -231,7 +231,6 @@ window.onload = function () {
 
 
     ///////////////
-    
     let timer;
     const elements = document.querySelectorAll('.select-style');
 
@@ -244,7 +243,7 @@ window.onload = function () {
         });
     }
 
-    mainCnt.addEventListener('click', (event) => {
+    document.addEventListener('click', (event) => {
         if (!event.target.closest('.select-style')) {
             deselectAll();
         }
@@ -261,7 +260,7 @@ window.onload = function () {
                 iconBox.classList.remove('d-none');
                 ele.classList.add('selected');
                 isLongPress = true;
-            }, 750); 
+            }, 750);
         };
 
         const clearTimer = () => {
@@ -278,13 +277,21 @@ window.onload = function () {
         };
 
         ele.addEventListener('mousedown', (e) => {
-            startTimer();
-            ele.addEventListener('contextmenu', preventContextMenu);
+            if (!e.target.closest('.btn-edit-item') && !e.target.closest('.btn-del-item') && !e.target.closest('.btn-edit') && !e.target.closest('.btn-del') && !e.target.closest('.btn-rest') && !e.target.closest('.btn-delete')) {
+                startTimer();
+                ele.addEventListener('contextmenu', preventContextMenu);
+            }
         });
 
         ele.addEventListener('mouseup', (e) => {
             clearTimer();
             ele.removeEventListener('contextmenu', preventContextMenu);
+            if (!isLongPress) {
+                if (ele.classList.contains('selected')) {
+                    iconBox.classList.add('d-none');
+                    ele.classList.remove('selected');
+                }
+            }
         });
 
         ele.addEventListener('mouseleave', (e) => {
@@ -293,13 +300,21 @@ window.onload = function () {
         });
 
         ele.addEventListener('touchstart', (e) => {
-            startTimer();
-            ele.addEventListener('contextmenu', preventContextMenu);
+            if (!e.target.closest('.btn-edit-item') && !e.target.closest('.btn-del-item') && !e.target.closest('.btn-edit') && !e.target.closest('.btn-del') && !e.target.closest('.btn-rest') && !e.target.closest('.btn-delete')) {
+                startTimer();
+                ele.addEventListener('contextmenu', preventContextMenu);
+            }
         });
 
         ele.addEventListener('touchend', (e) => {
             clearTimer();
             ele.removeEventListener('contextmenu', preventContextMenu);
+            if (!isLongPress) {
+                if (ele.classList.contains('selected')) {
+                    iconBox.classList.add('d-none');
+                    ele.classList.remove('selected');
+                }
+            }
         });
 
         ele.addEventListener('touchcancel', (e) => {
@@ -307,7 +322,6 @@ window.onload = function () {
             ele.removeEventListener('contextmenu', preventContextMenu);
         });
 
-        // Prevenir comportamiento predeterminado si fue una pulsación larga
         if (anchorOrSpan) {
             anchorOrSpan.addEventListener('click', (e) => {
                 if (ele.getAttribute('data-long-press') === 'true') {
@@ -317,11 +331,12 @@ window.onload = function () {
             });
         }
 
-        // Añadir un listener para prevenir el menú contextual cuando se mantiene la pulsación
         ele.addEventListener('contextmenu', (e) => {
             e.preventDefault();
         });
     });
+
+
 
 
 };
