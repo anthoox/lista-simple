@@ -244,39 +244,54 @@ window.onload = function () {
         });
     }
 
+    // Añadir un evento 'click' al contenedor principal
     mainCnt.addEventListener('click', (event) => {
+        // Si el objetivo del clic no es un elemento con la clase 'select-style'
         if (!event.target.closest('.select-style')) {
+            // Deseleccionar todos los elementos
             deselectAll();
         }
     });
 
+    // Iterar sobre cada elemento con la clase 'select-style'
     elements.forEach(ele => {
+        // Selección del elemento hijo con la clase 'cnt-btn-del'
         const iconBox = ele.querySelector('.cnt-btn-del');
+        // Selección de un enlace o un elemento con la clase 'span-style'
         const anchorOrSpan = ele.querySelector('a, .span-style');
+        // Variable para rastrear si es una pulsación larga
         let isLongPress = false;
 
+        // Función para iniciar el temporizador de pulsación larga
         const startTimer = () => {
             isLongPress = false;
             timer = setTimeout(() => {
+                // Mostrar el icono de eliminar
                 iconBox.classList.remove('d-none');
+                // Añadir la clase 'selected' al elemento
                 ele.classList.add('selected');
                 isLongPress = true;
-            }, 750); 
+            }, 500); // Establecer el tiempo de espera a 750 ms
         };
 
+        // Función para limpiar el temporizador de pulsación larga
         const clearTimer = () => {
             clearTimeout(timer);
             if (isLongPress) {
+                // Si fue una pulsación larga, establecer un atributo de datos
                 ele.setAttribute('data-long-press', 'true');
             } else {
+                // Si no fue una pulsación larga, remover el atributo de datos
                 ele.removeAttribute('data-long-press');
             }
         };
 
+        // Función para prevenir el menú contextual del navegador
         const preventContextMenu = (e) => {
             e.preventDefault();
         };
 
+        // Añadir eventos de ratón y táctiles al elemento para detectar pulsación larga
         ele.addEventListener('mousedown', (e) => {
             if (!e.target.closest('.btn-edit-item') && !e.target.closest('.btn-del-item') && !e.target.closest('.btn-edit') && !e.target.closest('.btn-del') && !e.target.closest('.btn-rest') && !e.target.closest('.btn-delete')) {
                 startTimer();
