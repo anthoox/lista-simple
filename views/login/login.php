@@ -1,9 +1,18 @@
 <!-- Cabeceras -->
-<?php require_once 'C:/wamp64/www/lista-simple/views/layout/head.php'; ?>
+<?php require_once base_host . 'views/layout/head.php'; ?>
 
-<?php if (isset($_SESSION['identity'])) : ?>
-    <?= header("Location:" . base_url . "lists/index") ?>
-<?php endif; ?>
+<?php
+
+
+if (isset($_SESSION['identity'])) {
+    // header("Location: https://listasimple.anthoox.es/lists/index"); 
+    header("Location: http://localhost/lista-simple/lists/index");
+
+    ob_end_flush();
+}
+?>
+
+
 
 <!-- Contenido -->
 <form action="<?= base_url ?>users/login" method="POST" class="d-flex flex-column justify-content-center mt-2 col-12 col-md-10 col-lg-6">
@@ -22,7 +31,7 @@
 
 <!-- <a class="text-center text-decoration-none text-primary-emphasis fw-medium " href="/lista-simple/views/login/restore.php">¿Olvidaste la
     contraseña?</a> -->
-<a class="text-center text-decoration-none text-primary-emphasis fw-medium " href="/lista-simple/">Volver</a>
+<a class="text-center text-decoration-none text-primary-emphasis fw-medium " href="<?= base_url ?>">Volver</a>
 
 
 <?php if (isset($_SESSION['error_login']) && $_SESSION['error_login'] == 'Failed') : ?>
@@ -32,4 +41,4 @@
 
 </div>
 
-<?php require_once 'C:/wamp64/www/lista-simple/views/layout/footer.php'; ?>
+<?php require_once base_host . 'views/layout/footer.php'; ?>

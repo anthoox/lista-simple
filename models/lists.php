@@ -202,7 +202,7 @@ class Lists
 
     public function lists($userId)
     {
-        $sql = "SELECT * FROM lists WHERE user_id = ? AND paper_bin = 0 ORDER BY completed, creation_date DESC";
+        $sql = "SELECT * FROM lists WHERE user_id = ? AND paper_bin = 0  ORDER BY completed, creation_date";
         $stmt = $this->db->prepare($sql);
         $stmt->bind_param("i", $userId);
         $stmt->execute();

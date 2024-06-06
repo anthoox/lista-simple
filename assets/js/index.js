@@ -1,4 +1,5 @@
 window.onload = function () {
+
     // Capturar el clic en el botón de edición
     var editButtons = document.querySelectorAll('.btn-edit');
     editButtons.forEach(function (button) {
@@ -9,6 +10,7 @@ window.onload = function () {
             var xhr = new XMLHttpRequest();
             xhr.open('GET', 'http://localhost/lista-simple/lists/list&id=' + listId, true);
             xhr.onload = function () {
+
                 if (xhr.status >= 200 && xhr.status < 400) {
                     // console.log(xhr.responseText);
                     var jsonData = JSON.parse(xhr.responseText);
@@ -40,7 +42,7 @@ window.onload = function () {
     delButtons.forEach(function (button) {
         button.addEventListener('click', function () {
             var listId = this.getAttribute('data-list-id');
-            console.log(listId)
+            // console.log(listId)
 
             // Solicitud AJAX enviando ID al controlador
             var xhr = new XMLHttpRequest();
@@ -63,7 +65,7 @@ window.onload = function () {
     delButtons.forEach(function (button) {
         button.addEventListener('click', function () {
             var listId = this.getAttribute('data-list-id');
-            console.log(listId)
+            // console.log(listId)
 
             // Solicitud AJAX enviando ID al controlador
             var xhr = new XMLHttpRequest();
@@ -84,7 +86,7 @@ window.onload = function () {
     delButtons.forEach(function (button) {
         button.addEventListener('click', function () {
             var listId = this.getAttribute('data-list-id');
-            console.log(listId)
+            // console.log(listId)
 
             // Solicitud AJAX enviando ID al controlador
             var xhr = new XMLHttpRequest();
@@ -175,9 +177,9 @@ window.onload = function () {
     // Capturar el cambio en el checkbox
     document.querySelectorAll('.form-check-input').forEach(function (checkbox) {
         checkbox.addEventListener('change', function () {
-            var idItem = this.dataset.itemId;
+            var idItem = this.getAttribute('data-list-id');
             var completed = this.checked ? 1 : 0; // Si está marcado, completado es 1, de lo contrario es 0
-            checkbox.classList.add
+            console.log(idItem, completed)
             // Crear una solicitud AJAX para enviar el ID del elemento y el estado completado al servidor
             var xhr = new XMLHttpRequest();
             xhr.open('POST', 'http://localhost/lista-simple/items/completed', true);
@@ -207,20 +209,150 @@ window.onload = function () {
     const showNav = document.getElementById('btn-menu-abrir');
     const hiddenNav = document.getElementById('btn-menu-cerrar')
     const mainCnt = document.getElementById('main-container');
-    showNav.addEventListener('click', () => {
-        nav.classList.add('nav-show');
-    })
+    if(showNav){
+        showNav.addEventListener('click', () => {
+            nav.classList.add('nav-show');
+        })
 
-    hiddenNav.addEventListener('click', () => {
-        nav.classList.remove('nav-show');
-    })
-
-    // Ocultar el menú lateral al hacer clic en cualquier parte de la aplicación
-    mainCnt.addEventListener('click', (event) => {
-        // Verificar si el clic ocurrió fuera del menú lateral
-        if (!nav.contains(event.target) && showNav != event.target) {
+        hiddenNav.addEventListener('click', () => {
             nav.classList.remove('nav-show');
+        })
+
+        // Ocultar el menú lateral al hacer clic en cualquier parte de la aplicación
+        mainCnt.addEventListener('click', (event) => {
+            // Verificar si el clic ocurrió fuera del menú lateral
+            if (!nav.contains(event.target) && showNav != event.target) {
+                nav.classList.remove('nav-show');
+            }
+        });
+    }
+
+
+
+
+    ///////////////
+    
+    let timer;
+    const elements = document.querySelectorAll('.select-style');
+
+    // Función para deseleccionar todos los elementos
+    function deselectAll() {
+        elements.forEach(ele => {
+            const iconBox = ele.querySelector('.cnt-btn-del');
+            iconBox.classList.add('d-none');
+            ele.classList.remove('selected');
+        });
+    }
+
+    // Añadir un evento 'click' al contenedor principal
+    mainCnt.addEventListener('click', (event) => {
+        // Si el objetivo del clic no es un elemento con la clase 'select-style'
+        if (!event.target.closest('.select-style')) {
+            // Deseleccionar todos los elementos
+            deselectAll();
         }
     });
+
+    // Iterar sobre cada elemento con la clase 'select-style'
+    elements.forEach(ele => {
+        // Selección del elemento hijo con la clase 'cnt-btn-del'
+        const iconBox = ele.querySelector('.cnt-btn-del');
+        // Selección de un enlace o un elemento con la clase 'span-style'
+        const anchorOrSpan = ele.querySelector('a, .span-style');
+        // Variable para rastrear si es una pulsación larga
+        let isLongPress = false;
+
+        // Función para iniciar el temporizador de pulsación larga
+        const startTimer = () => {
+            isLongPress = false;
+            timer = setTimeout(() => {
+                // Mostrar el icono de eliminar
+                iconBox.classList.remove('d-none');
+                // Añadir la clase 'selected' al elemento
+                ele.classList.add('selected');
+                isLongPress = true;
+            }, 500); // Establecer el tiempo de espera a 750 ms
+        };
+
+        // Función para limpiar el temporizador de pulsación larga
+        const clearTimer = () => {
+            clearTimeout(timer);
+            if (isLongPress) {
+                // Si fue una pulsación larga, establecer un atributo de datos
+                ele.setAttribute('data-long-press', 'true');
+            } else {
+                // Si no fue una pulsación larga, remover el atributo de datos
+                ele.removeAttribute('data-long-press');
+            }
+        };
+
+        // Función para prevenir el menú contextual del navegador
+        const preventContextMenu = (e) => {
+            e.preventDefault();
+        };
+
+        // Añadir eventos de ratón y táctiles al elemento para detectar pulsación larga
+        ele.addEventListener('mousedown', (e) => {
+            if (!e.target.closest('.btn-edit-item') && !e.target.closest('.btn-del-item') && !e.target.closest('.btn-edit') && !e.target.closest('.btn-del') && !e.target.closest('.btn-rest') && !e.target.closest('.btn-delete')) {
+                startTimer();
+                ele.addEventListener('contextmenu', preventContextMenu);
+            }
+        });
+
+        ele.addEventListener('mouseup', (e) => {
+            clearTimer();
+            ele.removeEventListener('contextmenu', preventContextMenu);
+            if (!isLongPress) {
+                if (ele.classList.contains('selected')) {
+                    iconBox.classList.add('d-none');
+                    ele.classList.remove('selected');
+                }
+            }
+        });
+
+        ele.addEventListener('mouseleave', (e) => {
+            clearTimer();
+            ele.removeEventListener('contextmenu', preventContextMenu);
+        });
+
+        ele.addEventListener('touchstart', (e) => {
+            if (!e.target.closest('.btn-edit-item') && !e.target.closest('.btn-del-item') && !e.target.closest('.btn-edit') && !e.target.closest('.btn-del') && !e.target.closest('.btn-rest') && !e.target.closest('.btn-delete')) {
+                startTimer();
+                ele.addEventListener('contextmenu', preventContextMenu);
+            }
+        });
+
+        ele.addEventListener('touchend', (e) => {
+            clearTimer();
+            ele.removeEventListener('contextmenu', preventContextMenu);
+            if (!isLongPress) {
+                if (ele.classList.contains('selected')) {
+                    iconBox.classList.add('d-none');
+                    ele.classList.remove('selected');
+                }
+            }
+        });
+
+        ele.addEventListener('touchcancel', (e) => {
+            clearTimer();
+            ele.removeEventListener('contextmenu', preventContextMenu);
+        });
+
+        // Prevenir comportamiento predeterminado si fue una pulsación larga
+        if (anchorOrSpan) {
+            anchorOrSpan.addEventListener('click', (e) => {
+                if (ele.getAttribute('data-long-press') === 'true') {
+                    e.preventDefault();
+                    ele.removeAttribute('data-long-press');
+                }
+            });
+        }
+
+        // Añadir un listener para prevenir el menú contextual cuando se mantiene la pulsación
+        ele.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+        });
+    });
+
 
 };

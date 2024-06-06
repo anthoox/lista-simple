@@ -1,5 +1,5 @@
 <!-- Cabeceras -->
-<?php require_once 'C:/wamp64/www/lista-simple/views/layout/head2.php'; ?>
+<?php require_once base_host . 'views/layout/head2.php'; ?>
 
 <!-- Contenido -->
 <div class="w-100 pe-2 ps-2">
@@ -22,7 +22,7 @@
 
 </form>
 
-<!-- <a class="text-center text-decoration-none text-primary-emphasis fw-medium" href="/lista-simple/index.php">Volver</a> -->
+<!-- <a class="text-center text-decoration-none text-primary-emphasis fw-medium" href="<?= base_url ?>index.php">Volver</a> -->
 <!-- <span class="text-success fw-semibold f-little">Consulta enviada</span> -->
 
 
@@ -65,7 +65,7 @@
         <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
             <div class="accordion-body">
                 <strong>Es muy sencillo.</strong> Solo debes dar clic sobre el botón de añadir lista
-                <img src="/lista-simple/assets/img/iconos/add-l.svg" alt="Foto de perfil de usuario" class="mb-1 rounded-circle border border-1 bg-success icon-list-ss"> e ir añadiendo los datos que desees. El único dato obligatorio es el nombre.
+                <img src="<?= base_url ?>assets/img/iconos/add-l.svg" alt="Foto de perfil de usuario" class="mb-1 rounded-circle border border-1 bg-success icon-list-ss"> e ir añadiendo los datos que desees. El único dato obligatorio es el nombre.
             </div>
         </div>
     </div>
@@ -79,7 +79,7 @@
         </h2>
         <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
             <div class="accordion-body">
-                <strong>Desde la vista de tus listas</strong> puedes dar clic en el icono <img src="/lista-simple/assets/img/iconos/editar.svg" alt="Foto de perfil de usuario" class="mb-1 icon-list-ss"> de la lista que quieras editar y así modificar sus datos.
+                <strong>Desde la vista de tus listas</strong> puedes dar clic en el icono <img src="<?= base_url ?>assets/img/iconos/editar.svg" alt="Foto de perfil de usuario" class="mb-1 icon-list-ss"> de la lista que quieras editar y así modificar sus datos.
             </div>
         </div>
     </div>
@@ -93,7 +93,7 @@
         </h2>
         <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse">
             <div class="accordion-body">
-                <strong>Crea una lista y</strong> da clic sobre el nombre de tu lista y te llevará al contenido de la lista. Para añadir nuevos elementos solo debes dar clic en el icono <img src="/lista-simple/assets/img/iconos/add.svg" alt="Foto de perfil de usuario" class="mb-1 rounded-circle border border-1 bg-success icon-list-ss"> y rellenar los datos del elemento a añadir. El único dato obligatorio es el nombre.
+                <strong>Crea una lista y</strong> da clic sobre el nombre de tu lista y te llevará al contenido de la lista. Para añadir nuevos elementos solo debes dar clic en el icono <img src="<?= base_url ?>assets/img/iconos/add.svg" alt="Foto de perfil de usuario" class="mb-1 rounded-circle border border-1 bg-success icon-list-ss"> y rellenar los datos del elemento a añadir. El único dato obligatorio es el nombre.
             </div>
         </div>
     </div>
@@ -107,7 +107,7 @@
         </h2>
         <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse">
             <div class="accordion-body">
-                <strong>Dentro de la vista de los elementos de la lista</strong> puedes dar clic en el icono <img src="/lista-simple/assets/img/iconos/editar.svg" alt="Imagen icono editar" class="mb-1 icon-list-ss"> del elemento que quieras editar y así modificar sus datos.
+                <strong>Dentro de la vista de los elementos de la lista</strong> puedes dar clic en el icono <img src="<?= base_url ?>assets/img/iconos/editar.svg" alt="Imagen icono editar" class="mb-1 icon-list-ss"> del elemento que quieras editar y así modificar sus datos.
             </div>
         </div>
     </div>
@@ -121,7 +121,7 @@
         </h2>
         <div id="panelsStayOpen-collapseSeven" class="accordion-collapse collapse">
             <div class="accordion-body">
-                <strong>Si damos clic</strong> en el icono <img src="/lista-simple/assets/img/iconos/papelera.svg" alt="Imagen icono de papelera" class="mb-1 icon-list-ss"> de una lista, esta se enviará a la papelera independientemente del contenido que tenga. Desde la papelera se podrá recuperar o eliminar. Sin embargo, si se eliminan los elementos que de una lista estos se borrarán de forma definitiva.
+                <strong>Si damos clic</strong> en el icono <img src="<?= base_url ?>assets/img/iconos/papelera.svg" alt="Imagen icono de papelera" class="mb-1 icon-list-ss"> de una lista, esta se enviará a la papelera independientemente del contenido que tenga. Desde la papelera se podrá recuperar o eliminar. Sin embargo, si se eliminan los elementos que de una lista estos se borrarán de forma definitiva.
             </div>
         </div>
     </div>
@@ -135,7 +135,7 @@
         </h2>
         <div id="panelsStayOpen-collapseEignt" class="accordion-collapse collapse">
             <div class="accordion-body">
-                <strong>Damos clic en el nombre de la lista</strong> para acceder a su contenido. Si damos clic en el icono <img src="/lista-simple/assets/img/iconos/papelera.svg" alt="Imagen icono de papelera" class="mb-1 icon-list-ss"> de cualquier elemento de la lista, este se eliminará de forma definitiva.
+                <strong>Damos clic en el nombre de la lista</strong> para acceder a su contenido. Si damos clic en el icono <img src="<?= base_url ?>assets/img/iconos/papelera.svg" alt="Imagen icono de papelera" class="mb-1 icon-list-ss"> de cualquier elemento de la lista, este se eliminará de forma definitiva.
             </div>
         </div>
     </div>
@@ -149,7 +149,7 @@
         </h2>
         <div id="panelsStayOpen-collapseNine" class="accordion-collapse collapse">
             <div class="accordion-body">
-                <strong>Podemos recuperar las listas</strong> accediendo a la vista papelera y restaurarlas individualmente, dabdo al icono <img src="/lista-simple/assets/img/iconos/restaurar.svg" alt="Imagen icono de restauarar" class="mb-1 icon-list-ss"> o eliminarlas dando al icono <img src="/lista-simple/assets/img/iconos/papelera.svg" alt="Imagen icono de papelera" class="mb-1 icon-list-ss">. También se pueden restaurar o eliminar todas a la vez con los botones <img src="/lista-simple/assets/img/iconos/botonesRD.png" alt="Imagen de iconos de restaurar y vaciar listas de la vista papelera" class="mb-1 iconslist-xl">.
+                <strong>Podemos recuperar las listas</strong> accediendo a la vista papelera y restaurarlas individualmente, dabdo al icono <img src="<?= base_url ?>assets/img/iconos/restaurar.svg" alt="Imagen icono de restauarar" class="mb-1 icon-list-ss"> o eliminarlas dando al icono <img src="<?= base_url ?>assets/img/iconos/papelera.svg" alt="Imagen icono de papelera" class="mb-1 icon-list-ss">. También se pueden restaurar o eliminar todas a la vez con los botones <img src="<?= base_url ?>assets/img/iconos/botonesRD.png" alt="Imagen de iconos de restaurar y vaciar listas de la vista papelera" class="mb-1 iconslist-xl">.
             </div>
         </div>
     </div>
@@ -163,7 +163,7 @@
         </h2>
         <div id="panelsStayOpen-collapseTen" class="accordion-collapse collapse">
             <div class="accordion-body">
-                <strong>Por su puesto</strong>. Desde la vista <strong>Mi cuenta</strong> puedes darte de baja dando clic en el botón <img src="/lista-simple/assets/img/iconos/baja.png" alt="Imagen botón darse de baja de vista Mi cuenta" class="mb-1 iconslist-xl">. Al dar de baja la cuenta se borran todos los datos de esta como el email, usuario, contraseña, listas y elementos de estas.
+                <strong>Por su puesto</strong>. Desde la vista <strong>Mi cuenta</strong> puedes darte de baja dando clic en el botón <img src="<?= base_url ?>assets/img/iconos/baja.png" alt="Imagen botón darse de baja de vista Mi cuenta" class="mb-1 iconslist-xl">. Al dar de baja la cuenta se borran todos los datos de esta como el email, usuario, contraseña, listas y elementos de estas.
             </div>
         </div>
     </div>
@@ -176,4 +176,4 @@
 
 
 <!-- Pie de página -->
-<?php require_once 'C:/wamp64/www/lista-simple/views/layout/footer.php'; ?>
+<?php require_once base_host . 'views/layout/footer.php'; ?>

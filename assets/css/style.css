@@ -41,7 +41,7 @@ body {
 }
 
 .top {
-    margin-top: 87px !important;
+    margin-top: 75px !important;
 }
 
 
@@ -86,7 +86,12 @@ body {
     width: 120px;
 }
 
-
+.select-style.selected{
+    background-color: #5e17eb20 !important;
+    border: 1px solid #5e17eb80 !important;
+    transform: scale(1.03);
+    transition: all 250ms;
+}
 
 .img-user {
 
@@ -98,7 +103,7 @@ body {
     width: 50px;
     height: 50px;
     cursor: pointer;
-    bottom: 80px !important;
+    bottom: 60px !important;
     transition: all 250ms;
 }
 
@@ -113,8 +118,9 @@ body {
 
 
 .iconslist {
-    width: 1.1rem;
+    width: 1.2rem;
     cursor: pointer;
+    margin-left: 5px;
 }
 
 .icon-list-ss {
@@ -157,8 +163,6 @@ body {
         width: 250px;
         height: 250px;
     }
-
-
 }
 
 @media (width >=768px) {
@@ -176,4 +180,12 @@ body {
 .f-u-little {
     font-size: 12px;
 
+}
+
+.add {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    bottom: 80px !important;
+    transition: all 250ms;
 }

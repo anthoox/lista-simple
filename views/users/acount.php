@@ -1,6 +1,6 @@
 <!-- Cabeceras -->
 <?php
-require_once 'C:/wamp64/www/lista-simple/views/layout/head2.php';
+require_once base_host . 'views/layout/head2.php';
 $userData = $_SESSION['identity'];
 ?>
 
@@ -58,5 +58,5 @@ $userData = $_SESSION['identity'];
 
 <!-- Pie de página -->
 <?php
-require_once 'C:/wamp64/www/lista-simple/views/layout/footer.php';
+require_once base_host . 'views/layout/footer.php';
 ?>

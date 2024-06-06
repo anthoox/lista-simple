@@ -25,7 +25,7 @@ require_once 'C:/wamp64/www/lista-simple/views/layout/head.php';
 
 </form>
 
-<a class="text-center text-decoration-none text-primary-emphasis fw-medium" href="/lista-simple/index.php">Volver</a>
+<a class="text-center text-decoration-none text-primary-emphasis fw-medium" href="<?= base_url ?>">Volver</a>
 <!-- <span class="text-success fw-semibold f-little">Consulta enviada</span> -->
 
 
@@ -33,4 +33,4 @@ require_once 'C:/wamp64/www/lista-simple/views/layout/head.php';
 </div>
 
 <!-- Pie de página -->
-<?php require_once 'C:/wamp64/www/lista-simple/views/layout/footer.php'; ?>
+<?php require_once base_host . 'views/layout/footer.php'; ?>
