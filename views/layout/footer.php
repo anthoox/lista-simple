@@ -5,8 +5,7 @@
 
 
     <footer class="container d-flex justify-content-between align-items-center p-3 mt-2 border-top border-1 ">
-        <!-- quitar bordes en vistas menores de 576px -->
-        <!-- ACTIVAR EN VISTAS DE LOGIN -->
+
         <ul class="list-unstyled  mb-0 d-md-flex gap-3  text-star">
             <li class="text-start ">
                 <a class="fw-medium text-decoration-none text-primary-emphasis f-little" href="<?= base_url ?>">Inicio</a>
@@ -21,10 +20,10 @@
 
         </ul>
 
-        <!-- <div class="h-100  p-0 m-0 w-50"> -->
+
         <p class="text-center text-primary-emphasis f-u-little p-0 m-0 w-50">Proyecto DAW - Lista Simple -
             Anthony Alegría Alcántara ©<?php echo date('Y') ?></p>
-        <!-- </div> -->
+
 
         <div class="h-100  p-0 m-0  gap-2 d-flex justify-content-center align-items-center">
             <a href="mailto:listasimple@anthoox.es"><img src="<?= web ?>img/iconos/email.svg" alt="Enlace a email de contacto" class="iconslist " title="listasimple@anthoox.es"></a>

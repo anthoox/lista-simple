@@ -146,10 +146,6 @@ class itemsController
         if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
             $dataItem = ValidatorForm::validatorItem($_POST);
 
-
-            // if (!isset($dataItem['notification'])) {
-            //     $dataItem['notification'] = "0000-00-00 00:00:00";
-            // }
             if (!isset($dataItem['notes'])) {
                 $dataItem['notes'] = "";
             }

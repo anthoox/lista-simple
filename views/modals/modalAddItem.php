@@ -23,14 +23,8 @@
                         <input type="text" class="form-control" name="idList" hidden value="<?= $_GET['id'] ?>">
                         <input type="text" class="form-control" name="idUser" hidden value="<?= $_SESSION['identity']->id ?>">
 
-
                     </div>
-                    <!-- <div class="mb-3">
-                        <label for="notification" class="form-label w-100 text-start">Notificación</label>
-                        <input type="datetime-local" class="form-control" id="notification" name="notification">
-                        <div id="notificationHelp" class="form-text text-start">Notificación no disponible.</div>
 
-                    </div> -->
                     <div class="mb-3">
                         <label for="description" class="form-label w-100 text-start">Notas</label>
                         <textarea class="form-control" id="description" rows="3" name="notes"></textarea>

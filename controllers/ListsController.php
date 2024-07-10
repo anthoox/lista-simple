@@ -182,13 +182,6 @@ class listsController
         }
         if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
             $dataList = ValidatorForm::valitatorList($_POST);
-            // if (!isset($dataList['notification'])) {
-            //     $dataList['notification'] = "0000-00-00 00:00:00";
-            // }
-            // if (!isset($dataList['description'])) {
-            //     $dataList['description'] = "";
-            // }
-
 
             $list = new Lists();
             $result = $list->edit($dataList);
