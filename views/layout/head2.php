@@ -11,6 +11,9 @@
     <link rel="icon" href="<?= base_url ?>assets/img/logo/logo.ico">
     <link rel="stylesheet" type="text/css" href="<?= base_url ?>assets/css/bootstrap/style.css">
     <link rel="stylesheet" href="<?= base_url ?>assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
 </head>
 
 
