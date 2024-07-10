@@ -15,9 +15,6 @@
                                                                             echo isset($_SESSION['color']) && $_SESSION['color'] == 'completed' ? 'bg-primary text-white' : 'bg-body border-dark-subtle';
                                                                             ?> rounded-3 border-1 btn-style f-little btn-list">Completas</a></h2>
 
-    <h2><a href="<?= base_url ?>lists/upcoming" id="upcoming" class="btn <?php
-                                                                            echo isset($_SESSION['color']) && $_SESSION['color'] == 'upcoming' ? 'bg-primary text-white' : 'bg-body border-dark-subtle';
-                                                                            ?> rounded-3 border-1fw-semibold btn-style f-little btn-list">Recordatorios</a></h2>
 
 </div>
 <div class="d-flex flex-column col-12  mt-xl-3 gap-2 p-0  ">

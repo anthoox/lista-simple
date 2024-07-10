@@ -17,13 +17,12 @@ window.onload = function () {
                     // console.log(jsonData);
 
                     var id = jsonData.id;
-                    var description = jsonData.description;
-                    var notification = jsonData.notification;
+                    // var description = jsonData.description;
+                    // var notification = jsonData.notification;
                     var name = jsonData.name;
                     document.getElementById('listName').value = name;
-                    document.getElementById('edit-notification').value = notification;
-                    document.getElementById('edit-description').value = description;
-                    document.getElementById('edit-description').value = description;
+                    // document.getElementById('edit-notification').value = notification;
+                    // document.getElementById('edit-description').value = description;
                     document.getElementById('idList').value = id;
 
                 } else {

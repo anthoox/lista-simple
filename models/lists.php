@@ -215,35 +215,7 @@ class Lists
         }
     }
 
-    // public function upcoming($userId)
-    // {
-    //     $sql = "SELECT * FROM lists WHERE user_id = ? AND completed = 0 AND paper_bin = 0 AND (notification IS NOT NULL AND notification != '0000-00-00 00:00:00') AND notification > NOW()";
-    //     $stmt = $this->db->prepare($sql);
-    //     $stmt->bind_param("i", $userId);
-    //     $stmt->execute();
-    //     $result = $stmt->get_result();
-
-    //     if ($result->num_rows > 0) {
-    //         return $result->fetch_all();
-    //     } else {
-    //         return false;
-    //     }
-    // }
-
-    public function pending($userId)
-    {
-        $sql = "SELECT * FROM lists WHERE user_id = ? AND completed = 0";
-        $stmt = $this->db->prepare($sql);
-        $stmt->bind_param("i", $userId);
-        $stmt->execute();
-        $result = $stmt->get_result();
-
-        if ($result->num_rows > 0) {
-            return $result->fetch_all();
-        } else {
-            return false;
-        }
-    }
+ 
 
     public function completed($userId)
     {
@@ -292,9 +264,9 @@ class Lists
 
     public function edit($datos)
     {
-        $sql = "UPDATE lists SET name = ?, modification_date = NOW(), notification = ?, description = ? WHERE id = ?";
+        $sql = "UPDATE lists SET name = ?, modification_date = NOW() WHERE id = ?";
         $stmt = $this->db->prepare($sql);
-        $stmt->bind_param("sssi", $datos['name'], $datos['notification'], $datos['description'], $datos['id']);
+        $stmt->bind_param("si", $datos['name'], $datos['id']);
         $result = $stmt->execute();
 
         if ($result) {

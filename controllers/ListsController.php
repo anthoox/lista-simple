@@ -86,52 +86,6 @@ class listsController
         }
     }
 
-    // public function upcoming()
-    // {
-    //     if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
-    //         require_once base_host . 'views/users/admin.php';
-    //     }
-    //     if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
-    //         $list = new Lists();
-    //         $result = $list->upcoming($_SESSION['identity']->id);
-    //         $_SESSION['color'] = 'upcoming';
-
-    //         if ($result) {
-    //             require_once  base_host . 'views/users/index.php';
-    //             return $result;
-    //         } else {
-    //             $_SESSION['upcoming']['empty'] = true;
-
-    //             require_once  base_host . 'views/users/index.php';  
-    //             return false;
-    //         }
-    //     } else {
-    //         require_once base_host . 'views/users/home.php';
-    //     }
-    // }
-
-    public function pending()
-    {
-        if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
-            require_once base_host . 'views/users/admin.php';
-        }
-        if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
-            $list = new Lists();
-            $result = $list->pending($_SESSION['identity']->id);
-            $_SESSION['color'] = 'pending';
-
-
-            if ($result) {
-                require_once  base_host . 'views/users/index.php';
-                return $result;
-            } else {
-                require_once  base_host . 'views/users/index.php';
-                return false;
-            }
-        } else {
-            require_once base_host . 'views/users/home.php';
-        }
-    }
 
     public function completed()
     {
@@ -228,12 +182,12 @@ class listsController
         }
         if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
             $dataList = ValidatorForm::valitatorList($_POST);
-            if (!isset($dataList['notification'])) {
-                $dataList['notification'] = "0000-00-00 00:00:00";
-            }
-            if (!isset($dataList['description'])) {
-                $dataList['description'] = "";
-            }
+            // if (!isset($dataList['notification'])) {
+            //     $dataList['notification'] = "0000-00-00 00:00:00";
+            // }
+            // if (!isset($dataList['description'])) {
+            //     $dataList['description'] = "";
+            // }
 
 
             $list = new Lists();
