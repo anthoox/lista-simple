@@ -173,9 +173,9 @@ class Items
 
     public function edit($dataItem)
     {
-        $sql = "UPDATE items SET name = ?, price = ?, numer = ?, notification_date = ?, notes = ? WHERE id = ?";
+        $sql = "UPDATE items SET name = ?, price = ?, numer = ?, notes = ? WHERE id = ?";
         $stmt = $this->db->prepare($sql);
-        $stmt->bind_param("sssssi", $dataItem['name'], $dataItem['price'], $dataItem['units'], $dataItem['notification'], $dataItem['notes'], $dataItem['idItem']);
+        $stmt->bind_param("ssssi", $dataItem['name'], $dataItem['price'], $dataItem['units'], $dataItem['notes'], $dataItem['idItem']);
         $result = $stmt->execute();
 
         if ($result) {

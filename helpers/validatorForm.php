@@ -136,26 +136,26 @@ class ValidatorForm
                 $dataList['name'] = $name;
             }
 
-            if (!empty($dataForm['notification'])) {
+            // if (!empty($dataForm['notification'])) {
 
 
-                $notification = isset($dataForm['notification']) ? $dataForm['notification'] : false;
-                $notificationObj = DateTime::createFromFormat('Y-m-d\TH:i', $notification);
+            //     $notification = isset($dataForm['notification']) ? $dataForm['notification'] : false;
+            //     $notificationObj = DateTime::createFromFormat('Y-m-d\TH:i', $notification);
 
 
-                // Verifica si la creación del objeto fue exitosa y si la fecha/hora coincide con la cadena original
-                if (!$notificationObj != false && $notificationObj->format('Y-m-d\TH:i') === $notification) {
-                    $error = 'notification';
-                }
+            //     // Verifica si la creación del objeto fue exitosa y si la fecha/hora coincide con la cadena original
+            //     if (!$notificationObj != false && $notificationObj->format('Y-m-d\TH:i') === $notification) {
+            //         $error = 'notification';
+            //     }
 
-                $dataList['notification'] = $notification;
-            } else {
-                $notification = "0000-00-00 00:00:00";
-                $notificationObj = DateTime::createFromFormat('Y-m-d\TH:i', $notification);
+            //     $dataList['notification'] = $notification;
+            // } else {
+            //     $notification = "0000-00-00 00:00:00";
+            //     $notificationObj = DateTime::createFromFormat('Y-m-d\TH:i', $notification);
 
 
-                $dataList['notification'] = $notification;
-            }
+            //     $dataList['notification'] = $notification;
+            // }
 
             if (!empty($dataForm['notes'])) {
                 $notes = isset($dataForm['notes']) ? $dataForm['notes'] : false;

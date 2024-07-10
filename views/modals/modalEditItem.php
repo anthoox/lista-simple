@@ -29,12 +29,12 @@
 
 
                     </div>
-                    <div class="mb-3">
+                    <!-- <div class="mb-3">
                         <label for="notification" class="form-label w-100 text-start">Notificación</label>
                         <input type="datetime-local" class="form-control" id="item-notification" name="notification">
                         <div id="notificationHelp" class="form-text text-start">Notificación no disponible.</div>
 
-                    </div>
+                    </div> -->
                     <div class="mb-3">
                         <label for="notes" class="form-label w-100 text-start">Notas</label>
                         <textarea class="form-control" id="item-notes" rows="3" name="notes"></textarea>

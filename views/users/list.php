@@ -66,10 +66,10 @@ $price = number_format((float)$totalPrice['totalPrice'], 2)
                         <div class="d-flex w-100 h-25">
                             <div class="d-flex w-50">';
 
-                if ($item[6] != '0000-00-00 00:00:00') {
-                    $notification = Utils::dateFormatter($item[6]);
-                    echo '<span class="text-primary fw-semibold f-little">' . $notification . '</span>';
-                }
+                // if ($item[6] != '0000-00-00 00:00:00') {
+                //     $notification = Utils::dateFormatter($item[6]);
+                //     echo '<span class="text-primary fw-semibold f-little">' . $notification . '</span>';
+                // }
 
                 echo '  </div>
                             <div class="d-flex align-items-center w-50 justify-content-end">
@@ -128,10 +128,10 @@ $price = number_format((float)$totalPrice['totalPrice'], 2)
                         
                     ';
 
-                if ($item[6] != '0000-00-00 00:00:00') {
-                    $notification = Utils::dateFormatter($item[6]);
-                    echo '<span class="text-secondary text-decoration-line-through fw-semibold f-little">' . $notification . '</span>';
-                }
+                // if ($item[6] != '0000-00-00 00:00:00') {
+                //     $notification = Utils::dateFormatter($item[6]);
+                //     echo '<span class="text-secondary text-decoration-line-through fw-semibold f-little">' . $notification . '</span>';
+                // }
 
                 echo '  </div>
                             <div class="d-flex align-items-center w-50 justify-content-end">

@@ -147,9 +147,9 @@ class itemsController
             $dataItem = ValidatorForm::validatorItem($_POST);
 
 
-            if (!isset($dataItem['notification'])) {
-                $dataItem['notification'] = "0000-00-00 00:00:00";
-            }
+            // if (!isset($dataItem['notification'])) {
+            //     $dataItem['notification'] = "0000-00-00 00:00:00";
+            // }
             if (!isset($dataItem['notes'])) {
                 $dataItem['notes'] = "";
             }
