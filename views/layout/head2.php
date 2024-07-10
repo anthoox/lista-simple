@@ -76,7 +76,7 @@
                     <li class="list-group-item pt-4 pb-4 "><a href="<?= base_url ?>lists/index" class="text-decoration-none text-black fw-semibold">Inicio</a></li>
                     <li class="list-group-item pt-4 pb-4 "><a href="<?= base_url ?>users/logout" class="text-decoration-none text-black fw-semibold">Salir</a></li>
                 <?php elseif (isset($_SESSION['user']) && $_SESSION['user'] == true) : ?>
-                    <li class="list-group-item pt-4 pb-4 "><a href="<?= base_url ?>lists/index" class="text-decoration-none text-black fw-semibold">Inicio</a></li>
+                    <li class="list-group-item pt-4 pb-4 "><a href="<?= base_url ?>lists/index" class="text-decoration-none text-black fw-semibold">Listas</a></li>
                     <li class="list-group-item pt-4 pb-4 "><a href="<?= base_url ?>users/acount" class="text-decoration-none text-black fw-semibold">Mi cuenta</a></li>
                     <li class="list-group-item pt-4 pb-4 "><a href="<?= base_url ?>users/trash" class="text-decoration-none text-black fw-semibold">Papelera</a></li>
                     <li class="list-group-item pt-4 pb-4 "><a href="<?= base_url ?>users/help" class="text-decoration-none text-black fw-semibold">Soporte</a></li>
@@ -106,7 +106,7 @@
                         <li class="list-group-item pt-4 pb-4  "><a href="<?= base_url ?>lists/index" class="text-decoration-none text-black fw-semibold">Inicio</a></li>
                         <li class="list-group-item pt-4 pb-4  "><a href="<?= base_url ?>users/logout" class="text-decoration-none text-black fw-semibold">Salir</a></li>
                     <?php elseif (isset($_SESSION['user']) && $_SESSION['user'] == true) : ?>
-                        <li class="list-group-item pt-4 pb-4  "><a href="<?= base_url ?>lists/index" class="text-decoration-none text-black fw-semibold">Inicio</a></li>
+                        <li class="list-group-item pt-4 pb-4  "><a href="<?= base_url ?>lists/index" class="text-decoration-none text-black fw-semibold">Listas</a></li>
                         <li class="list-group-item pt-4 pb-4  "><a href="<?= base_url ?>users/acount" class="text-decoration-none text-black fw-semibold">Mi cuenta</a></li>
                         <li class="list-group-item pt-4 pb-4  "><a href="<?= base_url ?>users/trash" class="text-decoration-none text-black fw-semibold">Papelera</a></li>
                         <li class="list-group-item pt-4 pb-4  "><a href="<?= base_url ?>users/help" class="text-decoration-none text-black fw-semibold">Soporte</a></li>
