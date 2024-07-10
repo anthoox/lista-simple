@@ -25,7 +25,7 @@
     <?php
 
 
-    if (isset($result) && empty(!$result)) {
+    if (isset($result) && empty(!$result)  && $result != 2) {
 
         foreach ($result as $list) {
             // Si no esta en la papelera/
@@ -113,12 +113,7 @@
     } elseif ($result == 1) {
 
         echo '<h6>Error al cargar listas</h6>';
-    } elseif ($_SESSION['upcoming']['empty'] == true) {
-
-        echo '<h6>Aún no tienes listas con recordatorios.</h6>';
-        Utils::deleteSession($_SESSION['upcoming']['empty']);
-
-    } elseif ($result == false) {
+    } elseif ($result == 2) {
 
         echo '<h6>Aún no has completado ninguna lista.</h6>';
     } else {

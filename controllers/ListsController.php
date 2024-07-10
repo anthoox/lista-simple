@@ -86,29 +86,29 @@ class listsController
         }
     }
 
-    public function upcoming()
-    {
-        if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
-            require_once base_host . 'views/users/admin.php';
-        }
-        if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
-            $list = new Lists();
-            $result = $list->upcoming($_SESSION['identity']->id);
-            $_SESSION['color'] = 'upcoming';
+    // public function upcoming()
+    // {
+    //     if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
+    //         require_once base_host . 'views/users/admin.php';
+    //     }
+    //     if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
+    //         $list = new Lists();
+    //         $result = $list->upcoming($_SESSION['identity']->id);
+    //         $_SESSION['color'] = 'upcoming';
 
-            if ($result) {
-                require_once  base_host . 'views/users/index.php';
-                return $result;
-            } else {
-                $_SESSION['upcoming']['empty'] = true;
+    //         if ($result) {
+    //             require_once  base_host . 'views/users/index.php';
+    //             return $result;
+    //         } else {
+    //             $_SESSION['upcoming']['empty'] = true;
 
-                require_once  base_host . 'views/users/index.php';  
-                return false;
-            }
-        } else {
-            require_once base_host . 'views/users/home.php';
-        }
-    }
+    //             require_once  base_host . 'views/users/index.php';  
+    //             return false;
+    //         }
+    //     } else {
+    //         require_once base_host . 'views/users/home.php';
+    //     }
+    // }
 
     public function pending()
     {
@@ -151,9 +151,9 @@ class listsController
 
                 return $result;
             } else {
-
+                $result = 2;
                 require_once  base_host . 'views/users/index.php';
-                return false;
+                return $result;
             }
         } else {
             require_once base_host . 'views/users/home.php';
