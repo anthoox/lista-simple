@@ -11,10 +11,10 @@
                 <a class="fw-medium text-decoration-none text-primary-emphasis f-little" href="<?= base_url ?>">Inicio</a>
             </li>
             <li class="text-start">
-                <a class="fw-medium text-decoration-none text-primary-emphasis f-little" href="<?= base_url ?>/views/login/faq.php">FaQ</a>
+                <a class="fw-medium text-decoration-none text-primary-emphasis f-little" href="<?= base_url ?>info/faq">FaQ</a>
             </li>
             <li class="text-start ">
-                <a class="fw-medium text-decoration-none text-primary-emphasis f-little" href="<?= base_url ?>/views/login/contact.php">Contacto</a>
+                <a class="fw-medium text-decoration-none text-primary-emphasis f-little" href="<?= base_url ?>info/contact">Contacto</a>
             </li>
 
 
