@@ -162,25 +162,31 @@ class UsersController
 
     public function login()
     {
-        if ($_POST) {
-            // Identificar usuario
-            $user = new User();
-            $user->setEmail($_POST['email']);
-            $user->setPassword($_POST['password']);
-            // Consulta a la base de datos
-            $identity = $user->login();
-            // Iniciar la sesión
-            if ($identity && is_object($identity)) {
-                $_SESSION['identity'] = $identity;
-                if ($identity->rol == 1) {
-                    $_SESSION['admin'] = true;
-                } elseif ($identity->rol == 2) {
-                    $_SESSION['user'] = true;
+       
+            if ($_POST) {
+                // Identificar usuario
+                $user = new User();
+                $user->setEmail($_POST['email']);
+                $user->setPassword($_POST['password']);
+                // Consulta a la base de datos
+                $identity = $user->login();
+                // Iniciar la sesión
+                if ($identity && is_object($identity)) {
+                    $_SESSION['identity'] = $identity;
+                    if ($identity->rol == 1) {
+                        $_SESSION['admin'] = true;
+                    } elseif ($identity->rol == 2) {
+                        $_SESSION['user'] = true;
+                    }
+                // Configuración de cookies
+                $cookieTime = time() + (86400 * 30); // 30 días
+                setcookie('user_email', $_POST['email'], $cookieTime, "/", "", true, true);
+                setcookie('user_password', $_POST['password'], $cookieTime, "/", "", true, true);
+                } else {
+                    $_SESSION['error_login'] = 'Failed';
                 }
-            } else {
-                $_SESSION['error_login'] = 'Failed';
             }
-        }
+        
         require_once base_host . 'views/login/login.php';
     }
     
@@ -190,6 +196,8 @@ class UsersController
     public function logout()
     {
 
+     
+
         if (isset($_SESSION['identity'])) {
             $userPrueba = $_SESSION['identity']->email;
             if ($userPrueba === 'prueba@prueba.com') {
@@ -197,6 +205,13 @@ class UsersController
                 $result = $user->deleteData($userPrueba);
             }
             unset($_SESSION['identity']);
+            // Eliminar las cookies de usuario
+            if (isset($_COOKIE['user_email'])) {
+                setcookie('user_email', '', time() - 3600, '/'); // Establece la cookie con un tiempo pasado para eliminarla
+            }
+            if (isset($_COOKIE['user_password'])) {
+                setcookie('user_password', '', time() - 3600, '/'); // Establece la cookie con un tiempo pasado para eliminarla
+            }
         }
 
         if (isset($_SESSION['admin'])) {
@@ -204,11 +219,12 @@ class UsersController
         }
 
         if (isset($_SESSION['user'])) {
-
             unset($_SESSION['user']);
+
         }
 
         header("Location:" . base_url);
+        exit();
     }
 
     public function edit()

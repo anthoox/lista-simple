@@ -1,15 +1,41 @@
 <!-- Cabeceras -->
 <?php require_once base_host . 'views/layout/head.php'; ?>
+<?php require_once base_host . 'controllers/UsersController.php'; ?>
+
 
 <?php
 
 
+
+
+if (!isset($_SESSION['identity'])) {
+    if (isset($_COOKIE['user_email']) && isset($_COOKIE['user_password'])) {
+       
+        // Identificar usuario
+        $user = new User();
+        $user->setEmail($_COOKIE['user_email']);
+        $user->setPassword($_COOKIE['user_password']);
+
+        // Consulta a la base de datos
+        $identity = $user->login();
+
+        // Iniciar la sesión
+        if ($identity && is_object($identity)) {
+            $_SESSION['identity'] = $identity;
+            if ($identity->rol == 1) {
+                $_SESSION['admin'] = true;
+            } elseif ($identity->rol == 2) {
+                $_SESSION['user'] = true;
+            }
+        }
+    }
+}
+
 if (isset($_SESSION['identity'])) {
     // header("Location: https://listasimple.anthoox.es/lists/index"); 
     header("Location: http://localhost/lista-simple/lists/index");
+} 
 
-    ob_end_flush();
-}
 ?>
 
 
