@@ -179,9 +179,9 @@ class UsersController
                         $_SESSION['user'] = true;
                     }
                 // Configuración de cookies
-                $cookieTime = time() + (86400 * 30); // 30 días
-                setcookie('user_email', $_POST['email'], $cookieTime, "/", "", true, true);
-                setcookie('user_password', $_POST['password'], $cookieTime, "/", "", true, true);
+                // $cookieTime = time() + (86400 * 30); // 30 días
+                // setcookie('user_email', $_POST['email'], $cookieTime, "/", "", true, true);
+                // setcookie('user_password', $_POST['password'], $cookieTime, "/", "", true, true);
                 } else {
                     $_SESSION['error_login'] = 'Failed';
                 }
@@ -206,12 +206,12 @@ class UsersController
             }
             unset($_SESSION['identity']);
             // Eliminar las cookies de usuario
-            if (isset($_COOKIE['user_email'])) {
-                setcookie('user_email', '', time() - 3600, '/'); // Establece la cookie con un tiempo pasado para eliminarla
-            }
-            if (isset($_COOKIE['user_password'])) {
-                setcookie('user_password', '', time() - 3600, '/'); // Establece la cookie con un tiempo pasado para eliminarla
-            }
+            // if (isset($_COOKIE['user_email'])) {
+            //     setcookie('user_email', '', time() - 3600, '/'); // Establece la cookie con un tiempo pasado para eliminarla
+            // }
+            // if (isset($_COOKIE['user_password'])) {
+            //     setcookie('user_password', '', time() - 3600, '/'); // Establece la cookie con un tiempo pasado para eliminarla
+            // }
         }
 
         if (isset($_SESSION['admin'])) {

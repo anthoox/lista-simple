@@ -8,7 +8,7 @@
 
 <?php
 // Comprobamos si existen las cookies en el navegador para redigir
-Cookies::cookiesHome();
+// Cookies::cookiesHome();
 
 ?>
 

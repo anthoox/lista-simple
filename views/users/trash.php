@@ -40,16 +40,9 @@
                     '<span class="fs-5 fw-semibold text-secondary span-style">' . $list[2] . '</span>' .
                     '</div>
             
-                    <div class="d-flex w-100 justify-content-between">
+                    <div class="d-flex w-100 justify-content-end">
      
-                        <div class=" ">';
-                if ($list[5] != '0000-00-00 00:00:00') {
-                    $notification = Utils::dateFormatter($list[5]);
-                    echo '<span class="f-little fw-semibold text-secondary ">' . $notification . '</span>';
-                }
-
-                echo '           
-                        </div>
+                
 
                         <div class="fw-semibold text-secondary ">' .
                     $itemsData["completed_items"] . '/' . $itemsData["total_items"] . '
@@ -78,14 +71,8 @@
                 echo
                 '</div>
             
-                    <div class="d-flex w-100 justify-content-between">
-                        <div class="  ">';
-                if ($list[5] != '0000-00-00 00:00:00') {
-                    $notification = Utils::dateFormatter($list[5]);
-                    echo '<span class="fw-semibold f-little text-secondary text-decoration-line-through">' . $notification . '</span>';
-                }
-
-                echo   '</div>
+                    <div class="d-flex w-100 justify-content-end">
+         
                         <div class="text-secondary fw-semibold text-decoration-line-through">' .
                     $itemsData["completed_items"] . ' / ' . $itemsData["total_items"] . '
 
