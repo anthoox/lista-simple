@@ -27,10 +27,10 @@
 
                     </div>
 
-                    <div class="mb-3">
+                    <!-- <div class="mb-3">
                         <label for="notes" class="form-label w-100 text-start">Notas</label>
                         <textarea class="form-control" id="item-notes" rows="3" name="notes"></textarea>
-                    </div>
+                    </div> -->
                 </form>
             </div>
             <div class="modal-footer">

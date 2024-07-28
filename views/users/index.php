@@ -26,7 +26,7 @@
 
         foreach ($result as $list) {
             // Si no esta en la papelera/
-            if ($list[7] == 0) {
+            if ($list[5] == 0) {
 
                 $items = new itemsController();
                 $itemsData = $items->numItems($list[0]);

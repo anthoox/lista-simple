@@ -116,16 +116,16 @@ class ValidatorForm
 
 
 
-            if (!empty($dataForm['notes'])) {
-                $notes = isset($dataForm['notes']) ? $dataForm['notes'] : false;
+            // if (!empty($dataForm['notes'])) {
+            //     $notes = isset($dataForm['notes']) ? $dataForm['notes'] : false;
 
-                if (!is_string($notes)) {
-                    $error = 'notes';
-                }
-                $dataList['notes'] = $notes;
-            } else {
-                $dataList['notes'] = "";
-            }
+            //     if (!is_string($notes)) {
+            //         $error = 'notes';
+            //     }
+            //     $dataList['notes'] = $notes;
+            // } else {
+            //     $dataList['notes'] = "";
+            // }
 
             if (!empty($dataForm['price'])) {
                 $price = isset($dataForm['price']) ? $dataForm['price'] : "0";

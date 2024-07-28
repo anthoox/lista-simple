@@ -17,8 +17,8 @@ class listsController
 
             if (!empty($dataList)) {
                 $name = isset($dataList['name']) ? $dataList['name'] : false;
-                $notification = isset($dataList['notification']) ? $dataList['notification'] : false;
-                $description = isset($dataList['description']) ? $dataList['description'] : false;
+                // $notification = isset($dataList['notification']) ? $dataList['notification'] : false;
+                // $description = isset($dataList['description']) ? $dataList['description'] : false;
                 $list = new Lists();
 
 
@@ -35,11 +35,11 @@ class listsController
                 }
 
 
-                if ($description) {
-                    $list->setDescription($description);
-                } else {
-                    $list->setDescription('');
-                }
+                // if ($description) {
+                //     $list->setDescription($description);
+                // } else {
+                //     $list->setDescription('');
+                // }
 
                 $list->setModificationDate(date('Y-m-d'));
 

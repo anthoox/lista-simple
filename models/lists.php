@@ -8,7 +8,7 @@ class Lists
     private $create_date;
     private $modification_date;
     private $notification;
-    private $description;
+    // private $description;
     private $paper_bin;
     private $complete;
 
@@ -130,20 +130,20 @@ class Lists
     /**
      * Get the value of description
      */
-    public function getDescription()
-    {
-        return $this->description;
-    }
+    // public function getDescription()
+    // {
+    //     return $this->description;
+    // }
 
     /**
      * Set the value of description
      */
-    public function setDescription($description)
-    {
-        $this->description = $description;
+    // public function setDescription($description)
+    // {
+    //     $this->description = $description;
 
-        return $this;
-    }
+    //     return $this;
+    // }
 
     /**
      * Get the value of paper_bin
@@ -185,12 +185,12 @@ class Lists
     {
         $name = $this->getName();
         $modificationDate = $this->getModificationDate();
-        $notification = $this->getNotification();
-        $description = $this->getDescription();
+        // $notification = $this->getNotification();
+        // $description = $this->getDescription();
 
-        $sql = "INSERT INTO lists VALUES(NULL, ?, ?, NOW(), ?, ?, ?, 0, 0)";
+        $sql = "INSERT INTO lists VALUES(NULL, ?, ?, NOW(), ?, 0, 0)";
         $stmt = $this->db->prepare($sql);
-        $stmt->bind_param("sssss", $userId, $name, $modificationDate, $notification, $description);
+        $stmt->bind_param("sss", $userId, $name, $modificationDate,);
         $result = $stmt->execute();
 
         if ($result) {

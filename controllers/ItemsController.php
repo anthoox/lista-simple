@@ -47,8 +47,8 @@ class itemsController
 
             if (!empty($dataItem)) {
                 $name = isset($dataItem['name']) ? $dataItem['name'] : false;
-                $notification = isset($dataItem['notification']) ? $dataItem['notification'] : false;
-                $notes = isset($dataItem['notes']) ? $dataItem['notes'] : false;
+                // $notification = isset($dataItem['notification']) ? $dataItem['notification'] : false;
+                // $notes = isset($dataItem['notes']) ? $dataItem['notes'] : false;
                 $price = isset($dataItem['price']) ? $dataItem['price'] : false;
                 $units = isset($dataItem['units']) ? $dataItem['units'] : false;
                 $idUser = isset($dataItem['idUser']) ? $dataItem['idUser'] : false;
@@ -64,18 +64,18 @@ class itemsController
                 }
 
 
-                if ($notification) {
-                    $item->setNotification($notification);
-                } else {
-                    $item->setNotification(null);
-                }
+                // if ($notification) {
+                //     $item->setNotification($notification);
+                // } else {
+                //     $item->setNotification(null);
+                // }
 
 
-                if ($notes) {
-                    $item->setNotes($notes);
-                } else {
-                    $item->setNotes('');
-                }
+                // if ($notes) {
+                //     $item->setNotes($notes);
+                // } else {
+                //     $item->setNotes('');
+                // }
 
                 if ($price) {
                     $item->setPrice($price);
@@ -144,18 +144,18 @@ class itemsController
             require_once base_host . 'views/users/admin.php';
         }
         if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
+
             $dataItem = ValidatorForm::validatorItem($_POST);
 
-            if (!isset($dataItem['notes'])) {
-                $dataItem['notes'] = "";
-            }
-
+            // if (!isset($dataItem['notes'])) {
+            //     $dataItem['notes'] = "";
+            // }
+  
 
             $item = new Items();
 
             $result = $item->edit($dataItem);
-
-
+       
             if ($result) {
                 $list = new ItemsController();
                 $list->index($dataItem['idList']);

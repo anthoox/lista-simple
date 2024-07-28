@@ -35,8 +35,8 @@ CREATE TABLE IF NOT EXISTS `items` (
   `name` varchar(255) NOT NULL,
   `price` float(100,2) DEFAULT '0.00',
   `numer` int DEFAULT '1',
-  `notification_date` datetime DEFAULT NULL,
-  `notes` text,
+  -- `notification_date` datetime DEFAULT NULL,
+  -- `notes` text,
   `completed` int DEFAULT '0',
   `creation_date` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -57,8 +57,8 @@ CREATE TABLE IF NOT EXISTS `lists` (
   `name` varchar(255) NOT NULL,
   `creation_date` datetime DEFAULT NULL,
   `modification_date` date DEFAULT NULL,
-  `notification` datetime DEFAULT NULL,
-  `description` text,
+  -- `notification` datetime DEFAULT NULL,
+  -- `description` text, 
   `paper_bin` int NOT NULL DEFAULT '0',
   `completed` int NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
@@ -85,20 +85,6 @@ CREATE TABLE IF NOT EXISTS `users` (
 ) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `auth_tokens`
---
-
-CREATE TABLE IF NOT EXISTS `auth_tokens` (
-    `id` INT AUTO_INCREMENT PRIMARY KEY,
-    `user_id` INT NOT NULL,
-    `token` CHAR(64) NOT NULL,
-    `expires_at` DATETIME,
-    FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
-
 --
 -- Volcado de datos para la tabla `users`
 --

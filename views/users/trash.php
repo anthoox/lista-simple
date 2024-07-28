@@ -19,7 +19,7 @@
     if (isset($result) && empty(!$result)) {
 
         foreach ($result as $list) {
-            if ($list[8] == 0) {
+            if ($list[6] == 0) {
                 $items = new itemsController();
                 $itemsData = $items->numItems($list[0]);
 

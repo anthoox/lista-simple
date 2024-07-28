@@ -9,8 +9,8 @@ class Items
     private $name;
     private $price;
     private $units;
-    private $notification;
-    private $notes;
+    // private $notification;
+    // private $notes;
     private $completed;
 
     private $db;
@@ -86,27 +86,27 @@ class Items
         return $this;
     }
 
-    public function getNotification()
-    {
-        return $this->notification;
-    }
+    // public function getNotification()
+    // {
+    //     return $this->notification;
+    // }
 
-    public function setNotification($notification)
-    {
-        $this->notification = $notification;
-        return $this;
-    }
+    // public function setNotification($notification)
+    // {
+    //     $this->notification = $notification;
+    //     return $this;
+    // }
 
-    public function getNotes()
-    {
-        return $this->notes;
-    }
+    // public function getNotes()
+    // {
+    //     return $this->notes;
+    // }
 
-    public function setNotes($notes)
-    {
-        $this->notes = $notes;
-        return $this;
-    }
+    // public function setNotes($notes)
+    // {
+    //     $this->notes = $notes;
+    //     return $this;
+    // }
     public function getcompleted()
     {
         return $this->completed;
@@ -140,13 +140,13 @@ class Items
         $name = $this->getName();
         $price = $this->getPrice();
         $units = $this->getUnits();
-        $notification = $this->getNotification();
-        $notes = $this->getNotes();
+        // $notification = $this->getNotification();
+        // $notes = $this->getNotes();
 
-        $sql = "INSERT INTO items VALUES(NULL, ?, ?, ?, ?, ?, ?, ?, 0, NOW())";
+        $sql = "INSERT INTO items VALUES(NULL, ?, ?, ?, ?, ?, 0, NOW())";
 
         $stmt = $this->db->prepare($sql);
-        $stmt->bind_param("iisssss", $idUser, $idList, $name, $price, $units, $notification, $notes);
+        $stmt->bind_param("iisss", $idUser, $idList, $name, $price, $units);
         $result = $stmt->execute();
 
         if ($result) {
@@ -173,9 +173,11 @@ class Items
 
     public function edit($dataItem)
     {
-        $sql = "UPDATE items SET name = ?, price = ?, numer = ?, notes = ? WHERE id = ?";
+        $sql = "UPDATE items SET name = ?, price = ?, numer = ? WHERE id = ?";
+
         $stmt = $this->db->prepare($sql);
-        $stmt->bind_param("ssssi", $dataItem['name'], $dataItem['price'], $dataItem['units'], $dataItem['notes'], $dataItem['idItem']);
+
+        $stmt->bind_param("siii", $dataItem['name'], $dataItem['price'], $dataItem['units'],  $dataItem['idItem']);
         $result = $stmt->execute();
 
         if ($result) {

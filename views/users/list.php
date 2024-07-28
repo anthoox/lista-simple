@@ -42,7 +42,7 @@ $price = number_format((float)$totalPrice['totalPrice'], 2)
     if (isset($result) && !empty($result)) {
         foreach ($result as $item) {
             // Si no esta completo/
-            if ($item[8] == 0) {
+            if ($item[6] == 0) {
                 echo '
                 <div class="w-100 rounded-4 border border-1 border-dark-subtle p-1 pe-3 ps-3 d-flex btn-style select-style"  >
                     <div class="form-check h-100 d-flex align-items-center pe-1 border-1 border-end" >
