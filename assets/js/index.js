@@ -120,7 +120,7 @@ window.onload = function () {
                     var price = jsonData.price;
                     var units = jsonData.numer;
                     // var notification = jsonData.notification_date;
-                    var notes = jsonData.notes;
+                    // var notes = jsonData.notes;
                     var idItem = jsonData.id;
                     var idList = jsonData.list_id;
 
@@ -128,7 +128,7 @@ window.onload = function () {
                     document.getElementById('item-price').value = price;
                     document.getElementById('item-units').value = units;
                     // document.getElementById('item-notification').value = notification;
-                    document.getElementById('item-notes').value = notes;
+                    // document.getElementById('item-notes').value = notes;
                     document.getElementById('item-id').value = idItem;
                     document.getElementById('list-id').value = idList;
 
