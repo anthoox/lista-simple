@@ -48,7 +48,6 @@ class itemsController
             if (!empty($dataItem)) {
                 $name = isset($dataItem['name']) ? $dataItem['name'] : false;
                 // $notification = isset($dataItem['notification']) ? $dataItem['notification'] : false;
-                // $notes = isset($dataItem['notes']) ? $dataItem['notes'] : false;
                 $price = isset($dataItem['price']) ? $dataItem['price'] : false;
                 $units = isset($dataItem['units']) ? $dataItem['units'] : false;
                 $idUser = isset($dataItem['idUser']) ? $dataItem['idUser'] : false;
@@ -70,12 +69,6 @@ class itemsController
                 //     $item->setNotification(null);
                 // }
 
-
-                // if ($notes) {
-                //     $item->setNotes($notes);
-                // } else {
-                //     $item->setNotes('');
-                // }
 
                 if ($price) {
                     $item->setPrice($price);
@@ -145,12 +138,7 @@ class itemsController
         }
         if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
 
-            $dataItem = ValidatorForm::validatorItem($_POST);
-
-            // if (!isset($dataItem['notes'])) {
-            //     $dataItem['notes'] = "";
-            // }
-  
+            $dataItem = ValidatorForm::validatorItem($_POST);  
 
             $item = new Items();
 
@@ -251,8 +239,6 @@ class itemsController
                 // Método de solicitud no válido
                 http_response_code(405);
                 echo json_encode(['error' => 'Método no permitido']);
-                // var_dump($_POST);
-                // die();
             }
             require_once  base_host . 'views/users/list.php';
         } else {

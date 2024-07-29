@@ -1,5 +1,16 @@
 </main>
 
+<!-- Modal ADD -->
+<?php require_once base_host . 'views/modals/modalAddList.php'; ?>
+<?php require_once base_host . 'views/modals/modalAddItem.php'; ?>
+
+<!-- Modal EDIT -->
+<?php require_once base_host . 'views/modals/modalEditList.php'; ?>
+<?php require_once base_host . 'views/modals/modalEditItem.php'; ?>
+
+
+<!-- Modal LOGOUT -->
+<?php require_once base_host . 'views/modals/modalLogout.php'; ?>
 
 <?php if (!isset($_SESSION['identity'])) :    ?>
 
@@ -35,31 +46,18 @@
 
     </footer>
 
-<?php else : ?>
-    <!-- Modal ADD -->
-    <?php require_once base_host . 'views/modals/modalAddList.php'; ?>
-    <?php require_once base_host . 'views/modals/modalAddItem.php'; ?>
-
-    <!-- Modal EDIT -->
-    <?php require_once base_host . 'views/modals/modalEditList.php'; ?>
-    <?php require_once base_host . 'views/modals/modalEditItem.php'; ?>
-
-
-    <!-- Modal LOGOUT -->
-    <?php require_once base_host . 'views/modals/modalLogout.php'; ?>
 <?php endif; ?>
-
 
 
 
 </div>
 
-
-
-</body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 <script src="<?= web ?>js/index.js"></script>
+
+</body>
+
 
 
 </html>

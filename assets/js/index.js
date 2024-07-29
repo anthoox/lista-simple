@@ -12,17 +12,11 @@ window.onload = function () {
             xhr.onload = function () {
 
                 if (xhr.status >= 200 && xhr.status < 400) {
-                    // console.log(xhr.responseText);
                     var jsonData = JSON.parse(xhr.responseText);
-                    // console.log(jsonData);
 
                     var id = jsonData.id;
-                    // var description = jsonData.description;
-                    // var notification = jsonData.notification;
                     var name = jsonData.name;
                     document.getElementById('listName').value = name;
-                    // document.getElementById('edit-notification').value = notification;
-                    // document.getElementById('edit-description').value = description;
                     document.getElementById('idList').value = id;
 
                 } else {
@@ -41,7 +35,6 @@ window.onload = function () {
     delButtons.forEach(function (button) {
         button.addEventListener('click', function () {
             var listId = this.getAttribute('data-list-id');
-            // console.log(listId)
 
             // Solicitud AJAX enviando ID al controlador
             var xhr = new XMLHttpRequest();
@@ -64,7 +57,6 @@ window.onload = function () {
     delButtons.forEach(function (button) {
         button.addEventListener('click', function () {
             var listId = this.getAttribute('data-list-id');
-            // console.log(listId)
 
             // Solicitud AJAX enviando ID al controlador
             var xhr = new XMLHttpRequest();
@@ -85,7 +77,6 @@ window.onload = function () {
     delButtons.forEach(function (button) {
         button.addEventListener('click', function () {
             var listId = this.getAttribute('data-list-id');
-            // console.log(listId)
 
             // Solicitud AJAX enviando ID al controlador
             var xhr = new XMLHttpRequest();
@@ -119,16 +110,12 @@ window.onload = function () {
                     var name = jsonData.name;
                     var price = jsonData.price;
                     var units = jsonData.numer;
-                    // var notification = jsonData.notification_date;
-                    // var notes = jsonData.notes;
                     var idItem = jsonData.id;
                     var idList = jsonData.list_id;
 
                     document.getElementById('item-name').value = name;
                     document.getElementById('item-price').value = price;
                     document.getElementById('item-units').value = units;
-                    // document.getElementById('item-notification').value = notification;
-                    // document.getElementById('item-notes').value = notes;
                     document.getElementById('item-id').value = idItem;
                     document.getElementById('list-id').value = idList;
 
@@ -228,8 +215,6 @@ window.onload = function () {
 
 
 
-
-    ///////////////
     
     let timer;
     const elements = document.querySelectorAll('.select-style');

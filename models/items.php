@@ -10,7 +10,7 @@ class Items
     private $price;
     private $units;
     // private $notification;
-    // private $notes;
+
     private $completed;
 
     private $db;
@@ -97,16 +97,6 @@ class Items
     //     return $this;
     // }
 
-    // public function getNotes()
-    // {
-    //     return $this->notes;
-    // }
-
-    // public function setNotes($notes)
-    // {
-    //     $this->notes = $notes;
-    //     return $this;
-    // }
     public function getcompleted()
     {
         return $this->completed;
@@ -141,7 +131,7 @@ class Items
         $price = $this->getPrice();
         $units = $this->getUnits();
         // $notification = $this->getNotification();
-        // $notes = $this->getNotes();
+
 
         $sql = "INSERT INTO items VALUES(NULL, ?, ?, ?, ?, ?, 0, NOW())";
 

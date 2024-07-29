@@ -1,16 +1,8 @@
 <!-- Cabeceras -->
 
-<?php require_once base_host . 'controllers/UsersController.php'; ?>
+<?php require_once base_host . 'controllers/usersController.php'; ?>
 <?php require_once base_host . 'models/users.php'; ?>
 <?php require_once base_host . 'views/layout/head.php'; ?>
-<?php require_once base_host . 'helpers/cookies.php'; ?>
-
-
-<?php
-// Comprobamos si existen las cookies en el navegador para redigir
-// Cookies::cookiesHome();
-
-?>
 
 <!-- Contenido -->
 

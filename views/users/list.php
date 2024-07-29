@@ -119,12 +119,21 @@ $price = number_format((float)$totalPrice['totalPrice'], 2)
                         </div>
             
                         <div class="d-flex w-100 justify-content-start align-items-center h-25">
-                            <span class="fw-semibold text-secondary text-decoration-line-through span-style">' . $item[3] . '</span>
+                            <span class="fw-semibold text-secondary text-decoration-line-through span-style">' . $item[3] .
+                '</span>
 
                         </div>
         
                     <div class="d-flex w-100 h-25">
-                    <div class="d-flex w-50">
+                    <div class="d-flex w-50 ">
+                    ';
+
+                // if ($item[6] != '0000-00-00 00:00:00') {
+                //     $notification = Utils::dateFormatter($item[6]);
+                //     echo '<span class="text-primary fw-semibold f-little">' . $notification . '</span>';
+                // }
+
+                echo '  
                       </div>
                             <div class="d-flex align-items-center w-50 justify-content-end">
                                 <span class="fw-semibold me-1">x' . $item[5] . '</span>';

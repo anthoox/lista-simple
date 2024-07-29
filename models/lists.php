@@ -8,7 +8,6 @@ class Lists
     private $create_date;
     private $modification_date;
     private $notification;
-    // private $description;
     private $paper_bin;
     private $complete;
 
@@ -128,24 +127,6 @@ class Lists
     }
 
     /**
-     * Get the value of description
-     */
-    // public function getDescription()
-    // {
-    //     return $this->description;
-    // }
-
-    /**
-     * Set the value of description
-     */
-    // public function setDescription($description)
-    // {
-    //     $this->description = $description;
-
-    //     return $this;
-    // }
-
-    /**
      * Get the value of paper_bin
      */
     public function getPaperBin()
@@ -186,7 +167,6 @@ class Lists
         $name = $this->getName();
         $modificationDate = $this->getModificationDate();
         // $notification = $this->getNotification();
-        // $description = $this->getDescription();
 
         $sql = "INSERT INTO lists VALUES(NULL, ?, ?, NOW(), ?, 0, 0)";
         $stmt = $this->db->prepare($sql);
@@ -214,7 +194,6 @@ class Lists
             return false;
         }
     }
-
  
 
     public function completed($userId)
