@@ -22,10 +22,6 @@
 
 </form>
 
-<!-- <a class="text-center text-decoration-none text-primary-emphasis fw-medium" href="<?= base_url ?>index.php">Volver</a> -->
-<!-- <span class="text-success fw-semibold f-little">Consulta enviada</span> -->
-
-
 
 <h3 class="text-start text-primary-emphasis mb-3 col-12 pe-2 ps-2">FaQ</h3>
 
@@ -65,7 +61,7 @@
         <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
             <div class="accordion-body">
                 <strong>Es muy sencillo.</strong> Solo debes dar clic sobre el botón de añadir lista
-                <img src="<?= base_url ?>assets/img/iconos/add-l.svg" alt="Foto de perfil de usuario" class="mb-1 rounded-circle border border-1 bg-success icon-list-ss"> e ir añadiendo los datos que desees. El único dato obligatorio es el nombre.
+                <img src="<?= base_url ?>assets/img/iconos/add.svg" alt="Foto de perfil de usuario" class="mb-1 rounded-circle border border-1 bg-success icon-list-ss"> e ir añadiendo los datos que desees. El único dato obligatorio es el nombre.
             </div>
         </div>
     </div>
@@ -115,13 +111,13 @@
     <div class="accordion-item">
         <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSeven" aria-expanded="false" aria-controls="panelsStayOpen-collapseSeven">
-                <strong>¿Cómo elimino una lista y sus elementos?</strong>
+                <strong>¿Cómo elimino una lista?</strong>
 
             </button>
         </h2>
         <div id="panelsStayOpen-collapseSeven" class="accordion-collapse collapse">
             <div class="accordion-body">
-                <strong>Si damos clic</strong> en el icono <img src="<?= base_url ?>assets/img/iconos/papelera.svg" alt="Imagen icono de papelera" class="mb-1 icon-list-ss"> de una lista, esta se enviará a la papelera independientemente del contenido que tenga. Desde la papelera se podrá recuperar o eliminar. Sin embargo, si se eliminan los elementos que de una lista estos se borrarán de forma definitiva.
+                <strong>Manten seleccionada un momento una lista</strong> y se mostrará el icono <img src="<?= base_url ?>assets/img/iconos/papelera.svg" alt="Imagen icono de papelera" class="mb-1 icon-list-ss">. Al dar clic en este icono la lista se enviará a la papelera independientemente del contenido que tenga. Desde la papelera se podrá recuperar o eliminar definitivamente.
             </div>
         </div>
     </div>
@@ -135,7 +131,7 @@
         </h2>
         <div id="panelsStayOpen-collapseEignt" class="accordion-collapse collapse">
             <div class="accordion-body">
-                <strong>Damos clic en el nombre de la lista</strong> para acceder a su contenido. Si damos clic en el icono <img src="<?= base_url ?>assets/img/iconos/papelera.svg" alt="Imagen icono de papelera" class="mb-1 icon-list-ss"> de cualquier elemento de la lista, este se eliminará de forma definitiva.
+                <strong>Tras acceder al contenido de la lista</strong>, mantenemos presionado el elemento que queremos eliminar hasta que aparezca el icono <img src="<?= base_url ?>assets/img/iconos/papelera.svg" alt="Imagen icono de papelera" class="mb-1 icon-list-ss">. Para eliminar el elemento de la lista simplemente tenemos que dar clic sobre el icono de la papelera. Los elementos de la lista no pasan por la papelera. Se eliminan de forma definitiva.
             </div>
         </div>
     </div>
